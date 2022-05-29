@@ -1,29 +1,40 @@
 # Linux Tips
 
-## date format
+## Date format : 
 
 `$ echo "LC_TIME=nl_BE.UTF-8" >> $HOME/.profile`
 
-## pdf
 
-reduce pdf size : ghostscript
+---
+
+## Pdf
+
+reduce pdf size with ghostscript :
 
 `gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -q -o output.pdf input.pdf`
 
-## renaming files
 
-rename file + autonumber
+---
+
+## Renaming files
+
+rename file + autonumber :
 
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
+
+---
+
 ## ssh
 
-Activate ssh
+Activate ssh :
 ```
 $ sudo apt-get install openssh-server
 $ systemctl status sshd
 $ systemctl enable sshd
 ```
+
+---
 
 ## StarDict + wiktionnaire
 
@@ -37,6 +48,9 @@ stardict_3.0.6.2-1_all.deb
 
 `$ sudo cp -r dict-fr /usr/share/stardict/dic/`
 
+
+---
+
 ## Calibre
 
 https://calibre-ebook.com/download_linux
@@ -46,9 +60,9 @@ https://calibre-ebook.com/download_linux
 install calibre tarball
 
 ```
-$ sudo mkdir -p /opt/calibre && \
-rm -rf /opt/calibre/* && \
-sudo tar xvf /home/jinx/Downloads/calibre/calibre-4.23.0-x86_64.txz -C /opt/calibre && \
+$ sudo mkdir -p /opt/calibre && \  
+rm -rf /opt/calibre/* && \  
+sudo tar xvf /home/jinx/Downloads/calibre/calibre-4.23.0-x86_64.txz -C /opt/calibre && \  
 sudo /opt/calibre/calibre_postinstall
 ```
 
@@ -58,6 +72,8 @@ Load plugin DeDRM in Calibre
 
 > menu > preferences > advanced > plugins 
 
+
+---
 
 ## wget 
 
@@ -86,6 +102,8 @@ $ wget \
 			https://www.tutorialspoint.com/whiteboard.htm
 ```
 
+---
+
 ## ffmpeg
 
 - Cut Sample Video (Fast)
@@ -101,10 +119,16 @@ $ wget \
 `$ ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize output.gif]` 
 
 
+
+---
+
 ## youtube-dl
 
 `$ sudo apt-get install youtube-dl`
 `$ sudo apt-get install python3-pip python-dev`
+
+
+---
 
 ## HP Printer
 
@@ -115,6 +139,13 @@ $ wget \
 ## GPG error
 
 `$ sudo apt-get update`
+
 "GPG error: http://dl.google.com stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 78BD65473CB3BD13"
 
-`wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+`$ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -`
+
+---
+
+## Sublime Text
+
+[Get rid of nag screen](https://gist.github.com/tonkoandrew/6da28ad58ee2a0371f8019142fb898c1)
