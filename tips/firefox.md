@@ -1,5 +1,13 @@
 # Firefox
 
+## deactivate CORS
+
+> security.fileuri.strict_origin_policy = false
+
+## language
+
+intl.locale.requested = fr
+
 ## Markdown (md files)
 
 - Install Extension Markdown Viewer Webkit
