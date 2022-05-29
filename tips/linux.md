@@ -63,21 +63,15 @@ Load plugin DeDRM in Calibre
 
 Leech an entire web site
 
- --recursive: download the entire Web site.
+     --recursive: download the entire Web site.  
+     --domains website.org: do not follow links outside website.org.  
+     --no-parent: do not follow links outside the directory tutorials/html/.  
+     --page-requisites: get all the elements that compose the page (images, CSS and so on).  
+     --html-extension: save files with the .html extension.  
+     --convert-links: convert links so that they work locally, off-line.  
+     --restrict-file-names=windows: modify filenames so that they will work in Windows as well.  
+     --no-clobber: do not overwrite any existing files (used in case the download is interrupted and resumed).  
 
- --domains website.org: do not follow links outside website.org.
-
- --no-parent: do not follow links outside the directory tutorials/html/.
-
- --page-requisites: get all the elements that compose the page (images, CSS and so on).
-
- --html-extension: save files with the .html extension.
-
- --convert-links: convert links so that they work locally, off-line.
-
- --restrict-file-names=windows: modify filenames so that they will work in Windows as well.
-
- --no-clobber: do not overwrite any existing files (used in case the download is interrupted and resumed).
 ```
 $ wget \
      --recursive \
@@ -94,11 +88,11 @@ $ wget \
 
 ## ffmpeg
 
-- Cut Sample Video 
+- Cut Sample Video (Fast)
 
-38:43 : start
-04:26 : duration
-43:09 : end
+38:43 : start  
+04:26 : duration  
+43:09 : end  
 
 `$ ffmpeg -ss 00:38:43 -t 00:04:26 -i "input.avi" -acodec copy -vcodec copy sample.avi`
 
