@@ -149,3 +149,5 @@ $ wget \
 ## Sublime Text
 
 [Get rid of nag screen](https://gist.github.com/tonkoandrew/6da28ad58ee2a0371f8019142fb898c1)
+
+`$ cp remover.py ~/.config/sublime-text/Packages/User/`
