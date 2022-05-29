@@ -21,5 +21,13 @@ $ sudo apt-get install -y nodejs
 $ cd /home/user/workspace/angular
 $ ng new sandbox
 $ cd sandbox
+$ ng generate component <component-name>
 $ ng serve --open
+```
+## d3 - angular
+
+```
+$ npm install d3 --save
+$ npm install @types/d3 --save
+app.component.ts : import * as d3 from 'd3'
 ```
