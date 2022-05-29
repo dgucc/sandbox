@@ -54,10 +54,10 @@ $ sudo systemctl disable docker.socket
 
 Start it manually
 
-`$ sudo service docker start`
-`$ sudo docker run --rm hello-world` 
-`$ sudo docker ps -a` 
-`$ sudo docker stop hello-world` 
+`$ sudo service docker start`  
+`$ sudo docker run --rm hello-world`  
+`$ sudo docker ps -a`  
+`$ sudo docker stop hello-world`  
 
 ---
 ## SQL Server 2017
