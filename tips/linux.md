@@ -124,8 +124,8 @@ $ wget \
 
 ## youtube-dl
 
-`$ sudo apt-get install youtube-dl`
-`$ sudo apt-get install python3-pip python-dev`
+`$ sudo apt-get install youtube-dl`  
+`$ sudo apt-get install python3-pip python-dev`  
 
 
 ---
