@@ -151,3 +151,11 @@ $ wget \
 [Get rid of nag screen](https://gist.github.com/tonkoandrew/6da28ad58ee2a0371f8019142fb898c1)
 
 `$ cp remover.py ~/.config/sublime-text/Packages/User/`
+
+Reformat/Reindent Code  
+
+CTRL+SHIFT+P : to open Command palette  
+S, S, J : Enter selected Java as current syntax  
+CTRL+A : to select all code  
+CTRL+SHIFT+P : to open Command palette again  
+r, e, i, n, ENTER : to issue the reindent command
