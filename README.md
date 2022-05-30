@@ -11,7 +11,7 @@ Command ***gh*** needed to push modifications to remote repository
 Link local and remote repositories  
 `$ git remote add origin https://github.com/dgucc/sandbox.git`  
 `$ git branch -M main`  
-Push modifications to github
+Push modifications to github  
 `$ git push -u origin main`
 
 ## How-to Update local repository from github  
