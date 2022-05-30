@@ -8,7 +8,7 @@ Command ***gh*** needed to push modifications to remote repository
 `$ gh auth login` 
 
 ## How-to push existing repository from command line   
-Link local and remote repositories
+Link local and remote repositories  
 `$ git remote add origin https://github.com/dgucc/sandbox.git`  
 `$ git branch -M main`  
 Push modifications to github
