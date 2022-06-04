@@ -7,7 +7,7 @@ Command ***gh*** needed to push modifications to remote repository
 2. In the command line, authenticate to GitHub.  
 `$ gh auth login` 
 
-3. Git clone alternative
+3. Git clone alternative  
 `$ gh repo clone dgucc/sandbox` 
 
 
