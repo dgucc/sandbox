@@ -3,3 +3,6 @@ $ git merge origin/main
 $ git add .
 $ git commit -m 'before push...'
 $ git push -u origin main
+
+# update local repository
+$ git pull origin main
