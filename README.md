@@ -7,10 +7,17 @@ Command ***gh*** needed to push modifications to remote repository
 2. In the command line, authenticate to GitHub.  
 `$ gh auth login` 
 
+3. Git clone alternative
+`$ gh repo clone dgucc/sandbox` 
+
+
 ## How-to push existing repository from command line   
 Link local and remote repositories  
 `$ git remote add origin https://github.com/dgucc/sandbox.git`  
+
+Rename master into main  
 `$ git branch -M main`  
+
 Push modifications to github  
 `$ git push -u origin main`
 
