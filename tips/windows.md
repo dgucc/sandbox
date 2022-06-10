@@ -1,3 +1,7 @@
+## Keyboard layout
+powershell as admin  
+`PS > Set-WinUserLanguageList -LanguageList fr-be -Force`    
+
 ## Add "Show Desktop" shortcut
 
 Right Click > New > Shortcut  
