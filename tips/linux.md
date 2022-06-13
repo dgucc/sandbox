@@ -11,8 +11,10 @@
 
 reduce pdf size with ghostscript :
 
-`gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -q -o output.pdf input.pdf`
+`$ gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -q -o output.pdf input.pdf`
 
+pdf to text : install "poppler" to user pdfTotext  
+`$ pdftotext input.pdf output.txt` 
 
 ---
 
