@@ -1,8 +1,10 @@
 # Linux Tips
 
 ## Date format : 
-
-`$ echo "LC_TIME=nl_BE.UTF-8" >> $HOME/.profile`
+Install missing locale if needed :  
+`$ mintlocale` 
+Define default time format :  
+`$ echo "LC_TIME=fr_BE.UTF-8" >> $HOME/.profile`
 
 
 ---
