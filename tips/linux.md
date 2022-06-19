@@ -2,7 +2,7 @@
 
 ## Date format : 
 Install missing locale if needed :  
-`$ mintlocale` 
+`$ mintlocale`  
 Define default time format :  
 `$ echo "LC_TIME=fr_BE.UTF-8" >> $HOME/.profile`
 
