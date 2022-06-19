@@ -11,3 +11,9 @@ Right Click > New > Shortcut
 
 `Shift + Right-Click` on folder in File Explorer...  
 
+## ALT+TAB behaviour
+
+regedit `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer`  
+New Key "DWORD (32-bit)" > `AltTabSettings = 1`  
+Restart computer  
+
