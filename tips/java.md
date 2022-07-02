@@ -19,6 +19,29 @@ void afterMarshal(Marshaller marshaller) {
 }
 ```
 
+## xpath
+
+xpath to get StartDate and EndDate for all declaration types :  
+`//*[local-name()='Declarer']//*[local-name()='StartDate'] `  
+whatever intermediate element : AccountingYear|ReportingPeriod  
+
+```
+
+	Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(filepath);
+	XPath xpath = XPathFactory.newInstance().newXPath();
+
+	// NodeList version
+	NodeList nodes = (NodeList) xpath.compile(//*[local-name() = 'AssessmentYear']).evaluate(doc,XPathConstants.NODESET);
+	for (int i = 0; i < nodes.getLength(); i++) {
+		Node node = nodes.item(i);
+		assessmentYear = node.getTextContent();
+	}
+
+	// SingleNode version
+	Node node = (Node) xpath.compile(//*[local-name() = 'AssessmentYear']).evaluate(doc, XPathConstants.NODE);
+	assessmentYear = node.getTextContent();
+```
+
 ## PDF : workaround for html2pdf to download pdf : Base64  
 
 http://localhost:8080/api/pdf/get/html/base64/
