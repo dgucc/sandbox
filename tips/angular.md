@@ -51,8 +51,8 @@ src/app/app.module.ts :
 ```
 [TS] : define a flag "isLoading:boolean"  
 	
-	> src/app/sub-app1/sub-app1.component.ts  
-	> src/app/sub-app2/sub-app2.component.ts  
+ > src/app/sub-app1/sub-app1.component.ts  
+ > src/app/sub-app2/sub-app2.component.ts  
 	
 
 [HTML] : use <map-progress-bar> linked to flag "isLoading" + *ngIf  
@@ -60,7 +60,7 @@ src/app/app.module.ts :
  > src/app/sub-app1/sub-app1.component.html  
  > src/app/sub-app2/sub-app2.component.html  
 	
-`	<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>`   
+`<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>`   
 
 
 ## d3 - angular
