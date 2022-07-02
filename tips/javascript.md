@@ -1,5 +1,12 @@
 # Javascript
 
+## Custom event in d3
+```
+var dispatch = d3.dispatch("statechange");
+dispatch.on('statechange', function(e){ console.log(e) })
+dispatch.call("statechange", this, 'Hello, world!')
+```
+
 ## String Remove accents 
 ```
 String.prototype.sansAccent = function(){
