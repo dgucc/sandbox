@@ -52,4 +52,12 @@ Lire > Convertir > Définir fichier de destination > Démarrer
 Function to check belgian company number (BCE) :  
 `=SI((DROITE(A1;2)-(97-((GAUCHE(A1;7)-(ENT(GAUCHE(A1;7)/97)*97))))=0);"ok";"nok")`  
 
+---
+
+## WINMERGE
+
+Plugin 'DisplayXMLFiles.dll' cannot pack your changes to the left file back into $filename$. The original file will not be changed.  
+Fix : Menu Plugins > Manual unpacking   
+
+
 
