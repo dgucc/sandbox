@@ -12,7 +12,6 @@ Right Click > New > Shortcut
 ## Retake ownership  
 (cmd as admin) : `> TAKEOWN /F . /R`  
 
-
 ## ALT+TAB behaviour
 
 regedit `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer`  
@@ -26,6 +25,13 @@ Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
 
+## USBSTOR allow|disallow  
+```
+3 : ENABLED
+4 : DISABLED
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR]
+"Start"=dword:00000003
+```
 
 ## VLC : screen recording  
 CTRL+C  
