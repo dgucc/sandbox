@@ -174,5 +174,34 @@ Remove last character in file :
 Surrounding "[...]" :  
 `$ sed -i '1 i [' inputfile && sed -i '$ a ]' outputfile`  
 
+## Curl to test Rest API :  
+```
+$ curl -X POST -H "Content-Type:application/json" --data @example.json http://localhost:8080/rest/app/1/add 
+{"field1":"1","field2":"2"}
+```
+## jq : json query 
 
+Filter output for selected fields :  
+`$ jq -r '[ .[] | {id: .id, field1: .field1} ]' file.json `  
+
+Filter array by range :  
+`$ jq -r '[ .[293:296] | .[] | {id: .id, field1: .field1} ]' file.json`  
+
+Export to csv (problem if order of columns matters) :  
+
+`$ jq -r -f filter.jq file.json > out.csv`  
+
+> filter.jq :
+def tocsv:
+    (map(keys)
+        |add
+        |unique
+    ) as $cols
+    |map(. as $row
+        |$cols
+        |map($row[.]|tostring)
+    ) as $rows
+    |$cols,$rows[]
+    | @csv;
+tocsv
 
