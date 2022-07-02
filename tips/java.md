@@ -19,6 +19,16 @@ void afterMarshal(Marshaller marshaller) {
 }
 ```
 
+## Regex Normalizer
+```
+System.out.println(Normalizer.normalize(CEt ça sera sa moitié, Normalizer.Form.NFD));
+CEt ça sera sa moitié
+System.out.println(Normalizer.normalize(CEt ça sera sa moitié, Normalizer.Form.NFD).replaceAll([^\\p{ASCII}], )); // \\p{ASCII} : match ascii
+CEt ca sera sa moitie
+System.out.println(Normalizer.normalize(CEt ça sera sa moitié, Normalizer.Form.NFD).replaceAll([\\p{M}],)); // \\p{M} : match accents
+CEt ca sera sa moitie
+```
+
 ## xpath
 
 xpath to get StartDate and EndDate for all declaration types :  
