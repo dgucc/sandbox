@@ -108,7 +108,10 @@ db2 => CATALOG DATABASE LOCALDB2 AS HOMEDEV AT NODE HOME
 
 db2 => UNCATALOG DATABASE HOMEDEV
 db2 => UNCATALOG NODE home
+
+db2 => CONNECT TO LOCALDB2 USER <username> USING <password>
 ```
+
 Export with CALL ADMIN_CMD (on server side) :  
 `CALL ADMIN_CMD('export to ~/data/export.csv of del modified by coldel, SELECT COL1,COL2 FROM MYSCHEMA.TABLE1');`
 
