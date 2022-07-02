@@ -31,7 +31,9 @@ String.prototype.sansAccent = function(){
 var chaine = "À côté d'un verre vide, il y a toujours un mec plein.";
 alert( chaine.sansAccent() );
 ```
+
 ## PDf : workaround for html2pdf to download pdf with javascript : Base64
+
 ```
 http://localhost:8080/api/pdf/get/html/base64/
 src/main/java/sandbox/rest/resource/PdfResource.java :
@@ -54,4 +56,14 @@ $.ajax(settings)
 		anchor.download = filename;
 		anchor.click(); // trigger file download			
 		anchor.remove();
+```
+
+## CompanyNumber cleanup :  
+```
+function cleanupCbe(cbe) {
+	let result = (cbe=="" || cbe==undefined) 
+			? "" 
+			: new Intl.NumberFormat('fr-BE',{minimumIntegerDigits:10, useGrouping:false}).format(cbe.replace(/\D/g,''));
+	return result;
+}
 ```
