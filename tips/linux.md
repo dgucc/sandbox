@@ -200,12 +200,7 @@ Basic authentication :
 
 - Screen recording  
 
-List media devices with ffmpeg    
-`$ ffmpeg -list_devices true -f dshow -i dummy`  
-
-Start recording  
-`$ ffmpeg -f gdigrab -i desktop -f dshow -i audio="Microphone externe (Conexant ISST Audio)" -framerate 10 -vcodec libx264 "screen.flv"`  
-`$ ffmpeg -f x11grab -follow_mouse centered -framerate 25 -video_size cif -i :0.0 out.mpg` 
+`$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.mkv`  
 
 ---
 
