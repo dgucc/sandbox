@@ -83,6 +83,22 @@ $ /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P SA_password`
 ```
 ---
 
+## DB2
+
+Catalog database remote docker :  
+```
+db2 => CATALOG TCPIP NODE HOME REMOTE 192.168.1.11 SERVER 50000
+db2 => CATALOG DATABASE LOCALDB2 AS HOMEDEV AT NODE HOME
+
+db2 => UNCATALOG DATABASE HOMEDEV
+db2 => UNCATALOG NODE home
+```
+Export with CALL ADMIN_CMD (on server side) :  
+`CALL ADMIN_CMD('export to ~/data/export.csv of del modified by coldel, SELECT COL1,COL2 FROM MYSCHEMA.TABLE1');`
+
+---
+
+
 ## Neo4j
 https://ajstorm.medium.com/installing-db2-on-your-coffee-break-5be1d811b052
 
