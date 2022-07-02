@@ -24,3 +24,11 @@ Mode de capture : Bureau > Afficher plus d'options > Modifier les options :
 `:screen-fps=20.000000 :live-caching=300 :screen-mouse-image=Mouse_pointer_small.png`  
 Lire > Convertir > Définir fichier de destination > Démarrer  
 
+---
+
+## Excel
+
+Function to check belgian company number (BCE) :  
+`=SI((DROITE(A1;2)-(97-((GAUCHE(A1;7)-(ENT(GAUCHE(A1;7)/97)*97))))=0);"ok";"nok")`  
+
+
