@@ -10,9 +10,10 @@ Define default time format :
 ## File manipulations  
 
 Renaming files + autonumber suffix :
-
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
+Counting records in csv files for given field :  
+`$ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' | bc`-1 | bc)" ; done`  
 
 Skip 1st line :  
 `$ tail -n + 2 filename`
