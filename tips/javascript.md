@@ -1,11 +1,5 @@
 # Javascript
 
-## Custom event in d3
-```
-var dispatch = d3.dispatch("statechange");
-dispatch.on('statechange', function(e){ console.log(e) })
-dispatch.call("statechange", this, 'Hello, world!')
-```
 
 ## String Remove accents 
 ```
@@ -66,4 +60,49 @@ function cleanupCbe(cbe) {
 			: new Intl.NumberFormat('fr-BE',{minimumIntegerDigits:10, useGrouping:false}).format(cbe.replace(/\D/g,''));
 	return result;
 }
+```
+---
+
+## d3.js
+
+d3 Glossary :  
+```
+The <defs> element is used to define SVG elements without rendering them. 
+	Combined with a ‘g’ tag, it can be used to create a template for 
+	an intricate graphic that contains many elements.
+The <marker> element defines the graphic that is to be used for 
+ 	drawing arrowheads or polymarkers on a given <path>, <line>, <polyline> or <polygon> element.
+The “charge” force — 
+	like electrostatic charge, when negative will push nodes away, 
+	(default strength is -30) the charge force is global: 
+	every node affects every other node, even if they are on disconnected subgraphs 
+	(used with many-body().
+The “center” force — 
+	centering force, centers all nodes at the given position ?x,y?.
+The “link” force — 
+	The link force pushes linked nodes together or apart according to the desired link distance.
+forceLink: 
+	Creates a new link force with the specified links and default parameters. 
+	If links are not specified, it defaults to the empty array.
+The “many-body” force 
+	applies mutually amongst all nodes. It can be used to simulate gravity (attraction) 
+	if the strength is a positive, or electrostatic charge (repulsion) 
+	if the strength is negative.
+alphaTarget: 
+	Usually used on interactions such as drag-drop a node, together with restart(), 
+	it’s hard to understand — thus hard to explain what is the “alpha” concept, 
+	it plays a role in “slowing” the nodes transition, for a “smother” experience 
+	when changing the layout by dropping the node somewhere, according to the API docs: 
+	alphaTarget sets the current target alpha to the specified number 
+	in the range [0,1] and returns this simulation.
+tick — 
+	The simulator starts automatically, and after the node data iteration the tick event 
+	is triggered, on its handler fn the nodes and lines get a calculated x- and y-positions. 
+```
+
+Custom event in d3
+```
+var dispatch = d3.dispatch("statechange");
+dispatch.on('statechange', function(e){ console.log(e) })
+dispatch.call("statechange", this, 'Hello, world!')
 ```
