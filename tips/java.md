@@ -89,3 +89,28 @@ How to kill running jetty on port 8080
 > netstat -ano | grep 8080 | grep LISTENING
 > taskkill /F /PID 1234
 ```
+
+## Eclipse  
+
+Eclipse: Java was started but returned error code=13  
+Remove in environement PATH : "C:\Program Files (x86)\Common Files\Oracle\Java\javapath"  
+
+## Tomcat  
+
+Tomcat 7 does not start anymore... ?  
+> Install Tomcat 9  
+Source of new problem : conflicting port for shutdown !!!  
+D:\tools\DEV\SERVER\apache-tomcat-9.0.30\conf\server.xml :  
+```
+<Server port="8005" shutdown="SHUTDOWN">
+to
+<Server port="8006" shutdown="SHUTDOWN">
+# idem for Tomcat 7 + set environement
+D:\tools\DEV\SERVER\apache-tomcat-7.0.70\bin\startup.bat :
+	setlocal
+	SET CATALINA_HOME=D:\tools\DEV\SERVER\apache-tomcat-7.0.70
+	SET CATALINA_BASE=D:\tools\DEV\SERVER\apache-tomcat-7.0.70
+	SET CATALINA_TMPDIR=D:\tools\DEV\SERVER\apache-tomcat-7.0.70\temp
+	SET JAVA_HOME==C:\Program Files\Java\jdk1.7.0_80
+	SET JRE_HOME=C:\Program Files\Java\jdk1.7.0_80\jre
+```
