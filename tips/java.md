@@ -1,5 +1,24 @@
 # Java
 
+ 
+## [Marshaller example](https://howtodoinjava.com/jaxb/marshaller-example/)
+ "Marshaller Callback Methods"  
+ "You can customize the marshalling operation by inside JAXB annotated class e.g. Employee.java. "  
+ "You need to define two methods which will listen before and after the marshaller process that class. "  
+ "In these methods, you can perform actions such as setting extra fields"  
+``` 
+// Invoked by Marshaller after it has created an instance of this object.
+boolean beforeMarshal(Marshaller marshaller) {
+	System.out.println("Before Marshaller Callback");
+	return true;
+}
+
+// Invoked by Marshaller after it has marshalled all properties of this object.
+void afterMarshal(Marshaller marshaller) {
+	System.out.println("After Marshaller Callback");
+}
+```
+
 ## PDF : workaround for html2pdf to download pdf : Base64  
 
 http://localhost:8080/api/pdf/get/html/base64/
