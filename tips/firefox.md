@@ -24,3 +24,12 @@ intl.locale.requested = fr
 [add text] 
 
 > type=text/plain exts=md,mkd,mkdn,mdwn,mdown,markdown desc="Markdown document"
+
+## homepage
+
+As admin, C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg :  
+```
+// Set Startpage
+pref(browser.startup.homepage,file:///D:/misc/ict/tamere.html);
+```
+
