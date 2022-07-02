@@ -242,3 +242,11 @@ tocsv
 or (one-line)  
 `$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > out.csv`  
 
+---
+
+## cygwin tips 
+
+Alt + b : backward previous word  
+Alt + f : forward  next word  
+/cygdrive/c/  
+/cygdrive/d/  
