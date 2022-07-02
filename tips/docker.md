@@ -115,6 +115,9 @@ db2 => CONNECT TO LOCALDB2 USER <username> USING <password>
 Export with CALL ADMIN_CMD (on server side) :  
 `CALL ADMIN_CMD('export to ~/data/export.csv of del modified by coldel, SELECT COL1,COL2 FROM MYSCHEMA.TABLE1');`
 
+Get detailed DDL with db2look :  
+`> db2look -d dbName -z schemaName -e -td @ -i username -w password -o DDL_db2look.sql`  
+
 ---
 
 
