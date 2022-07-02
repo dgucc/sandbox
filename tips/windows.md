@@ -22,6 +22,11 @@ Restart computer
 ## File locked by another process  
 Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename  
 
+## Passwords  
+
+(as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
+
+
 ## VLC : screen recording  
 CTRL+C  
 Mode de capture : Bureau > Afficher plus d'options > Modifier les options : 
