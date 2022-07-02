@@ -1,5 +1,14 @@
 # Javascript
 
+## Fix charset rendering 
+```
+var utf8_to_latin1 = function (s) {
+    return unescape(encodeURIComponent(s));
+};
+var latin1_to_utf8 = function (s) {
+    return decodeURIComponent(escape(s));
+};
+```
 
 ## String Remove accents 
 ```
