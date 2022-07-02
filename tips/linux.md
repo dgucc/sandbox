@@ -60,7 +60,7 @@ pdf to text : install "poppler" to use pdfTotext :
 `$ pdftotext input.pdf output.txt` 
 
 Enhance jpg scan => pdf :  
-# noteshrink [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
+**noteshrink** [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
 ```
 $ git clone https://github.com/mzucker/noteshrink.git  
 # Pre-requisites  
