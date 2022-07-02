@@ -162,3 +162,17 @@ S, S, J : Enter selected Java as current syntax
 CTRL+A : to select all code  
 CTRL+SHIFT+P : to open Command palette again  
 r, e, i, n, ENTER : to issue the reindent command
+
+## File manipulation 
+
+Skip 1st line :  
+`$ tail -n + 2 filename`
+
+Remove last character in file :  
+`$ sed -i '$ s/.$//' filename`  
+
+Surrounding "[...]" :  
+`$ sed -i '1 i [' inputfile && sed -i '$ a ]' outputfile`  
+
+
+
