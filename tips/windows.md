@@ -25,13 +25,19 @@ Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
 
-## USBSTOR allow|disallow  
+## USB
+
+USBSTOR allow|disallow  
 ```
 3 : ENABLED
 4 : DISABLED
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR]
 "Start"=dword:00000003
 ```
+
+Remove RegKey : 
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ADMX_DeviceInstallation\DeviceInstall_Removable_Deny`  
+
 
 ## VLC : screen recording  
 CTRL+C  
