@@ -201,6 +201,7 @@ Basic authentication :
 - Screen recording  
 
 `$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.mkv`  
+`$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.flv`  
 
 ---
 
