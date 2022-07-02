@@ -259,3 +259,18 @@ Alt + b : backward previous word
 Alt + f : forward  next word  
 /cygdrive/c/  
 /cygdrive/d/  
+
+Cygwin /dev/null equivalent :  
+`$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
+```
+db2 => connect to SAMPLE user username using password
+db2 => load from c:\temp\csv\NUL of del replace into SCHEMA1.TABLE1 nonrecoverable
+```
+
+check db2_2.log Investigate wich columns are set to null : 
+```
+$ grep column db2.log | sed -e 's/.*column /column /;s/ cannot.*//' | sort -u
+column 12  FIELD12
+column 13  FIELD13
+# these columns are ignored (null) - they are useless 
+```
