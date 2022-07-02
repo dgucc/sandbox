@@ -63,13 +63,35 @@ pdf to text : install "poppler" to use pdfTotext :
 
 ## ssh
 
-Activate ssh :
+Activate ssh :  
+
 ```
 $ sudo apt-get install openssh-server
 $ systemctl status sshd
 $ systemctl enable sshd
 ```
+```
+$ ssh-keygen -t rsa
+[...]
+The key fingerprint is:
+SHA256:................................. username@local_hostname
+The key's randomart image is:
++---[RSA 2048]----+
+|       ..  oo.   |
+|      E.o  .. o  |
+|       ooO.  . . |
+|       .@o* . o  |
+|     . +S* o +   |
+|      +o+.= . o  |
+|     . =.= o   o |
+|    . oo.++     .|
+|     +o+Oo..     |
++----[SHA256]-----+
+$ ssh-copy-id -i .ssh/id_rsa.pub username@remote_hostname
+```
+
 Check file modification date on remote :  
+
 `$ ssh -i /cygdrive/c/cygwin64/home/username/.ssh/id_rsa username@ftpserver stat ./folder/file.xlsx | grep "Modify"`  
 ---
 
