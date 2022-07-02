@@ -59,6 +59,22 @@ reduce pdf size with ghostscript :
 pdf to text : install "poppler" to use pdfTotext :  
 `$ pdftotext input.pdf output.txt` 
 
+Enhance jpg scan => pdf :  
+# noteshrink [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
+```
+$ git clone https://github.com/mzucker/noteshrink.git  
+# Pre-requisites  
+$ sudo apt install imagemagick  
+$ pip install numpy  
+$ pip install scipy  
+$ pip install pillow  
+# as root, edit /etc/ImageMagick-6/policy.xml :  
+ <policy domain="coder" rights="read | write" pattern="PDF" />  
+$ cd test/  
+$ python3 noteshrink.py *.jpg  
+# result page0000.png page0001.png ... output.pdf  
+```
+
 ---
 
 ## ssh
