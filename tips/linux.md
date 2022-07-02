@@ -191,7 +191,8 @@ Export to csv (problem if order of columns matters) :
 
 `$ jq -r -f filter.jq file.json > out.csv`  
 
-> filter.jq :
+```
+ filter.jq :
 def tocsv:
     (map(keys)
         |add
@@ -204,4 +205,4 @@ def tocsv:
     |$cols,$rows[]
     | @csv;
 tocsv
-
+```
