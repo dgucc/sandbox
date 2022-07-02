@@ -46,6 +46,12 @@ Duration res = Duration.between(one, two);
 System.out.println("Duration : " + res.toMinutesPart() + " min " + res.toSecondsPart() + " s");
 ```
 
+## Clob and charset
+```
+myClob = new javax.sql.rowset.serial.SerialClob(myString.getBytes("ISO-8859-1").toCharArray());
+myClob = new javax.sql.rowset.serial.SerialClob(myString.getBytes("UTR-8").toCharArray());
+```
+
 ---
 ## Log4j
 
