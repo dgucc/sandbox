@@ -60,6 +60,16 @@ Start it manually
 `$ sudo docker stop hello-world`  
 
 ---
+
+how to synchro date :  
+
+`sudo apt-get install ntp ntpdate` 
+`ntpdate pool.ntp.org` 
+`service ntp stat` 
+
+`docker run --rm --privileged alpine hwclock -s`  
+
+
 ## SQL Server 2017
 
 [How to run SQL Server in a Docker container](https://blog.logrocket.com/docker-sql-server/)
