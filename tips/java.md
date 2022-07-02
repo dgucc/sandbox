@@ -80,6 +80,14 @@ src/main/resources/log4j.xml :
 
 ---
 
+## Maven
+
+Encrypt password :  
+`$ mvn --encrypt-password newpass`  > settings.xml 
+
+
+---
+
 ## Jetty
 
 Remote debug with mvn jetty:run  
