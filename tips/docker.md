@@ -43,21 +43,48 @@ $ sudo docker run hello-world
 
 ```
 
----
+## Disable docker 
+$ sudo systemctl disable docker.service   
+$ sudo systemctl disable docker.socket  
 
-Disable Docker services
+Disable Docker services  
 
 ``` 
 $ sudo systemctl disable docker.service   
 $ sudo systemctl disable docker.socket 
 ```
 
-Start it manually
+Start it manually  
 
 `$ sudo service docker start`  
 `$ sudo docker run --rm hello-world`  
 `$ sudo docker ps -a`  
 `$ sudo docker stop hello-world`  
+
+## Last update : Errors
+
+Errors were encountered while processing :  
+
+```
+ docker-ce  
+E: Sub-process /usr/bin/dpkg returned an error code (1)  
+A package failed to install.  Trying to recover:  
+Setting up docker-ce (5:20.10.16~3-0~ubuntu-bionic) ...  
+Job for docker.service failed because the control process exited with error code.  
+See "systemctl status docker.service" and "journalctl -xe" for details.  
+invoke-rc.d: initscript docker, action "restart" failed.  
+● docker.service - Docker Application Container Engine  
+	Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)  
+	Active: activating (auto-restart) (Result: exit-code) since Sat 2022-05-14 10:51:20 CEST; 7ms ago  
+TriggeredBy: ● docker.socket  
+	Docs: https://docs.docker.com  
+	Process: 10968 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock (code=exited, status=1/FAILURE)  
+	Main PID: 10968 (code=exited, status=1/FAILURE)  
+dpkg: error processing package docker-ce (--configure):  
+ installed docker-ce package post-installation script subprocess returned error exit status 1  
+Errors were encountered while processing:  
+ docker-ce  
+```
 
 ---
 
@@ -134,38 +161,44 @@ neo4j
 
 http://localhost:7474/
 
----
-
-## disable docker 
-$ sudo systemctl disable docker.service   
-$ sudo systemctl disable docker.socket  
-
----
-
-## Last update : Errors
-
-Errors were encountered while processing:  
-
+Load CSV :  
 ```
- docker-ce  
-E: Sub-process /usr/bin/dpkg returned an error code (1)  
-A package failed to install.  Trying to recover:  
-Setting up docker-ce (5:20.10.16~3-0~ubuntu-bionic) ...  
-Job for docker.service failed because the control process exited with error code.  
-See "systemctl status docker.service" and "journalctl -xe" for details.  
-invoke-rc.d: initscript docker, action "restart" failed.  
-● docker.service - Docker Application Container Engine  
-	Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)  
-	Active: activating (auto-restart) (Result: exit-code) since Sat 2022-05-14 10:51:20 CEST; 7ms ago  
-TriggeredBy: ● docker.socket  
-	Docs: https://docs.docker.com  
-	Process: 10968 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock (code=exited, status=1/FAILURE)  
-	Main PID: 10968 (code=exited, status=1/FAILURE)  
-dpkg: error processing package docker-ce (--configure):  
- installed docker-ce package post-installation script subprocess returned error exit status 1  
-Errors were encountered while processing:  
- docker-ce  
-```
+-- parents
+USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM 'file:///bnb_stakeholdings.csv' AS row
+MERGE ( a:Enterprise { 
+bce: row.parentBce, 
+name: row.parentName, 
+start: row.startDate,
+end: row.endDate})
+-- Added 583 labels, created 583 nodes, set 2332 properties, statement executed in 2482 ms.
+
+-- children
+USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM 'file:///bnb_stakeholdings.csv' AS row
+MERGE ( a:Enterprise { 
+bce: row.childBce, 
+name: row.childName})
+-- Added 1627 labels, created 1627 nodes, set 3254 properties, statement executed in 2975 ms.
+
+-- stakeholdings
+USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM 'file:///bnb_stakeholdings.csv' AS row
+MATCH (mother:Enterprise{bce:row.parentBce}),(child:Enterprise {bce:row.childBce})
+CREATE (mother)-[:HOLDS{direct:row.direct, indirect:row.indirect}]->(child)
+-- Set 3932 properties, created 1966 relationships, statement executed in 7654 ms.
+
+http://localhost:7474/:
+MATCH p=(parent:Enterprise {bce:'0220324117'})-[r:HOLDS*1..10]->(c:Enterprise) RETURN c, r
+# Customize style
+D:\temp\neo4j\export\SAMPLE\20200130\graphstyle.grass :
+node.Enterprise {
+  color: #FF756E;
+  border-color: #E06760;
+  text-color-internal: #FFFFFF;
+  caption: '{bce} {name}';
+  diameter: 80px;
+}
 
 ---
 
