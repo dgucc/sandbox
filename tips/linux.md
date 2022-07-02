@@ -46,7 +46,8 @@ or trying to remove accents...
 
 Read-Write permissions  
 `$ find . * -exec chmod u+rwx {} \;`  
-
+(cygwin : setfacl)  
+`$ find . -exec setfacl -s user::rw-,group::r--,other::r-- {} \;`  
 
 ---
 
