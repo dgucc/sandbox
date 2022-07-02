@@ -30,6 +30,6 @@ intl.locale.requested = fr
 As admin, C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg :  
 ```
 // Set Startpage
-pref(browser.startup.homepage,file:///D:/misc/ict/tamere.html);
+pref(browser.startup.homepage,file:///D:/tamere.html);
 ```
 
