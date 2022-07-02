@@ -48,14 +48,18 @@ System.out.println("Duration : " + res.toMinutesPart() + " min " + res.toSeconds
 
 ---
 
+## Jetty
+
 Remote debug with mvn jetty:run  
 
 `MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n" && mvn jetty:run | tee log/debug.log`  
-
----
 
 Embedded jetty : Fix "favicon.ico 404" in browser  
 
 src/main/webapp/favicon.ico
 
-
+How to kill running jetty on port 8080  
+```
+> netstat -ano | grep 8080 | grep LISTENING
+> taskkill /F /PID 1234
+```
