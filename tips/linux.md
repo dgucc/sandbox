@@ -44,6 +44,10 @@ Unwanted characters...
 or trying to remove accents...  
 `$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd   
 
+Read-Write permissions  
+`$ find . * -exec chmod u+rwx {} \;`  
+
+
 ---
 
 ## Pdf
