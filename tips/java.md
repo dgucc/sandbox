@@ -101,6 +101,17 @@ How to kill running jetty on port 8080
 Eclipse: Java was started but returned error code=13  
 Remove in environement PATH : "C:\Program Files (x86)\Common Files\Oracle\Java\javapath"  
 
+[Debug mode - eclipse-weblogic](https://stackoverflow.com/questions/26104666/how-to-debug-java-web-application-in-eclips-with-weblogic-server)  
+
+startWeblogic.cmd :  
+`set JAVA_OPTIONS=-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8453,server=y,suspend=n ` 
+Eclipse (mode debug) :  
+Run -> Debug Configurations -> Remote Java Application  
+	Host : localhost  
+	Port : 8453  
+	-> Click Debug   
+
+
 ## Tomcat  
 
 Tomcat 7 does not start anymore... ?  
