@@ -163,7 +163,7 @@ CTRL+A : to select all code
 CTRL+SHIFT+P : to open Command palette again  
 r, e, i, n, ENTER : to issue the reindent command
 
-## File manipulation 
+## File manipulations  
 
 Skip 1st line :  
 `$ tail -n + 2 filename`
@@ -173,6 +173,22 @@ Remove last character in file :
 
 Surrounding "[...]" :  
 `$ sed -i '1 i [' inputfile && sed -i '$ a ]' outputfile`  
+
+Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :  
+`$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
+
+Split into smaller files :  
+```
+# -l : nb lines
+# -d : add autonum suffix
+# -a : nb of digits for suffix
+$ split -l 100 input.sql "baseFileName" -d -a 3 --additional-suffix=".sql"
+# append string "commit" in each file
+$ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done
+# append string "--EOF" in each file
+$ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done
+```
+
 
 ## Curl to test Rest API :  
 ```
