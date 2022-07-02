@@ -24,3 +24,27 @@ String.prototype.sansAccent = function(){
 var chaine = "À côté d'un verre vide, il y a toujours un mec plein.";
 alert( chaine.sansAccent() );
 ```
+## PDf : workaround for html2pdf to download pdf with javascript : Base64
+```
+http://localhost:8080/api/pdf/get/html/base64/
+src/main/java/sandbox/rest/resource/PdfResource.java :
+	@POST
+	@Path("get/html/base64/{filename}")
+	@Produces(MediaType.TEXT_PLAIN + ";charset=utf-8")
+	public Response getPdfBase64FromHtml(String html, @PathParam("filename") String filename)
+	[...]
+	return Response.ok(
+		Base64.getEncoder().encodeToString(baos.toByteArray()).toString(), 
+		MediaType.TEXT_PLAIN)
+		.build();
+
+src/main/webapp/testHtml2pdf.html :
+[...]
+$.ajax(settings)
+	.done(function (response) {
+		var anchor = document.createElement("a"); //Create anchor <a>
+		anchor.href = "data:application/pdf;base64," + response; // Pdf in Base64
+		anchor.download = filename;
+		anchor.click(); // trigger file download			
+		anchor.remove();
+```
