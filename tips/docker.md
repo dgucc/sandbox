@@ -163,6 +163,7 @@ db2 => UNCATALOG DATABASE HOMEDEV
 db2 => UNCATALOG NODE home
 
 db2 => CONNECT TO LOCALDB2 USER <username> USING <password>
+db2 => terminate
 ```
 
 Export with CALL ADMIN_CMD (on server side) :  
