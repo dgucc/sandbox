@@ -9,6 +9,10 @@ Right Click > New > Shortcut
 ## Open CMD or PowerShell from any folder  
 `Shift + Right-Click` on folder in File Explorer...  
 
+## Retake ownership  
+(cmd as admin) : `> TAKEOWN /F . /R`  
+
+
 ## ALT+TAB behaviour
 
 regedit `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer`  
