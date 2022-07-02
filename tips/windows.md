@@ -18,3 +18,9 @@ Restart computer
 ## File locked by another process  
 Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename  
 
+## VLC : screen recording  
+CTRL+C  
+Mode de capture : Bureau > Afficher plus d'options > Modifier les options : 
+`:screen-fps=20.000000 :live-caching=300 :screen-mouse-image=Mouse_pointer_small.png`  
+Lire > Convertir > Définir fichier de destination > Démarrer  
+
