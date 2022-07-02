@@ -81,6 +81,12 @@ $ /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P SA_password`
 1> select name from sys.databases 
 2> go 
 ```
+
+Docker files location in Windows :  
+
+C:\Users\username\AppData\Local\Docker\wsl\  
+C:\Users\username\docker\mailserver  
+
 ---
 
 ## DB2
@@ -143,4 +149,73 @@ dpkg: error processing package docker-ce (--configure):
  installed docker-ce package post-installation script subprocess returned error exit status 1  
 Errors were encountered while processing:  
  docker-ce  
+```
+
+---
+
+## [Docker network](https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker)  
+
+`ip addr show docker0` 
+
+```
+docker network create --driver bridge mon-bridge # --subnet=172.16.86.0/24 --gateway=172.16.86.1 
+docker network ls
+docker network inspect mon-bridge
+
+docker run -dit --name alpine1 --network mon-bridge alpine
+docker run -dit --name alpine1 --network mon-bridge alpine
+docker network inspect mon-bridge
+
+docker exec alpine1 ping -c 1 172.21.0.3
+docker exec alpine2 ping -c 1 172.21.0.2
+```
+Quels processus sont liés à un port ?  
+`sudo netstat -tulpn | grep :80`  
+
+Comment deconnecter un docker ?  
+```
+docker network disconnect mon-bridge alpine1
+docker network connect mon-bridge alpine2
+```
+
+--- 
+
+## Maildev 
+
+with Node.js 
+
+```
+$ npm install -g maildev # -g global
+$ maildev
+MailDev webapp running at http://0.0.0.0:1080
+MailDev SMTP Server running at 0.0.0.0:1025
+```
+Run maildev with Docker  
+`$ docker run -it --rm -p 1080:1080 -p 1025:1025 maildev/maildev` 
+
+Browser to see mail sent via maildev :  
+http://localhost:1080/  
+
+---
+
+## Html to pdf (TEST)
+`docker run -it --rm -p 3000:3000 thecodingmachine/gotenberg:6`
+
+```
+curl --request POST \
+ --url http://localhost:3000/convert/url \
+ --header 'Content-Type: multipart/form-data' \
+ --form remoteURL=https://google.com \
+ --form marginTop=0 \
+ --form marginBottom=0 \
+ --form marginLeft=0 \
+ --form marginRight=0 \
+ -o google.pdf
+ 
+curl --request POST \
+--url http://localhost:3000/convert/html \
+--header 'Content-Type: multipart/form-data' \
+--form files=@index.html \
+--form files=@footer.html \
+-o demo.pdf
 ```
