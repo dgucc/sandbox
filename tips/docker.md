@@ -61,6 +61,32 @@ Start it manually
 `$ sudo docker ps -a`  
 `$ sudo docker stop hello-world`  
 
+## [Docker network](https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker)  
+
+`ip addr show docker0` 
+
+```
+docker network create --driver bridge mon-bridge # --subnet=172.16.86.0/24 --gateway=172.16.86.1 
+docker network ls
+docker network inspect mon-bridge
+
+docker run -dit --name alpine1 --network mon-bridge alpine
+docker run -dit --name alpine1 --network mon-bridge alpine
+docker network inspect mon-bridge
+
+docker exec alpine1 ping -c 1 172.21.0.3
+docker exec alpine2 ping -c 1 172.21.0.2
+```
+Quels processus sont liés à un port ?  
+`sudo netstat -tulpn | grep :80`  
+
+Comment deconnecter un docker ?  
+```
+docker network disconnect mon-bridge alpine1
+docker network connect mon-bridge alpine2
+```
+
+--- 
 ## Last update : Errors
 
 Errors were encountered while processing :  
@@ -199,35 +225,9 @@ node.Enterprise {
   caption: '{bce} {name}';
   diameter: 80px;
 }
+```
 
 ---
-
-## [Docker network](https://devopssec.fr/article/fonctionnement-manipulation-reseau-docker)  
-
-`ip addr show docker0` 
-
-```
-docker network create --driver bridge mon-bridge # --subnet=172.16.86.0/24 --gateway=172.16.86.1 
-docker network ls
-docker network inspect mon-bridge
-
-docker run -dit --name alpine1 --network mon-bridge alpine
-docker run -dit --name alpine1 --network mon-bridge alpine
-docker network inspect mon-bridge
-
-docker exec alpine1 ping -c 1 172.21.0.3
-docker exec alpine2 ping -c 1 172.21.0.2
-```
-Quels processus sont liés à un port ?  
-`sudo netstat -tulpn | grep :80`  
-
-Comment deconnecter un docker ?  
-```
-docker network disconnect mon-bridge alpine1
-docker network connect mon-bridge alpine2
-```
-
---- 
 
 ## Maildev 
 
