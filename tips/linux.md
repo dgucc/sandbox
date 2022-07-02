@@ -51,7 +51,7 @@ Read-Write permissions
 
 ---
 
-## Pdf
+## pdf
 
 reduce pdf size with ghostscript :  
 `$ gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -q -o output.pdf input.pdf`
@@ -198,10 +198,11 @@ Basic authentication :
 
 `$ ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize output.gif]` 
 
-- List media devices with ffmpeg  
+- Screen recording 
+List media devices with ffmpeg    
 `$ ffmpeg -list_devices true -f dshow -i dummy`  
 
-- Start recording  
+Start recording  
 `$ ffmpeg -f gdigrab -i desktop -f dshow -i audio="Microphone externe (Conexant ISST Audio)" -framerate 10 -vcodec libx264 "screen.flv"`  
 
 
