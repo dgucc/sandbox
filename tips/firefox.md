@@ -2,7 +2,8 @@
 
 ## deactivate CORS
 
-> security.fileuri.strict_origin_policy = false
+> security.fileuri.strict_origin_policy = false  
+> privacy.file_unique_origin = false  
 
 ## language
 
