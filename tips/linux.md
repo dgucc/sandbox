@@ -60,7 +60,8 @@ $ sudo apt-get install openssh-server
 $ systemctl status sshd
 $ systemctl enable sshd
 ```
-
+Check file modification date on remote :  
+`$ ssh -i /cygdrive/c/cygwin64/home/username/.ssh/id_rsa username@ftpserver stat ./folder/file.xlsx | grep "Modify"`  
 ---
 
 ## StarDict + wiktionnaire
