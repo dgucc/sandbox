@@ -105,6 +105,10 @@ $ wget \
 			https://www.tutorialspoint.com/whiteboard.htm
 ```
 
+Basic authentication :  
+`$ wget --user=username --password=superpasswd http://target-url`  
+
+
 ---
 
 ## ffmpeg
@@ -222,3 +226,6 @@ def tocsv:
     | @csv;
 tocsv
 ```
+or (one-line)  
+`$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > out.csv`  
+
