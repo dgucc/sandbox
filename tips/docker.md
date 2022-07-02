@@ -172,6 +172,10 @@ Export with CALL ADMIN_CMD (on server side) :
 Get detailed DDL with db2look :  
 `> db2look -d dbName -z schemaName -e -td @ -i username -w password -o DDL_db2look.sql`  
 
+Execute db2 CLI :  
+`$ db2 -tvf "dml.sql"` 
+`$ db2 connect reset`  
+
 ---
 
 
