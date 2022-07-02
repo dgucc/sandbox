@@ -238,7 +238,7 @@ node.Enterprise {
   diameter: 80px;
 }
 ```
-Exemple :  
+Exemple of Cypher query :  
 `$ MATCH p=(parent:Enterprise {bce:'0646738194'})-[r:HOLDS*1..10]->(c:Enterprise) RETURN DISTINCT parent, c` 
 
 
