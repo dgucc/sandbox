@@ -184,6 +184,17 @@ $ sudo docker run -d --rm \
 --env=NEO4J_AUTH=none \
 neo4j
 ```
+or  
+```
+docker run \
+--publish=7474:7474 \
+--publish=7687:7687 \
+--volume=D:/tools/docker/volume/neo4j/data:/data \
+--volume=D:/tools/docker/volume/neo4j/logs:/logs \
+--volume=D:/tools/docker/volume/neo4j/conf:/conf \
+--env=NEO4J_AUTH=none \
+neo4j
+```
 
 http://localhost:7474/
 
