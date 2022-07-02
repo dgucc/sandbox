@@ -65,7 +65,7 @@ function cleanupCbe(cbe) {
 
 ## d3.js
 
-d3 Glossary :  
+d3 Directed Forece Layout - Glossary :  
 ```
 The <defs> element is used to define SVG elements without rendering them. 
 	Combined with a ‘g’ tag, it can be used to create a template for 
