@@ -47,6 +47,32 @@ System.out.println("Duration : " + res.toMinutesPart() + " min " + res.toSeconds
 ```
 
 ---
+## Log4j
+
+Filter log... to skip noisy messages  
+
+src/main/resources/log4j.xml :  
+```
+<log4j:configuration>[...]
+	<appender>[...]
+	    <layout/>
+		# filter type 1
+	    	<filter class="org.apache.log4j.filter.ExpressionFilter">
+	    		<param name="expression" value="MSG LIKE '.*t read cell.*'" />
+            		<param name="acceptOnMatch" value="false"/>
+        	</filter>
+ 	    	# filter type 2 
+	    	<filter class="org.apache.log4j.varia.StringMatchFilter">
+		    <param name="StringToMatch" value="Can't read cell" />
+		    <param name="acceptOnMatch" value="false"/>
+        	</filter>
+			# filter not a soluce ;-)
+			<filter class="org.apache.log4j.varia.DenyAllFilter"/> -->
+	</appender>
+[...]
+```
+
+---
 
 ## Jetty
 
