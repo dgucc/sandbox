@@ -59,17 +59,20 @@ Function to check belgian company number (BCE) :
 Plugin 'DisplayXMLFiles.dll' cannot pack your changes to the left file back into $filename$. The original file will not be changed.  
 Fix : Menu Plugins > Manual unpacking   
 
+---
+
 ## Keyboard shortcut
+
+### Windows Start > Contextual Menu
+`<WIN>+X`  
 
 ### System Settings
 `<WIN>+<PAUSE-BREAK>`
 
 ### Task Manager
-
 `<CTRL>+<SHIFT>+<ESCAPE>`  
 
 ### File Explorer
-
 Open Cmd Shell (or PowerShell) in specific folder :  
 `<CTRL>+<SHIFT>+Right-Click`
 
@@ -79,7 +82,7 @@ Insert Date or Time :
 `<ALT>+<SHIFT>+T`  
 
 ### Eclipse
-
 Find next :  
-`<CTRL>+K`
+`<CTRL>+K`  
+
 
