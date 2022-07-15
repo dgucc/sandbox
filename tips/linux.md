@@ -42,7 +42,7 @@ $ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done
 Unwanted characters...
 `$ iconv --unicode-subst="<U+%04X>" -f utf8 -t ascii input.xsd | tee temp/charset.xsd`  
 or trying to remove accents...  
-`$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd   
+`$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd`   
 
 Read-Write permissions  
 `$ find . * -exec chmod u+rwx {} \;`  
