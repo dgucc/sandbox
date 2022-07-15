@@ -76,6 +76,11 @@ Fix : Menu Plugins > Manual unpacking
 Open Cmd Shell (or PowerShell) in specific folder :  
 `<CTRL>+<SHIFT>+Right-Click`
 
+### Excel
+Insert Date or Time :  
+`<CTRL>+<;>`  
+`<CTRL>+<:>`  
+
 ### Outlook
 Insert Date or Time :  
 `<ALT>+<SHIFT>+D`  
