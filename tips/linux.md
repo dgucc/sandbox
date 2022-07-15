@@ -9,7 +9,7 @@ Define default time format :
 ---
 ## File manipulations  
 
-Renaming files + autonumber suffix :
+Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
 Counting records in csv files for given field :  
@@ -39,7 +39,7 @@ $ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done
 $ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done
 ```
 
-Unwanted characters...
+Unwanted characters...  
 `$ iconv --unicode-subst="<U+%04X>" -f utf8 -t ascii input.xsd | tee temp/charset.xsd`  
 or trying to remove accents...  
 `$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd`   
