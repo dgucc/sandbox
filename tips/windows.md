@@ -61,6 +61,9 @@ Fix : Menu Plugins > Manual unpacking
 
 ## Keyboard shortcut
 
+### System Settings
+`<WIN>+<PAUSE-BREAK>`
+
 ### Task Manager
 
 `<CTRL>+<SHIFT>+<ESCAPE>`  
