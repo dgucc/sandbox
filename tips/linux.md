@@ -77,6 +77,7 @@ $ python3 noteshrink.py *.jpg
 
 View and edit pdf's meta-data using exiftool :  
 `$ exiftool document.pdf`  
+`$ exiftool -Author -Creator -Title document.pdf`  
 `$ exiftool -Author="Mr Smith" -Creator="Mrs Smith" -Title="New Title" document.pdf`  
 To install with cygwin, search for 'perl-Image-exiftool'  
 
