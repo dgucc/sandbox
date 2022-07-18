@@ -23,3 +23,6 @@ Push modifications to github
 
 ## How-to Update local repository from github  
 `$ git pull origin main`  
+
+## Open directly Git GUI - History of all branches  
+`$ gitk --all`  
