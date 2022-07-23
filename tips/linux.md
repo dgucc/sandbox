@@ -301,6 +301,13 @@ Alt + f : forward  next word
 /cygdrive/c/  
 /cygdrive/d/  
 
+cygpath -w <PATH> : windows like path  
+```
+$ cd /cygdrive/c/Windows/Temp
+$ cygpath -w $(pwd)
+C:\Windows\Temp
+```	
+	
 Cygwin /dev/null equivalent :  
 `$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
 ```
