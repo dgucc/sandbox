@@ -296,6 +296,12 @@ or (one-line)
 
 ## cygwin tips 
 
+Cygwin in contextual menu  
+install "chere" package under the "Shells" category.
+(as admin) `$ chere -i -t mintty -s bash`  
+cf new entry in contextual menu :   
+> "Bash Prompt Here"
+
 Alt + b : backward previous word  
 Alt + f : forward  next word  
 /cygdrive/c/  
