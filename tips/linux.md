@@ -313,6 +313,17 @@ $ cd /cygdrive/c/Windows/Temp
 $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```	
+
+Loop File Names With Spaces : IFS (Internal Field Separator)	
+```bash
+IFS_BAK=$IFS
+IFS=$'\n'
+for file in "$(ls -1 Files/*.pdf)" ;
+do
+   exiftool -Author -Creator -Title $file 
+done
+IFS=$IFSBAK	
+```	
 	
 Cygwin /dev/null equivalent :  
 `$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
