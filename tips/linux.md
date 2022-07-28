@@ -318,7 +318,7 @@ Tackle Loop File Names With Spaces : **IFS** (Internal Field Separator) :
 ```bash
 IFS_BAK=$IFS
 IFS=$'\n'
-for file in "$(ls -1 Files/*.pdf)" ;
+for file in $(ls -1 Files/*.pdf) ;
 do
    exiftool -Author -Creator -Title $file 
 done
