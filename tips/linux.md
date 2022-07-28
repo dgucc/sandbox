@@ -76,6 +76,7 @@ $ python3 noteshrink.py *.jpg
 ```
 
 View and edit pdf's meta-data using exiftool :  
+`$ sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl`
 `$ exiftool document.pdf`  
 `$ exiftool -Author -Creator -Title document.pdf`  
 `$ exiftool -Author="Mr Smith" -Creator="Mrs Smith" -Title="New Title" document.pdf`  
