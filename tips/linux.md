@@ -314,7 +314,7 @@ $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```	
 
-Loop File Names With Spaces : IFS (Internal Field Separator)	
+Tackle Loop File Names With Spaces : **IFS** (Internal Field Separator) :	
 ```bash
 IFS_BAK=$IFS
 IFS=$'\n'
