@@ -303,11 +303,14 @@ install "chere" package under the "Shells" category.
 cf new entry in contextual menu :   
 > "Bash Prompt Here" 
 
-Customize contextual menu - registry 
+Customize contextual menu using registry 
 > "Text" : 
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Default = "&Cygwin from here" 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Default] = "&Cygwin from here" 
+
 > "Icon" : 
-Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Icon = "C:\workspace\cygwin64\Cygwin-Terminal.ico" 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Icon] = "C:\workspace\cygwin64\Cygwin-Terminal.ico" 
 
 Alt + b : backward previous word  
 Alt + f : forward  next word  
