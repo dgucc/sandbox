@@ -304,13 +304,13 @@ cf new entry in contextual menu :
 > "Bash Prompt Here" 
 
 Customize contextual menu using registry 
-> "Text" : 
+> Modify Text : 
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Default] = "&Cygwin from here" 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\**Default**] = **"&Cygwin from here"** 
 
-> "Icon" : 
+> Add Icon : 
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\Icon] = "C:\workspace\cygwin64\Cygwin-Terminal.ico" 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\**Icon**] = **"<cygwin64_path>\Cygwin-Terminal.ico"** 
 
 Alt + b : backward previous word  
 Alt + f : forward  next word  
