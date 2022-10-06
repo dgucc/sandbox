@@ -35,9 +35,13 @@ Remove unstaged files
 Remove non commited change  
 `$ git reset --hard`  
 
+## Log
+
 Display comments only  
 %s for the subject  
-%b for the body; 
-%B for both 
+%b for the body;  
+%B for both  
 `git --no-pager log --pretty=format:%s` 
 
+Git GUI : visualize all branch history  
+`gitk --all` 
