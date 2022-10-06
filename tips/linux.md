@@ -207,8 +207,10 @@ Basic authentication :
 
 - Screen recording  
 
-`$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.mkv`  
+`$ ffmpeg -list_devices true -f dshow -i dummy` 
+
 `$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.flv`  
+`$ ffmpeg -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Microphone Array (Realtek(R) Audio)" -crf 0  -filter:a "volume=1.5" -vcodec libx264 output.mp4`  
 
 ---
 
