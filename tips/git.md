@@ -34,3 +34,10 @@ Remove unstaged files
 
 Remove non commited change  
 `$ git reset --hard`  
+
+Display comments only  
+%s for the subject  
+%b for the body; 
+%B for both 
+`git --no-pager log --pretty=format:%s` 
+
