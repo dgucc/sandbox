@@ -223,12 +223,11 @@ oneline
 	no sound[^getScreenSize]  
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -c:v libx264rgb -crf 30 -preset ultrafast sample.mkv`  
 
-[^getScreenSize]:
-	Find out screen size : `$ xdpyinfo | grep dimensions` 
-
-
 	with sound[^ffmpeg_params]  
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f pulse -filter_complex amerge -ac 2 -i 0 -f pulse -ac 2 -i 1 -c:v libx264rgb -crf 0 -preset ultrafast sample.mp4`  
+
+[^getScreenSize]:
+	Find out screen size : `$ xdpyinfo | grep dimensions` 
 
 [^ffmpeg_params]:
 	**-video_size**
