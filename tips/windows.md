@@ -96,6 +96,6 @@ Find next :
 1. Identify exact names of available devices  
 `$ ffmpeg -list_devices true -f dshow -i dummy`  
 2. Start recording including Speaker sound  
--crf : Constant Ration Factor [0..51] Quality Loss  
+-crf : Constant Ratio Factor [0..51] Quality Loss  
 `ffmpeg -rtbufsize 1500M  -thread_queue_size 512 -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Stereo Mix (Realtek(R) Audio)" -crf 30  -filter:a "volume=1.5" -vcodec libx264  output.mp4`   
 
