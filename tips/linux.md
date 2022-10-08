@@ -223,41 +223,41 @@ oneline
 	no sound  
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -c:v libx264rgb -crf 30 -preset ultrafast sample.mkv`  
 
-	with sound[^params]  
+	with sound[^ffmpeg_params]  
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f pulse -filter_complex amerge -ac 2 -i 0 -f pulse -ac 2 -i 1 -c:v libx264rgb -crf 0 -preset ultrafast sample.mp4`  
 
-[^params]:
-	-video_size 
+[^ffmpeg_params]:
+	**-video_size**
 	    specifies the size of the recorded area. 
 	    If you have a different screen size, use that instead of 1920x1080. 
 	    If you want to record only an area of the screen, specify the area size here.
 
-	-framerate 
+	**-framerate** 
 	    specifies the frame rate, i. e. how many frames of video are recorded in a second. 
 	    If you need another frame rate, use another number than 30. 
 	    The lowest allowed framerate is 20.
 
-	-f x11grab 
+	**-f x11grab** 
 	    is what actually tells FFmpeg to record your screen. You shouldn't change that.
 
-	-i :0.0+0,0 
+	**-i :0.0+0,0** 
 	    is where you specify the x and y offset of the top left corner of the area that you want to record. 
 	    For example, use :0.0+100,200 to have an x offset of 100 and an y offset of 200.
 
-	-c:v libx264rgb -crf 0 -preset ultrafast 
+	**-c:v libx264rgb -crf 0 -preset ultrafast**
 	    are encoding options. These specify a fast and lossless recording.
 
-	 -f pulse 
+	 **-f pulse** 
 	    tells FFmpeg to grab the input from PulseAudio, which is your sound server.
 
-	-ac 2 
+	**-ac 2** 
 	    specifies the number of audio channels. 
 	    If you receive an error like: "cannot set channel count to 2 (Invalid argument)",
 	    you should change that to 1.
 
-	-i 0 
+	**-i 0** 
 	    specifies which device to grab the input from. 
-	    You can see a list of all devices with the command pacmd list-sources. 
+	    You can see a list of all devices with the command `pacmd list-sources`. 
 	    The number behind -i is the index listed there. 
 	    The other output of the command will give you an explanation of what that audio device is for. 
 	    A device with a name like "Monitor of Built-in Audio Analog" will most likely record the system audio, 
