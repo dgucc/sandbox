@@ -188,8 +188,19 @@ $ wget \
 Basic authentication :  
 `$ wget --user=username --password=superpasswd http://target-url`  
 
-
 ---
+
+## Time duration
+```
+START=$(date +%s -d 05:36:11)
+END=$(date +%s -d 06:46:00) 
+DURATION_SECONDS=$(expr $END - $START)
+date +%H:%M:%S -ud @$DURATION_SECONDS
+```
+oneline  
+
+`date +%H:%M:%S -ud $(echo @$(expr $(date +%s -d 06:46:00) - $(date +%s -d 05:36:11)))` 
+
 
 ## ffmpeg
 
@@ -207,11 +218,12 @@ Basic authentication :
 
 - Screen recording  
 
-`$ ffmpeg -list_devices true -f dshow -i dummy` 
-
 `$ ffmpeg -f x11grab  -s 1366x768 -i :0.0 -r 25 -vcodec libx264  output.flv`  
 
 Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)  
+
+`$ ffmpeg -list_devices true -f dshow -i dummy` 
+
 `$ ffmpeg -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Microphone Array (Realtek(R) Audio)" -crf 28  -filter:a "volume=1.5" -vcodec libx264 output.mp4`  
 
 ---
