@@ -197,6 +197,8 @@ END=$(date +%s -d 06:46:00)
 DURATION_SECONDS=$(expr $END - $START)
 date +%H:%M:%S -ud @$DURATION_SECONDS
 ```
+	Output : 01:09:49
+
 oneline  
 
 `date +%H:%M:%S -ud $(echo @$(expr $(date +%s -d 06:46:00) - $(date +%s -d 05:36:11)))` 
