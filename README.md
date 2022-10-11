@@ -26,3 +26,7 @@ Push modifications to github
 
 ## Open directly Git GUI - History of all branches  
 `$ gitk --all`  
+
+## Preview html page hosted in GitHub
+Prepend "https://htmlpreview.github.io/?"  to url  
+ex : https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
