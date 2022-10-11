@@ -49,6 +49,24 @@ Read-Write permissions
 (cygwin : setfacl)  
 `$ find . -exec setfacl -s user::rw-,group::r--,other::r-- {} \;`  
 
+Mimic a "GROUP BY HAVING field=MAX()" using tail, sort  
+```
+# sort options :
+# -k : -k, --key=POS1[,POS2] 	Start a key at POS1 (origin 1), end it at POS2 
+# -r --reverse
+# -n, --numeric-sort
+# -o, --output=FILE
+# -t, --field-separator=SEP
+
+# Example 
+# Group By Having field3=Max(field3)' per distinct couples field1-field2
+$ tail -n +2 input.csv | sort -k3,3r | sort -k1,1 -k2,2 -u -o output.csv
+
+# sort -k3,3r : sort on 3th field in reverse order
+# sort -k1,1 -k2,2 -u : sort uniques couples 1st-2d fields... 
+# good to know : "sort" seems to keep the first occurence of the 3th field
+```
+
 ---
 
 ## pdf
