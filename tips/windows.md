@@ -90,6 +90,15 @@ Insert Date or Time :
 Find next :  
 `<CTRL>+K`  
 
+### Cygwin  
+Call bash script from cmd :  
+```
+@echo off
+@%~d0
+@cd %~p0
+@C:\cygwin64\bin\bash -c ./my_script.sh
+```
+
 ### Screen + Sounds Recording with ffmpeg 
 0. Enable "Stereo Mix"  
 `mmsys.cpl` 
