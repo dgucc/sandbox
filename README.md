@@ -29,4 +29,4 @@ Push modifications to github
 
 ## Preview html page hosted in GitHub
 Prepend "https://htmlpreview.github.io/?"  to url  
-ex : https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
+ex : https://htmlpreview.github.io/?https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
