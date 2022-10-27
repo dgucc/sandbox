@@ -404,11 +404,14 @@ $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```	
 
+*ls* : ignore extension case :  
+`$ ls *.{txt,TXT}`  
+	
 Tackle Loop File Names With Spaces : **IFS** (Internal Field Separator) :	
 ```bash
 IFS_BAK=$IFS
 IFS=$'\n'
-for file in $(ls -1 Files/*.pdf) ;
+for file in $(ls -1 Files/*.{pdf,PDF}) ;
 do
    exiftool -Author -Creator -Title $file 
 done
