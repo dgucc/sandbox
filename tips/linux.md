@@ -18,6 +18,10 @@ Counting records in csv files for given field :
 Skip 1st line :  
 `$ tail -n + 2 filename`
 
+GREP : Get lines Before|After pattern :  
+`$ grep -B 500 'sometext' file.txt` 
+`$ grep -A 500 'sometext' file.txt` 
+
 Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
 
