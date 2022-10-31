@@ -412,7 +412,7 @@ C:\Windows\Temp
 use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)  
 `$ shopt -s nocaseglob ` -s : set ignore case  
 `$ ls *.txt`  
-`$ shopt -s nocaseglob ` -u : unset ignore case   
+`$ shopt -u nocaseglob ` -u : unset ignore case   
 	
 Tackle Loop File Names With Spaces : **IFS** (Internal Field Separator) :	
 ```bash
