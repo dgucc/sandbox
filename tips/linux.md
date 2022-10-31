@@ -409,7 +409,7 @@ C:\Windows\Temp
 ```	
 
 *ls* : how to ignore case :  
-use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)
+use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)  
 `$ shopt -s nocaseglob ` -s : set ignore case  
 `$ ls *.txt`  
 `$ shopt -s nocaseglob ` -u : unset ignore case   
