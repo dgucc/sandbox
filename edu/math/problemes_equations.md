@@ -125,9 +125,8 @@ le plus grand : x+18
 
 **question** :
 
-Un grand classique dans les questions de maths : les trains qui se croisent.
-Le train A roule à 100km/h et démarre à 10h15.
-Le train B roule à 80 km/h et démarre à 10h.
+Le train A roule à 100 km/h et démarre à 10h15.
+Le train B roule à  80 km/h et démarre à 10h.
 Sachant qu'ils sont distants de 620 km, à quelle heure vont-ils se croiser?
 
 **Solution** : 13h35
