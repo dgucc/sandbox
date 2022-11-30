@@ -9,6 +9,9 @@ Define default time format :
 ---
 ## File manipulations  
 
+Ignore case with ls :  
+`$ shopt -s nocaseglob; ls -1 *.pdf`  
+
 Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
