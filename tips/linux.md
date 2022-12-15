@@ -12,6 +12,9 @@ Define default time format :
 Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
+Remove empty lines with sed :  
+`$ sed -r '/^\s*$/d' file.txt` 
+
 Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
