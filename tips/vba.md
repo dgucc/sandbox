@@ -28,7 +28,9 @@ End Sub
 
 Highlight substring in cells :   
 ```vba
-Sub highlightSubstringInCell(subString As String, selectedCells As Range, startSearchAt As Integer)
+' Call highlightSubstringInCell("textToFind", Selection.Cells)
+
+Sub highlightSubstringInCell(subString As String, selectedCells As Range, Optional startSearchAt As Integer = 1)
 
 Dim objRange As Range
 Dim start
@@ -54,7 +56,7 @@ Dim length As Integer
 End Sub
 ```
 
-Format Rows - Alternate Rows Color Per Group :  
+Autoformat Rows Color - Alternate Per Group (ActiveCell) :  
 
 ```vba
 Sub clearInteriorColor(skipHeaderRow As Boolean)
@@ -225,3 +227,37 @@ End If
 
 End Sub
 ```
+Random Numbers :  
+
+```vba
+Sub main_test()
+Dim i As Integer
+
+For i = 1 To 15
+    Debug.Print RandomNumbers(0, 500, 2)
+Next i
+    
+End Sub
+Sub randomInt()
+
+    Randomize
+   
+    'Random whole number between 1 and 50 :
+    random_number = Int(50 * Rnd) + 1
+   
+    MsgBox random_number
+   
+End Sub
+
+Public Function RandomNumbers(Lowest As Long, Highest As Long, Optional Decimals As Integer)
+   Application.Volatile  'Remove this line to "freeze" the numbers
+   If IsMissing(Decimals) Or Decimals = 0 Then
+      Randomize
+      RandomNumbers = Int((Highest + 1 - Lowest) * Rnd + Lowest)
+   Else
+      Randomize
+      RandomNumbers = Round((Highest - Lowest) * Rnd + Lowest, Decimals)
+   End If
+End Function
+```
+
