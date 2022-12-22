@@ -123,6 +123,7 @@ End Sub
 
 List files :  
 
+```vba
 Sub getFilesList(fileFilter As String, folderToScan As String, scanInSubFolder As Boolean, ByVal resultsRange As Range)
 ' Call getFilesList("*.csv", ThisWorkbook.Path & "files\", False, ThisWorkbook.Sheets(1).Range("B2"))
 
