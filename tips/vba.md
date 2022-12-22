@@ -76,7 +76,7 @@ End Sub
 Sub alternateRowColorPerGroup()
 '
 ' Alternate Rows Color Per Group
-' taking the values of the activecell column as reference
+' taking the values of the activecell column as grouping key
 '
 
 Dim entireRange As Range
