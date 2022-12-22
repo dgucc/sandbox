@@ -2,6 +2,20 @@
 
 ## Excel
 
+Custom Function :  
+
+```vba
+Public Function checkDigitRRN(ByVal target As Range) As Integer
+    Dim base
+    base = CLng(Left(Trim(target.Value), 9))
+    If (Len(target.Value) = 10) Then
+        base = CLng("20" & Left(Trim(target.Value), 8))
+    End If
+    checkDigitRRN = 97 - base Mod 97
+End Function
+```
+
+
 Write to Log :  
 ```vba
 Sub log(strLine As String, Optional appendMode As Boolean = True)
