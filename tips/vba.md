@@ -195,6 +195,7 @@ Next
    
 Debug.Print "*** Terminated : " & Now() & " ***"
 End Sub
+
 Sub xslTransform(sourceFile As String, stylesheetFile As String, resultFile As String, errorCell As Range)
 
 Dim source As New MSXML2.DOMDocument30
@@ -261,3 +262,94 @@ Public Function RandomNumbers(Lowest As Long, Highest As Long, Optional Decimals
 End Function
 ```
 
+ODBC sample :   
+
+```vba
+Sub getDBData(ByVal sqlCommand As String, tableName As String)
+Const adFldIsNullable = 32
+
+'Add Reference to Microsoft ActiveX Data Objects 2.0 Library
+Dim objConnection As ADODB.Connection
+Dim objRecordset As ADODB.Recordset
+Dim objCommand As ADODB.Command
+Dim sqlStatement As String
+
+Dim i As Integer
+Dim iRow As Integer
+Dim myDate As String
+Dim cell As Range
+
+On Error GoTo errDateHandler
+
+Application.ScreenUpdating = False
+Application.Calculation = xlCalculationManual
+
+    ' Open dbConnection
+    Set objConnection = New ADODB.Connection
+    objConnection.Open "Provider=OraOLEDB.Oracle.1;Password=Password;Persist Security Info=True;User ID=admin;Data Source=myDataSource;"
+    
+    ' Prepare sqlStatement
+    Set objCommand = New ADODB.Command
+    Set objCommand.ActiveConnection = objConnection
+    objCommand.CommandType = adCmdText
+    objCommand.CommandText = sqlCommand
+    
+    ' Load Recordset
+    Set objRecordset = objCommand.Execute
+        
+    
+    If ThisWorkbook.Sheets("tablesADO").Range("A2").Value <> "" Then
+        Set cell = ThisWorkbook.Sheets("tablesADO").Range("A1").End(xlDown).Offset(1, 0)
+    Else
+        Set cell = ThisWorkbook.Sheets("tablesADO").Range("A2")
+    End If
+    
+    For i = 0 To objRecordset.Fields.Count - 1
+        cell.Offset(i, 0).Value = tableName
+        cell.Offset(i, 1).Value = objRecordset.Fields(i).Name
+        Select Case objRecordset.Fields(i).Type
+            Case 131
+                cell.Offset(i, 2).Value = "adNumeric"
+            Case 135
+                cell.Offset(i, 2).Value = "adDBTimeStamp"
+            Case Else
+                cell.Offset(i, 2).Value = "adVarChar"
+        End Select
+        cell.Offset(i, 3).Value = objRecordset.Fields(i).Precision
+        cell.Offset(i, 4).Value = objRecordset.Fields(i).Attributes
+        cell.Offset(i, 4).Value = objRecordset.Fields(i).Attributes
+        If ((adFldIsNullable And objRecordset.Fields(i).Attributes) = adFldIsNullable) Then
+            cell.Offset(i, 5).Value = ""
+        Else
+            cell.Offset(i, 5).Value = "NOT NULL"
+        End If
+
+    Next i    
+
+objRecordset.Close
+Set objRecordset = Nothing
+
+objConnection.Close
+Set objConnection = Nothing
+    
+    
+finalExit:
+    
+Application.ScreenUpdating = True
+Application.Calculation = xlCalculationAutomatic
+
+ThisWorkbook.Sheets("tablesADO").Activate
+
+
+'MsgBox ("Terminated")
+Exit Sub
+
+errDateHandler:
+Debug.Print Err.Description & " [" & objCommand.CommandText & "]"
+MsgBox (Err.Description)
+GoTo finalExit
+'Resume Next
+
+
+End Sub
+```
