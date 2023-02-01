@@ -38,6 +38,9 @@ USBSTOR allow|disallow
 Remove RegKey : 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ADMX_DeviceInstallation\DeviceInstall_Removable_Deny`  
 
+## Command to open explorer
+
+`explorer.exe /e,/root,"C:\TEMP"`
 
 ## VLC : screen recording  
 CTRL+C  
