@@ -1,5 +1,8 @@
 # Linux Tips
 
+## Linux version
+`uname --all`
+
 ## Date format : 
 Install missing locale if needed :  
 `$ mintlocale`  
