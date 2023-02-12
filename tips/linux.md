@@ -1,9 +1,7 @@
 # Linux Tips
 
 ## Linux version
-`$ uname --all`  
-or  
-`$ cat /etc/os-release`  
+`$ uname --all`  or  `$ cat /etc/os-release`  or `$ lsb_release -a`    
 
 
 ## Date format : 
