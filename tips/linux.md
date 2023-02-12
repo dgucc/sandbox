@@ -1,7 +1,10 @@
 # Linux Tips
 
 ## Linux version
-`uname --all`
+`$ uname --all`  
+or  
+`$ cat /etc/os-release`  
+
 
 ## Date format : 
 Install missing locale if needed :  
