@@ -85,13 +85,13 @@ $ tail -n +2 input.csv | sort -k3,3r | sort -k1,1 -k2,2 -u -o output.csv
 
 ## pdf
 
-reduce pdf size with ghostscript :  
+### reduce pdf size with ghostscript   
 `$ gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -q -o output.pdf input.pdf`
 
-pdf to text : install "poppler" to use pdfTotext :  
+### pdf to text : install "poppler" to use pdfTotext   
 `$ pdftotext input.pdf output.txt` 
 
-Enhance jpg scan => pdf :  
+### Enhance jpg scan => pdf  
 **noteshrink** [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
 ```
 $ git clone https://github.com/mzucker/noteshrink.git  
@@ -107,7 +107,7 @@ $ python3 noteshrink.py *.jpg
 # result page0000.png page0001.png ... output.pdf  
 ```
 
-View and edit pdf's meta-data using exiftool :  
+### View and edit pdf's meta-data using exiftool  
 `$ sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl`
 `$ exiftool document.pdf`  
 `$ exiftool -Author -Creator -Title document.pdf`  
@@ -424,7 +424,7 @@ use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensi
 `$ ls *.txt`  
 `$ shopt -u nocaseglob ` -u : unset ignore case   
 	
-Tackle Loop File Names With Spaces : **IFS** (Internal Field Separator) :	
+Tackle Loop File Names with spaces : **IFS** (Internal Field Separator) :	
 ```bash
 IFS_BAK=$IFS
 IFS=$'\n'
