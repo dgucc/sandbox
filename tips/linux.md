@@ -4,11 +4,17 @@
 `$ uname --all`  or  `$ cat /etc/os-release`  or `$ lsb_release -a`    
 
 
-## Date format : 
+## Dates
+
+### Date format
 Install missing locale if needed :  
 `$ mintlocale`  
 Define default time format :  
 `$ echo "LC_TIME=fr_BE.UTF-8" >> $HOME/.profile`
+
+### Count working days (excluding WE)
+
+`$ cal 2 2016 | tail -n +3 | cut -c 3-17 | tr ' ' '\n' | grep -v '^$' | sort -n | wc -l | head -n 1`
 
 ---
 ## File manipulations  
