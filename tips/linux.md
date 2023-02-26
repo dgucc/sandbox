@@ -3,6 +3,8 @@
 ## Linux version
 `$ uname --all`  or  `$ cat /etc/os-release`  or `$ lsb_release -a`    
 
+## Create shortcut on desktop
+<Ctrl+Shif> Drag/Drop on desktop  
 
 ## Dates
 
