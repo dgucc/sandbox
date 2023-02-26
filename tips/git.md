@@ -25,6 +25,12 @@ Push modifications to github
 How-to Update local repository from github  
 `$ git pull origin main`  
 
+How-to git pull over all subdirectories  
+```bash
+#!/bin/bash
+find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull origin main \;
+```
+
 ---
 
 ## Misc
