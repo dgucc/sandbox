@@ -21,6 +21,11 @@ Define default time format :
 ---
 ## File manipulations  
 
+List only directories :  
+`$ ls -d */`  
+or  
+`$ find . -type d -maxdepth 1`  
+
 Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
