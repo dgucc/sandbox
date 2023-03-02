@@ -14,6 +14,15 @@ Install missing locale if needed :
 Define default time format :  
 `$ echo "LC_TIME=fr_BE.UTF-8" >> $HOME/.profile`
 
+### arithmetics  
+Addition  
+`$ date --date="1 month" +"%d-%m-%Y" `  
+> 02-04-2023  
+
+Substraction  
+`$  date --date="15 days ago" +"%d-%m-%Y"`  
+> 15-02-2023  
+
 ### Count working days (excluding WE)
 
 `$ cal 2 2016 | tail -n +3 | cut -c 3-17 | tr ' ' '\n' | grep -v '^$' | sort -n | wc -l | head -n 1`
