@@ -19,3 +19,9 @@ Show stored Wi-Fi passwords
 `> netsh wlan show profile`  
 `> netsh wlan show profile <profileName> key-clear`  
 
+## Registry
+
+[HKLM]\Software\Microsoft\Windows\CurrentVersion\Run  
+[HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
+[HKLM]\SYSTEM\CurrentControlSet\Services\  
+
