@@ -1,0 +1,9 @@
+# Windows
+
+## Wi-Fi
+
+Show stored Wi-Fi passwords  
+
+`> netsh wlan show profile`  
+`> netsh wlan show profile <profileName> key-clear`  
+
