@@ -310,6 +310,9 @@ oneline
 
 `$ ffmpeg -ss 00:38:43 -t 00:04:26 -i "input.avi" -acodec copy -vcodec copy sample.avi`
 
+- VOB to mp4 (Fast) 
+`$ ffmpeg -i input.VOB -c:v copy -c:a copy output.mp4`   
+
 - mp4 to gif
 
 `$ ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 10 - -loop 0 -layers optimize output.gif]` 
