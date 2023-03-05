@@ -25,9 +25,14 @@
 
 ---  
 
-
 ## Linux version
 `$ uname --all`  or  `$ cat /etc/os-release`  or `$ lsb_release -a`    
+
+## sysinfo
+`$ inxi -F`  
+
+Memory :  
+`$ dmidecode --type memory`  
 
 ## Linux file system structure
 
