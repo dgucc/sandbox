@@ -7,7 +7,7 @@
 
 [youtube](https://www.youtube.com/watch?v=HbgzrKJvDRw)  
 [geeksforgeeks](https://www.geeksforgeeks.org/linux-file-hierarchy-structure/)  
-![image](LinuxFileSystem.jpg)  
+![image](images/LinuxFileSystem.jpg)  
 
 ## Create shortcut on desktop
 <Ctrl+Shif> Drag/Drop on desktop  
