@@ -6,6 +6,16 @@
 ## Create shortcut on desktop
 <Ctrl+Shif> Drag/Drop on desktop  
 
+## Digest  
+
+sha1sum, md5sum, etc.
+`$  sha1sum file.txt | tee file.txt.sha1`  
+> 362de0c3b8829da225431d40a82606808da39f68 *file.txt  
+
+`$ sha1sum -c file.txt.sha1'  
+> file.txt : OK  
+
+
 ## Dates
 
 ### Date format
