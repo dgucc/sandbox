@@ -1,5 +1,31 @@
 # Linux Tips
 
+- [Linux Tips](#linux-tips)
+  - [Linux version](#linux-version)
+  - [Linux file system structure](#linux-file-system-structure)
+  - [Create shortcut on desktop](#create-shortcut-on-desktop)
+  - [Digest](#digest)
+  - [Dates](#dates)
+  - [File manipulations](#file-manipulations)
+  - [pdf](#pdf)
+  - [ssh](#ssh)
+  - [StarDict + wiktionnaire](#stardict--wiktionnaire)
+  - [Calibre](#calibre)
+  - [wget](#wget)
+  - [Time duration](#time-duration)
+  - [ffmpeg](#ffmpeg)
+  - [Basic calculation](#basic-calculation)
+  - [youtube-dl](#youtube-dl)
+  - [HP Printer](#hp-printer)
+  - [GPG error](#gpg-error)
+  - [Sublime Text](#sublime-text)
+  - [Curl to test Rest API :](#curl-to-test-rest-api-)
+  - [jq : json query](#jq--json-query)
+  - [cygwin tips](#cygwin-tips)
+
+---  
+
+
 ## Linux version
 `$ uname --all`  or  `$ cat /etc/os-release`  or `$ lsb_release -a`    
 
