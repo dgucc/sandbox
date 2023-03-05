@@ -5,9 +5,9 @@
 
 ## Linux file system structure
 
-[youtube](https://www.youtube.com/watch?v=HbgzrKJvDRw)
-[geeksforgeeks](https://www.geeksforgeeks.org/linux-file-hierarchy-structure/)
-![alt text](LinuxFileSystem.jpg)
+[youtube](https://www.youtube.com/watch?v=HbgzrKJvDRw)  
+[geeksforgeeks](https://www.geeksforgeeks.org/linux-file-hierarchy-structure/)  
+![alt text](LinuxFileSystem.jpg)  
 
 ## Create shortcut on desktop
 <Ctrl+Shif> Drag/Drop on desktop  
