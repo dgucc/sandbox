@@ -102,6 +102,7 @@ GREP : Get lines Before|After pattern
 `$ grep -A 500 'sometext' file.txt` 
 
 GREP : extract substring between double quotes   
+option : -o, --only-matching  
 `$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
 
 Remove last character in file :  
