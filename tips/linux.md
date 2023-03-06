@@ -97,9 +97,12 @@ Counting records in csv files for given field :
 Skip 1st line :  
 `$ tail -n + 2 filename`
 
-GREP : Get lines Before|After pattern :  
+GREP : Get lines Before|After pattern   
 `$ grep -B 500 'sometext' file.txt` 
 `$ grep -A 500 'sometext' file.txt` 
+
+GREP : extract substring between double quotes   
+`$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
 
 Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
