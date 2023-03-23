@@ -37,11 +37,11 @@ Memory :
 `$ dmidecode --type memory`  
 
 ## Grub-Customizer
-How to change Default kernel version  
+How to change Default kernel version &rarr; [grub-customizer](https://tipsonubuntu.com/2018/03/11/install-grub-customizer-ubuntu-18-04-lts/)    
 `$ sudo apt-get install grub-customizer`   
 
-General Settings > default entry > predifined  
-Simply select the desired kernel in the drop-down list.  
+> General Settings > default entry > predifined  
+> Simply select the desired kernel in the drop-down list.  
 
 Uninstall :   
 `$ sudo apt-get remove --autoremove grub-customizer`   
