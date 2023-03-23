@@ -2,6 +2,7 @@
 
 - [Linux Tips](#linux-tips)
   - [Linux version](#linux-version)
+  - [grub-customizer](#Grub-Customizer)
   - [Linux file system structure](#linux-file-system-structure)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
   - [Digest](#digest)
@@ -22,6 +23,7 @@
   - [Curl to test Rest API :](#curl-to-test-rest-api-)
   - [jq : json query](#jq--json-query)
   - [cygwin tips](#cygwin-tips)
+  
 
 ---  
 
@@ -33,6 +35,16 @@
 
 Memory :  
 `$ dmidecode --type memory`  
+
+## Grub-Customizer
+How to change Default kernel version  
+`$ sudo apt-get install grub-customizer`   
+
+General Settings > default entry > predifined  
+Simply select the desired kernel in the drop-down list.  
+
+Uninstall :   
+`$ sudo apt-get remove --autoremove grub-customizer`   
 
 ## Linux file system structure
 
