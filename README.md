@@ -30,3 +30,10 @@ Push modifications to github
 ## Preview html page hosted in GitHub
 Prepend "https://htmlpreview.github.io/?"  to url  
 ex : https://htmlpreview.github.io/?https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
+
+## Clone subdirectory from a github repo (Slow...)
+1. URL : replace '/tree/main/' by '/trunk/' in the URL
+2. Use svn command (sudo apt-get install subversion)  
+3. Be patient...
+`$ svn export 'https://github.com/MarimerLLC/csla/trunk/Samples/CslaFastStart'`  
+
