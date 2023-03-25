@@ -35,6 +35,9 @@ find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull ori
 
 ## Misc
 
+Commit and add all files in a single command  
+`$ git commit -a -m 'Take all'`  
+
 Remove unstaged files  
 `$ git clean -df`  
 
