@@ -201,7 +201,7 @@ To install with cygwin, search for 'perl-Image-exiftool'
 
 ---
 
-## ssh
+## ssh - scp
 
 Activate ssh :  
 
