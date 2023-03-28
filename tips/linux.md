@@ -205,12 +205,12 @@ To install with cygwin, search for 'perl-Image-exiftool'
 
 Activate ssh :  
 
-```
+```bash
 $ sudo apt-get install openssh-server
 $ systemctl status sshd
 $ systemctl enable sshd
 ```
-```
+```bash
 $ ssh-keygen -t rsa
 [...]
 The key fingerprint is:
@@ -229,6 +229,14 @@ The key's randomart image is:
 +----[SHA256]-----+
 $ ssh-copy-id -i .ssh/id_rsa.pub username@remote_hostname
 ```
+Copy file to remote host (eg : 192.168.0.3) :  
+
+`$ scp file.zip user@192.168.0.3:/home/user/Desktop/`  
+
+Copy directory to remote host :   
+
+-r : recursive, -p : preserve properties
+`$ scp -r /local/directory/ user@192.168.0.3:/home/user/Desktop/`  
 
 Check file modification date on remote :  
 
