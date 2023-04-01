@@ -37,3 +37,10 @@ ex : https://htmlpreview.github.io/?https://github.com/dgucc/javascript/blob/mai
 3. Be patient...
 `$ svn export 'https://github.com/MarimerLLC/csla/trunk/Samples/CslaFastStart'`  
 
+## Reorganize folders in github (move...)  
+`$ mkdir -p newFolder`  
+`$ git mv existingFolder/ newFolder/existingFolder/`  
+`$ git commit -a -m 'reorganize folders'`  
+`$ git push origin main`  
+
+
