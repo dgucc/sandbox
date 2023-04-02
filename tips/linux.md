@@ -176,6 +176,17 @@ $ tail -n +2 input.csv | sort -k3,3r | sort -k1,1 -k2,2 -u -o output.csv
 ### pdf to text : install "poppler" to use pdfTotext   
 `$ pdftotext input.pdf output.txt` 
 
+### pdf page to thumbnail (jpg,png)
+
+1st pdf page to jpg  
+`$ convert example.pdf[0] -quality 90 -resize 50% cover.jpg`  
+
+1st pdf page to jpg with white background  
+`$ convert example.pdf[0] -quality 90 -resize 50%  -background white -alpha remove cover.jpg`  
+
+Transparency...  
+`$ $ convert example.pdf[0] -density 175 -colorspace sRGB -resize 50% -quality 95 cover.png`  
+
 ### Enhance jpg scan => pdf  
 **noteshrink** [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
 ```
