@@ -53,7 +53,7 @@ Uninstall :
 ![image](images/LinuxFileSystem.jpg)  
 
 ## Create shortcut on desktop
-<Ctrl+Shif> Drag/Drop on desktop  
+<Ctrl+Shift> Drag/Drop on desktop  
 
 ## Digest  
 
