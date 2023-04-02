@@ -188,16 +188,16 @@ Transparency...
 `$ convert example.pdf[0] -density 175 -colorspace sRGB -resize 50% -quality 95 cover.png`  
 
 Error `attempt to perform an operation not allowed by the security policy 'PDF' ...`  
-Edit /etc/ImageMagick-6/policy.xml:  
+Edit /etc/ImageMagick-6/policy.xml and comment these :  
 
 ```xml
 <!-- disable ghostscript format types -->
-<policy domain="coder" rights="none" pattern="PS" />
-<policy domain="coder" rights="none" pattern="PS2" />
-<policy domain="coder" rights="none" pattern="PS3" />
-<policy domain="coder" rights="none" pattern="EPS" />
-<policy domain="coder" rights="none" pattern="PDF" />
-<policy domain="coder" rights="none" pattern="XPS" />
+<!--<policy domain="coder" rights="none" pattern="PS" /> -->
+<!--<policy domain="coder" rights="none" pattern="PS2" /> -->
+<!--<policy domain="coder" rights="none" pattern="PS3" /> -->
+<!--<policy domain="coder" rights="none" pattern="EPS" /> -->
+<!--<policy domain="coder" rights="none" pattern="PDF" /> -->
+<!--<policy domain="coder" rights="none" pattern="XPS" /> -->
 ```
 
 ### Enhance jpg scan => pdf  
