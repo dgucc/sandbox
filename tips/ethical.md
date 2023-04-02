@@ -25,7 +25,7 @@ Show stored Wi-Fi passwords
 [HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
 [HKLM]\SYSTEM\CurrentControlSet\Services\  
 
-## VirtualBox (https://linuxhint.com/install-virtualbox-linux-mint/)  
+## [VirtualBox](https://linuxhint.com/install-virtualbox-linux-mint/)  
 
 `$ sudo apt-get install virtualbox virtualbox-ext-pack`  
 
