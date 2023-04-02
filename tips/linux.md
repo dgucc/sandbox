@@ -148,7 +148,7 @@ Read-Write permissions
 (cygwin : setfacl)  
 `$ find . -exec setfacl -s user::rw-,group::r--,other::r-- {} \;`  
 
-Mimic a "GROUP BY HAVING field=MAX()" using tail, sort  
+Mimic a "GROUP BY HAVING field=MAX()" using tail, sort (much faster than SQL on large tables)  
 ```
 # sort options :
 # -k : -k, --key=POS1[,POS2] 	Start a key at POS1 (origin 1), end it at POS2 
