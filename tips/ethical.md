@@ -25,3 +25,14 @@ Show stored Wi-Fi passwords
 [HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
 [HKLM]\SYSTEM\CurrentControlSet\Services\  
 
+## VirtualBox (https://linuxhint.com/install-virtualbox-linux-mint/)  
+
+`$ sudo apt-get install virtualbox virtualbox-ext-pack`  
+
+## kali - config post installation  
+
+```shell
+sudo dpkg-reconfigure keyboard-configuration
+sudo dpkg-reconfigure locales
+sudo dpkg-reconfigure tzdata
+```
