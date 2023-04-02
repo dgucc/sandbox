@@ -21,8 +21,8 @@
   - [GPG error](#gpg-error)
   - [Sublime Text](#sublime-text)
   - [Curl to test Rest API :](#curl-to-test-rest-api-)
-  - [jq : json query](#jq--json-query)
-  - [Nintendo Switch Pro controller on Linux](#Nintendo Switch Pro Controller on Linux)
+  - [jq : json query](#jq--json-query)  
+  - [Nintendo Switch Pro Controller on Linux](#Nintendo-Switch-Pro-Controller-on-Linux)
   - [cygwin tips](#cygwin-tips)
 
 ---  
