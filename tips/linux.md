@@ -185,7 +185,20 @@ $ tail -n +2 input.csv | sort -k3,3r | sort -k1,1 -k2,2 -u -o output.csv
 `$ convert example.pdf[0] -quality 90 -resize 50%  -background white -alpha remove cover.jpg`  
 
 Transparency...  
-`$ $ convert example.pdf[0] -density 175 -colorspace sRGB -resize 50% -quality 95 cover.png`  
+`$ convert example.pdf[0] -density 175 -colorspace sRGB -resize 50% -quality 95 cover.png`  
+
+Error `attempt to perform an operation not allowed by the security policy 'PDF' ...`  
+Edit /etc/ImageMagick-6/policy.xml:  
+
+```xml
+<!-- disable ghostscript format types -->
+<policy domain="coder" rights="none" pattern="PS" />
+<policy domain="coder" rights="none" pattern="PS2" />
+<policy domain="coder" rights="none" pattern="PS3" />
+<policy domain="coder" rights="none" pattern="EPS" />
+<policy domain="coder" rights="none" pattern="PDF" />
+<policy domain="coder" rights="none" pattern="XPS" />
+```
 
 ### Enhance jpg scan => pdf  
 **noteshrink** [python]: Convert scans of handwritten notes to beautiful, compact PDFs  
