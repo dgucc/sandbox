@@ -323,16 +323,18 @@ Leech an entire web site
 ```
 $ wget \
      --recursive \
-     --no-clobber \
      --page-requisites \
      --html-extension \
      --convert-links \
      --restrict-file-names=windows \
-     --domains website.org \
-     --wait=3
+     --domains tutorialspoint.com \
+     --wait=3 \
      --no-parent \
-			https://www.tutorialspoint.com/whiteboard.htm
+	https://www.tutorialspoint.com/whiteboard.htm
 ```
+one-line :  
+`$ wget --recursive --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains tutorialspoint.com --wait=3 --no-parent  https://www.tutorialspoint.com/whiteboard.htm`  
+
 
 Basic authentication :  
 `$ wget --user=username --password=superpasswd http://target-url`  
