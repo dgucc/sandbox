@@ -327,13 +327,13 @@ $ wget \
      --html-extension \
      --convert-links \
      --restrict-file-names=windows \
-     --domains tutorialspoint.com \
+     --domains example.com \
      --wait=3 \
      --no-parent \
-	https://www.tutorialspoint.com/whiteboard.htm
+	https://www.example.com/index.html
 ```
 one-line :  
-`$ wget --recursive --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains tutorialspoint.com --wait=3 --no-parent  https://www.tutorialspoint.com/whiteboard.htm`  
+`$ wget --recursive --page-requisites --html-extension --convert-links --restrict-file-names=windows --domains example.com --wait=3 --no-parent  https://www.example.com/index.html`  
 
 
 Basic authentication :  
