@@ -22,8 +22,8 @@
   - [Sublime Text](#sublime-text)
   - [Curl to test Rest API :](#curl-to-test-rest-api-)
   - [jq : json query](#jq--json-query)
+  - [Nintendo Switch Pro controller on Linux](#Nintendo Switch Pro Controller on Linux)
   - [cygwin tips](#cygwin-tips)
-  
 
 ---  
 
@@ -506,6 +506,19 @@ tocsv
 ```
 or (one-line)  
 `$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > out.csv`  
+
+---  
+## Nintendo Switch Pro Controller on Linux 
+
+`$ sudo nano /etc/udev/rules.d/60-steam-input.rules`  
+
+># Nintendo Switch Pro Controller over USB hidraw
+>KERNEL=="hidraw*", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="2009", MODE="0660", TAG+="uaccess"
+
+># Nintendo Switch Pro Controller over bluetooth hidraw
+>KERNEL=="hidraw*", KERNELS=="*057E:2009*", MODE="0660", TAG+="uaccess"
+Go to Bluetooth device manager ;-)  
+
 
 ---
 
