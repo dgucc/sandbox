@@ -1,3 +1,6 @@
+## Free up disk space
+[12 best ways to free up hard drive space on Windows 10](https://www.windowscentral.com/best-ways-to-free-hard-drive-space-windows-10)  
+
 ## Keyboard layout
 powershell as admin  
 `PS > Set-WinUserLanguageList -LanguageList fr-be -Force`    
