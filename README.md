@@ -4,7 +4,16 @@
 
 Command ***gh*** needed to push modifications to remote repository
 1. Install GitHub CLI on macOS, [Windows](https://github.com/cli/cli/releases/download/v2.11.3/gh_2.11.3_windows_amd64.msi), or Linux.  
-2. In the command line, authenticate to GitHub.  
+
+```bash
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+```
+
+3. In the command line, authenticate to GitHub.  
 `$ gh auth login` 
 
 3. Git clone alternative  
