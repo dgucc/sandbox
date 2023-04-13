@@ -507,7 +507,9 @@ def tocsv:
 tocsv
 ```
 or (one-line)  
-`$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > out.csv`  
+`$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > output.csv`  
+
+`$ jq -r '.[] | [.field1, .field2, .field3] | @csv' input.json > output.csv`  
 
 ---  
 ## Nintendo Switch Pro Controller on Linux 
