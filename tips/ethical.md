@@ -25,6 +25,8 @@ Show stored Wi-Fi passwords
 [HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
 [HKLM]\SYSTEM\CurrentControlSet\Services\  
 
+---
+
 # Linux
 
 ## [VirtualBox](https://linuxhint.com/install-virtualbox-linux-mint/)  
@@ -69,4 +71,11 @@ Ajouter le script dans cron.weekly :
 
 `mv updateblacklist /etc/cron.weekly/`  
 
+## Unbound - housekeeping
+
+```bash
+sudo service unbound stop
+sudo wget ftp://FTP.INTERNIC.NET/domain/named.cache -O /var/lib/unbound/root.hints
+sudo service unbound start
+```
 
