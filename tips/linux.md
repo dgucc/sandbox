@@ -511,6 +511,9 @@ or (one-line)
 
 `$ jq -r '.[] | [.field1, .field2, .field3] | @csv' input.json > output.csv`  
 
+some arithmetic on fields :  
+`$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
+
 ---  
 ## Nintendo Switch Pro Controller on Linux 
 
