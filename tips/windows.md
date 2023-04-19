@@ -45,6 +45,22 @@ Remove RegKey :
 
 `explorer.exe /e,/root,"C:\TEMP"`
 
+## Windows Defender Firewall with Advanced Security
+
+Run control firewall.cpl  
+or   
+Run wf.msc  
+
+Deactivate/Activate via netsh :  
+
+```cmd
+(as admin)
+> netsh advfirewall set domainprofile state off
+```
+
+
+
+
 ## VLC : screen recording  
 CTRL+C  
 Mode de capture : Bureau > Afficher plus d'options > Modifier les options : 
