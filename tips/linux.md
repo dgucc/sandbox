@@ -58,6 +58,7 @@ Uninstall :
 ## Scroll bars visible
 
 [Make scroll bars visible](https://www.technipages.com/linux-mint-make-scroll-bars-visible/)
+Themes > Settings :  
 ![image](images/mint-scroll-bars.png)  
 
 ## Digest  
