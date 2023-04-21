@@ -55,6 +55,11 @@ Uninstall :
 ## Create shortcut on desktop
 <Ctrl+Shift> Drag/Drop on desktop  
 
+## Scroll bars visible
+
+[Make scroll bars visible](https://www.technipages.com/linux-mint-make-scroll-bars-visible/)
+![image](images/mint-scroll-bars.png)  
+
 ## Digest  
 
 sha1sum, md5sum, etc.
