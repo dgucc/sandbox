@@ -79,3 +79,10 @@ sudo wget ftp://FTP.INTERNIC.NET/domain/named.cache -O /var/lib/unbound/root.hin
 sudo service unbound start
 ```
 
+## Protect USB Drive 
+
+[cryptsetup](https://www.linuxtricks.fr/wiki/cryptsetup-creer-une-cle-ou-un-disque-usb-chiffree) TO TEST  
+
+[Encrypt your Flash Drive on Ubuntu/Linux Mint](https://www.noobslab.com/2012/03/encrypt-your-flash-drive-on-ubuntulinux.html) TO TEST  
+
+
