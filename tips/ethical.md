@@ -25,6 +25,18 @@ Show stored Wi-Fi passwords
 [HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
 [HKLM]\SYSTEM\CurrentControlSet\Services\  
 
+## Windows Defender Firewall with Advanced Security
+
+`control firewall.cpl` or `wf.msc`  
+
+Deactivate/Activate command :  
+
+(as admin)
+`netsh advfirewall set domainprofile state off`    
+
+(as admin)
+`netsh advfirewall set domainprofile state on`  
+
 ---
 
 # Linux
