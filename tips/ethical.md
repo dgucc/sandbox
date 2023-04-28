@@ -11,6 +11,15 @@ Display localgroups names :
 Add new user as member of localadmins : 
 `> net localgroup administrators testuser /add`  
 
+## How to Identify Username and UserSid
+Get All Names and SID
+`> wmic useraccount get name,sid`  
+
+Get Name with SID  
+`> wmic useraccount where sid="S-1-5-21-992878714-4041223874-2616370337-1001" get name`  
+
+Get SID with Name  
+`> wmic useraccount where name="Alice" get sid`
 
 ## Wi-Fi
 
