@@ -55,6 +55,10 @@ Uninstall :
 ## Create shortcut on desktop
 <Ctrl+Shift> Drag/Drop on desktop  
 
+## Browse to Computer
+File URI : 'computer:///'  
+
+
 ## Scroll bars visible
 
 [Make scroll bars visible](https://www.technipages.com/linux-mint-make-scroll-bars-visible/)
