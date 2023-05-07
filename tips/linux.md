@@ -55,8 +55,8 @@ Uninstall :
 ## Create shortcut on desktop
 <Ctrl+Shift> Drag/Drop on desktop  
 
-## Browse to Computer
-File URI : 'computer:///'  
+## Browse from Computer Level
+URI : `computer:///`  
 
 
 ## Scroll bars visible
