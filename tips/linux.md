@@ -16,6 +16,7 @@
   - [Time duration](#time-duration)
   - [ffmpeg](#ffmpeg)
   - [Basic calculation](#basic-calculation)
+  - [Gimp](#gimp)
   - [youtube-dl](#youtube-dl)
   - [HP Printer](#hp-printer)
   - [GPG error](#gpg-error)
@@ -442,6 +443,13 @@ Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)
 
 `$ echo "2^10" | bc`
 
+---
+
+## Gimp
+
+[Launch Gimp in French](https://docs.gimp.org/en/gimp-fire-up.html#gimp-concepts-running-language)  
+
+`$ LANGUAGE=fr gimp` 
 
 ---
 
