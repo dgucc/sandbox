@@ -57,8 +57,10 @@ Deactivate/Activate via netsh :
 (as admin)
 > netsh advfirewall set domainprofile state off
 ```
+## Windows Key Backup
 
-
+(as admin)
+`PS > wmic path softwarelicensingservice get OA3xOriginalProductKey`   
 
 
 ## VLC : screen recording  
