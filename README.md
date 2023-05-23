@@ -1,5 +1,7 @@
 # Sandbox
 
+![Avatar](https://github.com/dgucc/sandbox/blob/main/tips/images/avatar.gif)  
+
 ## GitHub CLI - Getting started
 
 Command ***gh*** needed to push modifications to remote repository
