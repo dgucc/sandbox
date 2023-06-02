@@ -39,6 +39,18 @@ How-to git pull over all subdirectories
 find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull origin main \;
 ```
 
+## Git Pull Force
+
+[Git Pull Force – How to Overwrite Local Changes With Git](https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/)
+
+`@{u}` : shortcut for `$CURRENT_BRANCH`  
+
+```bash
+git fetch
+git reset --hard HEAD
+git merge '@{u}'
+```
+
 ---
 
 ## Misc
