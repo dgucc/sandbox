@@ -56,9 +56,9 @@ git merge '@{u}'
 ## Clone subdirectory only
 
 ```bash
-git clone -n --depth=1 --filter=tree:0 https://github.com/reponame
-cd subfolder
-git sparse-checkout set --no-cone subfolder
+git clone -n --depth=1 --filter=tree:0 https://github.com/dgucc/javascript 
+cd javascript
+git sparse-checkout set --no-cone openstreetmap
 git checkout
 ```
 
