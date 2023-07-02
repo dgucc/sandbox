@@ -9,6 +9,16 @@
 
 + [1. Introduction](https://www.youtube.com/watch?v=90hGCMC3Chc) 🖍
 + [2. Compiler programme](https://www.youtube.com/watch?v=6E-zrVV2tSg) 🖍
+
+Download compiler : [GCC 13.1.0](https://github.com/brechtsanders/winlibs_mingw/releases/download/13.1.0-16.0.5-11.0.0-ucrt-r5/winlibs-x86_64-posix-seh-gcc-13.1.0-mingw-w64ucrt-11.0.0-r5.7z)  
+Unzip it and set environment variable *PATH* to [MinGW64/bin/]  
+Test it :  
+```cmd
+> gcc -v
+> g++ -v
+> gdb -v
+```
++ 
 + [3. Variables](https://www.youtube.com/watch?v=kKeGTDyvi1o) 🖍
 + [4. Lire données au clavier](https://www.youtube.com/watch?v=I9xlZGDMfrw) 🖍
 + [5. Opérateurs](https://www.youtube.com/watch?v=imc6C96-TW8) 🖍
