@@ -134,3 +134,19 @@ Call bash script from cmd :
 
 ### Retrieve the key of a pre-installed Windows 
 `(as admin) > wmic path SoftwareLicensingService get OA3xOriginalProductKey`  
+
+### Fix Corrupted token.dat file (Activation file)
+[Resolve activation issue with error code 0xC004E015 on Windows 10 Enterprise for Virtual Desktops](https://www.augmastudio.com/2021/01/08/resolve-activation-issue-with-error-code-0xc004e015-on-windows-10-enterprise-for-virtual-desktops/)  
+Windows PowerShell (Admin)
+check Software Protection services  
+`PS> Get-Service sppsvc`  
+
+Rename presumably corrupted file  
+```
+PS> Stop-Service sppsvc
+PS> ren C:\Windows\System32\spp\store\2.0\tokens.dat C:\Windows\System32\spp\store\2.0\tokens.bak
+PS> Start-Service sppsvc
+```  
+Re-install license files
+`C:\Windows\System32>slmgr -rilc`  
+
