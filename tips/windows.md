@@ -132,3 +132,5 @@ Call bash script from cmd :
 -crf : Constant Ratio Factor [0..51] Quality Loss  
 `ffmpeg -rtbufsize 1500M  -thread_queue_size 512 -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Stereo Mix (Realtek(R) Audio)" -crf 30  -filter:a "volume=1.5" -vcodec libx264  output.mp4`   
 
+### Retrieve the key of a pre-installed Windows 
+`(as admin) > wmic path SoftwareLicensingService get OA3xOriginalProductKey`  
