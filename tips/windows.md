@@ -137,9 +137,8 @@ Call bash script from cmd :
 
 ### Fix Corrupted token.dat file (Activation file)
 [Resolve activation issue with error code 0xC004E015 on Windows 10 Enterprise for Virtual Desktops](https://www.augmastudio.com/2021/01/08/resolve-activation-issue-with-error-code-0xc004e015-on-windows-10-enterprise-for-virtual-desktops/)  
-Windows PowerShell (Admin)
 check Software Protection services  
-`PS> Get-Service sppsvc`  
+(as admin) `PS> Get-Service sppsvc`  
 
 Rename presumably corrupted file  
 ```
