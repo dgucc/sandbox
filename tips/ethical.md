@@ -106,4 +106,7 @@ sudo service unbound start
 
 [Encrypt your Flash Drive on Ubuntu/Linux Mint](https://www.noobslab.com/2012/03/encrypt-your-flash-drive-on-ubuntulinux.html) TO TEST  
 
+## Unquoted Service Path
+
+`wmic service get name,pathname,displayname,startmode | findstr /i auto | findstr /i /v "C:\Windows\\" | findstr /i /v """`  
 
