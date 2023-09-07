@@ -1,5 +1,7 @@
 # Windows
 
+ALT+F10 : open cmd from recovery login screen
+
 ## Add local admin
 
 Add user and password :  
