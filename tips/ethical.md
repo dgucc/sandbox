@@ -11,6 +11,14 @@ Display localgroups names :
 Add new user as member of localadmins : 
 `> net localgroup administrators testuser /add`  
 
+## diskpart
+
+Display volumes :  
+`DISKPART> list volume`  
+
+Mount volume and assign letter :  
+`DISKPART> select volume <VolumeNumber>`  
+
 ## How to Identify Username and UserSid
 Get All Names and SID
 `> wmic useraccount get name,sid`  
