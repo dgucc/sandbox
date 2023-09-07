@@ -11,6 +11,9 @@ Display localgroups names :
 Add new user as member of localadmins : 
 `> net localgroup administrators testuser /add`  
 
+Reboot :  
+`> wpeutil reboot`  
+
 ## diskpart
 
 Display volumes :  
