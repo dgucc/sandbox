@@ -22,6 +22,14 @@ Display volumes :
 Mount volume and assign letter :  
 `DISKPART> select volume <VolumeNumber>`  
 
+## Bitlocker
+
+`> manage-bde status`  
+
+Unlock with Recovery Code :  
+`> manage-bde -Unlock -RecoveryPassword <XXXX>`    
+
+
 ## How to Identify Username and UserSid
 Get All Names and SID
 `> wmic useraccount get name,sid`  
