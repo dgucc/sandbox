@@ -5,6 +5,9 @@
 > security.fileuri.strict_origin_policy = false  
 > privacy.file_unique_origin = false  
 
+for chrome :
+`chrome.exe --user-data-dir="C:/folder" --disable-web-security `  
+
 ## language
 
 intl.locale.requested = fr
