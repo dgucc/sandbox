@@ -13,3 +13,5 @@ The Apache Tika™ toolkit detects and extracts metadata and text from over a th
 ## scribe
 
 [scribe : Un outil de transcription gratuit et open source](https://www.blogdumoderateur.com/tools/redirection/?tool_id=27899&tool_name=scribe)  
+
+[github](https://gitlab.cemea.org/mallette/scribe)  
