@@ -59,6 +59,8 @@ Uninstall :
 ## Browse from Computer Level
 URI : `computer:///`  
 
+## Free up disk space : remove old kernels  
+$ sudo apt-get autoremove --purge  
 
 ## Scroll bars visible
 
