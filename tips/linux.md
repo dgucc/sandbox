@@ -288,6 +288,7 @@ Check file modification date on remote :
 stardict_3.0.6.2-1_all.deb
 
 - [Download dictionaries] (https://github.com/BoboTiG/ebook-reader-dict/releases/tag/fr)
+[wikdict.com](https://download.wikdict.com/dictionaries/)  
 
 - Unzip and copy dict-fr into stardict folder
 
