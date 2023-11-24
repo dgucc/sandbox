@@ -579,7 +579,7 @@ $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```
 
-*find . -iname* : get rid of "Permission denied"  
+*find . -iname* : get rid of polluting "Permission denied"  
 ```bash
 $ cd /cygdrive/c
 $ find . -iname "filename" 2>&1 | grep -v "Permission denied"
