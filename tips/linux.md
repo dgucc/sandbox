@@ -577,7 +577,13 @@ cygpath -w <PATH> : windows like path
 $ cd /cygdrive/c/Windows/Temp
 $ cygpath -w $(pwd)
 C:\Windows\Temp
-```	
+```
+
+*find . -iname* : get rid of "Permission denied"  
+```bash
+$ cd /cygdrive/c
+$ find . -iname "filename" 2>&1 | grep -v "Permission denied"
+```
 
 *ls* : how to ignore case :  
 use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)  
