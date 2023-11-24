@@ -579,7 +579,8 @@ $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```
 
-*find . -iname* : get rid of polluting "Permission denied"  
+*find . -iname* : [get rid of polluting "Permission denied"](https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux#answer-42842)  
+
 ```bash
 $ cd /cygdrive/c
 $ find . -iname "filename" 2>&1 | grep -v "Permission denied"
