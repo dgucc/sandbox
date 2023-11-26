@@ -62,6 +62,10 @@ URI : `computer:///`
 ## Free up disk space : remove old kernels  
 $ sudo apt-get autoremove --purge  
 
+## Uninstall 
+$ apt list --installed  
+$ sudo apt-get remove --purge dotnet-sdk-6.0  
+
 ## Scroll bars visible
 
 [Make scroll bars visible](https://www.technipages.com/linux-mint-make-scroll-bars-visible/)
