@@ -24,6 +24,14 @@ Restart computer
 ## File locked by another process  
 Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename  
 
+## Install Office 2021 LTSC
+[Office Customization Tool](https://config.office.com/deploymentsettings)  
+Configure and export : Configuration.xml  
+[Office Deployment Tool](https://www.microsoft.com/en-us/download/details.aspx?id=49117)
+Download and unzip : officedeploymenttool_16731-20398.exe  
+
+`(as admin)> Setup.exe /configure Configuration.xml`  
+
 ## Passwords  
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
