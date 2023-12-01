@@ -253,6 +253,7 @@ $ systemctl enable sshd
 ```
 ```bash
 $ ssh-keygen -t rsa
+[or ssh-keygen -t rsa -c user.name@gmail.com]
 [...]
 The key fingerprint is:
 SHA256:................................. username@local_hostname
@@ -582,6 +583,8 @@ $ cd /cygdrive/c/Windows/Temp
 $ cygpath -w $(pwd)
 C:\Windows\Temp
 ```
+cygpath -u <PATH> : unix like path  
+`$ cd "$(cygpath -u 'C:\Program Files\')"`  
 
 *find . -iname* : [get rid of polluting "Permission denied"](https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux#answer-42842)  
 
