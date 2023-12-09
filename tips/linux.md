@@ -499,9 +499,17 @@ Go to Bluetooth device manager ;-)
 
 ## cygwin tips 
 
-Cygwin in contextual menu  
-install "chere" package under the "Shells" category.
-(as admin) `$ chere -i -t mintty -s bash`  
+### Cygwin in contextual menu  
+install **chere** package under the "Shells" category.
+-i : install
+-t : terminal
+-a : all users
+-e : contextual text
+-s : shell
+-p : print regtool commands to stdout rather than running them 
+
+(as admin) `$ chere -i -e "Cygwin from here" -t mintty -s bash`  
+
 cf new entry in contextual menu :   
 > "Bash Prompt Here" 
 
@@ -514,11 +522,13 @@ Customize contextual menu using registry
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\\**Icon**] = **"<cygwin64_path>\Cygwin-Terminal.ico"** 
 
+### Keyboard shortcuts  
 Alt + b : backward previous word  
 Alt + f : forward  next word  
 /cygdrive/c/  
 /cygdrive/d/  
 
+### cygpath
 cygpath -w <PATH> : windows like path  
 ```
 $ cd /cygdrive/c/Windows/Temp
@@ -528,19 +538,21 @@ C:\Windows\Temp
 cygpath -u <PATH> : unix like path  
 `$ cd "$(cygpath -u 'C:\Program Files\')"`  
 
+### find : Permission denied
 *find . -iname* : [get rid of polluting "Permission denied"](https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux#answer-42842)  
 
 ```bash
 $ cd /cygdrive/c
 $ find . -iname "filename" 2>&1 | grep -v "Permission denied"
 ```
-
+### ls : ignore case 
 *ls* : how to ignore case :  
 use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)  
 `$ shopt -s nocaseglob ` -s : set ignore case  
 `$ ls *.txt`  
 `$ shopt -u nocaseglob ` -u : unset ignore case   
-	
+
+### Files names containing spaces
 Tackle Loop File Names with spaces : **IFS** (Internal Field Separator) :	
 ```bash
 IFS_BAK=$IFS
@@ -551,7 +563,7 @@ do
 done
 IFS=$IFSBAK	
 ```	
-	
+### /dev/null 
 Cygwin /dev/null equivalent :  
 `$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
 ```
