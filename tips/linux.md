@@ -501,12 +501,12 @@ Go to Bluetooth device manager ;-)
 
 ### Cygwin in contextual menu  
 install **chere** package under the "Shells" category.
--i : install
--t : terminal
--a : all users
--e : contextual text
--s : shell
--p : print regtool commands to stdout rather than running them 
+-i : install  
+-t : terminal  
+-a : all users  
+-e : contextual text  
+-s : shell  
+-p : print regtool commands to stdout rather than running them   
 
 (as admin) `$ chere -i -e "Cygwin from here" -t mintty -s bash`  
 
