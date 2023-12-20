@@ -3,7 +3,7 @@
 ## shortcut
 
 Open Terminal : <Ctrl+J>  
-
+Focus on Project Explorer : <Ctrl+0>
 
 ## Configuration
 [Configuration Visual Studio Code](https://grafikart.fr/tutoriels/vscode-settings-2096)  
