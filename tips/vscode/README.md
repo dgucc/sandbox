@@ -5,6 +5,8 @@
 Open Terminal : <Ctrl+J>  
 Focus on Project Explorer : <Ctrl+0>
 
+Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
+
 ## Configuration
 [Configuration Visual Studio Code](https://grafikart.fr/tutoriels/vscode-settings-2096)  
 <Ctrl+Shift+P> : Preferences  
