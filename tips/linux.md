@@ -483,6 +483,20 @@ some arithmetic on fields :
 `$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
 
 ---  
+## keyboard
+
+	*xev* : Press any key to identify the corresponding Keycode  
+
+`$ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'`
+
+	*xdotool* : Emulate key stroke
+
+`$ xdotool key 5`  
+
+	*xkeycaps* - graphically display and edit the X keyboard mapping
+
+---
+
 ## Nintendo Switch Pro Controller on Linux 
 
 `$ sudo nano /etc/udev/rules.d/60-steam-input.rules`  
