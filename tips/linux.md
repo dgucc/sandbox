@@ -493,8 +493,9 @@ some arithmetic on fields :
 
 `$ xdotool key 5`  
 
-	*xkeycaps* - graphically display and edit the X keyboard mapping
+	*xkeycaps* : graphically display and edit the X keyboard mapping
 
+	*Xbindkeys* : to bind commands to certain keys or key combinations on the keyboard.
 ---
 
 ## Nintendo Switch Pro Controller on Linux 
