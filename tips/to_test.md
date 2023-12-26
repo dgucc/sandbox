@@ -59,3 +59,7 @@ winetricks --force mdac28
 ```bash
 wine msiexec /i easetupfull.msi
 ```
+## UML
+
+[Prise en main d'outils UML](https://github.com/iblasquez/tuto_ModelisationUML)
+
