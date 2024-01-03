@@ -76,7 +76,8 @@ There is a workaround:
   [xstream 1.4.18 jar](https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.18/xstream-1.4.18.jar)   
 1. Locate the `com.objectaid.uml_1.2.4.jar` file and open it (with the zip tool of your choice)  
 1. Delete the xstream-1.3.1.jar file inside the lib directory. Add the xstream-1.4.18.jar to the lib directory.   
-1. Open the file `META-INF/MANIFEST.MF` and replace line `lib/xstream-1.3.1.jar` with `lib/xstream-1.4.18.jar`.  
+1. Open the file `META-INF/MANIFEST.MF` and replace line `lib/xstream-1.3.1.jar` with `lib/xstream-1.4.18.jar`.
+1. Repack the folders "features" and "plugins" into `objectaid-1.1.14.zip`
 1. Add to your `eclipse.ini` the following vmargs:
 ```
 --add-opens=java.base/java.lang=ALL-UNNAMED
