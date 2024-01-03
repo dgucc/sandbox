@@ -16,3 +16,13 @@
 ## Kindle
   [comment installer un dictionnaire sur liseuse Kindle ?](https://www.liseuses.net/dictionnaire-kindle/)
 
+## WikDict
+
+[WikDict Downloadable dictionaries](https://download.wikdict.com/dictionaries/)  
+  
+    Kobo, For Rakuten Kobo e-readers  
+    SQLite, Generic sqlite databases for developers  
+    Stardict, For StarDict compatible dictionary applications  
+    TEI, XML dictionaries according to TEI P5  
+    wdweb, DBs used by the wikdict-web application at WikDict.com   
+
