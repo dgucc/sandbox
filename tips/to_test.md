@@ -71,15 +71,22 @@ It seems that ObjectAid is no longer maintained. I got this error running on JDK
 
 There is a workaround:
 
-1. Download [xstream 1.4.18 jar](https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.18/xstream-1.4.18.jar)  
-2. Locate the `com.objectaid.uml_1.2.4.jar` file and open it (with the zip tool of your choice)  
-3. Delete the xstream-1.3.1.jar file inside the lib directory. Add the xstream-1.4.18.jar to the lib directory.   
-4. Open the file `META-INF/MANIFEST.MF` and replace line `lib/xstream-1.3.1.jar` with `lib/xstream-1.4.18.jar`.  
-5. Add to your `eclipse.ini` the following vmargs:
+1. Download  
+  [objectaid-1.1.14.zip](http://web.archive.org/web/20190113065017/http://www.objectaid.com/update/1.1/objectaid-1.1.14.zip)  
+  [xstream 1.4.18 jar](https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/1.4.18/xstream-1.4.18.jar)   
+1. Locate the `com.objectaid.uml_1.2.4.jar` file and open it (with the zip tool of your choice)  
+1. Delete the xstream-1.3.1.jar file inside the lib directory. Add the xstream-1.4.18.jar to the lib directory.   
+1. Open the file `META-INF/MANIFEST.MF` and replace line `lib/xstream-1.3.1.jar` with `lib/xstream-1.4.18.jar`.  
+1. Add to your `eclipse.ini` the following vmargs:
 ```
 --add-opens=java.base/java.lang=ALL-UNNAMED
 --add-opens=java.base/java.util=ALL-UNNAMED
 --add-opens=java.base/java.text=ALL-UNNAMED
 --add-opens=java.desktop/java.awt.font=ALL-UNNAMED
 ```  
-7. Restart Eclipse with `-clean` to ensure the OSGI cache is purged.  
+1. Restart Eclipse with `-clean` to ensure the OSGI cache is purged.  
+1. Install the OjbectAid plugin :  
+   Help > Install New Software... > Add > Archive : Select "objectaid-1.2.4.zip"  
+   Restart Eclipse  
+1. In Project Explorer : Ctrl+N (New) > Select "ObjectAid UML Diagram" > "ObjectAid Class Diagram" and call it "uml.ucls"
+1. Drag and Drop java classes into diagram  
