@@ -53,6 +53,13 @@ Remove RegKey :
 
 `explorer.exe /e,/root,"C:\TEMP"`
 
+## Access to local network while using VPN 
+
+Enable split-tunneling :  
+Run ncpa.cpl to open Network Adapter properties  
+VPN connection > Properties > Internet Protocol IPv4 > Properties > Advanced...  
+Uncheck "Use Default Gateway on remote network"
+
 ## Windows Defender Firewall with Advanced Security
 
 Run control firewall.cpl  
