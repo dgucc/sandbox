@@ -58,7 +58,11 @@ Remove RegKey :
 Enable split-tunneling :  
 Run ncpa.cpl to open Network Adapter properties  
 VPN connection > Properties > Internet Protocol IPv4 > Properties > Advanced...  
-Uncheck "Use Default Gateway on remote network"
+Uncheck "Use Default Gateway on remote network" 
+
+or 
+
+`PS> Set-VPNConnection -Name "Connection Name" -SplitTunneling $True`
 
 ## Windows Defender Firewall with Advanced Security
 
