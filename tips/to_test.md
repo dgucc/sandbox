@@ -91,3 +91,122 @@ There is a workaround:
    Restart Eclipse  
 1. In Project Explorer : Ctrl+N (New) > Select "ObjectAid UML Diagram" > "ObjectAid Class Diagram" and call it "uml.ucls"
 1. Drag and Drop java classes into diagram  
+
+### StarUML
+
+# How to get full version of StarUML
+
+cf. this [hack](https://gist.github.com/trandaison/40b1d83618ae8e3d2da59df8c395093a?permalink_comment_id=4805024#gistcomment-4805024)
+
+
+An update from my initial post.
+This worked for me on v5.0.1 v5.1.0 (Linux).
+
+All commands were run as root
+You may need to run commands as root if your StarUML directory is not owned by your user
+
+Probably should have StarUML closed during this process
+I recommend backing up your StarUML directory
+
+1. Install asar via npm
+```sh
+npm i asar -g
+```
+1. Extract source
+
+```sh
+cd <path_to_staruml>/resources/ # mine was /opt/StarUML/resources/
+asar extract app.asar app
+```
+1. Edit src/engine/license-manager.js
+change this
+```javascript
+checkLicenseValidity () {
+  if (packageJSON.config.setappBuild) {
+    setStatus(this, true)
+  } else {
+    this.validate().then(() => {
+      setStatus(this, true)
+    }, () => {
+      setStatus(this, false)
+      UnregisteredDialog.showDialog()
+    })
+  }
+}
+```
+to this
+```javascript
+checkLicenseValidity () {
+    setStatus(this, true)
+}
+```
+and this
+```javascript
+register (licenseKey) {
+  return new Promise((resolve, reject) => {
+    $.post(app.config.validation_url, {licenseKey: licenseKey})
+      .done(data => {
+        if (data.product === packageJSON.config.product_id) {
+          var file = path.join(app.getUserPath(), '/license.key')
+          fs.writeFileSync(file, JSON.stringify(data, 2))
+          licenseInfo = data
+          setStatus(this, true)
+          resolve(data)
+        } else {
+          setStatus(this, false)
+          reject('unmatched') /* License is for old version */
+        }
+      })
+      .fail(err => {
+        setStatus(this, false)
+        if (err.status === 499) { /* License key not exists */
+          reject('invalid')
+        } else {
+          reject()
+        }
+      })
+  })
+}
+```
+to this
+```javascript
+register (licenseKey) {
+  return new Promise(() => { setStatus(this, false) })
+}
+```
+1. Repackage app
+```sh
+asar pack app app.asar
+```
+Next time you run StarUML, it should behave as a licensed version.
+Source (Nonfunctional as of this post) Source on Wayback Original Post
+```javascript
+checkLicenseValidity () {
+  if (packageJSON.config.setappBuild) {
+    setStatus(this, true)
+  } else {
+    this.validate().then(() => {
+      setStatus(this, true)
+    }, () => {
+      setStatus(this, false)
+      UnregisteredDialog.showDialog()
+    })
+  }
+}
+```
+to
+```javascript
+checkLicenseValidity () {
+  if (packageJSON.config.setappBuild) {
+    setStatus(this, true)
+  } else {
+    this.validate().then(() => {
+      setStatus(this, true)
+    }, () => {
+      setStatus(this, true)
+    })
+  }
+}
+```
+This work for 6.0.1, but i can't export the diagram. I recommend using 5.1.0
+
