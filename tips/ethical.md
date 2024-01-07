@@ -140,3 +140,6 @@ via a batch file :
 set __COMPAT_LAYER=RunAsInvoker
 start SteamSetup.exe
 ```
+or
+`cmd min C set __COMPAT_LAYER=RunAsInvoker && start "" %1`  
+
