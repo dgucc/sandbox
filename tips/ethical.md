@@ -141,5 +141,5 @@ set __COMPAT_LAYER=RunAsInvoker
 start SteamSetup.exe
 ```
 or
-`cmd min C set __COMPAT_LAYER=RunAsInvoker && start "" %1`  
+`cmd /min /c set __COMPAT_LAYER=RunAsInvoker && start "" %1`  
 
