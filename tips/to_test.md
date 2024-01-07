@@ -94,7 +94,7 @@ There is a workaround:
 
 ### StarUML
 
-# How to get full version of StarUML
+*How to get full version of StarUML*
 
 cf. this [hack](https://gist.github.com/trandaison/40b1d83618ae8e3d2da59df8c395093a?permalink_comment_id=4805024#gistcomment-4805024)
 
@@ -112,13 +112,15 @@ I recommend backing up your StarUML directory
 ```sh
 npm i asar -g
 ```
-1. Extract source
+
+2. Extract source
 
 ```sh
 cd <path_to_staruml>/resources/ # mine was /opt/StarUML/resources/
 asar extract app.asar app
 ```
-1. Edit src/engine/license-manager.js
+
+3. Edit src/engine/license-manager.js
 change this
 ```javascript
 checkLicenseValidity () {
@@ -174,7 +176,8 @@ register (licenseKey) {
   return new Promise(() => { setStatus(this, false) })
 }
 ```
-1. Repackage app
+
+4. Repackage app
 ```sh
 asar pack app app.asar
 ```
