@@ -134,6 +134,7 @@ sudo service unbound start
 [Windows Privilege Escalation](https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae)
 
 ## How To Install Any Software Without Admin Rights
+Actually how to prevents the UAC pop-up from appearing 
 
 via a batch file :  
 ```cmd
