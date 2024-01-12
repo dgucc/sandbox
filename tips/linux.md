@@ -525,20 +525,30 @@ chere
 -s : shell  
 -p : print regtool commands to stdout rather than running them   
 ```
-
 (as admin) `$ chere -i -e "Cygwin from here" -t mintty -s bash`  
 
 cf new entry in contextual menu :   
-> "Bash Prompt Here" 
+> "&Cygwin from here" 
 
 Customize contextual menu using registry 
-> Modify contextual text : 
+> Modify contextual text (admin rights not needed):  
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\\**Default**] = **"&Cygwin from here"** 
+```bash
+regtool -w -s set /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
+regtool -w -s set /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
+regtool -w -s set /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
+regtool -w -s set /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
 
-> Add Icon : 
+regtool -w -s set /HKCU/Software/Classes/Directory/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
+regtool -w -s set /HKCU/Software/Classes/Directory/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
+regtool -w -s set /HKCU/Software/Classes/Directory/Background/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
+regtool -w -s set /HKCU/Software/Classes/Directory/Background/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\\**Icon**] = **"<cygwin64_path>\Cygwin-Terminal.ico"** 
+# You can remove them with this:
+regtool -w unset /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/Icon
+regtool -w unset /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/Icon
+[...]
+```
 
 ### Customize cygwin prompt
 
