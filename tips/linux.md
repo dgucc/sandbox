@@ -534,11 +534,13 @@ Customize contextual menu using registry
 > Modify contextual text (admin rights not needed):  
 
 ```bash
+regtool -w -s set /HKCU/Software/Classes/Drive/Shell/cygwin64_bash '&Cygwin from here'
 regtool -w -s set /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
 regtool -w -s set /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
 regtool -w -s set /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
 regtool -w -s set /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
 
+regtool -w -s set /HKCU/Software/Classes/Directory/Shell/cygwin64_bash '&Cygwin from here'
 regtool -w -s set /HKCU/Software/Classes/Directory/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
 regtool -w -s set /HKCU/Software/Classes/Directory/Shell/cygwin64_bash/Icon 'C:\cygwin64\Cygwin-Terminal.ico'
 regtool -w -s set /HKCU/Software/Classes/Directory/Background/Shell/cygwin64_bash/command 'C:\cygwin64\bin\mintty.exe -e /bin/xhere /bin/bash.exe "%V"'
