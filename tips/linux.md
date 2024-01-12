@@ -569,6 +569,8 @@ export PS1="\[\e[1;33m\]\w\n\[\e[1;36m\]\[\e[0m\]\[\e]0;\w\a\]\[\e[32m\]\u@\h\e[
 Reload .bashrc  
 `$ source ~/.bashrc` 
 
+![image](images/cygwin-prompt.png)  
+
 ### Keyboard shortcuts  
 Alt + b : backward previous word  
 Alt + f : forward  next word  
