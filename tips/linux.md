@@ -540,6 +540,23 @@ Customize contextual menu using registry
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\cygwin64_bash\\**Icon**] = **"<cygwin64_path>\Cygwin-Terminal.ico"** 
 
+### Customize cygwin prompt
+
+Edit .bashrc to define PS1 variable :   
+```bash
+# function to detect git repository
+parse_git_branch() {
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+# Combine path + newline + git branch (if repository is present) + Customize colors...
+# \[\e[1;33m\]\w\n	— current working directory in yellow + newline
+# \[\e[32m\]\u@\h	— user and host in green
+# \e[0;31m$(parse_git_branch)\[\033[37m\]	— git branch name in red + following in grey
+export PS1="\[\e[1;33m\]\w\n\[\e[1;36m\]\[\e[0m\]\[\e]0;\w\a\]\[\e[32m\]\u@\h\e[0;31m$(parse_git_branch)\[\033[37m\] $ "     
+```
+Reload .bashrc  
+`$ source ~/.bashrc` 
+
 ### Keyboard shortcuts  
 Alt + b : backward previous word  
 Alt + f : forward  next word  
