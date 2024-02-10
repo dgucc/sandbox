@@ -119,6 +119,9 @@ Remove empty lines with sed :
 Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
+Renaming files + format number :
+`for file in $(ls -1 *.jpg | sort -n) ; do rename  -- 's/(\d+)/sprintf "%03d", $1/e' $file ; done`  
+
 Counting records in csv files for given field :  
 `$ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' | bc`-1 | bc)" ; done`  
 
