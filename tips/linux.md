@@ -566,7 +566,7 @@ Add the following line to your ~/.bashrc:
 And add the following line to your ~/.inputrc:
 
 	"\C-v": paste-from-clipboard
-[source](https://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/)  
+[Infos](https://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/)  
 
 ### Customize cygwin prompt
 
