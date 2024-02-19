@@ -554,6 +554,19 @@ regtool -w unset /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/Icon
 regtool -w unset /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/Icon
 [...]
 ```
+### Copy Paste issue
+
+"\302\203": copy-to-clipboard  
+"\302\226": paste-from-clipboard
+
+Add the following line to your ~/.bashrc:
+
+	stty lnext ^q stop undef start undef
+
+And add the following line to your ~/.inputrc:
+
+	"\C-v": paste-from-clipboard
+[source](https://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/)  
 
 ### Customize cygwin prompt
 
