@@ -517,6 +517,15 @@ Go to Bluetooth device manager ;-)
 
 ## cygwin tips 
 
+### Call bash script from cmd :
+
+```cmd
+@echo off
+@%~d0
+@cd %~p0
+@C:\cygwin64\bin\bash -c ./my_script.sh
+```
+
 ### Cygwin in contextual menu  
 install **chere** package under the "Shells" category.
 ```
