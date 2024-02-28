@@ -637,6 +637,35 @@ do
 done
 IFS=$IFSBAK	
 ```	
+
+### mysql
+
+After installation of mysql via Cygwin Setup  
+```bash
+# adapt config file etc/my.cnf.d/client.cnf
+	[client]
+	host=127.0.0.1
+	protocol=tcp
+	socket=/var/run/mysqld/mysqld.sock
+
+# create folder needed by the server
+$ mkdir /var/lib/mysql 
+
+# creates the initial tables needed by mysql
+$ mysql_install_db 
+
+# start server
+$ mysqld_safe
+
+$ mysql -u root -p
+Enter password:
+MariaDB [(none)]> show databases;
+MariaDB [(none)]> use test;
+MariaDB [(none)]> show tables;
+MariaDB [(none)]> select * from Employee;
+MariaDB [(none)]> quit;
+```
+
 ### /dev/null 
 Cygwin /dev/null equivalent :  
 `$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
