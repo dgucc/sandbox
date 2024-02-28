@@ -589,7 +589,20 @@ parse_git_branch() {
 # \[\e[1;33m\]\w\n	— current working directory in yellow + newline
 # \[\e[32m\]\u@\h	— user and host in green
 # \e[0;31m$(parse_git_branch)\[\033[37m\]	— git branch name in red + following in grey
-export PS1="\[\e[1;33m\]\w\n\[\e[1;36m\]\[\e[0m\]\[\e]0;\w\a\]\[\e[32m\]\u@\h\e[0;31m$(parse_git_branch)\[\033[37m\] $ "     
+export PS1="\[\e[1;33m\]\w\n\[\e[1;36m\]\[\e[0m\]\[\e]0;\w\a\]\[\e[32m\]\u@\h\e[0;31m$(parse_git_branch)\]\[\033[37m\] $ "
+# OR
+PS1=""
+PS1="$PS1"'\[\e[1;33m\]\w'			# yellow working directory
+PS1="$PS1"'\n'                  		# new line
+PS1="$PS1"'\[\e[1;36m\]'        		# 
+PS1="$PS1"'\[\e[0m\]'           		# 
+PS1="$PS1"'\[\e]0;\w\a\]'       		# 
+PS1="$PS1"'\[\e[32m\]'          		# change to green
+PS1="$PS1"'\u@\h'               		# user@host
+PS1="$PS1"'\e[0;31m$(parse_git_branch)\]'	# function to detect git repository
+PS1="$PS1"'\[\033[37m\]'        		# 
+PS1="$PS1"' $ '                 		# 
+export PS1="$PS1"   
 ```
 Reload .bashrc  
 `$ source ~/.bashrc` 
