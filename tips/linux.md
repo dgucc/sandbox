@@ -657,7 +657,7 @@ $ mysql_install_db
 # start server
 $ mysqld_safe
 
-$ mysql -u root -p
+$ mysql -u root -p < employees.sql
 Enter password:
 MariaDB [(none)]> show databases;
 MariaDB [(none)]> use test;
@@ -665,6 +665,8 @@ MariaDB [(none)]> show tables;
 MariaDB [(none)]> select * from Employee;
 MariaDB [(none)]> quit;
 ```
+[test_db](https://github.com/datacharmer/test_db)
+`$  mysql -u root -p < employees.sql` 
 
 ### /dev/null 
 Cygwin /dev/null equivalent :  
