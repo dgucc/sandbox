@@ -39,6 +39,18 @@ How-to git pull over all subdirectories
 find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull origin main \;
 ```
 
+## Resolve conflict with binary files
+
+```bash
+$ git checkout branch1
+$ git merge branch2
+# Merge conflict in book.xlsx...
+$ git checkout --theirs book.xls
+$ git add book.xls
+$ git commit -m 'Resolve conflict by keeping the branch2 version'
+$ git merge branch2
+```
+
 ## Git Pull Force
 
 [Git Pull Force – How to Overwrite Local Changes With Git](https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/)
