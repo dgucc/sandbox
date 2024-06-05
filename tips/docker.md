@@ -287,3 +287,29 @@ curl --request POST \
 --form files=@footer.html \
 -o demo.pdf
 ```
+
+[wkhtmltopdf](https://hub.docker.com/r/grouptree/wkhtmltopdf-service)  
+
+```
+$ sudo docker pull grouptree/wkhtmltopdf-service
+$ sudo docker run -itd --rm -p 3000:3000 grouptree/wkhtmltopdf-service
+```
+
+```
+$ curl -X POST -o demo.pdf -H "Content-Type: application/json" \
+--data '{
+	"url": "https://wkhtmltopdf.org/usage/wkhtmltopdf.txt",
+	"options": {
+		"margin-bottom": "1cm",
+		"header-right":"[date] [time]",
+		"header-font-size":"8",
+		"footer-center":"[page]/[topage]",
+		"footer-font-size":"7"
+	}
+}' \
+http://localhost:3000
+```
+Or
+```
+$ curl -X POST -o demo.pdf -H "Content-Type: application/json" --data @data.json  http://localhost:3000
+```
