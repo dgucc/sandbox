@@ -150,7 +150,8 @@ Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :
 `$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
 
 Sed multi-line mode :  
-sed -e '1h;2,$H;$!d;g' -e 's///g'  
+`sed -e '1h;2,$H;$!d;g' -e 's/\n/\t/g'`  
+
 1h: put first line in the "hold" space (sed has 2 spaces: 1 hold space to keep data and the pattern space: actual processed line)  
 1d: delete first line  
 $!H: append all lines BUT the last one (and the first one since d command skips to the next line) into the "hold" space  
