@@ -145,6 +145,11 @@ Surrounding "[...]" :
 Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :  
 `$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
 
+Sed multi-line mode :  
+`$echo -e "Lorem ipsum\r\ndolor sit amet\r\nconsectetur adipiscing elit" | sed -e '1h;2,$H;$!d;g' -e 's/\r\n/;/g'`   
+> Lorem ipsum;dolor sit amet;consectetur adipiscing elit
+
+
 Split into smaller files :  
 ```
 # -l : nb lines
