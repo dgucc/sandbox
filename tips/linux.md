@@ -8,6 +8,7 @@
   - [Digest](#digest)
   - [Dates](#dates)
   - [File manipulations](#file-manipulations)
+  - [Text manipulations](#text-manipulations)
   - [ssh](#ssh)
   - [StarDict + wiktionnaire](#stardict--wiktionnaire)
   - [Calibre](#calibre)
@@ -125,6 +126,7 @@ Renaming files + format number :
 Counting records in csv files for given field :  
 `$ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' | bc`-1 | bc)" ; done`  
 
+
 Skip 1st line :  
 `$ tail -n + 2 filename`
 
@@ -136,6 +138,8 @@ GREP : extract substring between double quotes
 option : -o, --only-matching  
 `$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
 
+## Text manipulations  
+
 Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
 
@@ -146,6 +150,13 @@ Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :
 `$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
 
 Sed multi-line mode :  
+sed -e '1h;2,$H;$!d;g' -e 's///g'  
+1h: put first line in the "hold" space (sed has 2 spaces: 1 hold space to keep data and the pattern space: actual processed line)  
+1d: delete first line  
+$!H: append all lines BUT the last one (and the first one since d command skips to the next line) into the "hold" space  
+$!d: delete (do not print) all lines except the last one  
+g: Append a newline to the contents of the pattern space  
+
 `$echo -e "Lorem ipsum\r\ndolor sit amet\r\nconsectetur adipiscing elit" | sed -e '1h;2,$H;$!d;g' -e 's/\r\n/;/g'`   
 > Lorem ipsum;dolor sit amet;consectetur adipiscing elit
 
