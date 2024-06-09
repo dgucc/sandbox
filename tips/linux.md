@@ -75,7 +75,7 @@ Themes > Settings :
 
 ## No Numpad
 
-AutoAction : to re-assign keys combination (eg : Alt+W = 1, Alt+X = 2, etc.)  
+install autokey-gtk : to re-assign keys combination (eg : Alt+W = 1, Alt+X = 2, etc.)  
 
 ## Digest  
 
