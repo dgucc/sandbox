@@ -5,6 +5,7 @@
   - [grub-customizer](#Grub-Customizer)
   - [Linux file system structure](#linux-file-system-structure)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
+  - [No Numpad](#no-numpad)
   - [Digest](#digest)
   - [Dates](#dates)
   - [File manipulations](#file-manipulations)
@@ -71,6 +72,10 @@ $ sudo apt-get remove --purge dotnet-sdk-6.0
 [Make scroll bars visible](https://www.technipages.com/linux-mint-make-scroll-bars-visible/)
 Themes > Settings :  
 ![image](images/mint-scroll-bars.png)  
+
+## No Numpad
+
+AutoAction : to re-assign keys combination (eg : Alt+W = 1, Alt+X = 2, etc.)  
 
 ## Digest  
 
