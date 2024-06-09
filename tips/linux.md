@@ -108,6 +108,12 @@ Substraction
 
 `$ cal 2 2016 | tail -n +3 | cut -c 3-17 | tr ' ' '\n' | grep -v '^$' | sort -n | wc -l | head -n 1`
 
+### Time duration
+
+`$ date +%H:%M:%S -ud $(echo @$(expr $(date +%s -d 06:46:00) - $(date +%s -d 05:36:11)))`
+
+> Output : 01:09:49
+
 ---
 ## File manipulations  
 
