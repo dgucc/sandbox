@@ -6,6 +6,7 @@
   - [Linux file system structure](#linux-file-system-structure)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
   - [No Numpad](#no-numpad)
+  - [Test Microphone](#test-microphone)
   - [Digest](#digest)
   - [Dates](#dates)
   - [File manipulations](#file-manipulations)
@@ -76,6 +77,11 @@ Themes > Settings :
 ## No Numpad
 
 install autokey-gtk : to re-assign keys combination (eg : Alt+W = 1, Alt+X = 2, etc.)  
+
+## Test Microphone
+
+`$ arecord -d 5 test.wav` 
+`$ aplay test.wav`  
 
 ## Digest  
 
