@@ -131,6 +131,16 @@ or
 Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
+For loop with multiple file extensions :  
+```bash
+shopt -s nullglob
+for file in ./*.{txt, md, html}
+do
+   echo "$file"
+done
+shopt -u nullglob 
+```
+
 Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
 
