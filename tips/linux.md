@@ -12,6 +12,7 @@
   - [Digest](#digest)
   - [Dates](#dates)
   - [File manipulations](#file-manipulations)
+  - [Sort images by orientation ](#sort-images-by-orientation)
   - [Text manipulations](#text-manipulations)
   - [ssh](#ssh)
   - [StarDict + wiktionnaire](#stardict--wiktionnaire)
@@ -177,6 +178,36 @@ GREP : Get lines Before|After pattern
 GREP : extract substring between double quotes   
 option : -o, --only-matching  
 `$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
+
+
+## Sort images by orientation
+```bash
+#!/bin/bash
+# use imagemagick's identify with the fx special operator
+# to compare height and width eg. check h/w ratio
+
+mkdir -p ./portrait
+mkdir -p ./landscape
+
+shopt -s nullglob # to avoid error with extension not found
+shopt -s nocaseglob # case insensitive
+
+for file in ./*.{jpg,jpeg,png}
+do
+	ratio=$(identify -format '%[fx:(h>w)]' "$file")
+	if [[ ratio -eq 1 ]] 
+	then
+		mv "$file" ./portrait/
+	else
+		mv "$file" ./landscape/
+	fi
+done
+
+shopt -u nullglob # unset nullglob
+shopt -u nocaseglob # unset nocaseglob
+
+```
+
 
 ## Text manipulations  
 
