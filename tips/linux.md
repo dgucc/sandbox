@@ -91,7 +91,7 @@ install autokey-gtk : to re-assign keys combination (eg : Alt+W = 1, Alt+X = 2, 
 
 ## Test Microphone
 
-`$ arecord -d 5 test.wav` 
+`$ arecord -d 5 test.wav`  
 `$ aplay test.wav`  
 
 ## Digest  
