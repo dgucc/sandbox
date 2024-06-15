@@ -3,7 +3,8 @@
 - [Linux Tips](#linux-tips)
   - [Linux version](#linux-version)
   - [grub-customizer](#Grub-Customizer)
-  - [Free disk space](#free-disk-space)
+  - [Free up disk space](#free-disk-space)
+  - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
   - [No Numpad](#no-numpad)
@@ -50,10 +51,19 @@ How to change Default kernel version &rarr; [grub-customizer](https://tipsonubun
 Uninstall :   
 `$ sudo apt-get remove --autoremove grub-customizer`   
 
-## Free disk space
+## Free up disk space
 
 Remove no longer needed packages :   
 `$ sudo apt-get autoremove`  
+
+Remove old kernels :  
+`$ sudo apt-get autoremove --purge`  
+
+## Uninstall 
+
+`$ apt list --installed`  
+`$ sudo apt-get remove --purge dotnet-sdk-6.0`  
+
 
 ## Linux file system structure
 
@@ -67,12 +77,7 @@ Remove no longer needed packages :
 ## Browse from Computer Level
 URI : `computer:///`  
 
-## Free up disk space : remove old kernels  
-$ sudo apt-get autoremove --purge  
 
-## Uninstall 
-$ apt list --installed  
-$ sudo apt-get remove --purge dotnet-sdk-6.0  
 
 ## Scroll bars visible
 
