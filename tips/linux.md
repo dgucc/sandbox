@@ -18,7 +18,7 @@
   - [StarDict + wiktionnaire](#stardict--wiktionnaire)
   - [Calibre](#calibre)
   - [wget](#wget)
-  - [Time duration](#time-duration)
+  - [Compute Time duration](#compute-time-duration)
   - [ffmpeg](#ffmpeg)
   - [Basic calculation](#basic-calculation)
   - [Gimp](#gimp)
@@ -393,7 +393,7 @@ Basic authentication :
 
 ---
 
-## Time duration
+## Compute Time duration
 ```
 START=$(date +%s -d 05:36:11)
 END=$(date +%s -d 06:46:00) 
