@@ -667,6 +667,8 @@ And add the following line to your ~/.inputrc:
 
 ### Customize cygwin prompt
 
+#### Manually (buggy)  
+
 Edit .bashrc to define PS1 variable :   
 ```bash
 # function to detect git repository
@@ -696,6 +698,16 @@ Reload .bashrc
 `$ source ~/.bashrc` 
 
 ![image](images/cygwin-prompt.png)  
+
+
+#### using git-prompt.sh (saver option)
+
+.bashrc :  
+```
+unset PS1
+unset __git_ps1
+source "/cygdrive/c/Program Files/Git/etc/profile.d/git-prompt.sh"
+```
 
 ### Keyboard shortcuts  
 Alt + b : backward previous word  
