@@ -35,6 +35,41 @@ var chaine = "À côté d'un verre vide, il y a toujours un mec plein.";
 alert( chaine.sansAccent() );
 ```
 
+## jq : json query 
+
+Filter output for selected fields :  
+`$ jq -r '[ .[] | {id: .id, field1: .field1} ]' file.json `  
+
+Filter array by range :  
+`$ jq -r '[ .[293:296] | .[] | {id: .id, field1: .field1} ]' file.json`  
+
+Export to csv (problem if order of columns matters) :  
+
+`$ jq -r -f filter.jq file.json > out.csv`  
+
+```
+ filter.jq :
+def tocsv:
+    (map(keys)
+        |add
+        |unique
+    ) as $cols
+    |map(. as $row
+        |$cols
+        |map($row[.]|tostring)
+    ) as $rows
+    |$cols,$rows[]
+    | @csv;
+tocsv
+```
+or (one-line)  
+`$ jq 'map(. | .id, .field1, .field2 | tostring) | @csv' input.json > output.csv`  
+
+`$ jq -r '.[] | [.field1, .field2, .field3] | @csv' input.json > output.csv`  
+
+some arithmetic on fields :  
+`$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
+
 ## PDf : workaround for html2pdf to download pdf with javascript : Base64
 
 ```
