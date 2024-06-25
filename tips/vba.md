@@ -15,6 +15,16 @@ Public Function checkDigitRRN(ByVal target As Range) As Integer
 End Function
 ```
 
+Write to File (UTF-8) :  
+
+```vba
+Sub writeToFile(fileName As String, strLine As String)
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set out = fso.CreateTextFile(fileName, True, True) ' filename, overwrite:true, unicode:true
+    out.WriteLine strLine
+    out.Close
+End Sub
+```
 
 Write to Log :  
 ```vba
