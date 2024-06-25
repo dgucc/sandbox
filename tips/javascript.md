@@ -70,6 +70,17 @@ or (one-line)
 some arithmetic on fields :  
 `$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
 
+File encoding may cause problem  
+
+> Check file encoding  
+
+`$ file -i config.json` 
+
+> Change encoding   
+
+`$ iconv -f UTF-16 -t UTF-8 file.json -o file.json`  
+
+
 ## PDf : workaround for html2pdf to download pdf with javascript : Base64
 
 ```
