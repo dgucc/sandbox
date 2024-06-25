@@ -15,7 +15,7 @@ Public Function checkDigitRRN(ByVal target As Range) As Integer
 End Function
 ```
 
-Write to File (unicode : UTF-16 LE BOM) :  
+Write to File (unicode : UTF-16 LE BOM Grrrrrr) :  
 
 ```vba
 Sub writeToFile(fileName As String, strLine As String)
