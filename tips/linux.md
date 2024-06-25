@@ -573,6 +573,15 @@ or (one-line)
 some arithmetic on fields :  
 `$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
 
+jq may encouter issues with file encoding...
+
+> Check file encoding  
+
+`$ file -i config.json` 
+
+> Change encoding   
+
+`$ iconv -f UTF-16 -t UTF-8 file.json -o file.json`  
 ---  
 ## keyboard
 
