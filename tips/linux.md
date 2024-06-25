@@ -577,11 +577,12 @@ jq may encouter issues with file encoding...
 
 > Check file encoding  
 
-`$ file -i config.json` 
+`$ file -i file.json` 
 
 > Change encoding   
 
-`$ iconv -f UTF-16 -t UTF-8 file.json -o file.json`  
+`$ iconv -f UTF-16 -t UTF-8 file.json -o file.json` 
+
 ---  
 ## keyboard
 
