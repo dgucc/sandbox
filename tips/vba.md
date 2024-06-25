@@ -19,8 +19,10 @@ Write to File (UTF-8) :
 
 ```vba
 Sub writeToFile(fileName As String, strLine As String)
+Dim outputFile As String
+    outputFile = Replace(ThisWorkbook.FullName, ThisWorkbook.Name, "", 1, 1, vbTextCompare) & fileName
     Set fso = CreateObject("Scripting.FileSystemObject")
-    Set out = fso.CreateTextFile(fileName, True, True) ' filename, overwrite:true, unicode:true
+    Set out = fso.CreateTextFile(outputFile, True, True) ' filename, overwrite:true, unicode:true
     out.WriteLine strLine
     out.Close
 End Sub
