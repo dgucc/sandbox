@@ -480,6 +480,16 @@ Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)
 
 ---
 
+## Slow down | Speed up GIF with ImageMagick  
+
+`$ identify -verbose test.gif | grep Delay`  
+> Delay: 10x200
+10 hundredths of a second delay between each frame  
+
+`$ convert -delay 20x200 test.gif test_slow.gif`   
+
+---
+
 ## Basic calculation  
 
 `$ echo "2^10" | bc`
