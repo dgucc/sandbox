@@ -76,12 +76,12 @@ File encoding may cause problem
 
 `$ file -i config.json` 
 
-> Change encoding   
+> Change encoding    
 
-`$ iconv -f UTF-16 -t UTF-8 file.json -o file.json`  
+`$ iconv -f UTF-16 -t UTF-8 file.json > file-new.json`  
 
 
-## PDf : workaround for html2pdf to download pdf with javascript : Base64
+## PDf : workaround for html2pdf to download pdf with javascript : Ba>se64
 
 ```
 http://localhost:8080/api/pdf/get/html/base64/
