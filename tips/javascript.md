@@ -72,21 +72,27 @@ some arithmetic on fields :
 
 File encoding may prevent jq to work properly
 
-> Check file encoding  
+## iconv
+
+Check file encoding  
 
 `$ file -i file.json` 
 
-> Change encoding    
+> file.json: text/plain; charset=utf-16le
+
+Change file encoding    
 
 `$ iconv -f UTF-16LE -t UTF-8 file.json > file-new.json`  
+
 Or (with TRANSLIT)   
+
 `$ iconv -f UTF-16LE -t UTF-8//TRANSLIT file.json > file-new.json`  
+
 Or (script version)   
+
 ```
 #!/usr/bin/bash
-
 # Force file encoding to UTF-8
-
 for file in $(ls *.json) 
 do
 	# get previous encoding by parsing file output
@@ -101,7 +107,9 @@ do
 	file -i "${file%.json}_new.json"
 done
 ```
+
 Or (by using vim in "ex" and "silen" mode)    
+
 `$  vim -es '+set fileencoding=utf-8' '+wq!' file.json `  
 
 
