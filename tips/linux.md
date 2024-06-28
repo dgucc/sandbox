@@ -585,11 +585,13 @@ some arithmetic on fields :
 
 File encoding may prevent jq to work properly
 
-> Check file encoding  
+Check file encoding  
 
 `$ file -i file.json` 
 
-> Change encoding    
+> file.json: text/plain; charset=utf-16le
+
+Change file encoding    
 
 `$ iconv -f UTF-16LE -t UTF-8 file.json > file-new.json`  
 
