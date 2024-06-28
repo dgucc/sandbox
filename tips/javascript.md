@@ -70,15 +70,39 @@ or (one-line)
 some arithmetic on fields :  
 `$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
 
-File encoding may cause problem  
+File encoding may prevent jq to work properly
 
 > Check file encoding  
 
-`$ file -i config.json` 
+`$ file -i file.json` 
 
 > Change encoding    
 
-`$ iconv -f UTF-16 -t UTF-8 file.json > file-new.json`  
+`$ iconv -f UTF-16LE -t UTF-8 file.json > file-new.json`  
+Or (with TRANSLIT)   
+`$ iconv -f UTF-16LE -t UTF-8//TRANSLIT file.json > file-new.json`  
+Or (script version)   
+```
+#!/usr/bin/bash
+
+# Force file encoding to UTF-8
+
+for file in $(ls *.json) 
+do
+	# get previous encoding by parsing file output
+	# input.json: text/plain; charset=utf-16le
+	ENC_FROM=$(file -i $file | cut -d';' -f2 | cut -d'=' -f2)	
+	
+	# //TRANSLIT if supported (cf. iconv version)
+	ENC_TO=UTF-8//TRANSLIT
+	iconv -f ${ENC_FROM} -t ${ENC_TO} $file > "${file%.json}_new.json"
+	
+	# Check result
+	file -i "${file%.json}_new.json"
+done
+```
+Or (by using vim in "ex" and "silen" mode)    
+`$  vim -es '+set fileencoding=utf-8' '+wq!' file.json `  
 
 
 ## PDf : workaround for html2pdf to download pdf with javascript : Ba>se64
