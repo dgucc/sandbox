@@ -753,7 +753,7 @@ Reload .bashrc
 ![image](images/cygwin-prompt.png)  
 
 
-#### using git-prompt.sh (saver option)
+#### using git-prompt.sh (safer option)
 
 .bashrc :  
 ```
