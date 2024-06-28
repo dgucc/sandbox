@@ -821,18 +821,21 @@ $ mkdir /var/lib/mysql
 $ mysql_install_db 
 
 # start server
-$ mysqld_safe
+$ mysqld_safe &
+```
 
+[test_db](https://github.com/datacharmer/test_db)
+
+```bash
 $ mysql -u root -p < employees.sql
 Enter password:
 MariaDB [(none)]> show databases;
-MariaDB [(none)]> use test;
+MariaDB [(none)]> use employees;
 MariaDB [(none)]> show tables;
-MariaDB [(none)]> select * from Employee;
+MariaDB [(none)]> select count(*) from Employee;
 MariaDB [(none)]> quit;
 ```
-[test_db](https://github.com/datacharmer/test_db)
-`$  mysql -u root -p < employees.sql` 
+databases folder : cygwin64/var/lib/mysql/  
 
 ### /dev/null 
 Cygwin /dev/null equivalent :  
