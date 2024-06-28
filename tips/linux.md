@@ -27,7 +27,8 @@
   - [GPG error](#gpg-error)
   - [Sublime Text](#sublime-text)
   - [Curl to test Rest API :](#curl-to-test-rest-api-)
-  - [jq : json query](#jq--json-query)  
+  - [jq : json query](#jq--json-query)
+  - [iconv](#iconv)
   - [Nintendo Switch Pro Controller on Linux](#Nintendo-Switch-Pro-Controller-on-Linux)
   - [cygwin tips](#cygwin-tips)
 
@@ -584,6 +585,8 @@ some arithmetic on fields :
 `$ jq -r '.[] | [.field1, .field2, (.fieldX | tonumber)+(.fieldY | tonumber)] | @csv ' input.json > output.csv`  
 
 File encoding may prevent jq to work properly
+
+## iconv
 
 Check file encoding  
 
