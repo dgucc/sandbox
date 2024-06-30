@@ -536,11 +536,30 @@ oneline
 	    A device with a name like "Monitor of Built-in Audio Analog" will most likely record the system audio, 
 	    while something with "microphone" in the description will most likely be a microphone.  
 
-Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)  
+- Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)  
 
 `$ ffmpeg -list_devices true -f dshow -i dummy` 
 
 `$ ffmpeg -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Microphone Array (Realtek(R) Audio)" -crf 28  -filter:a "volume=1.5" -vcodec libx264 output.mp4`  
+
+
+- Extract images from gif
+
+[creatomate](https://creatomate.com/blog/how-to-extract-images-from-a-video-using-ffmpeg)  
+[bannerbear](https://www.bannerbear.com/blog/how-to-extract-images-from-a-video-using-ffmpeg/)  
+
+Get informations  
+`$ ffmpeg -i input.gif`  
+
+Basic extraction  
+`$ ffmpeg -i input.gif frame%04d.png`  
+
+Extract every seconds  
+`$ ffmpeg -i input.gif -vf fps=1 frame%04d.png`  
+
+Extract at given time  
+`$ ffmpeg -ss 5 -to 8 -i input.gif frame%04d.png`  
+
 
 ---
 
@@ -552,7 +571,6 @@ Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)
 
 `$ convert -delay 20x200 test.gif test_slow.gif`   
 
-[Extract images from gif](https://creatomate.com/blog/how-to-extract-images-from-a-video-using-ffmpeg)  
 
 
 ---
