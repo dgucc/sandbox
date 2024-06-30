@@ -7,6 +7,7 @@
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
+  - [Enable WiFi](#enable-wifi)
   - [No Numpad](#no-numpad)
   - [Test Microphone](#test-microphone)
   - [Digest](#digest)
@@ -79,6 +80,68 @@ Remove old kernels :
 ## Browse from Computer Level
 URI : `computer:///`  
 
+## Enable WiFi
+
+[How to enable Wifi drivers in Linux](https://www.youtube.com/watch?v=X2rFkqyD0oY)  
+
+Collect informations  
+```bash
+$ ifconfig -a
+
+$ ip a
+
+$ iwconfig
+
+```
+
+Collect Drivers Infos
+
+```bash
+# -knn : kernel, vendor, vendor codes
+$ lspci -knn | grep Network -A5
+
+	00:14.3 Network controller [0280]: Intel Corporation Device [8086:43f0] (rev 11)
+		DeviceName: Onboard - Ethernet
+		Subsystem: Intel Corporation Device [8086:0074]
+		Kernel driver in use: iwlwifi
+		Kernel modules: iwlwifi
+	...
+
+```
+OR
+
+```bash
+$ sudo lshw -class network
+	*-network                 
+       description: Wireless interface
+	...
+       logical name: wlo1
+       ...
+
+```
+OR
+
+```bash
+$ inxi -N
+	Network:   Device-1: Intel driver: iwlwifi 
+	           Device-2: Realtek RTL8111/8168/8411 PCI Express Gigabit Ethernet driver: r8169 
+
+```
+
+Check if modules are loaded into the system  
+lsmod - shows the status of modules in the kernel  
+
+```bash
+$ lsmod | grep -e wl -e iwlwifi
+	...
+	iwlwifi               335872  1 iwlmvm
+
+# modprobe - add and remove modules from the kernel
+$ sudo modprobe iwlwifi
+
+$ lsmod | grep -e wl -e iwlwifi
+
+```
 
 
 ## Scroll bars visible
