@@ -490,16 +490,18 @@ oneline
 
 - [Screen recording](https://www.wikihow.com/Record-Your-Desktop-Using-FFmpeg-on-Ubuntu-Linux)
 
-	no sound[^screen_size]  
+	no sound
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -c:v libx264rgb -crf 30 -preset ultrafast sample.mkv`  
 
-	with sound[^ffmpeg_params]  
+	with sound
 `$ ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f pulse -filter_complex amerge -ac 2 -i 0 -f pulse -ac 2 -i 1 -c:v libx264rgb -crf 0 -preset ultrafast sample.mp4`  
 
-[^screen_size]:
+<details>
+	<summary>Details</summary>
+[screen_size]:
 	Find out screen size : `$ xdpyinfo | grep dimensions` 
 
-[^ffmpeg_params]:
+[ffmpeg_params]:
 	**-video_size**
 	    specifies the size of the recorded area. 
 	    If you have a different screen size, use that instead of 1920x1080. 
@@ -535,6 +537,7 @@ oneline
 	    The other output of the command will give you an explanation of what that audio device is for. 
 	    A device with a name like "Monitor of Built-in Audio Analog" will most likely record the system audio, 
 	    while something with "microphone" in the description will most likely be a microphone.  
+</details>
 
 - Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)  
 
