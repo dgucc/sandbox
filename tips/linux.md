@@ -552,6 +552,9 @@ Cygwin + microphone (first : enable "Stereo Mix" mmsys.cpl)
 
 `$ convert -delay 20x200 test.gif test_slow.gif`   
 
+[Extract images from gif](https://creatomate.com/blog/how-to-extract-images-from-a-video-using-ffmpeg)  
+
+
 ---
 
 ## Basic calculation  
