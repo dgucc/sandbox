@@ -64,9 +64,12 @@ Remove old kernels :
 
 ## Uninstall 
 
+from apt-get  
 `$ apt list --installed`  
 `$ sudo apt-get remove --purge dotnet-sdk-6.0`  
 
+from source  
+`$ make uninstall` or `sudo make uninstall`    
 
 ## Linux file system structure
 
