@@ -290,14 +290,23 @@ Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :
 Sed multi-line mode :  
 `sed -e '1h;2,$H;$!d;g' -e 's/\n/\t/g'`  
 
-1h: put first line in the "hold" space (sed has 2 spaces: 1 hold space to keep data and the pattern space: actual processed line)  
-1d: delete first line  
-$!H: append all lines BUT the last one (and the first one since d command skips to the next line) into the "hold" space  
-$!d: delete (do not print) all lines except the last one  
-g: Append a newline to the contents of the pattern space  
+```
+# 1h: put first line in the "hold" space (sed has 2 spaces: 1 hold space to keep data and the pattern space: actual processed line)  
+# 1d: delete first line  
+# $!H: append all lines BUT the last one (and the first one since d command skips to the next line) into the "hold" space  
+# $!d: delete (do not print) all lines except the last one  
+# g: Append a newline to the contents of the pattern space  
+```
 
 `$echo -e "Lorem ipsum\r\ndolor sit amet\r\nconsectetur adipiscing elit" | sed -e '1h;2,$H;$!d;g' -e 's/\r\n/;/g'`   
 > Lorem ipsum;dolor sit amet;consectetur adipiscing elit
+
+Alternative : 'N;s/pattern/replace/;P;D'  
+```
+# "N" read next line too
+# "P" print result 
+# "D" delete red next line (already red).
+```
 
 
 Split into smaller files :  
