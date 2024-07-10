@@ -68,6 +68,14 @@ from apt-get
 `$ apt list --installed`  
 `$ sudo apt-get remove --purge dotnet-sdk-6.0`  
 
+Uninstall .NET  
+`$ sudo apt-get purge dotnet-sdk-*`  
+`$ sudo apt-get purge dotnet-runtime-*`  
+or  
+`$ sudo apt remove --purge dotnet-sdk-6.0`  
+`$ sudo apt remove --purge dotnet-runtime-6.0`  
+
+
 from source  
 `$ make uninstall` or `sudo make uninstall`    
 
