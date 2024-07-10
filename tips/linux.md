@@ -223,6 +223,18 @@ shopt -u nullglob
 Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
 
+Insert 'commit;' every 1000 lines
+```bash
+#!/usr/bin/bash
+total=$(wc -l input.txt | cut -f 1 -d' ')
+subtotal=$total
+slice=1000
+while [ $subtotal -gt $slice ] ; do
+   subtotal=$(($subtotal-$slice))
+   cat input.txt | sed -i "${subtotal}a commit;" input.txt
+done
+```
+
 Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
