@@ -223,6 +223,12 @@ shopt -u nullglob
 Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
 
+Insert one line at the top of a file :  
+`$ cat memo.sh | sed '1 i EXTRA_TOP_LINE'` 
+
+Append one line at the end of a file :  
+`$ cat memo.sh | sed '1 a EXTRA_BOTOOM_LINE'`  
+
 Insert 'commit;' every 1000 lines
 ```bash
 #!/usr/bin/bash
