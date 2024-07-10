@@ -189,6 +189,10 @@ Substraction
 `$  date --date="15 days ago" +"%d-%m-%Y"`  
 > 15-02-2023  
 
+### Get lastdate of a month
+`$ date --date="20040201 +1 Months -1 days" +%Y%m%d` 
+
+
 ### Count working days (excluding WE)
 
 `$ cal 2 2016 | tail -n +3 | cut -c 3-17 | tr ' ' '\n' | grep -v '^$' | sort -n | wc -l | head -n 1`
@@ -219,6 +223,13 @@ do
 done
 shopt -u nullglob 
 ```
+
+Change modification date :  
+`$ touch -d "2004-02-29 12:34" filename` 
+
+Find file modified less than a day ago :  
+`$ find . -name '*.csv' -ctime -1`  
+
 
 Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
@@ -263,6 +274,15 @@ GREP : Get lines Before|After pattern
 GREP : extract substring between double quotes   
 option : -o, --only-matching  
 `$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
+
+
+Find lines in common between 2 SORTED files :  
+`$ join file1.txt file2.txt`  
+
+Find lines not in common with grep :  
+-v : invert matching  
+`$  grep -vf file1.txt file2.txt ` only in file1.txt   
+`$  grep -vf file2.txt file1.txt ` only in file2.txt  
 
 
 ## Sort images by orientation
