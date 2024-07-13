@@ -9,6 +9,9 @@ powershell as admin
 Right Click > New > Shortcut  
 `C:\Windows\explorer.exe shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}`  
 
+## God Mode
+Create special folder : `GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}`  
+
 ## Open CMD or PowerShell from any folder  
 `Shift + Right-Click` on folder in File Explorer...  
 
