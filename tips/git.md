@@ -91,7 +91,7 @@ Display comments only
 %s for the subject  
 %b for the body;  
 %B for both  
-`git --no-pager log --pretty=format:%s` 
+`git --no-pager log --pretty=format:"%cs: %s [%H]"` 
 
 Git GUI : visualize all branch history  
 `gitk --all` 
