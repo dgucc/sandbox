@@ -62,6 +62,57 @@ git fetch
 git reset --hard HEAD
 git merge '@{u}'
 ```
+---
+
+[GIT avancé : stash, revert, restore, reset](https://www.youtube.com/watch?v=Ayr17xFKMHU)
+
+## git commit --amend
+Modifier message du dernier commit  
+`git commit --amend -m 'message corrigé'` 
+
+
+## git stash : mettre de côté   
+## git stach pop : pour récupérer ce qui a été mis de côté  
+Mettre de côté ses modifs pour intervenir sur une autre branch  
+```
+	$ git stash
+	$ git checkout main
+	$ git add . 
+	$ git commit -m 'commit dans le main'
+	$ git checkout dev
+	$ git stash pop
+```
+
+## git restore
+Sortir des fichiers de la staging area  
+	`$ git restore --staged index.html` 
+
+Annuler les modifs uncommited et revenir à l'état du dernier commit  
+	`$ git restore --source=HEAD --staged --worktree index.html` 
+
+## git revert (new commit)
+Nouveau commit pour annuler et revenir au commit précédent  
+	`$ git revert <hash du commit à annuler>` 
+
+## git reset 
+Attention: reset (--soft --mixed et --hard) et rebase modifient l'histoire  
+Revenir à un commit précédent avec les fichiers modifiés dernièrement (en --unstaged)  
+HEAD~1 : un commit en arrière  
+	`$ git reset HEAD~1`   
+
+Revenir strictement à un commit sans aucun fichier modifié  
+	`$ git reset --hard HEAD~1`  
+
+## git rebase, cherry-pick	
+-i : Mode interactif  
+	`$ git rebase -i HEAD~6` 
+
+---------------------------------------
+`$ git diff HEAD`  
+
+# discard local changes
+$ git checkout -f HEAD
+$ git reset --hard HEAD~1
 
 ---
 
