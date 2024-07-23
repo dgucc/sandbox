@@ -26,3 +26,10 @@
     TEI, XML dictionaries according to TEI P5  
     wdweb, DBs used by the wikdict-web application at WikDict.com   
 
+## Windows
+
+[GoldenDict](https://portableapps.com/apps/education/goldendict_portable) + StarDict format
+
+## Android
+
+[ColorDict Off-line Dictionary](https://play.google.com/store/apps/details?id=com.socialnmobile.colordict&hl=en) + StarDict format
