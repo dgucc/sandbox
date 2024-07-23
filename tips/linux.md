@@ -1000,3 +1000,9 @@ column 12  FIELD12
 column 13  FIELD13
 # these columns are ignored (null) - they are useless 
 ```
+### Generate new GUID 
+Generate "-r" random UUID :  
+`$ uuidgen -r` 
+> 5758c27e-0995-4f8f-aa8c-d269b773102a  
+
+
