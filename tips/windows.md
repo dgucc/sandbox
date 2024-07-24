@@ -35,6 +35,13 @@ Download and unzip : officedeploymenttool_16731-20398.exe
 
 `(as admin)> Setup.exe /configure Configuration.xml`  
 
+Fix Activation Issue :  
+```
+(as admin) > CD C:\Program Files\Microsoft Office\Office16
+(as admin) > cscript ospp.vbs /sethst:kms.03k.org
+(as admin) > cscript ospp.vbs /act
+```
+
 ## Passwords  
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
