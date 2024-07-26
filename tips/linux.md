@@ -366,11 +366,13 @@ Split into smaller files :
 # -d : add autonum suffix
 # -a : nb of digits for suffix
 $ split -l 100 input.sql "baseFileName" -d -a 3 --additional-suffix=".sql"
-# append string "commit" in each file
-$ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done
-# append string "--EOF" in each file
-$ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done
 ```
+
+Append string "commit" in each file  
+`$ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done`  
+
+Append string "--EOF" in each file
+`$ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done` 
 
 Unwanted characters...  
 `$ iconv --unicode-subst="<U+%04X>" -f utf8 -t ascii input.xsd | tee temp/charset.xsd`  
