@@ -266,6 +266,11 @@ Renaming files + autonumber suffix :
 Renaming files + format number :
 `for file in $(ls -1 *.jpg | sort -n) ; do rename  -- 's/(\d+)/sprintf "%03d", $1/e' $file ; done`  
 
+Rename files extensions :  
+`$ find . -name "*.old" -exec bash -c 'mv "$1" "${1%.old}".new' - '{}' \;`  
+or  
+`$ find . -iname "*.old" -exec rename .old .new {} \;`   
+
 Counting records in csv files for given field :  
 ```bash
 $ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' | bc`-1 | bc)" ; done`
