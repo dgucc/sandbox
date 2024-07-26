@@ -111,8 +111,8 @@ Revenir strictement à un commit sans aucun fichier modifié
 `$ git diff HEAD`  
 
 # discard local changes
-$ git checkout -f HEAD
-$ git reset --hard HEAD~1
+`$ git checkout -f HEAD`  
+`$ git reset --hard HEAD~1` 
 
 ---
 
