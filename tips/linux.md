@@ -415,7 +415,7 @@ $ systemctl enable sshd
 ```
 ```bash
 $ ssh-keygen -t rsa
-[or ssh-keygen -t rsa -c user.name@gmail.com]
+[or ssh-keygen -t rsa -C user.name@gmail.com]
 [...]
 The key fingerprint is:
 SHA256:................................. username@local_hostname
