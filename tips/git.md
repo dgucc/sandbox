@@ -39,6 +39,8 @@ How-to git pull over all subdirectories
 find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull origin main \;
 ```
 
+---
+
 ## Resolve conflict with binary files
 
 ```bash
@@ -67,7 +69,7 @@ git merge '@{u}'
 [GIT avancé : stash, revert, restore, reset](https://www.youtube.com/watch?v=Ayr17xFKMHU)
 
 ## git commit --amend
-Modifier message du dernier commit  
+Modifier le dernier commit  (message et autres)
 `git commit --amend -m 'message corrigé'` 
 
 
@@ -89,6 +91,10 @@ Sortir des fichiers de la staging area
 
 Annuler les modifs uncommited et revenir à l'état du dernier commit  
 	`$ git restore --source=HEAD --staged --worktree index.html` 
+
+Récupérer fichiers supprimés par erreur  
+	`$ git checkout -f` 
+
 
 ## git revert (new commit)
 Nouveau commit pour annuler et revenir au commit précédent  
