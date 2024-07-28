@@ -135,23 +135,23 @@ Sachant qu'ils sont distants de 620 km, à quelle heure vont-ils se croiser?
 
 1. Distance restante
 
-	15 min = 1/4h à 80km/h
-	distance = 20km
+	15 min = 1/4h à 80km/h  
+	distance = 20km  
 
-	Donc, à 10h15, il reste 600km
+	Donc, à 10h15, il reste 600km  
 
 2. Vitesse de croisement
 
-	en 1h train A : 100km
-	en 1h train B : 80km
-	Donc, en 1h, les trains parcourent 180km
+	en 1h train A : 100km  
+	en 1h train B : 80km  
+	Donc, en 1h, les trains parcourent 180km  
 	
 3. Temps nécessaire parcourir 600km restant
 	
-	V = d/t (v : vitesse, d : distance, t : temps)
-	t = d/v = 600/180 = 10/3 h
-	t = 9/3 + 1/3 = 3 + 1/3 h
-	t = 3h20 (à partir de 10h15)
+	V = d/t (v : vitesse, d : distance, t : temps)  
+	t = d/v = 600/180 = 10/3 h  
+	t = 9/3 + 1/3 = 3 + 1/3 h  
+	t = 3h20 (à partir de 10h15)  
 
 
 **Solution** : 13h35
