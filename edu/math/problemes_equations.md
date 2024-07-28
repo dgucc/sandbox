@@ -89,6 +89,9 @@ Si tout le monde paie 7 euros, il y a 3 euros de trop.
 Si tout le monde paie 6 euros, il manque 16 euros.
 Combien sommes-nous ?
 
+7x - 3 = 6x +16  
+7x - 6x = 16 +3  
+x = 19  
 
 **solution** : 19 personnes pour 130 Euro
 
