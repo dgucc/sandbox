@@ -238,6 +238,8 @@ Change modification date :
 Find file modified less than a day ago :  
 `$ find . -name '*.csv' -ctime -1`  
 
+Replace text in multiple files :   
+`$ sed -i 's/old-text/new-text/g' *.* `
 
 Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
