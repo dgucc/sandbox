@@ -123,6 +123,7 @@ le plus grand : x+18
 
 **solution** : 2 et 20
 
+---
 
 [A quelle heure ces trains vont-ils se croiser?](https://www.youtube.com/watch?v=OgZs82KUzvE)
 
@@ -131,6 +132,8 @@ le plus grand : x+18
 Le train A roule à 100 km/h et démarre à 10h15.
 Le train B roule à  80 km/h et démarre à 10h.
 Sachant qu'ils sont distants de 620 km, à quelle heure vont-ils se croiser?
+
+
 
 **Solution** : 13h35
 
