@@ -63,6 +63,11 @@ Remove RegKey :
 
 `explorer.exe /e,/root,"C:\TEMP"`
 
+## Move or Rezize Window with Keyboard Shortcut
+
+`Alt`+`Space` : open title bar menu (Move, Size, ...)  
+
+
 ## Access to local network while using VPN 
 
 Enable split-tunneling :  
