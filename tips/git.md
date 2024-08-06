@@ -74,6 +74,8 @@ Modifier le dernier commit  (message et autres)
 
 
 ## git stash : mettre de côté   
+`$ git stash` 
+
 ## git stach pop : pour récupérer ce qui a été mis de côté  
 Mettre de côté ses modifs pour intervenir sur une autre branch  
 ```
