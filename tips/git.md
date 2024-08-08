@@ -181,7 +181,7 @@ set branchname=
 
 `> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\bin\cd-git.bat doskey cd=C:\bin\cd-git.bat $*'`  
 
-3. References
+3. References  
 [AutoRun](https://ss64.com/nt/syntax-autoexec.html)  
 [Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)  
 [Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)  
