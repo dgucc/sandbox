@@ -155,6 +155,37 @@ Display comments only
 Git GUI : visualize all branch history  
 `gitk --all` 
 
+## Show git branch in Windows Command Prompt 
+[stackoverflow](https://stackoverflow.com/questions/36047706/show-current-git-branch-name-in-windows-command-prompt)  
+
+1. C:\bin\maven-bin\cd-git.bat :  
+```bat
+@echo off
+CD %*
+where git >nul 2>&1
+if %errorlevel% neq 0 (
+	goto :eof
+)
+for /f "usebackq tokens=* delims=" %%g in (`git rev-parse --is-inside-work-tree ^>nul 2^>^&1 ^&^& git branch --show-current`) do (
+	set branchname=%%g
+)
+if "%branchname%"=="" (
+	prompt $p$g
+) else (
+	prompt $p $c$e[36m%branchname%$e[0m$f$_$$$s
+)
+set branchname=
+```
+
+2. AutoRun
+
+`> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\home\bin\maven-bin\cd-git.bat doskey cd=C:\bin\maven-bin\cd-git.bat $*'`  
+
+3. References
+[AutoRun](https://ss64.com/nt/syntax-autoexec.html)  
+[Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)  
+[Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)  
+
 ## Preview html page hosted in GitHub
 Prepend **https://htmlpreview.github.io/?**  to url  
 ex : https://htmlpreview.github.io/?https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
