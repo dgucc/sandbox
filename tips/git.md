@@ -158,7 +158,7 @@ Git GUI : visualize all branch history
 ## Show git branch in Windows Command Prompt 
 [stackoverflow](https://stackoverflow.com/questions/36047706/show-current-git-branch-name-in-windows-command-prompt)  
 
-1. C:\bin\maven-bin\cd-git.bat :  
+1. C:\bin\cd-git.bat :  
 ```bat
 @echo off
 CD %*
@@ -179,7 +179,7 @@ set branchname=
 
 2. AutoRun
 
-`> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\home\bin\maven-bin\cd-git.bat doskey cd=C:\bin\maven-bin\cd-git.bat $*'`  
+`> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\bin\cd-git.bat doskey cd=C:\bin\cd-git.bat $*'`  
 
 3. References
 [AutoRun](https://ss64.com/nt/syntax-autoexec.html)  
