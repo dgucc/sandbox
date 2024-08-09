@@ -3,68 +3,70 @@
 ## Keyboard Shortcuts
 
 Go to Declaration  
-	F4
+	`F4`
 
 Go to Implementation  
-	<Ctrl> + <Alt> + B
+	`<Ctrl> + <Alt> + B`  
 
 Find All Usages  
-	<Ctrl> + <Alt> + F7
+	`<Ctrl> + <Alt> + F7`
 
 Find in Files  
-	<Ctrl> + <Shift> + F
+	`<Ctrl> + <Shift> + F`
 
 ---
 Copy Absolute Path  
-	<Ctrl> + <Shift> + C
+	`<Ctrl> + <Shift> + C`
 
 ---  
 Add Bookmark  
-	F11
+	`F11`
 
 Show Bookmarks  
-	<Shift> + F11
+	`<Shift> + F11`
 
 ---
 
 Go to Line  
-	<Ctrl> + G  
+	`<Ctrl> + G`  
  
 ---
 Move line  
-	<Alt> + <Shift> + <Up>   
+	`<Alt> + <Shift> + <Up>`   
 	or  
-	<Alt> + <Shift> + <Down>  
+	`<Alt> + <Shift> + <Down>`  
 
 ---
 Comment In/Out  
-	<Ctrl> + / numpad  
+	`<Ctrl> + / numpad`  
 
 ---
 Format Code  
-	<Ctrl> + <Alt> + L  
+	`<Ctrl> + <Alt> + L`  
 
 ---
 Build Project  
-	<Ctrl> + <F9>  
+	`<Ctrl> + <F9>`  
 
 ---
 Navigate backward | Forward  
-	<Ctrl> + <Alt> + <Left> or <Right>  
+	`<Ctrl> + <Alt> + <Left>`  
+ 	or  
+  	`<Ctrl> + <Alt> + <Right>`  
 
 ---
 
 ## PlantUML
 
 Install Plugins :  
-- PlantUML Diagram Generator
+- PlantUML Diagram Generator  
 - PlantUML Integration  
 
 Contextual Menu > Generate Diagram...   
 
 ## Custom configuration file (overwrite default settings)  
 
-%AppData%\Roaming\JetBrains\IdeaIC2023.3\idea64.exe.vmoptions
+%AppData%\Roaming\JetBrains\IdeaIC2023.3\idea64.exe.vmoptions  
 
 
 ## Add IntelliJ in contextual menu wit reg.exe  
