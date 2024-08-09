@@ -219,6 +219,13 @@ List only directories :
 or  
 `$ find . -type d -maxdepth 1`  
 
+"find *" instead of "find ." to remove leading dot :  
+
+`$ find * -iname "*.puml" -exec echo {} \;`  
+- hidden files omitted at top level   
+- not working with many files
+- not working with files starting with !,-,(,)  
+
 Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
