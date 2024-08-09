@@ -222,9 +222,11 @@ or
 "find *" instead of "find ." to remove leading dot :  
 
 `$ find * -iname "*.puml" -exec echo {} \;`  
+
+Drawbacks :   
 - hidden files omitted at top level   
-- not working with many files
-- not working with files starting with !,-,(,)  
+- not working with many many files
+- not working with files starting with `!, -, (, )`  
 
 Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
