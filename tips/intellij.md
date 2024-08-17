@@ -58,6 +58,8 @@ Navigate backward | Forward
 
 ## PlantUML
 
+`$ sudo apt-get install graphviz`  
+
 Install Plugins :  
 - PlantUML Diagram Generator  
 - PlantUML Integration  
