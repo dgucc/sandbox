@@ -1,12 +1,33 @@
 # Java
 
+## List all available versions of OpenJDK on Linux Mint.
+
+```shell
+$ sudo apt update
+$ apt-cache search openjdk
+```
+To install the default OpenJDK :  
+`$ sudo apt install default-jdk`  
+
+Or select a specific version :  
+`$ sudo apt install openjdk-17-jdk`  
+
+List of Java versions installed :  
+`$ sudo update-java-alternatives --list`  
+
+Set the default version :  
+`$ sudo update-alternatives --config java`  
+
+Check the default version:sam jui 27 16:13:02 CEST 2024   
+`$ java --version`  
+
  
 ## [Marshaller example](https://howtodoinjava.com/jaxb/marshaller-example/)
  "Marshaller Callback Methods"  
  "You can customize the marshalling operation by inside JAXB annotated class e.g. Employee.java. "  
  "You need to define two methods which will listen before and after the marshaller process that class. "  
  "In these methods, you can perform actions such as setting extra fields"  
-``` 
+```java 
 // Invoked by Marshaller after it has created an instance of this object.
 boolean beforeMarshal(Marshaller marshaller) {
 	System.out.println("Before Marshaller Callback");
