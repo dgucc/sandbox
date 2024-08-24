@@ -6,3 +6,11 @@ $ git push -u origin main
 
 # update local repository
 $ git pull origin main
+
+
+[TO TEST]
+## demo phishing
+[zphisher](https://github.com/htr-tech/zphisher)  
+
+## control Android from pc
+[scrcpy](https://github.com/Genymobile/scrcpy)
