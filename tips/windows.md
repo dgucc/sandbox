@@ -1,3 +1,7 @@
+## Windows 11 installation with local user
+When invited to connect to internet : SHIFT + F10  
+`(as admin)> OOBE\BYPASSNRO`  -> Restart installation procedure...  
+
 ## Free up disk space
 [12 best ways to free up hard drive space on Windows 10](https://www.windowscentral.com/best-ways-to-free-hard-drive-space-windows-10)  
 
