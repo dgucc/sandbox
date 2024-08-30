@@ -2,6 +2,17 @@
 When invited to connect to internet : SHIFT + F10  
 `(as admin)> OOBE\BYPASSNRO`  -> Restart installation procedure...  
 
+## Usefull commands 
+```
+services : sysmain
+sysdm.cpl
+cleanmgr
+appwiz.cpl
+lusrmgr.msc
+
+```
+
+
 ## Free up disk space
 [12 best ways to free up hard drive space on Windows 10](https://www.windowscentral.com/best-ways-to-free-hard-drive-space-windows-10)  
 
