@@ -6,6 +6,7 @@
   - [Free up disk space](#free-disk-space)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
+  - [unbound](#local-dns-unbound)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
   - [Enable WiFi](#enable-wifi)
   - [No Numpad](#no-numpad)
@@ -84,6 +85,76 @@ from source
 [youtube](https://www.youtube.com/watch?v=HbgzrKJvDRw)  
 [geeksforgeeks](https://www.geeksforgeeks.org/linux-file-hierarchy-structure/)  
 ![image](images/LinuxFileSystem.jpg)  
+
+## Local Dns Unbound
+
+Installer le paquet Unbound :  
+`$ sudo apt-get install unbound`  
+
+Téléchargement de la liste des serveurs DNS racines :  
+`$ cd /var/lib/unbound/ && wget ftp://ftp.internic.net/domain/named.cache`  
+
+Mise en place de cette liste pour le serveur Unbound  
+`$ mv named.cache root.hints && chown unbound:unbound root.hints`  
+
+Fichier de configuration  
+/etc/unbound/unbound.conf  
+
+```bash
+server:
+# Activer les logs
+verbosity: 1
+interface: 127.0.0.1
+port: 53
+do-ip4: yes
+do-ip6: no
+do-udp: yes
+do-tcp: yes
+access-control: 192.168.1.0/24 allow
+#emplacement du fichier serveurs DNS root
+#fichier à télécharger là à cette adresse: ftp://ftp.internet.net/domain/named.cache
+root-hints: "/var/lib/unbound/root.hints"
+auto-trust-anchor-file: "/var/lib/unbound/root.key"
+#Cacher les infos sur le serveur DNS
+hide-identity: yes
+hide-version: yes
+#paramètre limitant l'usurpation de DNS
+harden-glue: yes
+#Requérir les infos DNSSEC pour les zones de confiance
+harden-dnssec-stripped: yes
+use-caps-for-id: yes
+# Bloquer cetaines pubs
+local-zone: "doubleclick.net" redirect
+local-data: "doubleclick.net A 127.0.0.1"
+local-zone: "googlesyndication.com" redirect
+local-data: "googlesyndication.com A 127.0.0.1"
+local-zone: "googleadservices.com" redirect
+local-data: "googleadservices.com A 127.0.0.1"
+local-zone: "google-analytics.com" redirect
+local-data: "google-analytics.com A 127.0.0.1"
+local-zone: "ads.youtube.com" redirect
+local-data: "ads.youtube.com A 127.0.0.1"
+local-zone: "adserver.yahoo.com" redirect
+local-data: "adserver.yahoo.com A 127.0.0.1"
+local-zone: "ask.com" redirect
+local-data: "ask.com A 127.0.0.1"
+forward-zone:
+name: "."
+forward-addr: 208.67.222.222 #serveur DNS OpenDNS
+forward-addr: 208.67.220.220 #serveur DNS OpenDNS
+forward-addr: 8.8.8.8 #serveur DNS de google
+forward-addr: 8.8.4.4 #serveur DNS de google
+```
+
+Relance du service Unbound :  
+`$ systemctl restart unbound`
+
+Vérifier le status :  
+`$ systemctl status unbound`  
+
+Vérifier la résolution de nom à partir du serveur :  
+`$ sudo unbound-checkconf`  
+
 
 ## Create shortcut on desktop
 <Ctrl+Shift> Drag/Drop on desktop  
