@@ -893,7 +893,7 @@ Go to Bluetooth device manager ;-)
 ## cygwin tips 
 
 ### Install Cygwin without admin rights
-`> etup-x86_64.exe --no-admin`  
+`> setup-x86_64.exe --no-admin`  
 
 ### Call bash script from cmd :
 
