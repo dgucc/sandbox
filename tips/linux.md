@@ -543,6 +543,9 @@ stardict_3.0.6.2-1_all.deb
 
 `$ sudo cp -r dict-fr /usr/share/stardict/dic/`
 
+- Install goldendict (based on stardic)
+  
+`$ sudo apt-get install goldendict`  
 
 ---
 
