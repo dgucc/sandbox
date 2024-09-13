@@ -564,7 +564,7 @@ sudo tar xvf /home/jinx/Downloads/calibre/calibre-4.23.0-x86_64.txz -C /opt/cali
 sudo /opt/calibre/calibre_postinstall
 ```
 
-[Download and unzip DeDRM_tools 6.8.1](including Obok plugin)](ttps://github.com/apprenticeharper/DeDRM_tools/releases/download/v6.8.1/DeDRM_tools_6.8.1.zip)  
+[Download and unzip DeDRM_tools 6.8.1-including Obok plugin](ttps://github.com/apprenticeharper/DeDRM_tools/releases/download/v6.8.1/DeDRM_tools_6.8.1.zip)  
 [Fork](https://github.com/noDRM/DeDRM_tools)  
 Load plugin DeDRM in Calibre
 
