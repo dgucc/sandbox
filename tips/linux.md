@@ -114,7 +114,8 @@ access-control: 192.168.1.0/24 allow
 #emplacement du fichier serveurs DNS root
 #fichier à télécharger là à cette adresse: ftp://ftp.internet.net/domain/named.cache
 root-hints: "/var/lib/unbound/root.hints"
-auto-trust-anchor-file: "/var/lib/unbound/root.key"
+# Duplicate with /etc/unbound/unbound.conf.d/root-auto-trust-anchor-file.conf
+#auto-trust-anchor-file: "/var/lib/unbound/root.key"
 #Cacher les infos sur le serveur DNS
 hide-identity: yes
 hide-version: yes
@@ -154,6 +155,16 @@ Vérifier le status :
 
 Vérifier la résolution de nom à partir du serveur :  
 `$ sudo unbound-checkconf`  
+
+Extra blacklist:  
+[Using Unbound as an Ad-blocker](https://wiki.alpinelinux.org/wiki/Using_Unbound_as_an_Ad-blocker)  
+```
+$ sudo echo "server:" >/etc/unbound/blacklist.conf
+$ sudo curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | \
+grep ^0.0.0.0 - | \
+sed 's/ #.*$//;s/^0.0.0.0 \(.*\)/local-zone: "\1" refuse/' \
+>>/etc/unbound/blacklist.conf
+``` 
 
 
 ## Create shortcut on desktop
