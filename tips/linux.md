@@ -159,11 +159,11 @@ Vérifier la résolution de nom à partir du serveur :
 Extra blacklist:  
 [Using Unbound as an Ad-blocker](https://wiki.alpinelinux.org/wiki/Using_Unbound_as_an_Ad-blocker)  
 ```
-$ sudo echo "server:" >/etc/unbound/blacklist.conf
+$ sudo echo "server:" >/etc/unbound/unbound.conf.d/blacklist.conf
 $ sudo curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | \
 grep ^0.0.0.0 - | \
 sed 's/ #.*$//;s/^0.0.0.0 \(.*\)/local-zone: "\1" refuse/' \
->>/etc/unbound/blacklist.conf
+>>/etc/unbound/unbound.conf.d/blacklist.conf
 ``` 
 
 
