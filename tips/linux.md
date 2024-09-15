@@ -157,7 +157,12 @@ Vérifier la résolution de nom à partir du serveur :
 `$ sudo unbound-checkconf`  
 
 Extra blacklist:  
-[Using Unbound as an Ad-blocker](https://wiki.alpinelinux.org/wiki/Using_Unbound_as_an_Ad-blocker)  
+[How to Block Ads with Unbound DNS Server](https://infotoast.org/site/index.php/2023/12/07/how-to-block-ads-with-unbound-dns-server/)  
+```
+$ curl -o block.conf https://infotoast.org/Downloads/hosts/unbound.php
+$ sudo cp block.conf /etc/unbound/unbound.conf.d/block.conf
+``` 
+Or [Using Unbound as an Ad-blocker](https://wiki.alpinelinux.org/wiki/Using_Unbound_as_an_Ad-blocker)  
 ```
 $ sudo echo "server:" >/etc/unbound/unbound.conf.d/blacklist.conf
 $ sudo curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts | \
