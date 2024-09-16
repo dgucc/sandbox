@@ -199,3 +199,18 @@ PS> Start-Service sppsvc
 3. Re-install license files
 `C:\Windows\System32>slmgr -rilc`  
 
+## Windows Subsystem Linux (WSL)
+
+### Prerequis
+- Virtual Machine Platform   
+- Microsoft Windows Subsystem Linux   
+
+```
+PS> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+### Installation
+```
+PS> wsl --list --online
+PS> wsl --install -d Ubuntu
+```
