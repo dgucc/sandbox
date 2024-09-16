@@ -48,7 +48,7 @@ CALL "C:\home\bin\apache-maven-3.9.5\bin\mvn.cmd" %*
 [Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)
 
 C:\home\bin\maven-bin\cd-git.bat :  
-```
+```cmd
 @echo off
 CD %*
 where git >nul 2>&1
