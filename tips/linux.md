@@ -477,6 +477,27 @@ Unwanted characters...
 or trying to remove accents...  
 `$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd`   
 
+Convert non-ascii characters as unicode escape sequence  
+- IntelliJ plugin : Unicodifier  
+- VSCode plugin : ascii-unicode-escape  
+- iconv -t java   
+
+```
+# original text
+$ cat messages.txt
+mail.body=Les dossiers enrôlés seront débloqués au plus tôt 2 jours ouvrables après la date exécutoire et les
+dossiers non-enrôlés seront libérés demain en matinée. Les enrôlements prochains sont mentionnés
+sur l'intranet / BizTax Gestion et BizTax Consultation/ Documentation/ Calendriers
+```
+
+```
+# convert non-ascii -> unicode
+$ iconv -t java messages.txt
+mail.body=Les dossiers enr\u00f4l\u00e9s seront d\u00e9bloqu\u00e9s au plus t\u00f4t 2 jours ouvrables apr\u00e8s la date ex\u00e9cutoire et les
+dossiers non-enr\u00f4l\u00e9s seront lib\u00e9r\u00e9s demain en matin\u00e9e. Les enr\u00f4lements prochains sont mentionn\u00e9s
+sur l'intranet / BizTax Gestion et BizTax Consultation/ Documentation/ Calendriers
+```
+
 Read-Write permissions  
 `$ find . * -exec chmod u+rwx {} \;`  
 (cygwin : setfacl)  
