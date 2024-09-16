@@ -301,7 +301,7 @@ Substraction
 ---
 ## File manipulations  
 
-List only directories :  
+### List only directories :  
 `$ ls -d */`  
 or  
 `$ find . -type d -maxdepth 1`  
@@ -315,7 +315,7 @@ Drawbacks :
 - not working with many many files
 - not working with files starting with `!, -, (, )`  
 
-Ignore case with ls :  
+### Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
 For loop with multiple file extensions :  
@@ -328,25 +328,25 @@ done
 shopt -u nullglob 
 ```
 
-Change modification date :  
+### Change modification date :  
 `$ touch -d "2004-02-29 12:34" filename` 
 
-Find file modified less than a day ago :  
+### Find file modified less than a day ago :  
 `$ find . -name '*.csv' -ctime -1`  
 
-Replace text in multiple files :   
+### Replace text in multiple files :   
 `$ sed -i 's/old-text/new-text/g' *.* `
 
-Remove empty lines with sed :  
+### Remove empty lines with sed :  
 `$ sed -r '/^\s*$/d' file.txt` 
 
-Insert one line at the top of a file :  
+### Insert one line at the top of a file :  
 `$ cat memo.sh | sed '1 i EXTRA_TOP_LINE'` 
 
-Append one line at the end of a file :  
+### Append one line at the end of a file :  
 `$ cat memo.sh | sed '1 a EXTRA_BOTOOM_LINE'`  
 
-Insert 'commit;' every 1000 lines
+### Insert 'commit;' every 1000 lines
 ```bash
 #!/usr/bin/bash
 total=$(wc -l input.txt | cut -f 1 -d' ')
@@ -357,40 +357,47 @@ while [ $subtotal -gt $slice ] ; do
    cat input.txt | sed -i "${subtotal}a commit;" input.txt
 done
 ```
+### Split into smaller files :  
+```
+# -l : nb lines
+# -d : add autonum suffix
+# -a : nb of digits for suffix
+$ split -l 100 input.sql "baseFileName" -d -a 3 --additional-suffix=".sql"
+```
 
-Renaming files + autonumber suffix :  
+### Renaming files + autonumber suffix :  
 `$ rename  's/.+/our $i; sprintf("MyGallery_%03d.jpg", 1+$i++)/e' *`
 
-Renaming files + format number :
+### Renaming files + format number :
 `for file in $(ls -1 *.jpg | sort -n) ; do rename  -- 's/(\d+)/sprintf "%03d", $1/e' $file ; done`  
 
-Rename files extensions :  
+### Rename files extensions :  
 `$ find . -name "*.old" -exec bash -c 'mv "$1" "${1%.old}".new' - '{}' \;`  
 or  
 `$ find . -iname "*.old" -exec rename .old .new {} \;`   
 
-Counting records in csv files for given field :  
+### Counting records in csv files for given field :  
 ```bash
 $ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' | bc`-1 | bc)" ; done`
 ```
 
 
-Skip 1st line :  
+### Skip 1st line :  
 `$ tail -n + 2 filename`
 
-GREP : Get lines Before|After pattern   
+### GREP : Get lines Before|After pattern   
 `$ grep -B 500 'sometext' file.txt` 
 `$ grep -A 500 'sometext' file.txt` 
 
-GREP : extract substring between double quotes   
+### GREP : extract substring between double quotes   
 option : -o, --only-matching  
 `$ grep -o '".*"' input.txt | tr -d '"' | sort -u`
 
 
-Find lines in common between 2 SORTED files :  
+### Find lines in common between 2 SORTED files :  
 `$ join file1.txt file2.txt`  
 
-Find lines not in common with grep :  
+### Find lines not in common with grep :  
 -v : invert matching  
 `$  grep -vf file1.txt file2.txt ` only in file1.txt   
 `$  grep -vf file2.txt file1.txt ` only in file2.txt  
@@ -427,16 +434,16 @@ shopt -u nocaseglob # unset nocaseglob
 
 ## Text manipulations  
 
-Remove last character in file :  
+### Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
 
-Surrounding "[...]" :  
+### Surrounding "[...]" :  
 `$ sed -i '1 i [' inputfile && sed -i '$ a ]' outputfile`  
 
-Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :  
+### Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :  
 `$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
 
-Sed multi-line mode :  
+### Sed multi-line mode :  
 `sed -e '1h;2,$H;$!d;g' -e 's/\n/\t/g'`  
 
 ```
@@ -458,26 +465,19 @@ Alternative : 'N;s/pattern/replace/;P;D'
 ```
 
 
-Split into smaller files :  
-```
-# -l : nb lines
-# -d : add autonum suffix
-# -a : nb of digits for suffix
-$ split -l 100 input.sql "baseFileName" -d -a 3 --additional-suffix=".sql"
-```
 
-Append string "commit" in each file  
+### Append string "commit" in each file  
 `$ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done`  
 
-Append string "--EOF" in each file
+### Append string "--EOF" in each file
 `$ for file in $(ls -1 *.sql) ; do sed -i '$ a --EOF' $file ; done` 
 
-Unwanted characters...  
+### Unwanted characters...  
 `$ iconv --unicode-subst="<U+%04X>" -f utf8 -t ascii input.xsd | tee temp/charset.xsd`  
 or trying to remove accents...  
 `$ iconv -f utf8 -t ascii//TRANSLIT input.xsd | tee temp/iconv_translit.xsd`   
 
-Convert non-ascii characters as unicode escape sequence  
+### Convert non-ascii characters as unicode escape sequence  
 - IntelliJ plugin : Unicodifier  
 - VSCode plugin : ascii-unicode-escape  
 - iconv -t java   
@@ -498,12 +498,12 @@ dossiers non-enr\u00f4l\u00e9s seront lib\u00e9r\u00e9s demain en matin\u00e9e. 
 sur l'intranet / BizTax Gestion et BizTax Consultation/ Documentation/ Calendriers
 ```
 
-Read-Write permissions  
+### Read-Write permissions  
 `$ find . * -exec chmod u+rwx {} \;`  
 (cygwin : setfacl)  
 `$ find . -exec setfacl -s user::rw-,group::r--,other::r-- {} \;`  
 
-Mimic a "GROUP BY HAVING field=MAX()" using tail, sort (much faster than SQL on large tables)  
+### Mimic a "GROUP BY HAVING field=MAX()" using tail, sort (much faster than SQL on large tables)  
 ```
 # sort options :
 # -k : -k, --key=POS1[,POS2] 	Start a key at POS1 (origin 1), end it at POS2 
