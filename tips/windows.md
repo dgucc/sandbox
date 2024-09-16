@@ -11,6 +11,16 @@ appwiz.cpl
 lusrmgr.msc
 
 ```
+## Run commnad by skipping UAC pop-up
+
+Environment Variables  
+`cmd /min /c start "" rundll32 sysdm.cpl,EditEnvironmentVariables`  
+
+Task Manager no UAC  
+`cmd /min /c "set __COMPAT_LAYER=RunAsInvoker && TaskMgr.exe"`  
+
+Regedit no UAC  
+`cmd /min /c "set __COMPAT_LAYER=RunAsInvoker && regedit.exe"`  
 
 
 ## Free up disk space
