@@ -935,6 +935,19 @@ Go to Bluetooth device manager ;-)
 ### Install Cygwin without admin rights
 `> setup-x86_64.exe --no-admin`  
 
+### cygwin setup (auto update)
+
+<cygwin-path>\cygwin64\usr\local\bin\cygwin-setup.sh :  
+```
+#! /usr/bin/sh
+rm setup-x86_64.exe
+wget cygwin.com/setup-x86_64.exe
+chmod u+x setup-x86_64.exe
+run ./setup-x86_64.exe --no-admin
+```
+Create a shortcut in <cygwin-path> :  
+`<cygwin-path>\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/bash -l -c 'cygwin-setup.sh'`  
+
 ### Call bash script from cmd :
 
 ```cmd
