@@ -21,7 +21,53 @@ Set the default version :
 Check the default version:sam jui 27 16:13:02 CEST 2024   
 `$ java --version`  
 
- 
+## Batch file to run maven for a specific jdk  
+mvn8.cmd :  
+```cmd
+@echo off
+@REM Remember to add PATH to this file...
+
+echo "       ____.                       ______    "
+echo "      |    |____ ___  _______     /  __  \   "
+echo "      |    \__  \\  \/ /\__  \    >      <   "
+echo "  /\__|    |/ __ \\   /  / __ \_ /   --   \  "
+echo "  \________(____  /\_/  (____  / \______  /  "
+echo "                \/           \/         \/   "
+echo "                                             "
+
+@REM SET M2_HOME=C:\home\bin\apache-maven-3.9.5
+SET JAVA_HOME=C:\home\bin\jdk-8
+CALL "C:\home\bin\apache-maven-3.9.5\bin\mvn.cmd" %*
+```
+
+## Display current git branch name in windows command prompt
+
+[stackoverflow](https://stackoverflow.com/questions/36047706/show-current-git-branch-name-in-windows-command-prompt)
+[AutoRun](https://ss64.com/nt/syntax-autoexec.html) 
+[Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)
+[Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)
+
+C:\home\bin\maven-bin\cd-git.bat :  
+```
+@echo off
+CD %*
+where git >nul 2>&1
+if %errorlevel% neq 0 (
+	goto :eof
+)
+for /f "usebackq tokens=* delims=" %%g in (`git rev-parse --is-inside-work-tree ^>nul 2^>^&1 ^&^& git branch --show-current`) do (
+	set branchname=%%g
+)
+if "%branchname%"=="" (
+	prompt $p$g
+) else (
+	prompt $p $c$e[36m%branchname%$e[0m$f$_$$$s
+)
+set branchname=
+```
+
+`> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\home\bin\maven-bin\cd-git.bat doskey cd=C:\home\bin\maven-bin\cd-git.bat $*' ` 
+
 ## [Marshaller example](https://howtodoinjava.com/jaxb/marshaller-example/)
  "Marshaller Callback Methods"  
  "You can customize the marshalling operation by inside JAXB annotated class e.g. Employee.java. "  
