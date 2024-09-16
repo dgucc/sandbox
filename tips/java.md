@@ -66,6 +66,9 @@ if "%branchname%"=="" (
 set branchname=
 ```
 
+regtool  
+-w : access 64 bit registry  
+-s : set type to REG_SZ (string)  
 `> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\home\bin\maven-bin\cd-git.bat doskey cd=C:\home\bin\maven-bin\cd-git.bat $*' ` 
 
 ## [Marshaller example](https://howtodoinjava.com/jaxb/marshaller-example/)
