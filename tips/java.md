@@ -21,7 +21,7 @@ Set the default version :
 Check the default version:sam jui 27 16:13:02 CEST 2024   
 `$ java --version`  
 
-## Batch file to run maven for a specific jdk  
+## Script to run maven for a specific jdk  
 mvn8.cmd :  
 ```cmd
 @echo off
@@ -39,6 +39,19 @@ echo "                                             "
 SET JAVA_HOME=C:\home\bin\jdk-8
 CALL "C:\home\bin\apache-maven-3.9.5\bin\mvn.cmd" %*
 ```
+mvn8.sh : 
+```bash
+#!/usr/bin/bash
+export JAVA_HOME="C:\home\bin\jdk-17"
+echo "      ____.                      _____________   "
+echo "     |    |____ ___  _______    /_   \______  \  "
+echo "     |    \__  \\  \/ /\__  \    |   |   /    /  "
+echo " /\__|    |/ __ \\   /  / __ \_  |   |  /    /   "
+echo " \________(____  /\_/  (____  /  |___| /____/    "
+echo "               \/           \/                   "
+mvn $@ 
+```
+
 
 ## Display current git branch name in windows command prompt
 
