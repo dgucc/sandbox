@@ -498,6 +498,11 @@ dossiers non-enr\u00f4l\u00e9s seront lib\u00e9r\u00e9s demain en matin\u00e9e. 
 sur l'intranet / BizTax Gestion et BizTax Consultation/ Documentation/ Calendriers
 ```
 
+### Display non control characters
+
+`$  echo "hello" | od -c | sed -E 's/^[0-9]{7}//;s/ //g'`  
+
+
 ### Read-Write permissions  
 `$ find . * -exec chmod u+rwx {} \;`  
 (cygwin : setfacl)  
