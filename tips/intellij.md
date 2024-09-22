@@ -1,9 +1,22 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [IntelliJ](#intellij)
+   * [Keyboard Shortcuts](#keyboard-shortcuts)
+   * [PlantUML](#plantuml)
+   * [Custom configuration file (overwrite default settings)  ](#custom-configuration-file-overwrite-default-settings)
+   * [Add IntelliJ in contextual menu wit reg.exe  ](#add-intellij-in-contextual-menu-wit-regexe)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="intellij"></a>
 # IntelliJ
 
+<!-- TOC --><a name="keyboard-shortcuts"></a>
 ## Keyboard Shortcuts
 
 <details>
 	<summary>Shortcuts</summary>
+	
 Go to Declaration  
 	`F4`
 
@@ -22,9 +35,9 @@ Copy Absolute Path
 
 ---  
 Add Bookmark  
-	`F11`
+	`F11`  
 
-Show Bookmarks  
+Show Bookmarks   
 	`<Shift> + F11`
 
 ---
@@ -59,6 +72,7 @@ Navigate backward | Forward
 </details>
 
 ---
+<!-- TOC --><a name="plantuml"></a>
 ## PlantUML
 
 `$ sudo apt-get install graphviz`  
@@ -69,11 +83,13 @@ Install Plugins :
 
 Contextual Menu > Generate Diagram...   
 
+<!-- TOC --><a name="custom-configuration-file-overwrite-default-settings"></a>
 ## Custom configuration file (overwrite default settings)  
 
 %AppData%\Roaming\JetBrains\IdeaIC2023.3\idea64.exe.vmoptions  
 
 
+<!-- TOC --><a name="add-intellij-in-contextual-menu-wit-regexe"></a>
 ## Add IntelliJ in contextual menu wit reg.exe  
 	/f : force no prompting  
 	/ve : set empty value name "(Default)"  
