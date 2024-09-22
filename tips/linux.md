@@ -60,7 +60,7 @@ Uninstall :
 
 grub menu -> 'e' edit linux entry  
 append : quiet splash **rw init=/bin/bash**  
-boot <F10>  
+boot '<F10>'  
 
 
 ## Free up disk space
