@@ -1,5 +1,27 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Java](#java)
+   * [List all available versions of OpenJDK on Linux Mint.](#list-all-available-versions-of-openjdk-on-linux-mint)
+   * [Script to run maven for a specific jdk  ](#script-to-run-maven-for-a-specific-jdk)
+   * [Display current git branch name in windows command prompt](#display-current-git-branch-name-in-windows-command-prompt)
+   * [Marshaller example](#marshaller-example)
+   * [Regex Normalizer](#regex-normalizer)
+   * [xpath](#xpath)
+   * [PDF : workaround for html2pdf to download pdf : Base64  ](#pdf-workaround-for-html2pdf-to-download-pdf-base64)
+   * [Duration  ](#duration)
+   * [Clob and charset](#clob-and-charset)
+   * [Log4j](#log4j)
+   * [Maven](#maven)
+   * [Jetty](#jetty)
+   * [Eclipse  ](#eclipse)
+   * [Tomcat  ](#tomcat)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="java"></a>
 # Java
 
+<!-- TOC --><a name="list-all-available-versions-of-openjdk-on-linux-mint"></a>
 ## List all available versions of OpenJDK on Linux Mint.
 
 ```shell
@@ -21,6 +43,7 @@ Set the default version :
 Check the default version:sam jui 27 16:13:02 CEST 2024   
 `$ java --version`  
 
+<!-- TOC --><a name="script-to-run-maven-for-a-specific-jdk"></a>
 ## Script to run maven for a specific jdk  
 mvn8.cmd :  
 ```cmd
@@ -53,6 +76,7 @@ mvn $@
 ```
 
 
+<!-- TOC --><a name="display-current-git-branch-name-in-windows-command-prompt"></a>
 ## Display current git branch name in windows command prompt
 
 [stackoverflow](https://stackoverflow.com/questions/36047706/show-current-git-branch-name-in-windows-command-prompt)
@@ -84,6 +108,7 @@ regtool
 -s : set type to REG_SZ (string)  
 `> regtool -w -s set '/HKCU/Software/Microsoft/Command Processor/AutoRun' 'if exist C:\home\bin\maven-bin\cd-git.bat doskey cd=C:\home\bin\maven-bin\cd-git.bat $*' ` 
 
+<!-- TOC --><a name="marshaller-example"></a>
 ## [Marshaller example](https://howtodoinjava.com/jaxb/marshaller-example/)
  "Marshaller Callback Methods"  
  "You can customize the marshalling operation by inside JAXB annotated class e.g. Employee.java. "  
@@ -102,6 +127,7 @@ void afterMarshal(Marshaller marshaller) {
 }
 ```
 
+<!-- TOC --><a name="regex-normalizer"></a>
 ## Regex Normalizer
 ```
 System.out.println(Normalizer.normalize(CEt ça sera sa moitié, Normalizer.Form.NFD));
@@ -112,6 +138,7 @@ System.out.println(Normalizer.normalize(CEt ça sera sa moitié, Normalizer.Fo
 CEt ca sera sa moitie
 ```
 
+<!-- TOC --><a name="xpath"></a>
 ## xpath
 
 xpath to get StartDate and EndDate for all declaration types :  
@@ -135,6 +162,7 @@ whatever intermediate element : AccountingYear|ReportingPeriod
 	assessmentYear = node.getTextContent();
 ```
 
+<!-- TOC --><a name="pdf-workaround-for-html2pdf-to-download-pdf-base64"></a>
 ## PDF : workaround for html2pdf to download pdf : Base64  
 
 http://localhost:8080/api/pdf/get/html/base64/
@@ -163,6 +191,7 @@ $.ajax(settings)
 		anchor.remove();
 ```
 
+<!-- TOC --><a name="duration"></a>
 ## Duration  
 ```
 Instant start = Instant.now();
@@ -181,6 +210,7 @@ Duration res = Duration.between(one, two);
 System.out.println("Duration : " + res.toMinutesPart() + " min " + res.toSecondsPart() + " s");
 ```
 
+<!-- TOC --><a name="clob-and-charset"></a>
 ## Clob and charset
 ```
 myClob = new javax.sql.rowset.serial.SerialClob(myString.getBytes("ISO-8859-1").toCharArray());
@@ -188,6 +218,7 @@ myClob = new javax.sql.rowset.serial.SerialClob(myString.getBytes("UTR-8").toCha
 ```
 
 ---
+<!-- TOC --><a name="log4j"></a>
 ## Log4j
 
 Filter log... to skip noisy messages  
@@ -215,6 +246,7 @@ src/main/resources/log4j.xml :
 
 ---
 
+<!-- TOC --><a name="maven"></a>
 ## Maven
 
 Encrypt password :  
@@ -223,6 +255,7 @@ Encrypt password :
 
 ---
 
+<!-- TOC --><a name="jetty"></a>
 ## Jetty
 
 Remote debug with mvn jetty:run  
@@ -239,6 +272,7 @@ How to kill running jetty on port 8080
 > taskkill /F /PID 1234
 ```
 
+<!-- TOC --><a name="eclipse"></a>
 ## Eclipse  
 
 Eclipse: Java was started but returned error code=13  
@@ -255,6 +289,7 @@ Run -> Debug Configurations -> Remote Java Application
 	-> Click Debug   
 
 
+<!-- TOC --><a name="tomcat"></a>
 ## Tomcat  
 
 Tomcat 7 does not start anymore... ?  
