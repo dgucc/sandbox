@@ -2,6 +2,8 @@
 
 ## Keyboard Shortcuts
 
+<details>
+	<summary>Shortcuts</summary>
 Go to Declaration  
 	`F4`
 
@@ -53,6 +55,8 @@ Navigate backward | Forward
 	`<Ctrl> + <Alt> + <Left>`  
  	or  
   	`<Ctrl> + <Alt> + <Right>`  
+	
+</details>
 
 ---
 ## PlantUML
