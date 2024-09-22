@@ -1,7 +1,34 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [GIT](#git)
+   * [GitHub - Getting started](#github-getting-started)
+      + [Command gh needed to push modifications to remote repository  ](#command-gh-needed-to-push-modifications-to-remote-repository)
+      + [How-to push existing repository from command line  ](#how-to-push-existing-repository-from-command-line)
+   * [Resolve conflict with binary files](#resolve-conflict-with-binary-files)
+   * [Git Pull Force](#git-pull-force)
+   * [git commit --amend](#git-commit-amend)
+   * [git stash : mettre de côté   ](#git-stash-mettre-de-côté)
+   * [git stach pop : pour récupérer ce qui a été mis de côté  ](#git-stach-pop-pour-récupérer-ce-qui-a-été-mis-de-côté)
+   * [git restore](#git-restore)
+   * [git revert (new commit)](#git-revert-new-commit)
+   * [git reset ](#git-reset)
+   * [git rebase, cherry-pick	](#git-rebase-cherry-pick)
+- [discard local changes](#discard-local-changes)
+   * [Clone subdirectory only](#clone-subdirectory-only)
+   * [Misc](#misc)
+   * [Log](#log)
+   * [Show git branch in Windows Command Prompt ](#show-git-branch-in-windows-command-prompt)
+   * [Preview html page hosted in GitHub](#preview-html-page-hosted-in-github)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="git"></a>
 # GIT
 
+<!-- TOC --><a name="github-getting-started"></a>
 ## GitHub - Getting started
 
+<!-- TOC --><a name="command-gh-needed-to-push-modifications-to-remote-repository"></a>
 ### Command gh needed to push modifications to remote repository  
 Install GitHub CLI on macOS, Windows, or Linux.  
 
@@ -19,6 +46,7 @@ In the command line, authenticate to GitHub.
 Git clone alternative  
 `$ gh repo clone dgucc/sandbox`  
 
+<!-- TOC --><a name="how-to-push-existing-repository-from-command-line"></a>
 ### How-to push existing repository from command line  
 
 Link local and remote repositories  
@@ -41,6 +69,7 @@ find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull ori
 
 ---
 
+<!-- TOC --><a name="resolve-conflict-with-binary-files"></a>
 ## Resolve conflict with binary files
 
 ```bash
@@ -53,6 +82,7 @@ $ git commit -m 'Resolve conflict by keeping the branch2 version'
 $ git merge branch2
 ```
 
+<!-- TOC --><a name="git-pull-force"></a>
 ## Git Pull Force
 
 [Git Pull Force – How to Overwrite Local Changes With Git](https://www.freecodecamp.org/news/git-pull-force-how-to-overwrite-local-changes-with-git/)
@@ -68,14 +98,17 @@ git merge '@{u}'
 
 [GIT avancé : stash, revert, restore, reset](https://www.youtube.com/watch?v=Ayr17xFKMHU)
 
+<!-- TOC --><a name="git-commit-amend"></a>
 ## git commit --amend
 Modifier le dernier commit  (message et autres)
 `git commit --amend -m 'message corrigé'` 
 
 
+<!-- TOC --><a name="git-stash-mettre-de-côté"></a>
 ## git stash : mettre de côté   
 `$ git stash` 
 
+<!-- TOC --><a name="git-stach-pop-pour-récupérer-ce-qui-a-été-mis-de-côté"></a>
 ## git stach pop : pour récupérer ce qui a été mis de côté  
 Mettre de côté ses modifs pour intervenir sur une autre branch  
 ```
@@ -87,6 +120,7 @@ Mettre de côté ses modifs pour intervenir sur une autre branch
 	$ git stash pop
 ```
 
+<!-- TOC --><a name="git-restore"></a>
 ## git restore
 Sortir des fichiers de la staging area  
 	`$ git restore --staged index.html` 
@@ -98,10 +132,12 @@ Récupérer fichiers supprimés par erreur
 	`$ git checkout -f` 
 
 
+<!-- TOC --><a name="git-revert-new-commit"></a>
 ## git revert (new commit)
 Nouveau commit pour annuler et revenir au commit précédent  
 	`$ git revert <hash du commit à annuler>` 
 
+<!-- TOC --><a name="git-reset"></a>
 ## git reset 
 Attention: reset (--soft --mixed et --hard) et rebase modifient l'histoire  
 Revenir à un commit précédent avec les fichiers modifiés dernièrement (en --unstaged)  
@@ -111,6 +147,7 @@ HEAD~1 : un commit en arrière
 Revenir strictement à un commit sans aucun fichier modifié  
 	`$ git reset --hard HEAD~1`  
 
+<!-- TOC --><a name="git-rebase-cherry-pick"></a>
 ## git rebase, cherry-pick	
 -i : Mode interactif  
 	`$ git rebase -i HEAD~6` 
@@ -118,12 +155,14 @@ Revenir strictement à un commit sans aucun fichier modifié
 ---------------------------------------
 `$ git diff HEAD`  
 
+<!-- TOC --><a name="discard-local-changes"></a>
 # discard local changes
 `$ git checkout -f HEAD`  
 `$ git reset --hard HEAD~1` 
 
 ---
 
+<!-- TOC --><a name="clone-subdirectory-only"></a>
 ## Clone subdirectory only
 
 ```bash
@@ -133,6 +172,7 @@ git sparse-checkout set --no-cone openstreetmap
 git checkout
 ```
 
+<!-- TOC --><a name="misc"></a>
 ## Misc
 
 Commit and add all files in a single command  
@@ -144,6 +184,7 @@ Remove unstaged files
 Remove non commited change  
 `$ git reset --hard`  
 
+<!-- TOC --><a name="log"></a>
 ## Log
 
 Display comments only  
@@ -155,6 +196,7 @@ Display comments only
 Git GUI : visualize all branch history  
 `gitk --all` 
 
+<!-- TOC --><a name="show-git-branch-in-windows-command-prompt"></a>
 ## Show git branch in Windows Command Prompt 
 [stackoverflow](https://stackoverflow.com/questions/36047706/show-current-git-branch-name-in-windows-command-prompt)  
 
@@ -186,6 +228,7 @@ set branchname=
 [Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)  
 [Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)  
 
+<!-- TOC --><a name="preview-html-page-hosted-in-github"></a>
 ## Preview html page hosted in GitHub
 Prepend **https://htmlpreview.github.io/?**  to url  
 ex : https://htmlpreview.github.io/?https://github.com/dgucc/javascript/blob/main/d3js/map/world/index.html    
