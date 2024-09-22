@@ -55,7 +55,6 @@ Navigate backward | Forward
   	`<Ctrl> + <Alt> + <Right>`  
 
 ---
-
 ## PlantUML
 
 `$ sudo apt-get install graphviz`  
@@ -84,3 +83,18 @@ reg.exe add "HKCU\Software\Classes\Directory\Shell\IntelliJ" /f /ve /d "Open wit
 reg.exe add "Software\Classes\Directory\Shell\IntelliJ" /v "Icon" /t REG_SZ /f /d "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin\idea.ico"
 reg.exe add "Software\Classes\Directory\Shell\IntelliJ\command" /d	Set (Default)="C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin\idea64.exe" "%V"
 ```
+
+for linux mint  
+
+~/.local/share/nemo/actions/intellij.nemo_action :  
+
+```
+[Nemo Action]
+Name=Open in Intellij
+Comment=Open with Intellij
+Exec="/opt/idea/bin/idea.sh" %F
+Icon-Name=intellij
+Selection=Any
+Extensions=dir;
+```
+
