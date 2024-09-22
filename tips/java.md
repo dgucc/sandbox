@@ -2,7 +2,6 @@
 
 - [Java](#java)
    * [List all available versions of OpenJDK on Linux Mint.](#list-all-available-versions-of-openjdk-on-linux-mint)
-   * [Script to run maven for a specific jdk  ](#script-to-run-maven-for-a-specific-jdk)
    * [Display current git branch name in windows command prompt](#display-current-git-branch-name-in-windows-command-prompt)
    * [Marshaller example](#marshaller-example)
    * [Regex Normalizer](#regex-normalizer)
@@ -12,6 +11,8 @@
    * [Clob and charset](#clob-and-charset)
    * [Log4j](#log4j)
    * [Maven](#maven)
+      + [Encrypt password :  ](#encrypt-password-)
+      + [Script to run maven for a specific jdk  ](#script-to-run-maven-for-a-specific-jdk)
    * [Jetty](#jetty)
    * [Eclipse  ](#eclipse)
    * [Tomcat  ](#tomcat)
@@ -42,38 +43,6 @@ Set the default version :
 
 Check the default version:sam jui 27 16:13:02 CEST 2024   
 `$ java --version`  
-
-<!-- TOC --><a name="script-to-run-maven-for-a-specific-jdk"></a>
-## Script to run maven for a specific jdk  
-mvn8.cmd :  
-```cmd
-@echo off
-@REM Remember to add PATH to this file...
-
-echo "       ____.                       ______    "
-echo "      |    |____ ___  _______     /  __  \   "
-echo "      |    \__  \\  \/ /\__  \    >      <   "
-echo "  /\__|    |/ __ \\   /  / __ \_ /   --   \  "
-echo "  \________(____  /\_/  (____  / \______  /  "
-echo "                \/           \/         \/   "
-echo "                                             "
-
-@REM SET M2_HOME=C:\home\bin\apache-maven-3.9.5
-SET JAVA_HOME=C:\home\bin\jdk-8
-CALL "C:\home\bin\apache-maven-3.9.5\bin\mvn.cmd" %*
-```
-mvn8.sh : 
-```bash
-#!/usr/bin/bash
-export JAVA_HOME="C:\home\bin\jdk-17"
-echo "      ____.                      _____________   "
-echo "     |    |____ ___  _______    /_   \______  \  "
-echo "     |    \__  \\  \/ /\__  \    |   |   /    /  "
-echo " /\__|    |/ __ \\   /  / __ \_  |   |  /    /   "
-echo " \________(____  /\_/  (____  /  |___| /____/    "
-echo "               \/           \/                   "
-mvn $@ 
-```
 
 
 <!-- TOC --><a name="display-current-git-branch-name-in-windows-command-prompt"></a>
@@ -249,8 +218,41 @@ src/main/resources/log4j.xml :
 <!-- TOC --><a name="maven"></a>
 ## Maven
 
-Encrypt password :  
+<!-- TOC --><a name="encrypt-password-"></a>
+### Encrypt password :  
 `$ mvn --encrypt-password newpass`  > settings.xml 
+
+<!-- TOC --><a name="script-to-run-maven-for-a-specific-jdk"></a>
+### Script to run maven for a specific jdk  
+mvn8.cmd :  
+```cmd
+@echo off
+@REM Remember to add PATH to this file...
+
+echo "       ____.                       ______    "
+echo "      |    |____ ___  _______     /  __  \   "
+echo "      |    \__  \\  \/ /\__  \    >      <   "
+echo "  /\__|    |/ __ \\   /  / __ \_ /   --   \  "
+echo "  \________(____  /\_/  (____  / \______  /  "
+echo "                \/           \/         \/   "
+echo "                                             "
+
+@REM SET M2_HOME=C:\home\bin\apache-maven-3.9.5
+SET JAVA_HOME=C:\home\bin\jdk-8
+CALL "C:\home\bin\apache-maven-3.9.5\bin\mvn.cmd" %*
+```
+mvn8.sh : 
+```bash
+#!/usr/bin/bash
+export JAVA_HOME="C:\home\bin\jdk-17"
+echo "      ____.                      _____________   "
+echo "     |    |____ ___  _______    /_   \______  \  "
+echo "     |    \__  \\  \/ /\__  \    |   |   /    /  "
+echo " /\__|    |/ __ \\   /  / __ \_  |   |  /    /   "
+echo " \________(____  /\_/  (____  /  |___| /____/    "
+echo "               \/           \/                   "
+mvn $@ 
+```
 
 
 ---
