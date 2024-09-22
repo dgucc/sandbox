@@ -1,12 +1,62 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Windows 11 installation with local user](#windows-11-installation-with-local-user)
+- [Usefull commands ](#usefull-commands)
+- [General](#general)
+- [Programmes et outils Windows](#programmes-et-outils-windows)
+- [Gestion des disques](#gestion-des-disques)
+- [Gestion des réseaux et Internet](#gestion-des-réseaux-et-internet)
+- [Autres commandes](#autres-commandes)
+- [Run commnad by skipping UAC pop-up](#run-commnad-by-skipping-uac-pop-up)
+- [Free up disk space](#free-up-disk-space)
+- [Keyboard layout](#keyboard-layout)
+- [Add "Show Desktop" shortcut](#add-show-desktop-shortcut)
+- [God Mode](#god-mode)
+- [Open CMD or PowerShell from any folder  ](#open-cmd-or-powershell-from-any-folder)
+- [Retake ownership  ](#retake-ownership)
+- [ALT+TAB behaviour](#alttab-behaviour)
+- [File locked by another process  ](#file-locked-by-another-process)
+- [Install Office 2021 LTSC](#install-office-2021-ltsc)
+- [Passwords  ](#passwords)
+- [USB](#usb)
+- [Command to open explorer](#command-to-open-explorer)
+- [Move or Rezize Window with Keyboard Shortcut](#move-or-rezize-window-with-keyboard-shortcut)
+- [Access to local network while using VPN ](#access-to-local-network-while-using-vpn)
+- [Windows Defender Firewall with Advanced Security](#windows-defender-firewall-with-advanced-security)
+- [Windows Key Backup](#windows-key-backup)
+- [VLC : screen recording  ](#vlc-screen-recording)
+- [Excel](#excel)
+- [WINMERGE](#winmerge)
+- [Keyboard shortcut](#keyboard-shortcut)
+   * [Windows Start > Contextual Menu](#windows-start-contextual-menu)
+   * [System Settings](#system-settings)
+   * [Task Manager](#task-manager)
+   * [File Explorer](#file-explorer)
+   * [Excel](#excel-1)
+   * [Outlook](#outlook)
+   * [Eclipse](#eclipse)
+   * [Cygwin  ](#cygwin)
+   * [Screen + Sounds Recording with ffmpeg ](#screen-sounds-recording-with-ffmpeg)
+   * [Retrieve the key of a pre-installed Windows ](#retrieve-the-key-of-a-pre-installed-windows)
+   * [Fix Corrupted token.dat file (Activation file)](#fix-corrupted-tokendat-file-activation-file)
+- [Windows Subsystem Linux (WSL)](#windows-subsystem-linux-wsl)
+   * [Prerequis](#prerequis)
+   * [Installation](#installation)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="windows-11-installation-with-local-user"></a>
 ## Windows 11 installation with local user
 When invited to connect to internet : SHIFT + F10  
 `(as admin)> OOBE\BYPASSNRO`  -> Restart installation procedure...  
 
+<!-- TOC --><a name="usefull-commands"></a>
 ## Usefull commands 
 
 <details>
 <summary>Les commandes de Windows par invité de commande</summary>
 
+<!-- TOC --><a name="general"></a>
 ## General
 ```
     ACCESS.CPL : ouvre les options d’accessibilité (Pour XP uniquement)
@@ -78,6 +128,7 @@ When invited to connect to internet : SHIFT + F10
     WSCUI.CPL : ouvre le centre de sécurité Windows
     WUAUCPL.CPL : ouvre le service de mise à jour Windows (Pour XP uniquement)
 ```
+<!-- TOC --><a name="programmes-et-outils-windows"></a>
 ## Programmes et outils Windows
 ```
     %WINDIR%\SYSTEM32\RESTORE\RSTRUI.EXE : ouvre l’outil de restauration de système (Pour XP uniquement).
@@ -127,6 +178,7 @@ When invited to connect to internet : SHIFT + F10
     WRITE ou bien Wordpad : ouvre Wordpad
 ```
 
+<!-- TOC --><a name="gestion-des-disques"></a>
 ## Gestion des disques
 ```
     CHKDSK : effectue une analyse de la partition précisée dans les paramètres de la commande (Pour plus d’informations, tapez CHKDSK /? dans l’invite de commande CMD)
@@ -136,6 +188,7 @@ When invited to connect to internet : SHIFT + F10
     DISKMGMT.MSC : ouvre le gestionnaire de disques
     DISKPART : ouvre l’outil de partitionnement (un peu lourd à manipuler)
 ```
+<!-- TOC --><a name="gestion-des-réseaux-et-internet"></a>
 ## Gestion des réseaux et Internet
 ```
     CONTROL NETCONNECTIONS ou bien NCPA.CPL : ouvre les connexions réseau
@@ -145,6 +198,7 @@ When invited to connect to internet : SHIFT + F10
     NETSETUP.CPL : ouvre l’assistant configuration réseau (Pour XP uniquement)
     WF.MSC : ouvre les fonctions avancées du pare-feu Windows (Pour Vista uniquement).
 ```
+<!-- TOC --><a name="autres-commandes"></a>
 ## Autres commandes
 ```
     %HOMEDRIVE% : ouvre l’explorateur sur la partition ou le système d’exploitation est installé
@@ -173,6 +227,7 @@ When invited to connect to internet : SHIFT + F10
 ```  
 </details>
 
+<!-- TOC --><a name="run-commnad-by-skipping-uac-pop-up"></a>
 ## Run commnad by skipping UAC pop-up
 
 Environment Variables  
@@ -185,35 +240,44 @@ Regedit no UAC
 `cmd /min /c "set __COMPAT_LAYER=RunAsInvoker && regedit.exe"`  
 
 
+<!-- TOC --><a name="free-up-disk-space"></a>
 ## Free up disk space
 [12 best ways to free up hard drive space on Windows 10](https://www.windowscentral.com/best-ways-to-free-hard-drive-space-windows-10)  
 
+<!-- TOC --><a name="keyboard-layout"></a>
 ## Keyboard layout
 powershell as admin  
 `PS > Set-WinUserLanguageList -LanguageList fr-be -Force`    
 
+<!-- TOC --><a name="add-show-desktop-shortcut"></a>
 ## Add "Show Desktop" shortcut
 Right Click > New > Shortcut  
 `C:\Windows\explorer.exe shell:::{3080F90D-D7AD-11D9-BD98-0000947B0257}`  
 
+<!-- TOC --><a name="god-mode"></a>
 ## God Mode
 Create special folder : `GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}`  
 
+<!-- TOC --><a name="open-cmd-or-powershell-from-any-folder"></a>
 ## Open CMD or PowerShell from any folder  
 `Shift + Right-Click` on folder in File Explorer...  
 
+<!-- TOC --><a name="retake-ownership"></a>
 ## Retake ownership  
 (cmd as admin) : `> TAKEOWN /F . /R`  
 
+<!-- TOC --><a name="alttab-behaviour"></a>
 ## ALT+TAB behaviour
 
 regedit `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer`  
 New Key "DWORD (32-bit)" > `AltTabSettings = 1`  
 Restart computer  
 
+<!-- TOC --><a name="file-locked-by-another-process"></a>
 ## File locked by another process  
 Run resmon.exe "Resource Monitor" > tab "CPU" > "Search" :  filename  
 
+<!-- TOC --><a name="install-office-2021-ltsc"></a>
 ## Install Office 2021 LTSC
 [Office Customization Tool](https://config.office.com/deploymentsettings)  
 Configure and export : Configuration.xml  
@@ -229,10 +293,12 @@ Fix Activation Issue :
 (as admin) > cscript ospp.vbs /act
 ```
 
+<!-- TOC --><a name="passwords"></a>
 ## Passwords  
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
 
+<!-- TOC --><a name="usb"></a>
 ## USB
 
 USBSTOR allow|disallow  
@@ -246,15 +312,18 @@ USBSTOR allow|disallow
 Remove RegKey : 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ADMX_DeviceInstallation\DeviceInstall_Removable_Deny`  
 
+<!-- TOC --><a name="command-to-open-explorer"></a>
 ## Command to open explorer
 
 `explorer.exe /e,/root,"C:\TEMP"`
 
+<!-- TOC --><a name="move-or-rezize-window-with-keyboard-shortcut"></a>
 ## Move or Rezize Window with Keyboard Shortcut
 
 `Alt`+`Space` : open title bar menu (Move, Size, ...)  
 
 
+<!-- TOC --><a name="access-to-local-network-while-using-vpn"></a>
 ## Access to local network while using VPN 
 
 Enable split-tunneling :  
@@ -266,6 +335,7 @@ or
 
 `PS> Set-VPNConnection -Name "Connection Name" -SplitTunneling $True`
 
+<!-- TOC --><a name="windows-defender-firewall-with-advanced-security"></a>
 ## Windows Defender Firewall with Advanced Security
 
 Run control firewall.cpl  
@@ -278,12 +348,14 @@ Deactivate/Activate via netsh :
 (as admin)
 > netsh advfirewall set domainprofile state off
 ```
+<!-- TOC --><a name="windows-key-backup"></a>
 ## Windows Key Backup
 
 (as admin)
 `PS > wmic path softwarelicensingservice get OA3xOriginalProductKey`   
 
 
+<!-- TOC --><a name="vlc-screen-recording"></a>
 ## VLC : screen recording  
 CTRL+C  
 Mode de capture : Bureau > Afficher plus d'options > Modifier les options : 
@@ -292,6 +364,7 @@ Lire > Convertir > Définir fichier de destination > Démarrer
 
 ---
 
+<!-- TOC --><a name="excel"></a>
 ## Excel
 
 Function to check belgian company number (BCE) :  
@@ -299,6 +372,7 @@ Function to check belgian company number (BCE) :
 
 ---
 
+<!-- TOC --><a name="winmerge"></a>
 ## WINMERGE
 
 Plugin 'DisplayXMLFiles.dll' cannot pack your changes to the left file back into $filename$. The original file will not be changed.  
@@ -306,35 +380,44 @@ Fix : Menu Plugins > Manual unpacking
 
 ---
 
+<!-- TOC --><a name="keyboard-shortcut"></a>
 ## Keyboard shortcut
 
+<!-- TOC --><a name="windows-start-contextual-menu"></a>
 ### Windows Start > Contextual Menu
 `<WIN>+X`  
 
+<!-- TOC --><a name="system-settings"></a>
 ### System Settings
 `<WIN>+<PAUSE-BREAK>`
 
+<!-- TOC --><a name="task-manager"></a>
 ### Task Manager
 `<CTRL>+<SHIFT>+<ESCAPE>`  
 
+<!-- TOC --><a name="file-explorer"></a>
 ### File Explorer
 Open Cmd Shell (or PowerShell) in specific folder :  
 `<CTRL>+<SHIFT>+Right-Click`
 
+<!-- TOC --><a name="excel-1"></a>
 ### Excel
 Insert Date or Time :  
 `<CTRL>+<;>`  
 `<CTRL>+<:>`  
 
+<!-- TOC --><a name="outlook"></a>
 ### Outlook
 Insert Date or Time :  
 `<ALT>+<SHIFT>+D`  
 `<ALT>+<SHIFT>+T`  
 
+<!-- TOC --><a name="eclipse"></a>
 ### Eclipse
 Find next :  
 `<CTRL>+K`  
 
+<!-- TOC --><a name="cygwin"></a>
 ### Cygwin  
 Call bash script from cmd :  
 ```
@@ -344,6 +427,7 @@ Call bash script from cmd :
 @C:\cygwin64\bin\bash -c ./my_script.sh
 ```
 
+<!-- TOC --><a name="screen-sounds-recording-with-ffmpeg"></a>
 ### Screen + Sounds Recording with ffmpeg 
 0. Enable "Stereo Mix"  
 `mmsys.cpl` 
@@ -353,9 +437,11 @@ Call bash script from cmd :
 -crf : Constant Ratio Factor [0..51] Quality Loss  
 `ffmpeg -rtbufsize 1500M  -thread_queue_size 512 -f gdigrab -s 1920x1080 -i desktop -f dshow -i audio="Stereo Mix (Realtek(R) Audio)" -crf 30  -filter:a "volume=1.5" -vcodec libx264  output.mp4`   
 
+<!-- TOC --><a name="retrieve-the-key-of-a-pre-installed-windows"></a>
 ### Retrieve the key of a pre-installed Windows 
 `(as admin) > wmic path SoftwareLicensingService get OA3xOriginalProductKey`  
 
+<!-- TOC --><a name="fix-corrupted-tokendat-file-activation-file"></a>
 ### Fix Corrupted token.dat file (Activation file)
 [Resolve activation issue with error code 0xC004E015 on Windows 10 Enterprise for Virtual Desktops](https://www.augmastudio.com/2021/01/08/resolve-activation-issue-with-error-code-0xc004e015-on-windows-10-enterprise-for-virtual-desktops/)  
 
@@ -371,8 +457,10 @@ PS> Start-Service sppsvc
 3. Re-install license files
 `C:\Windows\System32>slmgr -rilc`  
 
+<!-- TOC --><a name="windows-subsystem-linux-wsl"></a>
 ## Windows Subsystem Linux (WSL)
 
+<!-- TOC --><a name="prerequis"></a>
 ### Prerequis
 - Virtual Machine Platform   
 - Microsoft Windows Subsystem Linux   
@@ -381,6 +469,7 @@ PS> Start-Service sppsvc
 PS> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
+<!-- TOC --><a name="installation"></a>
 ### Installation
 ```
 PS> wsl --list --online
