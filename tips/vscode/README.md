@@ -189,3 +189,15 @@ Windows Registry Editor Version 5.00
 @="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"%V\""
 ```
 
+for linux ~/.local/share/nemo/actions/vscode.nemo_action :   
+
+```
+[Nemo Action]
+Name=Open in VS Code
+Comment=Open in VS Code
+Exec=code "%F"
+Icon-Name=visual-studio-code
+Selection=Any
+Extensions=dir;
+```
+
