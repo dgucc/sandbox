@@ -3,6 +3,7 @@
 - [Linux Tips](#linux-tips)
   - [Linux version](#linux-version)
   - [grub-customizer](#Grub-Customizer)
+  - [Reset password](#reset-password)
   - [Free up disk space](#free-disk-space)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
@@ -54,6 +55,13 @@ How to change Default kernel version &rarr; [grub-customizer](https://tipsonubun
 
 Uninstall :   
 `$ sudo apt-get remove --autoremove grub-customizer`   
+
+## Reset-password
+
+grub menu -> 'e' edit linux entry  
+append : quiet splash **rw init=/bin/bash**  
+boot <F10>  
+
 
 ## Free up disk space
 
