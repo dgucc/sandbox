@@ -33,7 +33,25 @@
   - [jq : json query](#jq--json-query)
   - [iconv](#iconv)
   - [Nintendo Switch Pro Controller on Linux](#Nintendo-Switch-Pro-Controller-on-Linux)
-  - [cygwin tips](#cygwin-tips)
+  - [cygwin tips ](#cygwin-tips)
+   * [Install Cygwin without admin rights](#install-cygwin-without-admin-rights)
+   * [cygwin setup (auto update)](#cygwin-setup-auto-update)
+   * [Call bash script from cmd :](#call-bash-script-from-cmd-)
+   * [Cygwin in contextual menu  ](#cygwin-in-contextual-menu)
+   * [Copy Paste issue](#copy-paste-issue)
+   * [Customize cygwin prompt](#customize-cygwin-prompt)
+      + [Manually (buggy)  ](#manually-buggy)
+      + [using git-prompt.sh (safer option)](#using-git-promptsh-safer-option)
+   * [Keyboard shortcuts  ](#keyboard-shortcuts)
+   * [cygpath](#cygpath)
+   * [find : Permission denied](#find-permission-denied)
+   * [ls : ignore case ](#ls-ignore-case)
+   * [Files names containing spaces](#files-names-containing-spaces)
+   * [mysql](#mysql)
+   * [/dev/null ](#devnull)
+   * [Generate new GUID ](#generate-new-guid)
+
+
 
 ---  
 
@@ -943,11 +961,14 @@ Go to Bluetooth device manager ;-)
 
 ---
 
+<!-- TOC --><a name="cygwin-tips"></a>
 ## cygwin tips 
 
+<!-- TOC --><a name="install-cygwin-without-admin-rights"></a>
 ### Install Cygwin without admin rights
 `> setup-x86_64.exe --no-admin`  
 
+<!-- TOC --><a name="cygwin-setup-auto-update"></a>
 ### cygwin setup (auto update)
 
 <cygwin-path>\cygwin64\usr\local\bin\cygwin-setup.sh :  
@@ -961,6 +982,7 @@ run ./setup-x86_64.exe --no-admin
 Create a shortcut in <cygwin-path> :  
 `<cygwin-path>\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/bash -l -c 'cygwin-setup.sh'`  
 
+<!-- TOC --><a name="call-bash-script-from-cmd-"></a>
 ### Call bash script from cmd :
 
 ```cmd
@@ -970,6 +992,7 @@ Create a shortcut in <cygwin-path> :
 @C:\cygwin64\bin\bash -c ./my_script.sh
 ```
 
+<!-- TOC --><a name="cygwin-in-contextual-menu"></a>
 ### Cygwin in contextual menu  
 install **chere** package under the "Shells" category.
 ```
@@ -1007,6 +1030,7 @@ regtool -w unset /HKCU/Software/Classes/Drive/Shell/cygwin64_bash/Icon
 regtool -w unset /HKCU/Software/Classes/Drive/Background/Shell/cygwin64_bash/Icon
 [...]
 ```
+<!-- TOC --><a name="copy-paste-issue"></a>
 ### Copy Paste issue
 
 "\302\203": copy-to-clipboard  
@@ -1021,8 +1045,10 @@ And add the following line to your ~/.inputrc:
 	"\C-v": paste-from-clipboard
 [Infos](https://www.saltycrane.com/blog/2008/05/how-to-paste-in-cygwin-bash-using-ctrl/)  
 
+<!-- TOC --><a name="customize-cygwin-prompt"></a>
 ### Customize cygwin prompt
 
+<!-- TOC --><a name="manually-buggy"></a>
 #### Manually (buggy)  
 
 Edit .bashrc to define PS1 variable :   
@@ -1056,6 +1082,7 @@ Reload .bashrc
 ![image](images/cygwin-prompt.png)  
 
 
+<!-- TOC --><a name="using-git-promptsh-safer-option"></a>
 #### using git-prompt.sh (safer option)
 
 .bashrc :  
@@ -1065,12 +1092,14 @@ unset __git_ps1
 source "/cygdrive/c/Program Files/Git/etc/profile.d/git-prompt.sh"
 ```
 
+<!-- TOC --><a name="keyboard-shortcuts"></a>
 ### Keyboard shortcuts  
 Alt + b : backward previous word  
 Alt + f : forward  next word  
 /cygdrive/c/  
 /cygdrive/d/  
 
+<!-- TOC --><a name="cygpath"></a>
 ### cygpath
 cygpath -w <PATH> : windows like path  
 ```
@@ -1081,6 +1110,7 @@ C:\Windows\Temp
 cygpath -u <PATH> : unix like path  
 `$ cd "$(cygpath -u 'C:\Program Files\')"`  
 
+<!-- TOC --><a name="find-permission-denied"></a>
 ### find : Permission denied
 *find . -iname* : [get rid of polluting "Permission denied"](https://unix.stackexchange.com/questions/42841/how-to-skip-permission-denied-errors-when-running-find-in-linux#answer-42842)  
 
@@ -1088,6 +1118,7 @@ cygpath -u <PATH> : unix like path
 $ cd /cygdrive/c
 $ find . -iname "filename" 2>&1 | grep -v "Permission denied"
 ```
+<!-- TOC --><a name="ls-ignore-case"></a>
 ### ls : ignore case 
 *ls* : how to ignore case :  
 use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensitive-mode-search-pattern-linux-unix/)  
@@ -1095,6 +1126,7 @@ use shell options [shopts](https://www.cyberciti.biz/faq/ls-command-case-insensi
 `$ ls *.txt`  
 `$ shopt -u nocaseglob ` -u : unset ignore case   
 
+<!-- TOC --><a name="files-names-containing-spaces"></a>
 ### Files names containing spaces
 Tackle Loop File Names with spaces : **IFS** (Internal Field Separator) :	
 ```bash
@@ -1107,6 +1139,7 @@ done
 IFS=$IFSBAK	
 ```	
 
+<!-- TOC --><a name="mysql"></a>
 ### mysql
 
 After installation of mysql via Cygwin Setup  
@@ -1140,6 +1173,7 @@ MariaDB [(none)]> quit;
 ```
 databases folder : cygwin64/var/lib/mysql/  
 
+<!-- TOC --><a name="devnull"></a>
 ### /dev/null 
 Cygwin /dev/null equivalent :  
 `$ wget http://download.thinkbroadband.com/1GB.zip -O NUL` 
@@ -1155,6 +1189,7 @@ column 12  FIELD12
 column 13  FIELD13
 # these columns are ignored (null) - they are useless 
 ```
+<!-- TOC --><a name="generate-new-guid"></a>
 ### Generate new GUID 
 Generate "-r" random UUID :  
 `$ uuidgen -r` 
