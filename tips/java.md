@@ -276,8 +276,7 @@ How to kill running jetty on port 8080
 
 <!-- TOC --><a name="eclipse"></a>
 ## Eclipse  
-**
-Eclipse: Java was started but returned error code=13  **
+**Eclipse: Java was started but returned error code=13**
 Remove in environement PATH : "C:\Program Files (x86)\Common Files\Oracle\Java\javapath"  
 
 [Debug mode - eclipse-weblogic](https://stackoverflow.com/questions/26104666/how-to-debug-java-web-application-in-eclips-with-weblogic-server)  
@@ -290,7 +289,7 @@ Run -> Debug Configurations -> Remote Java Application
 	Port : 8453  
 	-> Click Debug   
 
-**Eclipse 2023-09 : ObjectAid plugin **  
+**Eclipse 2023-09 : ObjectAid plugin**  
 [objectaid-eclipse](https://stackoverflow.com/questions/68589918/objectaid-unhandled-event-loop-exception/70785096#70785096)  
 
 There is a workaround:  
