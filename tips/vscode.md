@@ -164,29 +164,16 @@ Create a omnisharp.json file in the root of your project or in `%userprofile%\.o
 <Ctrl+Shif+P> Open User Settings : uncheck "Controls whether the editor Show CodeLens"  
 
 ## Add "Open with Visual Studio Code" in Contextual Menu
-vsCodeOpenFolder.reg :   
+"C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe %1"  
+
 ```
-Windows Registry Editor Version 5.00
-; Open files
-[HKEY_CLASSES_ROOT\*\shell\Open with VS Code]
-@="Edit with VS Code"
-"Icon"="C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe,0"
-[HKEY_CLASSES_ROOT\*\shell\Open with VS Code\command]
-@="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"%1\""
-; This will make it appear when you right click ON a folder
-; The "Icon" line can be removed if you don't want the icon to appear
-[HKEY_CLASSES_ROOT\Directory\shell\vscode]
-@="Open Folder as VS Code Project"
-"Icon"="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\",0"
-[HKEY_CLASSES_ROOT\Directory\shell\vscode\command]
-@="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"%1\""
-; This will make it appear when you right click INSIDE a folder
-; The "Icon" line can be removed if you don't want the icon to appear
-[HKEY_CLASSES_ROOT\Directory\Background\shell\vscode]
-@="Open Folder as VS Code Project"
-"Icon"="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\",0"
-[HKEY_CLASSES_ROOT\Directory\Background\shell\vscode\command]
-@="\"C:\\Users\\dgucc\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"%V\""
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode" /f /ve /d "Open with &vscode"
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode" /v "Icon2" /t REG_SZ /f /d "C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe,0"
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode\command" /f /ve /d "C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe %1"
+
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode" /f /ve /d "Open with &vscode"
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode" /v "Icon" /t REG_SZ /f /d "C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe,0"
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode\command" /d "C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe %1"
 ```
 
 for linux ~/.local/share/nemo/actions/vscode.nemo_action :   
