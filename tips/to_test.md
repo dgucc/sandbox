@@ -243,14 +243,15 @@ $ python
 ```
 
 **Decrypt previous stored passwords**  
-```json
+```bash
 openssl aes-128-cbc -d \
   -K babb4a9f774ab853c96c2d653dfe544a \
   -iv 00000000000000000000000000000000 \
   -in " %APPDATA%\DBeaverData\workspace6\General\.dbeaver\.credentials-config.json.bak" | \
   dd bs=1 skip=16 2>/dev/null | jq
-  
+```  
 
+```json
  {
   "db2-18bdd50d52b-3539a17d1da04651": {
     "#connection": {
