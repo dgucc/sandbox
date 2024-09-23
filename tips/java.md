@@ -276,8 +276,8 @@ How to kill running jetty on port 8080
 
 <!-- TOC --><a name="eclipse"></a>
 ## Eclipse  
-
-Eclipse: Java was started but returned error code=13  
+**
+Eclipse: Java was started but returned error code=13  **
 Remove in environement PATH : "C:\Program Files (x86)\Common Files\Oracle\Java\javapath"  
 
 [Debug mode - eclipse-weblogic](https://stackoverflow.com/questions/26104666/how-to-debug-java-web-application-in-eclips-with-weblogic-server)  
@@ -289,6 +289,38 @@ Run -> Debug Configurations -> Remote Java Application
 	Host : localhost  
 	Port : 8453  
 	-> Click Debug   
+
+**Eclipse 2023-09 : ObjectAid plugin **  
+[objectaid-eclipse](https://stackoverflow.com/questions/68589918/objectaid-unhandled-event-loop-exception/70785096#70785096)  
+
+There is a workaround:  
+
+1. Download xstream 1.4.18 jar  
+
+2. Locate the com.objectaid.uml_1.2.4.jar file and open it (with the zip tool of your choice)  
+
+3. Delete the xstream-1.3.1.jar file inside the lib directory.  
+Add the xstream-1.4.18.jar to the lib directory.  
+
+4. Open the file META-INF/MANIFEST.MF and replace line lib/xstream-1.3.1.jar with lib/xstream-1.4.18.jar.  
+
+5. Add to your eclipse.ini the following vmargs:   
+--add-opens=java.base/java.lang=ALL-UNNAMED  
+--add-opens=java.base/java.util=ALL-UNNAMED  
+--add-opens=java.base/java.text=ALL-UNNAMED  
+--add-opens=java.desktop/java.awt.font=ALL-UNNAMED  
+
+6. Restart Eclipse with -clean to ensure the OSGI cache is purged.  
+
+7. Install the OjbectAid plugin :  
+Help > Install New Software... > Add > Archive : Select "objectaid-1.2.4.zip"  
+Restart Eclipse  
+
+8. In Project Explorer : Ctrl+N (New) > Select "ObjectAid UML Diagram" > "ObjectAid Class Diagram"   
+and call it "uml"or whatever  
+
+9. Drag and Drop java classes into diagram "uml.ucls"  
+
 
 
 <!-- TOC --><a name="tomcat"></a>
