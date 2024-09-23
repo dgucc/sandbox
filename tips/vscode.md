@@ -1,5 +1,19 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [vscode](#vscode)
+   * [shortcut](#shortcut)
+   * [Configuration](#configuration)
+   * [Installation on Linux  ](#installation-on-linux)
+   * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
+   * [Hide References count in Editor ](#hide-references-count-in-editor)
+   * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="vscode"></a>
 # vscode
 
+<!-- TOC --><a name="shortcut"></a>
 ## shortcut
 
 Open Terminal : <Ctrl+J>  
@@ -7,6 +21,7 @@ Focus on Project Explorer : <Ctrl+0>
 
 Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
 
+<!-- TOC --><a name="configuration"></a>
 ## Configuration
 [Configuration Visual Studio Code](https://grafikart.fr/tutoriels/vscode-settings-2096)  
 <Ctrl+Shift+P> : Preferences  
@@ -94,6 +109,7 @@ Edit /home/<user>/.config/Code/User/settings.json :
 ```  
 ---
 
+<!-- TOC --><a name="installation-on-linux"></a>
 ## Installation on Linux  
 
 [Install Visual Studio Code and .NET Core for C# coding on Linux](https://www.pragmaticlinux.com/2021/03/install-visual-studio-code-and-net-core-for-c-coding-on-linux/)  
@@ -130,6 +146,7 @@ $ sudo apt-get install -y dotnet-sdk-6.0
 $ sudo apt-get install -y aspnetcore-runtime-6.0
 ```
 
+<!-- TOC --><a name="format-curly-brackets-on-the-same-line-c"></a>
 ## Format curly brackets on the same line c# 
 
 Create a omnisharp.json file in the root of your project or in `%userprofile%\.omnisharp\` folder :   
@@ -159,10 +176,12 @@ Create a omnisharp.json file in the root of your project or in `%userprofile%\.o
 
 <Ctrl+Shift+P> Restart Omnisharp  
 
+<!-- TOC --><a name="hide-references-count-in-editor"></a>
 ## Hide References count in Editor 
 
 <Ctrl+Shif+P> Open User Settings : uncheck "Controls whether the editor Show CodeLens"  
 
+<!-- TOC --><a name="add-open-with-visual-studio-code-in-contextual-menu"></a>
 ## Add "Open with Visual Studio Code" in Contextual Menu
 "C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe %1"  
 
