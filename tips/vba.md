@@ -1,8 +1,27 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [VBA tips](#vba-tips)
+   * [Excel](#excel)
+      + [Custom Function :  ](#custom-function-)
+      + [Write to File (unicode : UTF-16 LE BOM Grrrrrr) :  ](#write-to-file-unicode-utf-16-le-bom-grrrrrr-)
+      + [Write to Log :  ](#write-to-log-)
+      + [Highlight substring in cells :   ](#highlight-substring-in-cells-)
+      + [Autoformat Rows Color - Alternate Per Group (ActiveCell) :  ](#autoformat-rows-color-alternate-per-group-activecell-)
+      + [List files :  ](#list-files-)
+      + [XslTransform :  ](#xsltransform-)
+      + [Random Numbers :  ](#random-numbers-)
+      + [ODBC sample :   ](#odbc-sample-)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="vba-tips"></a>
 # VBA tips
 
+<!-- TOC --><a name="excel"></a>
 ## Excel
 
-Custom Function :  
+<!-- TOC --><a name="custom-function-"></a>
+### Custom Function :  
 
 ```vba
 Public Function checkDigitRRN(ByVal target As Range) As Integer
@@ -15,7 +34,8 @@ Public Function checkDigitRRN(ByVal target As Range) As Integer
 End Function
 ```
 
-Write to File (unicode : UTF-16 LE BOM Grrrrrr) :  
+<!-- TOC --><a name="write-to-file-unicode-utf-16-le-bom-grrrrrr-"></a>
+### Write to File (unicode : UTF-16 LE BOM Grrrrrr) :  
 
 ```vba
 Sub writeToFile(fileName As String, strLine As String)
@@ -28,7 +48,8 @@ Dim outputFile As String
 End Sub
 ```
 
-Write to Log :  
+<!-- TOC --><a name="write-to-log-"></a>
+### Write to Log :  
 ```vba
 Sub log(strLine As String, Optional appendMode As Boolean = True)
 
@@ -52,7 +73,8 @@ Dim fileNumber As Integer
 End Sub
 ```
 
-Highlight substring in cells :   
+<!-- TOC --><a name="highlight-substring-in-cells-"></a>
+### Highlight substring in cells :   
 ```vba
 ' Call highlightSubstringInCell("textToFind", Selection.Cells)
 
@@ -82,7 +104,8 @@ Dim length As Integer
 End Sub
 ```
 
-Autoformat Rows Color - Alternate Per Group (ActiveCell) :  
+<!-- TOC --><a name="autoformat-rows-color-alternate-per-group-activecell-"></a>
+### Autoformat Rows Color - Alternate Per Group (ActiveCell) :  
 
 ```vba
 Sub clearInteriorColor(skipHeaderRow As Boolean)
@@ -149,7 +172,8 @@ On Error Resume Next
 End Sub
 ```
 
-List files :  
+<!-- TOC --><a name="list-files-"></a>
+### List files :  
 
 ```vba
 Sub getFilesList(fileFilter As String, folderToScan As String, scanInSubFolder As Boolean, ByVal resultsRange As Range)
@@ -192,7 +216,8 @@ On Error Resume Next
 End Sub
 ```
 
-XslTransform :  
+<!-- TOC --><a name="xsltransform-"></a>
+### XslTransform :  
 
 ```vba
 ' Add Reference to Microsoft XML, v6.0
@@ -254,7 +279,8 @@ End If
 
 End Sub
 ```
-Random Numbers :  
+<!-- TOC --><a name="random-numbers-"></a>
+### Random Numbers :  
 
 ```vba
 Sub main_test()
@@ -288,7 +314,8 @@ Public Function RandomNumbers(Lowest As Long, Highest As Long, Optional Decimals
 End Function
 ```
 
-ODBC sample :   
+<!-- TOC --><a name="odbc-sample-"></a>
+### ODBC sample :   
 
 ```vba
 Sub getDBData(ByVal sqlCommand As String, tableName As String)
