@@ -1195,4 +1195,10 @@ Generate "-r" random UUID :
 `$ uuidgen -r` 
 > 5758c27e-0995-4f8f-aa8c-d269b773102a  
 
+### 8080 Already in use  
+`$ lsof -i:8080`  
+`$ kill -9 <PID>`  
+
+cygwin equivalent :  
+`$ netstat -aonp tcp | awk  '$4 == "LISTENING" && $2 ~ /:8080$/ '`  
 
