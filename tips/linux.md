@@ -8,6 +8,7 @@
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [unbound](#local-dns-unbound)
+  - [OpenVPN](#openvpn)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
   - [Enable WiFi](#enable-wifi)
   - [No Numpad](#no-numpad)
@@ -197,6 +198,23 @@ sed 's/ #.*$//;s/^0.0.0.0 \(.*\)/local-zone: "\1" refuse/' \
 >>/etc/unbound/unbound.conf.d/blacklist.conf
 ``` 
 
+
+## OpenVPN
+
+**Download and unzip *.ovpn**  
+Choose an country, Download and unzip [vpnbook bundle](https://www.vpnbook.com/freevpn)  
+note the username and password 
+
+**Launch openvpn** 
+`$ sudo openvpn --conf '~\Downloads\vpnbook-ca149-tcp443.ovpn'`
+
+**Deactivate IPv6**  
+``` 
+$ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+$ sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+$ sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+```
+Check your IP : https://www.whatismyip.com/  
 
 ## Create shortcut on desktop
 <Ctrl+Shift> Drag/Drop on desktop  
