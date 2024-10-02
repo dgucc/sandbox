@@ -6,7 +6,7 @@
 `$ sudo apt install flatpak`  
 `$ flatpak install flathub org.duckstation.DuckStation`  
 
-[install on Android](https://gamingonphone.com/guides/how-to-download-and-play-ps1-games-on-android-using-the-duckstation-emulator/)  
+[How to download and play PS1 games on Android](https://gamingonphone.com/guides/how-to-download-and-play-ps1-games-on-android-using-the-duckstation-emulator/)  
 
 
 ## Nintendo Switch Pro Controller on Linux
