@@ -171,7 +171,6 @@ sudo service unbound start
 
 <!-- TOC --><a name="how-to-install-any-software-without-admin-rights"></a>
 ## How To get rid of UAC pop-up
-Actually how to prevents the UAC pop-up from appearing 
 
 via a batch file :  
 ```cmd
