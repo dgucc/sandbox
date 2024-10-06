@@ -15,7 +15,7 @@
    * [Unbound - housekeeping](#unbound-housekeeping)
    * [Protect USB Drive ](#protect-usb-drive)
    * [Unquoted Service Path](#unquoted-service-path)
-   * [How To Install Any Software Without Admin Rights](#how-to-install-any-software-without-admin-rights)
+   * [How To get rid of UAC pop-up](#how-to-get-rid-of-uac-pop-up)
 
 <!-- TOC end -->
 
@@ -170,7 +170,7 @@ sudo service unbound start
 [Windows Privilege Escalation](https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae)
 
 <!-- TOC --><a name="how-to-install-any-software-without-admin-rights"></a>
-## How To Install Any Software Without Admin Rights
+## How To get rid of UAC pop-up
 Actually how to prevents the UAC pop-up from appearing 
 
 via a batch file :  
