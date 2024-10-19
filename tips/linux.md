@@ -18,7 +18,7 @@
   - [File manipulations](#file-manipulations)
   - [Sort images by orientation ](#sort-images-by-orientation)
   - [Text manipulations](#text-manipulations)
-  - [ssh](#ssh)
+  - [Ssh](#ssh)
   - [StarDict + wiktionnaire](#stardict--wiktionnaire)
   - [Calibre](#calibre)
   - [wget](#wget)
@@ -601,6 +601,15 @@ The key's randomart image is:
 +----[SHA256]-----+
 $ ssh-copy-id -i .ssh/id_rsa.pub username@remote_hostname
 ```
+port 22: connection refused :  
+ufw on remote host  
+```
+$ sudo ufw status
+$ sudo ufw allow 22
+$ sudo ufw reload
+ssh-copy-id -i .ssh/id_rsa.pub username@remote_hostname
+```
+
 Copy file to remote host (eg : 192.168.0.3) :  
 
 `$ scp file.zip user@192.168.0.3:/home/user/Desktop/`  
