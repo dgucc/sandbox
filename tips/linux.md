@@ -487,6 +487,9 @@ shopt -u nocaseglob # unset nocaseglob
 ### Convert jdbc dates "{d 'yyyy-mm-dd'}" => 'yyyy-mm-dd' :  
 `$ sed -i -E "s/\{d ('.{10}')\}/\1/g" file.sql`  
 
+### Replace text in multiple files
+`$ find . -name pom.xml -exec sed -i -e 's/\-before/\-after/g' {} \;`
+
 ### Sed multi-line mode :  
 `sed -e '1h;2,$H;$!d;g' -e 's/\n/\t/g'`  
 
