@@ -57,6 +57,25 @@ try {
 ?>
 ```
 
+```php
+<?php
+try {
+    $wsdl = 'http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL';
+    $client = new SoapClient($wsdl);
+    $params = [
+        'sCountryISOCode' => 'BE'
+    ];
+
+    $result = $client->__soapCall('CapitalCity', [$params]);
+    echo 'The capital of ' . $params['sCountryISOCode'] . ' is : ' . $result->CapitalCityResult;
+
+} catch (SoapFault $e) {
+    echo 'Erreur : ' . $e->getMessage();
+}
+?>
+```
+> The capital of US is : Washington
+
 5. [TODO] example with a payload in XML
 
 
