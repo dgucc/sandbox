@@ -56,6 +56,12 @@ try {
 }
 ?>
 ```
+> List of countries :
+> [AX] Åland Islands
+> [AF] Afghanistan
+> [AL] Albania
+> [DZ] Algeria
+> [...]
 
 ```php
 <?php
