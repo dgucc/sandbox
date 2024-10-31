@@ -55,6 +55,7 @@ try {
     echo "Erreur : " . $fault->getMessage();
 }
 ?>
+```
 
 5. [TODO] example with a payload in XML
 
