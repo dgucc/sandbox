@@ -28,8 +28,8 @@ extension=php_tidy.dll
 extension=php_xmlrpc.dll
 extension=php_xsl.dll
 ```
-2. Intall MIBS as indicated
-[Extract net-snmp-5.9.4.zip](https://sourceforge.net/projects/net-snmp/files/net-snmp/5.9.4/net-snmp-5.9.4.zip/download)
+2. Intall MIBS as indicated  
+[Extract net-snmp-5.9.4.zip](https://sourceforge.net/projects/net-snmp/files/net-snmp/5.9.4/net-snmp-5.9.4.zip/download)  
 Create a new environment variable MIBDIRS pointing to [extracted-path]\net-snmp-5.9.4
 
 3. Check installation with phpinfo() and look for SOAP section
@@ -56,5 +56,6 @@ try {
 }
 ?>
 
-5. 
+5. [TODO] example with a payload in XML
+
 
