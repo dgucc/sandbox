@@ -1,5 +1,18 @@
 # XML
 
+## XMLLINT
+
+Format XML :  
+```xml
+cat data.xml | xmllint --format -
+```
+Parse XML :  
+Use local-name() trick to ignore namespace prefixes
+```xml
+cat data.xml | xmllint --xpath '//*[local-name()="name"]/text()' -
+```
+
+
 ## WSDL-Viewer
 
 [Download wsdl-viewer.xsl](https://github.com/qvantel/wsdl-viewer/blob/master/wsdl-viewer.xsl)
