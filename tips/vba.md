@@ -410,6 +410,8 @@ End Sub
 
 ---
 
+## Misc
+
 ### Change the character used to separate thousands or decimals
 Click File > Options > Advanced > Editing options :  
 > Uncheck "Use system separators" and re-define separators for Decimals and/or Thousands
