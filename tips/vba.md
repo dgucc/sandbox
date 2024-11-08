@@ -11,6 +11,7 @@
       + [XslTransform :  ](#xsltransform-)
       + [Random Numbers :  ](#random-numbers-)
       + [ODBC sample :   ](#odbc-sample-)
+      + [Misc : ](#misc)
 
 <!-- TOC end -->
 
@@ -406,3 +407,11 @@ GoTo finalExit
 
 End Sub
 ```
+
+---
+
+### Change the character used to separate thousands or decimals
+Click File > Options > Advanced > Editing options :  
+> Uncheck "Use system separators" and re-define separators for Decimals and/or Thousands
+
+
