@@ -16,8 +16,8 @@
    * [Protect USB Drive ](#protect-usb-drive)
    * [Unquoted Service Path](#unquoted-service-path)
    * [How To get rid of UAC pop-up](#how-to-get-rid-of-uac-pop-up)
- - [Misc](#misc)
-  * [Google Dorks](#google-dorks)
+- [Misc](#misc)
+   * [Google Dorks](#google-dorks)
   
 <!-- TOC end -->
 
