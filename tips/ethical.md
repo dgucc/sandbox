@@ -16,7 +16,9 @@
    * [Protect USB Drive ](#protect-usb-drive)
    * [Unquoted Service Path](#unquoted-service-path)
    * [How To get rid of UAC pop-up](#how-to-get-rid-of-uac-pop-up)
-
+-  [Misc](#misc)
+  * [Google Dorks](#google-dorks)
+  
 <!-- TOC end -->
 
 <!-- TOC --><a name="windows"></a>
@@ -180,3 +182,26 @@ start SteamSetup.exe
 or
 `cmd /min /c set __COMPAT_LAYER=RunAsInvoker && start "" %1`  
 
+# Misc
+
+## Google Dorks
+
+[Google Dorks / Google Hacking : Google au service des hackers](https://www.securiteinfo.com/attaques/hacking/google-dorks-et-google-hacking.shtml)  
+
+- intitle
+> intitle:"Pi-hole Admin Console"   
+> intitle:"Netgear™ - NETGEAR Configuration Manager Login" : cible les configuration de routeurs Netgear qui sont en ligne.  
+> intitle:"index of" .env : trouve des mots de passe de base de données Mysql  
+> intitle:"Yawcam" inurl:8081 : rechercher des caméras en ligne  
+
+- inurl
+> inurl:/login.rsp : cible les webcams en ligne   
+> inurl:/phpMyAdmin/setup/index.php?phpMyAdmin= : cible des zones d'administration de PHPMyAdmin  
+> inurl:pipermail filetype:txt : permet d'accéder à des mails stockés en ligne  
+
+- filetype
+> filetype:txt "Registration Code" : rechercher des numéros d'enregistrements de logiciels payants.
+> filetype:txt "License Key" : la même chose que précédemment
+> filetype:png | "proportal" : cible des pages d'authentification du logiciel proportal  
+> "database_password" filetype:yml "config/parameters.yml" : la même chose que précédemment
+- ...
