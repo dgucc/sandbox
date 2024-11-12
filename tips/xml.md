@@ -13,7 +13,9 @@ cat data.xml | xmllint --xpath '//*[local-name()="name"]/text()' -
 ```
 ## XSD Viewer
 
-[xsd-schema-viewer](https://github.com/peterraf/online-xsd-viewer)
+[xsd-schema-viewer](https://github.com/peterraf/online-xsd-viewer)  
+
+[off-line?](https://github.com/dgucc/sandbox/blob/main/tips/xsdviewer.html)  
 
 ## WSDL-Viewer
 
