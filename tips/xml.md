@@ -11,7 +11,9 @@ Use local-name() trick to ignore namespace prefixes
 ```xml
 cat data.xml | xmllint --xpath '//*[local-name()="name"]/text()' -
 ```
+## XSD Viewer
 
+[xsd-schema-viewer](https://gist.github.com/jakebrinkmann/fc80f2d10212db23515dff1252ec973d)  
 
 ## WSDL-Viewer
 
