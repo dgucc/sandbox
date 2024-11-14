@@ -10,6 +10,7 @@
    * [d3.js](#d3js)
    * [Misc](#misc)
      + [Programmatically define input:file](#Programmatically-define-input:file )
+     + [Template Literals](#template-literals)
 
 <!-- TOC end -->
 
@@ -248,3 +249,17 @@ function getImgURL(url, callback) {
   xhr.send();
 }
 ```
+
+### Teamplate Literals 
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)  
+
+```javascript
+let msg="hello world!";
+let templateLiterals = `
+<div class="hello">
+   ${msg}
+</div>`;
+console.log(templateLiterals);
+```
+ 
