@@ -1,5 +1,21 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Javascript](#javascript)
+   * [Fix charset rendering ](#fix-charset-rendering)
+   * [String Remove accents ](#string-remove-accents)
+   * [jq : json query ](#jq-json-query)
+   * [iconv](#iconv)
+   * [PDf : workaround for html2pdf to download pdf with javascript : Ba>se64](#pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64)
+   * [CompanyNumber cleanup :  ](#companynumber-cleanup-)
+   * [d3.js](#d3js)
+   * [Misc](#misc)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="javascript"></a>
 # Javascript
 
+<!-- TOC --><a name="fix-charset-rendering"></a>
 ## Fix charset rendering 
 ```
 var utf8_to_latin1 = function (s) {
@@ -10,6 +26,7 @@ var latin1_to_utf8 = function (s) {
 };
 ```
 
+<!-- TOC --><a name="string-remove-accents"></a>
 ## String Remove accents 
 ```
 String.prototype.sansAccent = function(){
@@ -35,6 +52,7 @@ var chaine = "À côté d'un verre vide, il y a toujours un mec plein.";
 alert( chaine.sansAccent() );
 ```
 
+<!-- TOC --><a name="jq-json-query"></a>
 ## jq : json query 
 
 Filter output for selected fields :  
@@ -72,6 +90,7 @@ some arithmetic on fields :
 
 File encoding may prevent jq to work properly
 
+<!-- TOC --><a name="iconv"></a>
 ## iconv
 
 Check file encoding  
@@ -113,6 +132,7 @@ Or (by using vim in "ex" and "silen" mode)
 `$  vim -es '+set fileencoding=utf-8' '+wq!' file.json `  
 
 
+<!-- TOC --><a name="pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64"></a>
 ## PDf : workaround for html2pdf to download pdf with javascript : Ba>se64
 
 ```
@@ -139,6 +159,7 @@ $.ajax(settings)
 		anchor.remove();
 ```
 
+<!-- TOC --><a name="companynumber-cleanup-"></a>
 ## CompanyNumber cleanup :  
 ```
 function cleanupCbe(cbe) {
@@ -150,6 +171,7 @@ function cleanupCbe(cbe) {
 ```
 ---
 
+<!-- TOC --><a name="d3js"></a>
 ## d3.js
 
 d3 Directed Forece Layout - Glossary :  
@@ -192,4 +214,36 @@ Custom event in d3
 var dispatch = d3.dispatch("statechange");
 dispatch.on('statechange', function(e){ console.log(e) })
 dispatch.call("statechange", this, 'Hello, world!')
+```
+
+## Misc
+
+### Programmatically define input:file 
+
+```js
+// programmatically add File to input:file > filelist
+const myfileName = "img/pic.png"
+loadURLToInputFiled(myfileName);
+
+// Use DataTransfer.files to define input.files
+function loadURLToInputFiled(url) {
+  getImgURL(url, (fileBlob) => {
+    let fileName = xsdFileName;
+    let file = new File([fileBlob], fileName, { type: "text/xml", lastModified: new Date().getTime() }, 'utf-8');
+    let dataTransfer = new DataTransfer();
+    dataTransfer.items.add(file);
+    document.querySelector('#get_the_file').files = dataTransfer.files;
+    document.getElementById("get_the_file").dispatchEvent(new Event("change"));
+  })
+}
+// xmlHTTP return blob respond
+function getImgURL(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    callback(xhr.response);
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
 ```
