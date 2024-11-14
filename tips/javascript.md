@@ -221,26 +221,26 @@ dispatch.call("statechange", this, 'Hello, world!')
 ### Programmatically define input:file 
 
 ```js
-// programmatically add File to input:file > filelist
-const myfileName = "img/pic.png"
-loadURLToInputFiled(myfileName);
+// programmatically add XSD in input filelist
+const xsdFileName = "xsd/schema.xsd"
+loadURLToInputFiled(xsdFileName);
 
 // Use DataTransfer.files to define input.files
 function loadURLToInputFiled(url) {
   getImgURL(url, (fileBlob) => {
-    let fileName = xsdFileName;
-    let file = new File([fileBlob], fileName, { type: "text/xml", lastModified: new Date().getTime() }, 'utf-8');
-    let dataTransfer = new DataTransfer();
-    dataTransfer.items.add(file);
-    document.querySelector('#get_the_file').files = dataTransfer.files;
-    document.getElementById("get_the_file").dispatchEvent(new Event("change"));
+	let fileName = xsdFileName;
+	let file = new File([fileBlob], fileName, { type: "text/xml", lastModified: new Date().getTime() }, 'utf-8');
+	let dataTransfer = new DataTransfer();
+	dataTransfer.items.add(file);
+	document.querySelector('#get_the_file').files = dataTransfer.files;
+	document.getElementById("get_the_file").dispatchEvent(new Event("change"));
   })
 }
 // xmlHTTP return blob respond
 function getImgURL(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onload = function () {
-    callback(xhr.response);
+	callback(xhr.response);
   };
   xhr.open('GET', url);
   xhr.responseType = 'blob';
