@@ -9,7 +9,7 @@
    * [CompanyNumber cleanup :  ](#companynumber-cleanup-)
    * [d3.js](#d3js)
    * [Misc](#misc)
-     + [Programmatically define input:file](#Programmatically-define-input:file )
+     + [Programmatically define input:file](#Programmatically-define-input-file)
      + [Template Literals](#template-literals)
 
 <!-- TOC end -->
@@ -250,7 +250,7 @@ function getImgURL(url, callback) {
 }
 ```
 
-### Teamplate Literals 
+### Teamplate Literals
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)  
 
