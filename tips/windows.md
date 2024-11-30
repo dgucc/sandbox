@@ -101,6 +101,7 @@ When invited to connect to internet : SHIFT + F10
     MOBSYNC : ouvre le centre de synchronisation
     MSCONFIG : ouvre l’outil de configuration du système
     NAPCLCFG.MSC : ouvre l’outil de configuration du client NAP (Pour Vista uniquement)
+    NCPA.cpl : panneau de configuration réseau
     NTMSMGR.MSC : ouvre le gestionnaire des supports de stockage amovibles
     NTMSOPRQ.MSC : ouvre les demandes de l’opérateur de stockage amovible
     ODBCAD32 : ouvre l’administrateur de sources de données ODBC
