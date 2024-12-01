@@ -28,6 +28,8 @@
 <!-- TOC --><a name="github-getting-started"></a>
 ## GitHub - Getting started
 
+[Bien démarrer avec GitHub](https://docs.github.com/fr/get-started)  
+
 <!-- TOC --><a name="command-gh-needed-to-push-modifications-to-remote-repository"></a>
 ### Command gh needed to push modifications to remote repository  
 Install GitHub CLI on macOS, Windows, or Linux.  
