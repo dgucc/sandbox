@@ -195,6 +195,10 @@ Display comments only
 %B for both  
 `git --no-pager log --pretty=format:"%cs: %s [%H]"` 
 
+`git --no-pager log --all --decorate --graph --pretty="%C(blue)%h %C(yellow)%s %C(white)%ad" --date=short`
+
+
+
 Git GUI : visualize all branch history  
 `gitk --all` 
 
