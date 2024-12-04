@@ -191,12 +191,16 @@ Remove non commited change
 
 Display comments only  
 %s for the subject  
-%b for the body;  
+%b for the body  
 %B for both  
 `git --no-pager log --pretty=format:"%cs: %s [%H]"` 
 
-`git --no-pager log --all --decorate --graph --pretty="%C(blue)%h %C(yellow)%s %C(white)%ad" --date=short`
+Display Graph [Mnemonic : no-pager log A DoG]  
+%h for sha1 hash  
+%ad for date  
+`git --no-pager log --all --decorate --graph --pretty="%C(blue)%h %C(yellow)%s %C(white)%ad" --date=short`  
 
+> ![git-log-graph](https://github.com/dgucc/sandbox/blob/main/tips/images/git-log-graph.png)
 
 
 Git GUI : visualize all branch history  
