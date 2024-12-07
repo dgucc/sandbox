@@ -98,6 +98,17 @@ Deactivate/Activate command :
 (as admin)
 `netsh advfirewall set domainprofile state on`  
 
+## Install programs without admin rights
+
+Download and extract innoextract (cf. innosetup)  
+[Download innoextract](https://constexpr.org/innoextract/)  
+
+Drag-Drop any installation program on innoextract.exe  
+or  
+`> innoextract.exe setup.exe`  
+
+If setup.exe is compatible, a new< folder app/  will be created as a portable app  
+
 ---
 
 <!-- TOC --><a name="linux"></a>
