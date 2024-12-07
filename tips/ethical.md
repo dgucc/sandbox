@@ -8,6 +8,7 @@
    * [Wi-Fi](#wi-fi)
    * [Registry](#registry)
    * [Windows Defender Firewall with Advanced Security](#windows-defender-firewall-with-advanced-security)
+   * [Install programs without admin rights](#install-programs-without-admin-rights)
 - [Linux](#linux)
    * [VirtualBox  ](#virtualbox)
    * [kali - config post installation  ](#kali-config-post-installation)
