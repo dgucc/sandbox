@@ -359,6 +359,12 @@ Drawbacks :
 - not working with many many files
 - not working with files starting with `!, -, (, )`  
 
+### Find all files create|modified|accessed on a given date  
+- ct : creation  
+- mt : modification  
+- at : access  
+`$ find . -type f -newermt 2024-12-12 ! -newermt 2024-12-13`  
+
 ### Ignore case with ls :  
 `$ shopt -s nocaseglob; ls -1 *.pdf`  
 
