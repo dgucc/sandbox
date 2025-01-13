@@ -11,6 +11,13 @@ Use local-name() trick to ignore namespace prefixes
 ```xml
 cat data.xml | xmllint --xpath '//*[local-name()="name"]/text()' -
 ```
+Validate XSD :  
+`$ xmllint --noout --schema http://www.w3.org/2001/XMLSchema.xsd foo.xsd`  
+`$ xmllint --noout --schema https://www.w3.org/2009/XMLSchema/XMLSchema.xsd foo.xsd`  
+
+Validate XML against XSD :  
+`$ xmllint --noout --schema foo.xsd sample.xml`  
+
 ## XSD Viewer
 
 [xsd-schema-viewer](https://github.com/peterraf/online-xsd-viewer)  
