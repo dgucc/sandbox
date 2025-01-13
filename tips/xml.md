@@ -18,9 +18,9 @@ Validate XSD :
 Validate XML against XSD :  
 `$ xmllint --noout --schema foo.xsd sample.xml`  
 
-> Tip : Si le proxy fait des misères
-> set http_proxy=http://username@ip-proxy:8080
-> set https_proxy=$http_proxy
+> Tip : Si le proxy fait des misères  
+> set http_proxy=http://username@ip-proxy:8080  
+> set https_proxy=$http_proxy  
 
 
 ## XSD Viewer
