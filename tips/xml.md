@@ -60,3 +60,10 @@ Correct the xsl
 Open xml file with your browser :  
 
 ![image](https://github.com/user-attachments/assets/4704945d-eaa4-4d4d-9dc1-ac35082b1183)
+
+## XPATH
+
+Fetch any kind of node containing a specific text  
+`//*[text()[contains(.,'abc')]]`  
+
+
