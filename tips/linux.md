@@ -16,6 +16,7 @@
   - [Digest](#digest)
   - [Dates](#dates)
   - [File manipulations](#file-manipulations)
+  - [Image manipulations](#image-manipulations)
   - [Sort images by orientation ](#sort-images-by-orientation)
   - [Text manipulations](#text-manipulations)
   - [Ssh](#ssh)
@@ -453,7 +454,9 @@ option : -o, --only-matching
 `$  grep -vf file2.txt file1.txt ` only in file2.txt  
 
 
-## Sort images by orientation
+## Image manipulations
+
+### Sort images by orientation
 ```bash
 #!/bin/bash
 # use imagemagick's identify with the fx special operator
@@ -481,6 +484,10 @@ shopt -u nocaseglob # unset nocaseglob
 
 ```
 
+### How to crop automatically image 
+Trim white regions away with imagemagick :   
+
+`$ convert -trim input.png output.png`  
 
 ## Text manipulations  
 
