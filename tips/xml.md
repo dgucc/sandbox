@@ -22,6 +22,24 @@ Validate XML against XSD :
 > set http_proxy=http://username@ip-proxy:8080  
 > set https_proxy=$http_proxy  
 
+## XSLTPROC
+
+Cygwin : install libxslt  
+
+in xml source :  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+```
+in xsl :  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xsl:output method="xml" encoding="UTF-8" indent="yes" />
+```
+
+`$ xsltproc style.xsl input.xml > output.xml`  
+
 
 ## XSD Viewer
 
