@@ -503,6 +503,13 @@ Trim white regions away with imagemagick :
 ### Replace text in multiple files
 `$ find . -name pom.xml -exec sed -i -e 's/\-before/\-after/g' {} \;`
 
+### Swap 2 consecutive lines
+Test 
+`$ perl -0777 -pne 's/(.*pattern-line-A.*)\n(.*pattern-line-B.*)/$2\n$1/g' input.txt`  
+
+Apply  
+`$ perl -0777 -i.bak -ne 's/(.*pattern-line-A.*)\n(.*pattern-line-B.*)/$2\n$1/g' input.txt` 
+
 ### Sed multi-line mode :  
 `sed -e '1h;2,$H;$!d;g' -e 's/\n/\t/g'`  
 
