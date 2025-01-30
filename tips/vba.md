@@ -11,6 +11,8 @@
       + [XslTransform :  ](#xsltransform-)
       + [Random Numbers :  ](#random-numbers-)
       + [ODBC sample :   ](#odbc-sample-)
+    * [Word](#word)
+      + [Replace text from dictionary](#replace-text-from-dictionary)
       + [Misc : ](#misc)
 
 <!-- TOC end -->
@@ -410,6 +412,45 @@ End Sub
 
 ---
 
+## Word
+
+### Replace text from dictionary
+Find & replace All text using object dictionary (including text in shapes)  
+```vba
+Public Sub ReplaceAllText()
+   Dim Dict As Object
+   Set Dict = CreateObject("Scripting.Dictionary")
+   
+   Dict.Add "Replace Me 1", "Replaced 1"
+   Dict.Add "Replace Me 2", "Replaced 2"
+   Dict.Add "Replace Me 3", "Replaced 3"
+ 
+    'Loop over Dictionary Keys and get item
+    Dim k As Variant
+    For Each k In Dict.Keys()
+
+      ' Loop over common Texts 
+      With ActiveDocument.Range.Find
+         .Text = k
+         .Replacement.Text = Dict(k)
+         .Execute Replace:=wdReplaceAll
+      End With
+      
+      ' Loop over Text in Boxes
+      For Each objshape In ActiveDocument.Range.ShapeRange
+         If objshape.TextFrame.HasText Then
+            With objshape.TextFrame.TextRange.Find
+               .Text = k
+               .Replacement.Text = Dict(k)
+               .Execute Replace:=wdReplaceAll
+            End With
+         End If
+      Next
+      
+    Next k
+End Sub
+```
+---
 ## Misc
 
 ### Change the character used to separate thousands or decimals
