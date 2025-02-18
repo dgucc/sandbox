@@ -395,7 +395,7 @@ shopt -u nullglob
 `$ cat memo.sh | sed '1 i EXTRA_TOP_LINE'` 
 
 ### Append one line at the end of a file :  
-`$ cat memo.sh | sed '1 a EXTRA_BOTOOM_LINE'`  
+`$ cat memo.sh | sed '$ a EXTRA_BOTOOM_LINE'`  
 
 ### Insert 'commit;' every 1000 lines
 ```bash
