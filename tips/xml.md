@@ -48,9 +48,9 @@ Merge multiple xml content
 <Document>
    <Header>Header text</Header>
    <Content>
-      <BlockToSkip>...</BlockToSkip>
       <Paragraph>Lorem ipsum</Paragraph>
    </Content>
+   <BlockToSkip>Skip Me</BlockToSkip>
 </Document>
 ```
 **doc2.xml**  
@@ -115,7 +115,6 @@ Merge multiple xml content
 <Document>
   <Header>Header text</Header>
   <Content>
-    <BlockToSkip>...</BlockToSkip>
     <Paragraph>Lorem ipsum</Paragraph>
     <Paragraph>Lorem ipsum 2</Paragraph>
     <Paragraph>Lorem ipsum 3</Paragraph>
