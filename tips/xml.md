@@ -2,20 +2,20 @@
 
 ## XMLLINT
 
-Format XML :  
+### Format XML :  
 ```xml
 cat data.xml | xmllint --format -
 ```
-Parse XML :  
+### Parse XML :  
 Use local-name() trick to ignore namespace prefixes
 ```xml
 cat data.xml | xmllint --xpath '//*[local-name()="name"]/text()' -
 ```
-Validate XSD :  
+### Validate XSD :  
 `$ xmllint --noout --schema http://www.w3.org/2001/XMLSchema.xsd foo.xsd`  
 `$ xmllint --noout --schema https://www.w3.org/2009/XMLSchema/XMLSchema.xsd foo.xsd`  
 
-Validate XML against XSD :  
+### Validate XML against XSD :  
 `$ xmllint --noout --schema foo.xsd sample.xml`  
 
 > Tip : Si le proxy fait des misères  
@@ -24,7 +24,7 @@ Validate XML against XSD :
 
 ## XSLTPROC
 
-Cygwin : install libxslt  
+### Cygwin : install libxslt  
 
 in xml source :  
 ```xml
@@ -40,7 +40,7 @@ in xsl :
 
 `$ xsltproc style.xsl input.xml > output.xml`  
 
-Merge multiple xml content  
+### Merge multiple xml content  
 
 **doc.xml**
 ```xml
