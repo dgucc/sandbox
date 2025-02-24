@@ -163,6 +163,8 @@ $.ajax(settings)
 
 ## wkhtmltopdf
 
+[Reference](https://wkhtmltopdf.org/usage/wkhtmltopdf.txt)  
+
 ### How to produce A4 size PDFs
 **css:**  
 ```css
