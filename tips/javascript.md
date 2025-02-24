@@ -176,6 +176,27 @@ $.ajax(settings)
 **wkhtmltopdf options:**  
 `wkhtmltopdf -L 0 -R 0 -T 0 -B 0 -s A4 --disable-smart-shrinking input.html output.pdf`
 
+### Deal with Page breaks
+
+```css
+.keep-together {
+    page-break-inside: avoid;
+}
+
+.break-before {
+    page-break-before: always;
+}
+
+.break-after {
+    page-break-after: always;
+}
+```
+```html
+<div style = "display:block; clear:both; page-break-after:always;">
+</div>
+```
+
+
 <!-- TOC --><a name="companynumber-cleanup-"></a>
 ## CompanyNumber cleanup :  
 ```
