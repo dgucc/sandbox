@@ -5,7 +5,7 @@
    * [String Remove accents ](#string-remove-accents)
    * [jq : json query ](#jq-json-query)
    * [iconv](#iconv)
-   * [PDf : workaround for html2pdf to download pdf with javascript : Ba>se64](#pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64)
+   * [PDF : workaround for html2pdf to download pdf with javascript : Base64](#pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64)
    * [CompanyNumber cleanup :  ](#companynumber-cleanup-)
    * [d3.js](#d3js)
    * [Misc](#misc)
@@ -135,7 +135,7 @@ Or (by using vim in "ex" and "silen" mode)
 
 
 <!-- TOC --><a name="pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64"></a>
-## PDf : workaround for html2pdf to download pdf with javascript : Ba>se64
+## PDF : workaround for html2pdf to download pdf with javascript : Base64
 
 ```
 http://localhost:8080/api/pdf/get/html/base64/
@@ -160,6 +160,19 @@ $.ajax(settings)
 		anchor.click(); // trigger file download			
 		anchor.remove();
 ```
+
+## wkhtmltopdf
+
+###How to produce A4 size PDFs
+**css:**  
+```css
+{
+   width: 991px;
+   height: 1403px;
+}
+```
+**wkhtmltopdf options:**  
+`wkhtmltopdf -L 0 -R 0 -T 0 -B 0 -s A4 --disable-smart-shrinking input.html output.pdf`
 
 <!-- TOC --><a name="companynumber-cleanup-"></a>
 ## CompanyNumber cleanup :  
