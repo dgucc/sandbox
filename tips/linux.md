@@ -436,6 +436,11 @@ $ for file in $(ls *.csv) ; do echo "$file $(echo `wc -l $file | cut -f1 -d';' |
 ### Skip 1st line :  
 `$ tail -n + 2 filename`
 
+
+### GREP : speed up research by targeting files extension and by excluding folder
+`$ grep -nr "private static final" --include=\*.java --exclude=target` 
+
+
 ### GREP : Get lines Before|After pattern   
 `$ grep -B 500 'sometext' file.txt` 
 `$ grep -A 500 'sometext' file.txt` 
