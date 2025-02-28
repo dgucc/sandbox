@@ -73,3 +73,27 @@ $ gs -sDEVICE=pdfwrite -o cropped.pdf \
 ## How to extract images with pdfimages 
 $ pdfimages -f 2 -l 2 -j input.pdf temp/cover # cover : prefix
 
+## Poppler-utils
+
+[Poppler is a PDF rendering library based on the xpdf-3.0 code base](https://poppler.freedesktop.org/)  
+
+[poppler-utils includes](https://github.com/elswork/poppler-utils) : 
+
+ - **pdffonts** show the list of fonts of the PDF file.
+`$ pdffonts elswork_poppler-utils.pdf`   
+ - **pdfimages** extract and list the images of the PDF file.
+`$ pdfimages -list elswork_poppler-utils.pdf`   
+ - **pdfinfo** extract info from the PDF file.
+`$ pdfinfo elswork_poppler-utils.pdf`   
+ - **pdfseparate** separate the PDF file.
+`$ pdfseparate elswork_poppler-utils.pdf separated%d.pdf`   
+ - **pdftocairo** convert PDF file into images.
+`$ pdftocairo -png elswork_poppler-utils.pdf`   
+ - **pdftohtml** convert PDF file into html files.
+`$ pdftohtml elswork_poppler-utils.pdf`   
+ - **pdftotext** convert PDF file into text file.
+`$ pdftotext elswork_poppler-utils.pdf`   
+ - **pdfunite** join PDF files in one file.
+`$ pdfunite file1.pdf file2.pdf joined.pdf`
+
+
