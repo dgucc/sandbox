@@ -35,6 +35,12 @@ Push modifications to github
 ## How-to Update local repository from github  
 `$ git pull origin main`  
 
+## How to git pull all git projects
+```bash
+#!/bin/bash
+find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull origin main \;
+```
+
 ## Open directly Git GUI - History of all branches  
 `$ gitk --all`  
 
