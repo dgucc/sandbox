@@ -142,20 +142,18 @@ Include xsl into wsdl.xml
 Correct the xsl 
 ```xml
 <!--
-  <div
-			class="porttitle" id="{concat($PORT-TITLE-PREFIX, generate-id($port-type))}">
-			<xsl:if test="position() != 1">
-				<xsl:value-of select="$collapsed-img" disable-output-escaping="yes" />
-			</xsl:if>
-    <xsl:if
-				test="position() = 1">
-				<xsl:value-of select="$expanded-img" disable-output-escaping="yes" />
-			</xsl:if>
-		Port: <span class="portbold">
-				<xsl:value-of select="@name" />
-			</span>
-		</div>
- -->
+<div class="porttitle" id="{concat($PORT-TITLE-PREFIX, generate-id($port-type))}">
+<xsl:if test="position() != 1">
+	<xsl:value-of select="$collapsed-img" disable-output-escaping="yes" />
+</xsl:if>
+<xsl:if test="position() = 1">
+	<xsl:value-of select="$expanded-img" disable-output-escaping="yes" />
+</xsl:if>
+Port: <span class="portbold">
+		<xsl:value-of select="@name" />
+	</span>
+</div>
+-->
 ```
 Open xml file with your browser :  
 
