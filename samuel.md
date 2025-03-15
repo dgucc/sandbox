@@ -6,7 +6,7 @@ Downloads
 
 **Git**
 
-[git](https://git-scm.com/downloads/win)  
+[TortoiseGit](https://download.tortoisegit.org/tgit/2.17.0.0/TortoiseGit-2.17.0.2-64bit.msi)  
 [guide git fr](https://github.com/progit/progit2-fr/releases/download/2.1.77/progit.pdf)  
 
 **GitHub**  
