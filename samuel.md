@@ -2,12 +2,17 @@
 
 ## Git
 
-Tools to Downloads
+Downloads
+
+**Git**
 
 [git](https://git-scm.com/downloads/win)  
 [guide git fr](https://github.com/progit/progit2-fr/releases/download/2.1.77/progit.pdf)  
+
+**GitHub**  
 [github CLI](https://github.com/cli/cli/releases/download/v2.68.1/gh_2.68.1_windows_amd64.msi)  
 
+S'authentifier auprès de  GitHub.com:   
 ```bash
 $ gh auth login
 ? Where do you use GitHub? GitHub.com
@@ -23,7 +28,12 @@ Press Enter to open https://github.com/login/device in your browser...
 ✓ Logged in as dgucc
 ```
 
+Récupérer son 1er projet depuis GitHub
+```bash
+git clone dgucc/sandbox
+```
+
+## Other Tools
 [vscode](https://code.visualstudio.com/docs/?dv=win32arm64zip)  
 [winmerge](https://downloads.sourceforge.net/winmerge/winmerge-2.16.46-x64-exe.zip)  
 
-To Test
