@@ -207,7 +207,7 @@ Choose an country, Download and unzip [vpnbook bundle](https://www.vpnbook.com/f
 note the username and password 
 
 **Launch openvpn** 
-`$ sudo openvpn --conf '~\Downloads\vpnbook-ca149-tcp443.ovpn'`
+`$ sudo openvpn --config '~\Downloads\vpnbook-ca149-tcp443.ovpn'`
 
 **Deactivate IPv6**  
 ``` 
