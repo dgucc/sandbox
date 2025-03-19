@@ -4,6 +4,7 @@
    * [shortcut](#shortcut)
    * [Configuration](#configuration)
    * [Installation on Linux  ](#installation-on-linux)
+   * [Clean extensions](#clean-extensions)
    * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
    * [Hide References count in Editor ](#hide-references-count-in-editor)
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
@@ -145,6 +146,15 @@ $ sudo apt-get update
 $ sudo apt-get install -y dotnet-sdk-6.0
 $ sudo apt-get install -y aspnetcore-runtime-6.0
 ```
+
+## Clean extensions
+
+Remove folder extensions :  
+
+ - Windows: %USERPROFILE%\.vscode\extensions
+ - Linux: ~/.vscode/extensions
+
+
 
 <!-- TOC --><a name="format-curly-brackets-on-the-same-line-c"></a>
 ## Format curly brackets on the same line c# 
