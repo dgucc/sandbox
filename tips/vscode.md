@@ -151,8 +151,8 @@ $ sudo apt-get install -y aspnetcore-runtime-6.0
 
 Remove folder extensions :  
 
- - Windows: %USERPROFILE%\.vscode\extensions
- - Linux: ~/.vscode/extensions
+ - Windows: `%USERPROFILE%\.vscode\extensions` 
+ - Linux: `~/.vscode/extensions` 
 
 
 
