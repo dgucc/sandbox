@@ -54,6 +54,8 @@ When invited to connect to internet : SHIFT + F10
 ## UnattendedWinstall
 [Microsoft's Answer Files to automate and customize Windows installations](https://github.com/memstechtips/UnattendedWinstall)  
 
+Pre-requesite : `Set-ExecutionPolicy Unrestricted`  
+
 
 <!-- TOC --><a name="usefull-commands"></a>
 ## Usefull commands 
