@@ -29,7 +29,7 @@ Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
 Edit /home/<user>/.config/Code/User/settings.json :
 
 <details>
-<summary>json</summary>
+<summary>settings.json</summary>
 
 ```json
 {
