@@ -28,6 +28,9 @@ Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
 <Ctrl+Shift+P> : Preferences  
 Edit /home/<user>/.config/Code/User/settings.json :
 
+<details>
+<summary>json</summary>
+
 ```json
 {
   "workbench.startupEditor": "none", // On ne veut pas une page d'accueil chargée
@@ -107,7 +110,9 @@ Edit /home/<user>/.config/Code/User/settings.json :
     "editor.formatOnType": true
   }
 }
-```  
+```
+</details>
+
 ---
 
 <!-- TOC --><a name="installation-on-linux"></a>
