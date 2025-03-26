@@ -91,7 +91,7 @@ Contextual Menu > Generate Diagram...
 
 <!-- TOC --><a name="add-intellij-in-contextual-menu-wit-regexe"></a>
 ## Add IntelliJ in contextual menu wit reg.exe  
-	/f : force no prompting  
+	/f : force no prompting and update if the element already exists  
 	/ve : set empty value name "(Default)"  
 
 ```cmd
