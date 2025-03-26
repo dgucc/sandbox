@@ -26,6 +26,16 @@
     TEI, XML dictionaries according to TEI P5  
     wdweb, DBs used by the wikdict-web application at WikDict.com   
 
+StarDict + Wiktionnaire:  
+
+https://sourceforge.net/projects/stardict-4/  
+https://github.com/BoboTiG/ebook-reader-dict/releases/  
+
+> Install dictionnaries : unzip and copy in the followin folder  
+'$ sudo cp -r dict-fr /usr/share/stardict/dic/'  
+
+Install GolgenDict (better interface)  
+
 ## Windows
 
 [GoldenDict](https://portableapps.com/apps/education/goldendict_portable) + StarDict format
