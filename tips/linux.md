@@ -198,7 +198,12 @@ grep ^0.0.0.0 - | \
 sed 's/ #.*$//;s/^0.0.0.0 \(.*\)/local-zone: "\1" refuse/' \
 >>/etc/unbound/unbound.conf.d/blacklist.conf
 ``` 
-
+Update unbound:   
+```bash
+sudo service unbound stop
+sudo wget ftp://FTP.INTERNIC.NET/domain/named.cache -O /var/lib/unbound/root.hints
+sudo service unbound start
+```
 
 ## OpenVPN
 
