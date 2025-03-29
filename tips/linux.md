@@ -5,7 +5,7 @@
   - [grub-customizer](#Grub-Customizer)
   - [Reset password](#reset-password)
   - [Free up disk space](#free-disk-space)
-  - [Move /home into a separate partition](#move-/home-into-a-separate-partition-)
+  - [Move home into a separate partition](#move-home-into-a-separate-partition-)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [unbound](#local-dns-unbound)
@@ -93,7 +93,7 @@ Remove old kernels :
 `$ sudo apt-get autoremove --purge`  
 
 
-## Move /home into separate partition 
+## Move home into separate partition 
 
 With a LiveCD  
 - use **gparted** to reduce root partition (/dev/sda5) and create a new one for /home  (/dev/sda6)
