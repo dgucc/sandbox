@@ -1,13 +1,12 @@
 # Ollama
 
-[IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
+[cf. linuxtricks.fr : IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
 
-IA : Installer un Modèle de Langage (LLM) avec OllamaWiki   
 
 IA : Installer un Modèle de Langage (LLM) avec Ollama
 =====================================================
 
-![ollama-logo](/upload/ollama-logo.png "ollama-logo")
+![ollama-logo](https://www.linuxtricks.fr/upload/ollama-logo.png)
 
   
   
@@ -135,8 +134,20 @@ Voici le contenu du service systemd :
 
 Code :
 
-`[Unit]   Description=Ollama Service   After=network-online.target   [Service]   ExecStart=/usr/bin/ollama serve   User=ollama   Group=ollama   Restart=always   RestartSec=3   Environment="PATH=$PATH"   [Install]   WantedBy=default.target`
-
+```
+[Unit]
+Description=Ollama Service
+After=network-online.target
+[Service]
+ExecStart=/usr/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment="PATH=$PATH"
+[Install]
+WantedBy=default.target`
+```
   
   
 On recharge systemd :  
@@ -213,8 +224,15 @@ La sortie produite pendant le téléchargement est similaire à la récupératio
 
 Code :
 
-`pulling manifest   pulling 6a0746a1ec1a... 100% ▕█████████████▏ 4.7 GB   pulling 4fa551d4f938... 100% ▕█████████████▏ 12 KB   pulling 8ab4849b038c... 100% ▕█████████████▏ 254 B   pulling 577073ffcc6c... 100% ▕█████████████▏ 110 B   pulling 3f8eb4da87fa... 100% ▕█████████████▏ 485 B   verifying sha256 digest   writing manifest   success`
-
+```
+pulling manifest   pulling 6a0746a1ec1a... 100% ▕█████████████▏ 4.7 GB   pulling 4fa551d4f938... 100% ▕█████████████▏ 12 KB
+pulling 8ab4849b038c... 100% ▕█████████████▏ 254 B
+pulling 577073ffcc6c... 100% ▕█████████████▏ 110 B
+pulling 3f8eb4da87fa... 100% ▕█████████████▏ 485 B   
+verifying sha256 digest
+writing manifest
+success`
+```
   
   
 Par défaut il s'agit de la variante 8B.  
@@ -239,8 +257,10 @@ Ce qui donne :
 
 Code :
 
-`NAME             ID              SIZE      MODIFIED        llama3:70b       786f3184aec0    39 GB     10 hours ago      llama3:latest    365c0bd3c000    4.7 GB    10 hours ago`  
-
+```
+NAME             ID              SIZE      MODIFIED
+llama3:70b       786f3184aec0    39 GB     10 hours ago      llama3:latest    365c0bd3c000    4.7 GB    10 hours ago`  
+```
   
   
 
@@ -282,7 +302,9 @@ Le LLM traite la demande et nous répond :
 
 Code :
 
-`Fedora est une distribution de système d'exploitation GNU/Linux créée en 2003 par le projet Fedora, un sous-projet de la Fondation Red Hat. Elle est considérée comme une version "bêta" ou "prérequis" pour l'éditeur de système d'exploitation Linux commercial, CentOS et Red Hat Enterprise Linux (RHEL).   Fedora est conçue pour être une distribution open-source, libre et communautaire, qui permet aux développeurs et aux utilisateurs de tester les dernières versions des logiciels et des fonctionnalités avant leur intégration dans les éditions commerciales. Elle est donc très populaire parmi les développeurs et les passionnés de Linux.   Les caractéristiques clés de Fedora sont :   1. Libre et open-source, ce qui signifie que tout le code est disponible sous licence libre.   2. Rapide à mettre à jour, car il s'agit d'une version "bêta" pour tester les nouveaux logiciels et les fonctionnalités avant leur intégration dans les éditions commerciales.   3. Conçue pour être compatible avec les systèmes d'exploitation Linux commerçiaux, tels que CentOS et RHEL.   4. Possède une communauté active de développeurs et d'utilisateurs qui contribuent au projet.   Fedora est disponible sous forme de CD/DVD ou de téléchargement direct, et il existe plusieurs versions pour différents ordinateurs et architectures (x86-64, ARM, etc.).`
+```
+Fedora est une distribution de système d'exploitation GNU/Linux créée en 2003 par le projet Fedora, un sous-projet de la Fondation Red Hat. Elle est considérée comme une version "bêta" ou "prérequis" pour l'éditeur de système d'exploitation Linux commercial, CentOS et Red Hat Enterprise Linux (RHEL).   Fedora est conçue pour être une distribution open-source, libre et communautaire, qui permet aux développeurs et aux utilisateurs de tester les dernières versions des logiciels et des fonctionnalités avant leur intégration dans les éditions commerciales. Elle est donc très populaire parmi les développeurs et les passionnés de Linux.   Les caractéristiques clés de Fedora sont :   1. Libre et open-source, ce qui signifie que tout le code est disponible sous licence libre.   2. Rapide à mettre à jour, car il s'agit d'une version "bêta" pour tester les nouveaux logiciels et les fonctionnalités avant leur intégration dans les éditions commerciales.   3. Conçue pour être compatible avec les systèmes d'exploitation Linux commerçiaux, tels que CentOS et RHEL.   4. Possède une communauté active de développeurs et d'utilisateurs qui contribuent au projet.   Fedora est disponible sous forme de CD/DVD ou de téléchargement direct, et il existe plusieurs versions pour différents ordinateurs et architectures (x86-64, ARM, etc.).
+```
 
   
   
@@ -385,7 +407,7 @@ Lors de la réponse, qui peut être générée plus ou moins vite suivant les re
   
 Lorsque le LLM traite la réponse à notre prompt, voici un aperçu sur le serveur avec htop de l'activité :  
 
-![ollama-htop-serveur](/upload/ollama-htop-serveur.png "ollama-htop-serveur")
+![ollama-htop-serveur](https://www.linuxtricks.fr/upload/ollama-htop-serveur.png))
 
   
   
@@ -527,8 +549,10 @@ Ce qui donne :
 
 Code :
 
-`NAME                   ID              SIZE      MODIFIED          granite-perl:latest    0e85cc76ba66    2.0 GB    6 seconds ago        llama3:latest          365c0bd3c000    4.7 GB    18 minutes ago`
-
+```
+NAME                   ID              SIZE      MODIFIED
+granite-perl:latest    0e85cc76ba66    2.0 GB    6 seconds ago        llama3:latest          365c0bd3c000    4.7 GB    18 minutes ago
+```
   
   
 On peut tester une requête en utilisant la commande suivante :  
@@ -543,7 +567,18 @@ On n'a rien précisé et le contexte a bien été pris en compte (de produire du
 
 Code :
 
-` ```perl   #!/usr/bin/perl -w   use strict;   use warnings;   open my $fh, '<', 'export.csv' or die "Impossible d'ouvrir l'YYYY export.csv : $!";   while (my $line = <$fh>) {       chomp $line;       my ($ champ1, undef, $champ3 ) = split ",", $line;       print "$champ1,$champ3\n";   }   close $fh;   ``` `
+` ```perl   
+#!/usr/bin/perl -w   
+use strict;   
+use warnings;   
+open my $fh, '<', 'export.csv' or die "Impossible d'ouvrir l'YYYY export.csv : $!";   
+while (my $line = <$fh>) {       
+  chomp $line;       
+  my ($ champ1, undef, $champ3 ) = split ",", $line;       
+  print "$champ1,$champ3\n";   
+}   
+close $fh;   
+``` 
 
   
   
