@@ -93,7 +93,7 @@ Remove old kernels :
 `$ sudo apt-get autoremove --purge`  
 
 
-## Move home into separate partition 
+## Move home into a separate partition 
 
 With a LiveCD  
 - use **gparted** to reduce root partition (/dev/sda5) and create a new one for /home  (/dev/sda6)
