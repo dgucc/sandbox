@@ -35,4 +35,8 @@ As admin, C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg :
 // Set Startpage
 pref(browser.startup.homepage,file:///D:/tamere.html);
 ```
+## Disable WEBP
+
+about:config :  
+`image.webp.enabled = false`  
 
