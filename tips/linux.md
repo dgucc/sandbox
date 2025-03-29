@@ -5,6 +5,7 @@
   - [grub-customizer](#Grub-Customizer)
   - [Reset password](#reset-password)
   - [Free up disk space](#free-disk-space)
+  - [Move /home into a separate partition](#move-/home-into-a-separate-partition-)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [unbound](#local-dns-unbound)
@@ -90,6 +91,48 @@ Remove no longer needed packages :
 
 Remove old kernels :  
 `$ sudo apt-get autoremove --purge`  
+
+
+## Move /home into separate partition 
+
+With a LiveCD  
+- use **gparted** to reduce root partition (/dev/sda5) and create a new one for /home  (/dev/sda6)
+- mount and rsync the original /home directory to new /home directory  
+```bash
+$ sudo mkdir /mnt/root
+$ sudo mkdir /mnt/home
+$ sudo mount /dev/sda5 /mnt/root
+$ sudo mount /dev/sda6 /mnt/home
+```
+```bash
+# rsync options source destination
+# -a : archive mode (preserve original permissions!)  
+# -v : verbose  
+# -z : compress during transfer  
+# -h : human readable final report  
+$ rsync -avzh /mnt/root/home/ /mnt/home/
+$ sudo mv /mnt/root/home/ /mnt/root/home-old/
+```
+
+Note the UUID of new home partition /dev/sda6
+`$ blkid`
+
+Edit /mnt/root/etc/fstab to automount after restart
+`$ sudo nano /mnt/root/etc/fstab` :   
+```
+ <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# New home partition
+UUID=<XXXX>	/home	ext4	defaults	0	0 
+```
+
+- Restart without LiveCD and check it's OK  
+
+- Retake the ownership of your home directory  
+`$ sudo chown -R $USER:$USER /home/$USER`  
+
+- And remove the /home-old directory  
+`$ sudo rm -rf /home-old`
+
 
 ## Uninstall 
 
