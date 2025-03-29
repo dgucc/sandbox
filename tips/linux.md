@@ -5,7 +5,7 @@
   - [grub-customizer](#Grub-Customizer)
   - [Reset password](#reset-password)
   - [Free up disk space](#free-disk-space)
-  - [Move home into a separate partition](#move-home-into-a-separate-partition-)
+  - [Move home into a separate partition](#move-home-into-a-separate-partition)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
   - [unbound](#local-dns-unbound)
