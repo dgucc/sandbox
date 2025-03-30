@@ -2,6 +2,62 @@
 
 [cf. linuxtricks.fr : IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
 
+## Memo
+
+`$ sudo nano /etc/systemd/system/ollama.service` 
+
+```
+[Unit]
+Description=Ollama Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment="PATH=$PATH"
+Environment="OLLAMA_MODELS=/home/ollama/models"
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+
+[Install]
+WantedBy=default.target
+```
+
+openwebui  
+
+`$ sudo apt-get install podman`  
+
+`$ sudo nano /etc/systemd/system/openwebui.service`  
+
+```
+[Unit]
+Description=Open WebUI
+After=network.target
+[Service]
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/podman start openwebui
+ExecStop=/usr/bin/podman stop openwebui
+Environment=PODMAN_SYSTEMD_UNIT=%n
+
+Type=forking
+[Install]
+WantedBy=multi-user.target
+```
+
+`$ sudo systemctl daemon-reload`  
+`$ sudo systemctl enable openwebui.service`  
+
+`$ podman run -d --rm -p 3000:8080 -v openwebui:/app/backend/data --name openwebui ghcr.io/open-webui/open-webui:main`  
+`$ podman ps`  
+
+Open WebUI in browser : http://localhost:3000/  
+
+`$ podman stop openwebui`  
+
+---
 
 IA : Installer un Modèle de Langage (LLM) avec Ollama
 =====================================================
