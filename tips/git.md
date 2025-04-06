@@ -18,6 +18,7 @@
    * [Misc](#misc)
    * [Log](#log)
    * [Show git branch in Windows Command Prompt ](#show-git-branch-in-windows-command-prompt)
+   * [Show git branch in Linux bash Prompt](#Show-git-branch-in-Linux-bash-Prompt)
    * [Preview html page hosted in GitHub](#preview-html-page-hosted-in-github)
 
 <!-- TOC end -->
@@ -237,6 +238,22 @@ set branchname=
 [AutoRun](https://ss64.com/nt/syntax-autoexec.html)  
 [Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)  
 [Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)  
+
+## Show git branch in Linux bash Prompt 
+
+in ~/.bashrc :  
+```bash
+# https://thucnc.medium.com/how-to-show-current-git-branch-with-colors-in-bash-prompt-380d05a24745
+parse_git_branch() {
+   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\e[38;5;220m\]$(parse_git_branch)\[\e[00m\]$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+```
+
 
 <!-- TOC --><a name="preview-html-page-hosted-in-github"></a>
 ## Preview html page hosted in GitHub
