@@ -2,6 +2,7 @@
 
 - [Windows 11 installation with local user](#windows-11-installation-with-local-user)
 - [UnattendedWinstall](#unattendedWinstall)
+- [Disable hibernation](#disable-hibernation)
 - [Restore classic context menu](#restore-classic-context-menu)
 - [Usefull commands ](#usefull-commands)
 - [General](#general)
@@ -57,6 +58,8 @@ When invited to connect to internet : SHIFT + F10
 
 Pre-requesite : `Set-ExecutionPolicy Unrestricted`  
 
+## Disable hibernation
+`(as admin)> powercfg -h off`  
 
 ## Restore classic context menu
 
