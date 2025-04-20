@@ -2,6 +2,84 @@
 
 [cf. linuxtricks.fr : IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
 
+<details>
+  <summary>Installer ollama (linuxtricks.fr)</summary>
+
+Ollama n'est pas dans les dépôts des principales distributions.  
+Bien qu'il existe un script automatisé d'installation, je vais ici faire les étapes manuellement.  
+
+On récupère dans un premier temps ollama pour l'architecture souhaitée :  
+`wget https://ollama.com/download/ollama-linux-amd64.tgz`  
+
+Pour ARM64 :  
+`wget https://ollama.com/download/ollama-linux-arm64.tgz`  
+
+Ensuite, on extrait l'archive :  
+`tar -C /usr -xvzf ollama-linux-*.tgz`  
+
+
+Dans le cas d'une carte graphique AMD, on récupère des éléments additionnels :  
+`wget https://ollama.com/download/ollama-linux-amd64-rocm.tgz`  
+
+Et on les installe :  
+`tar -C /usr -xvzf ollama-linux-amd64-rocm.tgz`  
+
+
+Création d'un utilisateur dédié  
+
+
+On va ensuite créer un utilisateur dédié et un service pour lancer automatiquement ollama avec un utilisateur spécifique.  
+`useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama`  
+
+
+On ajoute les utilisateurs d'ollama dans le groupe ollama :  
+`usermod -a -G ollama adrien`  
+
+
+
+Création d'un service systemd
+
+
+On va créer un service systemd pour lancer ollama au démarrage du système :  
+`vim /etc/systemd/system/ollama.service`  
+
+
+
+Voici le contenu du service systemd :  
+```
+Code :
+[Unit]
+Description=Ollama Service
+After=network-online.target
+[Service]
+ExecStart=/usr/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment="PATH=$PATH"
+[Install]
+WantedBy=default.target
+```
+
+On recharge systemd :  
+`systemctl daemon-reload`  
+
+
+
+On active et démarre le service :  
+`systemctl enable --now ollama`  
+
+
+
+On pourra voir les logs avec :  
+`journalctl -u ollama`  
+
+
+
+Toutes les commandes ollama peuvent être utilisées en tant qu'utilisateur classique du système.  
+</details>
+
 ## Memo
 
 `$ sudo nano /etc/systemd/system/ollama.service` 
