@@ -18,8 +18,9 @@
 > - 1 c.s. de sucre
 > - 1 c.c. de fécule de maïs
 > - 100 ml d'eau
-> - 3 jeunes oignons
 
+> - 3 jeunes oignons
+> - 1 piment doux
 
 ## Poulet poivron
 
