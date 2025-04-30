@@ -7,6 +7,7 @@
   - [ObjectAid Eclipse 2023-09](#objectaid-eclipse-2023-09)
   - [StarUML](#staruml)
 - [DBeaver](#dbeaver)
+- [Misc](#misc)
 
 ## pandoc
 [pandoc](https://pandoc.org/)  
@@ -297,3 +298,11 @@ openssl aes-128-cbc -d \
   }
 }
 ```
+
+## Misc
+
+Remote Control for AndroidTV
+> codes 
+10381  
+67664537  
+51180  
