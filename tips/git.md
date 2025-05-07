@@ -5,6 +5,7 @@
       + [Command gh needed to push modifications to remote repository  ](#command-gh-needed-to-push-modifications-to-remote-repository)
       + [How-to push existing repository from command line  ](#how-to-push-existing-repository-from-command-line)
    * [Resolve conflict with binary files](#resolve-conflict-with-binary-files)
+   * [Git pull all subfolders](#git-pull-all-subfolders)
    * [Git Pull Force](#git-pull-force)
    * [git commit --amend](#git-commit-amend)
    * [git stash : mettre de côté   ](#git-stash-mettre-de-côté)
@@ -84,6 +85,15 @@ $ git add book.xls
 $ git commit -m 'Resolve conflict by keeping the branch2 version'
 $ git merge branch2
 ```
+
+## Git pull all subfolders
+
+Update all git repositories in subfolders :  
+
+`$ find * -type d -name .git -exec git --git-dir={} --work-tree={}/.. pull origin \;`  
+
+Remark : 
+> find * : to avoid leading dot 
 
 <!-- TOC --><a name="git-pull-force"></a>
 ## Git Pull Force
