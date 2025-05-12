@@ -1,5 +1,5 @@
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
-
+- [Windows 11 installation for all](#windows-11-installation-for-all)
 - [Windows 11 installation with local user](#windows-11-installation-with-local-user)
 - [UnattendedWinstall](#unattendedWinstall)
 - [Disable hibernation](#disable-hibernation)
@@ -47,6 +47,12 @@
    * [Installation](#installation)
 
 <!-- TOC end -->
+
+
+## Windows 11 installation for all
+
+Installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or unsupported processor  
+[Flyby11](https://github.com/builtbybel/Flyby11)  
 
 <!-- TOC --><a name="windows-11-installation-with-local-user"></a>
 ## Windows 11 installation with local user
