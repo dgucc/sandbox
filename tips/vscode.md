@@ -42,7 +42,8 @@ Edit /home/<user>/.config/Code/User/settings.json :
   // -- Code
   "editor.occurrencesHighlight": false, 
   "editor.renderWhitespace": "trailing", // On ne veut pas laisser d'espace en fin de ligne
-
+  // Zoom
+  "editor.mouseWheelZoom": true,
   // Thème
   "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Operator Mono Lig', monospace",
   "editor.fontLigatures": true,
