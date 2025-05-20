@@ -2,7 +2,9 @@
 
 - [Linux Tips](#linux-tips)
   - [Linux version](#linux-version)
-  - [grub-customizer](#Grub-Customizer)
+  - [grub](#grub)
+     + [Modify Options](#modify-options)
+     + [grub-customizer](#Grub-Customizer)
   - [Reset password](#reset-password)
   - [Free up disk space](#free-disk-space)
   - [Move home into a separate partition](#move-home-into-a-separate-partition)
@@ -67,7 +69,22 @@
 Memory :  
 `$ dmidecode --type memory`  
 
-## Grub-Customizer
+## Grub
+
+### Modify options
+
+Collect infos  
+`sudo nano /boot/grub/grub.cfg`
+
+Modify options  
+> GRUB_DEFAULT=0 
+> GRUB_TIMEOUT=5 
+`sudo nano /etc/default/grub`  
+
+Apply modifications    
+`sudo update-grub`  
+
+### Grub-Customizer
 How to change Default kernel version &rarr; [grub-customizer](https://tipsonubuntu.com/2018/03/11/install-grub-customizer-ubuntu-18-04-lts/)    
 `$ sudo apt-get install grub-customizer`   
 
@@ -122,7 +139,7 @@ Edit /mnt/root/etc/fstab to automount after restart
 ```
  <file system> <mount point>   <type>  <options>       <dump>  <pass>
 # New home partition
-UUID=<XXXX>	/home	ext4	defaults	0	0 
+UUID=<XXXX>	/home	ext4	defaults,nofail	0	0 
 ```
 
 - Restart without LiveCD and check it's OK  
