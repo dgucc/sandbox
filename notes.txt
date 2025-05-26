@@ -9,6 +9,10 @@ $ git pull origin main
 
 
 [TO TEST]
+## Blokada Android
+Ad blocker
+
+
 ## demo phishing
 [zphisher](https://github.com/htr-tech/zphisher)  
 
