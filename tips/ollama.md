@@ -60,6 +60,10 @@ Open WebUI in browser : http://localhost:3000/
 
 ---
 
+[Chat with a PDF file using Ollama and Langchain](https://m1lt0n.github.io/python/llm/pdf/ollama-ask-a-pdf-file/)
+
+---
+
 <details>
   <summary>Installer ollama (linuxtricks.fr)</summary>
 
