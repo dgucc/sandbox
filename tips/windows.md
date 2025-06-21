@@ -322,6 +322,9 @@ Fix Activation Issue :
 
 (as admin) `rundll32.exe keymgr.dll,KRShowKeyMgr`  
 
+Disable passwords expiration for local accounts  
+(as admin) `> wmic UserAccount set PasswordExpires=False`  
+
 <!-- TOC --><a name="usb"></a>
 ## USB
 
