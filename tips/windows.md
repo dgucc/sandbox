@@ -54,6 +54,16 @@
 Installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or unsupported processor  
 [Flyby11](https://github.com/builtbybel/Flyby11)  
 
+## Retrieve Windows 10 Product Key
+command:  
+`> wmic path softwareLicensingService get OA3xOriginalProductKey`  
+
+powershell:  
+`PS >(Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey` 
+
+registry: 
+`[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\BackupProductKeyDefault]` 
+
 <!-- TOC --><a name="windows-11-installation-with-local-user"></a>
 ## Windows 11 installation with local user
 When invited to connect to internet : SHIFT + F10  
