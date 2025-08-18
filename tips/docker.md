@@ -10,7 +10,7 @@ move docker folder :
 $ sudo service docker stop
 $ nano /etc/docker/daemon.json
 {
-    "data-root": "/home/jinx/docker"
+    "data-root": "/home/joan/docker"
 }
 $ sudo rsync -aP /var/lib/docker/ ~/docker
 $ sudo mv /var/lib/docker /var/lib/docker.bak
