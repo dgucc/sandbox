@@ -154,6 +154,14 @@ C:\Users\username\docker\mailserver
 
 ## DB2
 
+```
+sudo docker run -itd --rm --name testdb2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=admin -e SAMPLEDB=true -e DBNAME=SAMPLE -v $HOME/docker/volumes/db2:/database ibmcom/db2
+
+sudo docker exec -it testdb2 bash -c "su - db2inst1"
+db2 => connect to sample
+db2 => db list directory
+```
+
 Catalog database remote docker :  
 ```
 db2 => CATALOG TCPIP NODE HOME REMOTE 192.168.1.11 SERVER 50000
