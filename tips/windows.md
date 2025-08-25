@@ -54,6 +54,13 @@
 Installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or unsupported processor  
 [Flyby11](https://github.com/builtbybel/Flyby11)  
 
+Or in Server Mode 
+`(as admin)> setup.exe /product server`  
+
+> DISM (Deployment Image Servicing and Management
+> get-intl : international language settings  
+`> dism /online /get-intl` 
+
 ## Retrieve Windows 10 Product Key
 command:  
 `> wmic path softwareLicensingService get OA3xOriginalProductKey`  
