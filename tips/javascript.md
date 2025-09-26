@@ -14,6 +14,7 @@
    * [Misc](#misc)
      + [Programmatically define input:file](#Programmatically-define-input-file)
      + [Template Literals](#template-literals)
+     + [Include html into another](#Include-html-into-another)
 
 <!-- TOC end -->
 
@@ -289,7 +290,7 @@ function getImgURL(url, callback) {
 }
 ```
 
-### Teamplate Literals
+### Template Literals
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)  
 
