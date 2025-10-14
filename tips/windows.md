@@ -45,7 +45,7 @@
 - [Windows Subsystem Linux (WSL)](#windows-subsystem-linux-wsl)
    * [Prerequis](#prerequis)
    * [Installation](#installation)
-
+   * [Reset WSL password](#reset-wsl-password)
 <!-- TOC end -->
 
 
@@ -519,3 +519,10 @@ PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Li
 PS> wsl --list --online
 PS> wsl --install -d Ubuntu
 ```
+
+### Reset WSL password
+In Windows Terminal (as Admin)
+```
+(as admin) > wsl -u root
+```
+Relaunch WSL and change passwd as usual : `passwd username`  
