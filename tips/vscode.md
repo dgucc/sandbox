@@ -8,6 +8,7 @@
    * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
    * [Hide References count in Editor ](#hide-references-count-in-editor)
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
+   * [C/C++ with WSL](#c/c++-with-wsl)
 
 <!-- TOC end -->
 
@@ -222,4 +223,15 @@ Icon-Name=visual-studio-code
 Selection=Any
 Extensions=dir;
 ```
+
+## C/C++ with WSL
+
+cf. https://code.visualstudio.com/docs/cpp/config-wsl  
+
+```
+sudo apt-get install build-essential gdb
+
+cd $HOME/projects/helloworld
+code .
+```  
 
