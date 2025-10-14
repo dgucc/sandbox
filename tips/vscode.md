@@ -8,7 +8,7 @@
    * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
    * [Hide References count in Editor ](#hide-references-count-in-editor)
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
-   * [C/C++ with WSL](#c/c++-with-wsl)
+   * [C/C++ with WSL](#c-c++-with-wsl)
 
 <!-- TOC end -->
 
