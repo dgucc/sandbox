@@ -465,13 +465,26 @@ shopt -u nullglob
 ### Insert 'commit;' every 1000 lines
 ```bash
 #!/usr/bin/bash
-total=$(wc -l input.txt | cut -f 1 -d' ')
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 input_file"
+  exit 1
+fi
+input_file="$1"
+
+total=$(wc -l $input_file | cut -f 1 -d' ')
+echo "Total lines : $total"
+
 subtotal=$total
 slice=1000
 while [ $subtotal -gt $slice ] ; do
-   subtotal=$(($subtotal-$slice))
-   cat input.txt | sed -i "${subtotal}a commit;" input.txt
+	subtotal=$(($subtotal-$slice))
+	cat $input_file | sed -i "${subtotal}a commit;" $input_file
 done
+new_total=$(wc -l $input_file | cut -f 1 -d' ')
+echo "Total lines : $new_total"
+
+echo "Terminated"
+
 ```
 ### Split into smaller files :  
 ```
