@@ -82,6 +82,9 @@ When invited to connect to internet : SHIFT + F10
 [Generate autounattend.xml files for Windows 10/11](https://schneegans.de/windows/unattend-generator/)  
 Pre-requesite : `Set-ExecutionPolicy Unrestricted`  
 
+## Win11Debloat
+[Win11Debloat](https://github.com/Raphire/Win11Debloat)
+
 ## Disable hibernation
 `(as admin)> powercfg -h off`  
 
