@@ -8,6 +8,7 @@
 - [General](#general)
 - [Programmes et outils Windows](#programmes-et-outils-windows)
 - [Gestion des disques](#gestion-des-disques)
+- [Delete protected partition with diskpart](#delete-protected-partition-with-diskpart)  
 - [Gestion des réseaux et Internet](#gestion-des-réseaux-et-internet)
 - [Autres commandes](#autres-commandes)
 - [Run commnad by skipping UAC pop-up](#run-commnad-by-skipping-uac-pop-up)
@@ -229,6 +230,18 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
     DISKMGMT.MSC : ouvre le gestionnaire de disques
     DISKPART : ouvre l’outil de partitionnement (un peu lourd à manipuler)
 ```
+
+## Delete protected partition with diskpart  
+```
+Start Diskpart:
+(as admin) > diskpart
+> list disk
+> select disk X 
+> list partition
+> select partition Y
+> delete partition override 
+```
+
 <!-- TOC --><a name="gestion-des-réseaux-et-internet"></a>
 ## Gestion des réseaux et Internet
 ```
