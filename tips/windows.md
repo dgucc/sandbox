@@ -3,6 +3,7 @@
 - [Windows 11 installation with local user](#windows-11-installation-with-local-user)
 - [UnattendedWinstall](#unattendedWinstall)
 - [Disable hibernation](#disable-hibernation)
+- [Disable password expiration](#disable-password-expiration)
 - [Restore classic context menu](#restore-classic-context-menu)
 - [Usefull commands ](#usefull-commands)
 - [General](#general)
@@ -86,7 +87,10 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
 [Win11Debloat](https://github.com/Raphire/Win11Debloat)
 
 ## Disable hibernation
-`(as admin)> powercfg -h off`  
+`(as admin) > powercfg -h off`  
+
+## Disable password expiration
+`(as admin) > wmic UserAccount where Name="USERNAME" set PasswordExpires=False`   
 
 ## Restore classic context menu
 
