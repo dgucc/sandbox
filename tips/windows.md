@@ -230,10 +230,9 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
     DISKMGMT.MSC : ouvre le gestionnaire de disques
     DISKPART : ouvre l’outil de partitionnement (un peu lourd à manipuler)
 ```
-
+<!-- TOC --><a name="delete-protected-partition-with-diskpart"></a>
 ## Delete protected partition with diskpart  
 ```
-Start Diskpart:
 (as admin) > diskpart
 > list disk
 > select disk X 
