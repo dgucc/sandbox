@@ -299,6 +299,59 @@ openssl aes-128-cbc -d \
 }
 ```
 
+---
+## How to Clone Windows 11/10 to a New SSD/HDD Without Any Software
+
+[youtube](https://www.youtube.com/watch?v=CDLyNJGzkWE)
+
+
+### Create Backup file - dism
+
+Shift + Restart
+
+```
+(as admin) > dism /capture-image /imagefile:D:\backup.wim /capturedir:C:\ /name:"WinBackup" /compress:max /checkintegrity
+```
+
+Open notepad to check Windows is on C:\
+
+### Prepare new disk
+
+Reboot Windows  
+
+Open Disk Manager  
+Choose GPT as partition style in Diaglog (for new HDD)  
+
+
+### Create EFI Partition on S:  
+
+```
+(as admin) > diskpart
+list disk
+sel disk 0
+create partition efi size=512
+format fs=fat32 quick label="System Boot"
+assign letter S
+```
+
+Create new partition with Disk Manager (NTFS as W:)  
+
+### Apply backup file to W:
+```
+(as admin) > D:
+dism /apply-image /imagefile:backup.wim /index:1 /applydir:W:\
+```
+
+Activate new boot partition
+```
+(as admin) > bcdboot W:\Windows /f uefi /s S:\
+```
+
+Restart > BIOS : select new HDD
+
+
+---
+
 ## Misc
 
 Remote Control for AndroidTV
