@@ -6,6 +6,8 @@
 ## Memo
 
 ```bash
+su -
+
 # Download
 wget https://ollama.com/download/ollama-linux-amd64.tgz
 # Install
