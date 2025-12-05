@@ -5,21 +5,26 @@
 
 ## Memo
 
-```
+```bash
 # Download
 wget https://ollama.com/download/ollama-linux-amd64.tgz
-# Extract
+# Install
 tar -C /usr -xvzf ollama-linux-*.tgz
+
+# Additional for AMD :
+wget https://ollama.com/download/ollama-linux-amd64-rocm.tgz
+tar -C /usr -xvzf ollama-linux-amd64-rocm.tgz
+
 # Create ollama user
 useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
-# Add john to ollama group
-usermod -a -G ollama john
+# Add dgucc to ollama group
+usermod -a -G ollama dgucc
 
 # Create systemd service
 `$ sudo nano /etc/systemd/system/ollama.service` 
 ```
 
-```
+```ini
 [Unit]
 Description=Ollama Service
 After=network-online.target
@@ -38,7 +43,7 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 WantedBy=default.target
 ```
 
-```
+```bash
 # Reload systemd
 systemctl daemon-reload
 # Activate ollama service
@@ -47,6 +52,7 @@ systemctl enable --now ollama
 journalctl -u ollama
 ```
 
+---
 
 ## openwebui with podman  
 
