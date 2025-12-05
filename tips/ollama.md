@@ -5,7 +5,19 @@
 
 ## Memo
 
+```
+# Download
+wget https://ollama.com/download/ollama-linux-amd64.tgz
+# Extract
+tar -C /usr -xvzf ollama-linux-*.tgz
+# Create ollama user
+useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
+# Add john to ollama group
+usermod -a -G ollama john
+
+# Create systemd service
 `$ sudo nano /etc/systemd/system/ollama.service` 
+```
 
 ```
 [Unit]
@@ -26,7 +38,17 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 WantedBy=default.target
 ```
 
-openwebui  
+```
+# Reload systemd
+systemctl daemon-reload
+# Activate ollama service
+systemctl enable --now ollama
+# Check log
+journalctl -u ollama
+```
+
+
+## openwebui with podman  
 
 `$ sudo apt-get install podman`  
 
