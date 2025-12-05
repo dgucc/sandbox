@@ -54,6 +54,21 @@ systemctl enable --now ollama
 journalctl -u ollama
 ```
 
+```bash
+# Update ollama
+ollama -v
+# Download last version
+wget https://ollama.com/download/ollama-linux-amd64.tgz
+# Stop ollama service
+systemctl stop ollama.service
+# Update restart ollama
+tar -C /usr -xvzf ollama-linux-*.tgz
+# Start ollama
+systemctl start ollama.service
+```
+
+
+
 ---
 
 ## openwebui with podman  
