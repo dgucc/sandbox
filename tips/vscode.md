@@ -3,6 +3,7 @@
 - [vscode](#vscode)
    * [shortcut](#shortcut)
    * [Configuration](#configuration)
+   * [Ollama-Continue](#ollama-continue)
    * [Installation on Linux  ](#installation-on-linux)
    * [Clean extensions](#clean-extensions)
    * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
@@ -114,6 +115,24 @@ Edit /home/<user>/.config/Code/User/settings.json :
 }
 ```
 </details>
+
+## Ollama-Continue
+
+Continue can automatically detect available Ollama models. You can configure this in your YAML:
+~/.continue/config.yaml
+
+```
+models:
+  - name: Autodetect
+    provider: ollama
+    model: AUTODETECT
+    roles:
+      - chat
+      - edit
+      - apply
+      - rerank
+      - autocomplete
+```
 
 ---
 
