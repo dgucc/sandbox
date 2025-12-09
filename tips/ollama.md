@@ -32,7 +32,7 @@ Description=Ollama Service
 After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/ollama serve
+ExecStart=/usr/bin/ollama serve
 User=ollama
 Group=ollama
 Restart=always
