@@ -2,7 +2,8 @@
 
 ## Comment installer un dictionnaire sur liseuse Kobo ?
 
-  [Article complet avec les étapes et les liens de téléchargement](https://www.liseuses.net/installer-dictionnaire-liseuse-kobo/)  
+  [Article complet avec les étapes et les liens de téléchargement](https://www.liseuses.net/installer-dictionnaire-liseuse-kobo/) 
+  [Nouveau]https://www.tiger-222.fr/?d=2020/04/17/22/14/21-un-dictionnaire-alternatif-et-complet-pour-votre-kobo)
   liste des Kobo compatibles  
   Télécharger un nouveau dictionnaire pour liseuse Kobo  
   Transférer votre dictionnaire sur la liseuse Kobo  
@@ -10,6 +11,7 @@
     
   [Wiktionnaire](https://github.com/BoboTiG/ebook-reader-dict)  
   [BoboTiG](https://github.com/BoboTiG/ebook-reader-dict/blob/master/docs/fr/README.md)
+  [Nouveau](https://www.reader-dict.com/fr/download/fr)
   
   [Lien : dictionnaires bilingues](https://download.wikdict.com/dictionaries/kobo/)  
 
