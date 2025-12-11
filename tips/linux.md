@@ -35,6 +35,7 @@
   - [GPG error](#gpg-error)
   - [Sublime Text](#sublime-text)
   - [Curl to test Rest API :](#curl-to-test-rest-api-)
+  - [CSV to json](#csv-to-json)
   - [jq : json query](#jq--json-query)
   - [iconv](#iconv)
   - [Nintendo Switch Pro Controller on Linux](#Nintendo-Switch-Pro-Controller-on-Linux)
@@ -987,6 +988,19 @@ r, e, i, n, ENTER : to issue the reindent command
 $ curl -X POST -H "Content-Type:application/json" --data @example.json http://localhost:8080/rest/app/1/add 
 {"field1":"1","field2":"2"}
 ```
+
+## CSV to json
+Using column command  
+-t : table mode  
+-s : separator  
+-N : headers  
+-n : table name
+-J : json format  
+```
+$ cat input.csv | column -t -s ';' -N 'Field1, Field2, Field3' -n tablename -J
+```
+
+
 ## jq : json query 
 
 Filter output for selected fields :  
