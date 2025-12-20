@@ -3,6 +3,12 @@
 
 [Linux Mint: Wi-Fi Adapter Not Detected(https://www.youtube.com/watch?v=ZZYQsjunjbs)
 
+## Disable Power Saving
+Disable WiFi power saving by modifying the NetworkManager configuration file :  
+
+/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf  
+Change wifi.powersave = 3 (enabled) to > wifi.powersave = 2 (disable)
+
 ## Identify Wireless Network Adapter
 
 Connect to internet via ethernet cable
