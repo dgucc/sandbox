@@ -13,6 +13,16 @@ delete partition **override**
 > delete partition override 
 ```
 
+## Create EFI partition on new disk
+
+```cmd
+(as admin) > diskpart 
+list disk
+select disk 0
+create partition efi size=512
+format fs=fat32 quick label="System Boot"
+assign letter S
+```
 
 ## Attach a virtual disk
 
