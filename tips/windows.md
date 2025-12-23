@@ -5,7 +5,7 @@
 - [Disable hibernation](#disable-hibernation)
 - [Disable password expiration](#disable-password-expiration)
 - [Restore classic context menu](#restore-classic-context-menu)
-- [Usefull commands ](#usefull-commands)
+- [Usefull commands](#usefull-commands)
 - [General](#general)
 - [Programmes et outils Windows](#programmes-et-outils-windows)
 - [Disks management](#disks-management)
@@ -177,8 +177,13 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
     WSCUI.CPL : ouvre le centre de sécurité Windows
     WUAUCPL.CPL : ouvre le service de mise à jour Windows (Pour XP uniquement)
 ```
+</details>
+
 <!-- TOC --><a name="programmes-et-outils-windows"></a>
 ## Programmes et outils Windows
+
+<details>
+
 ```
     %WINDIR%\SYSTEM32\RESTORE\RSTRUI.EXE : ouvre l’outil de restauration de système (Pour XP uniquement).
     CALC : ouvre la calculatrice
@@ -226,9 +231,10 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
     WMPLAYER : ouvre le lecteur Windows Media
     WRITE ou bien Wordpad : ouvre Wordpad
 ```
+</details>
 
-<!-- TOC --><a name="disks-management"></a>
-## Disks management
+<!-- TOC --><a name="disks-management-tools"></a>
+## Disks management tools
 ```
     CHKDSK : effectue une analyse de la partition précisée dans les paramètres de la commande (Pour plus d’informations, tapez CHKDSK /? dans l’invite de commande CMD)
     CLEANMGR : ouvre l’outil de nettoyage de disque
