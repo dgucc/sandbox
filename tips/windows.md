@@ -8,7 +8,7 @@
 - [Usefull commands ](#usefull-commands)
 - [General](#general)
 - [Programmes et outils Windows](#programmes-et-outils-windows)
-- [Gestion des disques](#gestion-des-disques)
+- [Disks management](#disks-management)
 - [Delete protected partition with diskpart](#delete-protected-partition-with-diskpart)  
 - [Gestion des réseaux et Internet](#gestion-des-réseaux-et-internet)
 - [Autres commandes](#autres-commandes)
@@ -227,8 +227,8 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
     WRITE ou bien Wordpad : ouvre Wordpad
 ```
 
-<!-- TOC --><a name="gestion-des-disques"></a>
-## Gestion des disques
+<!-- TOC --><a name="disks-management"></a>
+## Disks management
 ```
     CHKDSK : effectue une analyse de la partition précisée dans les paramètres de la commande (Pour plus d’informations, tapez CHKDSK /? dans l’invite de commande CMD)
     CLEANMGR : ouvre l’outil de nettoyage de disque
