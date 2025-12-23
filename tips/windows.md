@@ -8,7 +8,7 @@
 - [Usefull commands](#usefull-commands)
 - [General](#general)
 - [Programmes et outils Windows](#programmes-et-outils-windows)
-- [Disks management](#disks-management)
+- [Disk management tools](#disk-management-tools)
 - [Delete protected partition with diskpart](#delete-protected-partition-with-diskpart)  
 - [Gestion des réseaux et Internet](#gestion-des-réseaux-et-internet)
 - [Autres commandes](#autres-commandes)
@@ -105,7 +105,7 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
 <summary>Les commandes de Windows par invité de commande</summary>
 
 <!-- TOC --><a name="general"></a>
-## General
+General  
 ```
     ACCESS.CPL : ouvre les options d’accessibilité (Pour XP uniquement)
     APPWIZ.CPL : ouvre l’outil Ajouter/Supprimer un programme
@@ -180,7 +180,7 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
 </details>
 
 <!-- TOC --><a name="programmes-et-outils-windows"></a>
-## Programmes et outils Windows
+Programmes et outils Windows
 
 <details>
 
@@ -233,8 +233,8 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
 ```
 </details>
 
-<!-- TOC --><a name="disks-management-tools"></a>
-## Disks management tools
+<!-- TOC --><a name="disk-management-tools"></a>
+## Disk management tools
 ```
     CHKDSK : effectue une analyse de la partition précisée dans les paramètres de la commande (Pour plus d’informations, tapez CHKDSK /? dans l’invite de commande CMD)
     CLEANMGR : ouvre l’outil de nettoyage de disque
