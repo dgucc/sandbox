@@ -13,8 +13,8 @@ delete partition **override**
 > delete partition override 
 ```
 
-## Virtual disks
 
+## Attach a virtual disk
 
 ```cmd
 (as admin) > diskpart
@@ -23,3 +23,13 @@ select vdisk file:c:\VHDX\Windows11.vhdx
 	attach vdisk
 ```
 
+## Enlarge Virtual disk
+
+```cmd
+(as admin) > diskpart  
+> select vdisk file=c:\VHDX\Windows11.vhdx  
+> expand vdisk maximum=80000  
+> attach vdisk  
+> select volume 3  
+> extend
+```
