@@ -21,12 +21,12 @@ convert gpt
 create partition efi size=512
 list partition
 format fs=fat32 quick
-assign letter=S
+assign letter S
 list vol
 -----------------------
 create part primary size=102400
 format fs=ntfs quick label Windows 
-assign letter=W
+assign letter W
 list vol
 exit
 ```
