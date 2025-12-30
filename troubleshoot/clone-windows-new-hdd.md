@@ -32,6 +32,9 @@ Use Disk Manager to create new partition for windows
 assign letter W:  
 
 ## Restore Windows on new disk
+Check Windows Edition index  
+`dism /get-wiminfo /wimfile:win10backup.wim`  
+
 Restore the backup image :
 `(as admin) > dism /apply-image /imagefile:win10backup.wim /index:1 /applydir:W:\`
 
