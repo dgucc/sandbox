@@ -1,139 +1,95 @@
-# Installing Windows using CMD. (UEFI and BIOS Supported)
-Guide created by Andrew Lee. Supports Windows 7, 8, 10, and 11.
-
+# Installing Windows using CMD. (GPT Disk)
 [Reference](https://gist.githubusercontent.com/Alee14/e8ce6306a038902df6e7a6d667544ac9/raw/00fc5ad29c5d1595d266b0bbd043f143fa58f50c/win-dism.md)
 
-Note that this guide does not go into detail, it's just providing the commands to install Windows. 
+## Disable secured boot in BIOS
 
-Be cautions when doing this when dualbooting, please backup any existing data or you will lose them all.
+Reboot windows installation media (Ventoy + ISO)  
 
 ## Open CMD
-First open CMD by pressing the following keys after booting into setup: `Shift + F10`
+During setup screen : open cmd
+`Shift + F10` 
+
 ## Creating Partition
-### MBR
-```
-diskpart
-list disk
-select disk (number for main disk)
-clean # Clearing the partitions
-convert mbr
------------------------
-(Creating recovery is optional)
-create part primary size 500
-format quick label Recovery
-assign letter R
-set id 27
------------------------
-create part primary
-format quick label Windows (or label of your choice)
-assign letter C (or E)
-active
-exit
-```
+
 ### UEFI
 ```
 diskpart
 list disk
-select disk (number for main disk)
-clean # Clearing the partitions
+select disk 0 # number for main disk
+clean # Clearing all partitions
 convert gpt
-create part efi size 512
-format fs fat32 quick
-assign letter w
-create part msr size 16
+create partition efi size=512
+list partition
+format fs=fat32 quick
+assign letter=S
+list vol
 -----------------------
-(Creating recovery is optional)
-create part primary size 500
-format quick label Recovery
-assign letter R
-set id de94bba4-06d1-4d40-a16a-bfd50179d6ac
-gpt attributes 0x8000000000000001
------------------------
-create part primary 
-format quick label Windows (or label of your choice)
-assign letter C (or E)
+create part primary size=102400
+format fs=ntfs quick label Windows 
+assign letter=W
+list vol
 exit
 ```
+Tip : Use notepad to identify drive of installation media  
 
 ## Go to install.wim directory
 ```
-[letter of installation disk]:
-cd sources
+G: # letter of installation disk
+cd Sources
 ```
 
-## List SKUs
-Listing SKUs like Home, Pro, Education, Ultimate, etc.
+## List indexes of SKUs
+Listing SKUs like Home, Pro, Education, Ultimate, etc.  
 
-`dism /get-wiminfo /wimfile:[Location to install.wim]`
+`dism /get-wiminfo /wimfile:install.wim`  
 
 ## Deploying WIM file
-Copies the content from the install.wim file to the main disk.
+Copies the content from the install.wim file to the main disk.  
 
-`dism /apply-image /imagefile:[Location to install.wim] /index:[SKU Number] /applydir:(Drive letter to main disk)`
-
-e.g `dism /apply-image /imagefile:d:\sources\install.wim /index:6 (Win10 Pro) /applydir:C:\`
-
-## Creating recovery folders and copying Windows RE to the recovery partition (Optional)
-```
-md R:\Recovery
-xcopy /h C:\Windows\System32\Recovery\Winre.wim R:\Recovery
-C:\Windows\System32\Reagentc /Setreimage /Path R:\Recovery /Target C:\Windows
-```
+`dism /apply-image /imagefile:install.wim /index:1 /applydir:W:`  
 
 ## Creating boot files
 
-### MBR only
-`bootsect /nt60 C: (or E:) /force /mbr`
+Tip : Use notepad to verify drive letters  
 
 ### MBR + UEFI
-`bcdboot (Drive letter to main disk):\Windows`
-
-### Add argument if it's UEFI (if needed)
-`/s [drive letter to UEFI]:`
-
-## Bypassing the OOBE entirely (Optional)
-```
-reg load HKLM\SOFT C:\Windows\System32\config\SOFTWARE
-reg load HKLM\SYS C:\Windows\System32\config\SYSTEM
-reg add HKLM\SOFT\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /t REG_DWORD /d 1 /f
-reg add HKLM\SOFT\Microsoft\Windows\CurrentVersion\Policies\System /v EnableCursorSuppression /t REG_DWORD /d 0 /f
-reg add HKLM\SYS\Setup /v CmdLine /t REG_SZ /d cmd.exe /f
-```
+`bcdboot W:\Windows /s S: /f uefi`  
 
 ## Reboot
 `wpeutil reboot`
 
-## Bypassing the OOBE entirely (P2)
+## Bypassing the OOBE to create local account 
+Shift + F10 to open cmd  
+cd Sources folder et type   
+`oobe\bypassnro` or `oobe\bypassnroCMD`
 
-### Run Windows Deployment Loader then enable recovery
+Option "no internet connection" visible  
+Able to create local user  
+
+## Follow installation process
+
+---
+## Post installation
+
+### Activation  
+
+(powershell as admin) : `irm https://get.activated.win | iex`    
+irm : invoke request method  
+iex : invoke expression  
+
+### Disable password expiration
+`(as admin) > wmic UserAccount Set PasswordExpires=False`
+
+### Disable hibernation
+`(as admin) > powercfg /h off`    
+
+### Disable bitlocker
+
+---
+## Add user (When the boot status says "Getting Ready")
 ```
-oobe\windeploy
-Reagentc /enable (if you made a recovery parition)
-Reagentc /Info /Target C:\Windows
+net user /add john password1234
+net localgroup users /add john # in case Windows didn't add the users group
+net localgroup administrators /add john
 ```
 
-### Add user (When the boot status says "Getting Ready")
-```
-net user /add (username) (password)
-net localgroup users /add (username) # in case Windows didn't add the users group
-net localgroup administrators /add (username)
-```
-
-### Clear OOBE status
-```
-reg add HKLM\SYSTEM\Setup /v OOBEInProgress /t REG_DWORD /d 0 /f
-reg add HKLM\SYSTEM\Setup /v SetupType /t REG_DWORD /d 0 /f
-reg add HKLM\SYSTEM\Setup /v SystemSetupInProgress /t REG_DWORD /d 0 /f
-exit
-```
-
-### Disabling VerboseStatus and Enabling CursorSuppression (Optional)
-When entering the desktop open CMD as admin and run the following.
-```
-reg add HKLM\SOFT\Microsoft\Windows\CurrentVersion\Policies\System /v VerboseStatus /t REG_DWORD /d 0 /f
-reg add HKLM\SOFT\Microsoft\Windows\CurrentVersion\Policies\System /v EnableCursorSuppression /t REG_DWORD /d 1 /f
-```
-
-# Credits
-If there's anything that needs to be added, feel free to tell me in the comments below!
-- Caesar (TheDarkBomber#0229): For helping fixing some things in the script that I forgot or needed to add.
