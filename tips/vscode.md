@@ -132,6 +132,47 @@ models:
       - apply
       - rerank
       - autocomplete
+
+# List of all the contexts providers
+context:    
+# Reference any file in your current workspace.
+  - provider: file
+# Reference specific functions or classes from throughout your project.
+  - provider: code
+# Reference the most relevant snippets from your codebase.
+  - provider: codebase
+# Reference all of the changes you've made to your current branch.
+  - provider: diff
+# Reference the contents of the currently open file.
+  - provider: currentFile
+# Reference the contents of your IDE's terminal.
+  - provider: terminal
+# Reference the contents from any added documentation site.
+  - provider: docs
+# Reference the contents of a specific folder in your workspace.
+  - provider: folder
+# Reference the results of codebase search.
+  - provider: search
+# Reference the markdown converted contents of a given URL.
+  - provider: url
+# Reference the contents of your clipboard.
+  - provider: clipboard
+# Reference the structure of your current workspace.
+  - provider: tree
+# Reference reported problems or errors in your workspace.
+  - provider: problems
+# Reference the contents of all open files in your IDE. Set onlyPinned to true to only reference pinned files.
+  - provider: open
+    params:
+      onlyPinned: False
+
+rules:
+  - You are a senior developer in java
+  - You are a senior developer in python
+  - You are a senior developer in web
+  - You are a senior developer in xml
+  - You are a senior analyst in uml
+
 ```
 
 ---
