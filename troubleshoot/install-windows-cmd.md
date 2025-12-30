@@ -12,7 +12,7 @@ During setup screen : open cmd
 ## Creating Partition
 
 ### UEFI
-```
+```cmd
 diskpart
 list disk
 select disk 0 # number for main disk
@@ -87,7 +87,7 @@ iex : invoke expression
 
 ---
 ## Add user (When the boot status says "Getting Ready")
-```
+```cmd
 net user /add john password1234
 net localgroup users /add john # in case Windows didn't add the users group
 net localgroup administrators /add john
