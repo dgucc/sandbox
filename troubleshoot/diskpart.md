@@ -1,5 +1,29 @@
 # Diskpart
 
+**diskpart** : manage computer’s drives (discs, partitions, volumes, or virtual hard drives).
+
+## Create primary partition
+```cmd
+create part primary size=102400
+format fs=ntfs quick label Data 
+assign letter D
+list vol
+```
+
+## Delete all partition
+```cmd
+list disk
+select disk 0 
+clean # Clearing all partitions
+```
+
+## Convert disk from MBR to GPT 
+```cmd
+list disk
+select disk 0 # number for main disk
+convert gpt
+```
+
 ## Delete protected partition with diskpart
 
 delete partition **override**  
@@ -7,9 +31,9 @@ delete partition **override**
 ```cmd
 (as admin) > diskpart
 > list disk
-> select disk X 
+> select disk 0 
 > list partition
-> select partition Y
+> select partition 2
 > delete partition override 
 ```
 
