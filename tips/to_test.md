@@ -354,6 +354,18 @@ Restart > BIOS : select new HDD
 
 ## Misc
 
+Cemu on Linux cf. Lutris...  
+
+WiiU-USB on Linux : cf. Wine-stage  
+
+PCSx2 : pro controller Linux  
+
+Yuzy : Switch emulator  cf. youtube Daniel Schmid
+https://www.xc-nsp.com
+yuzu-emu.org  
+Galiak Game
+
+
 Remote Control for AndroidTV
 > codes 
 10381  
