@@ -540,6 +540,15 @@ option : -o, --only-matching
 
 ## Image manipulations
 
+### sort images by drag/drop : Geeqie 
+
+- File > New Collection  
+- Add pictures in the collection window  
+- Reorder pics by Drag/Drop  
+- Select All > Right Click : Rename   
+- Select Tab Formatted Rename  
+
+
 ### Sort images by orientation
 ```bash
 #!/bin/bash
