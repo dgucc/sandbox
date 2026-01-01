@@ -2,14 +2,23 @@
 
 ## Memo
 
+- Activate Developper mode in the phone  
+- Connect the phone to the computer  
+
+Install ADB : Android Debug Bridge  
 `sudo apt-get install android-tools-adb`  
 
+Authorize access on the device  
 `adb devices`  
 
 `adb shell`  
 
+adb pull [destination] [source] — Pulls from your device to your computer.  
 `adb pull /sdcard/Download`  
 `adb pull /sdcard/DCIM`  
+
+adb push [source] [destination] — Pushes from your computer to your device.  
+
 
 ---
 
