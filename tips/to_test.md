@@ -361,7 +361,7 @@ WiiU-USB on Linux : cf. Wine-stage
 PCSx2 : pro controller Linux  
 
 Yuzy : Switch emulator  cf. youtube Daniel Schmid
-https://www.xc-nsp.com
+https://www.xci-nsp.com
 yuzu-emu.org  
 Galiak Game
 
