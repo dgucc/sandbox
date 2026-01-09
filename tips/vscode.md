@@ -3,7 +3,7 @@
 - [vscode](#vscode)
    * [shortcut](#shortcut)
    * [Configuration](#configuration)
-   * [Create Custom Snippet](#create-custom-snippet)
+   * [Create Custom Snippets](#create-custom-snippets)
    * [Ollama-Continue](#ollama-continue)
    * [Installation on Linux  ](#installation-on-linux)
    * [Clean extensions](#clean-extensions)
