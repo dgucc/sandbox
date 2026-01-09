@@ -116,6 +116,23 @@ Edit /home/<user>/.config/Code/User/settings.json :
 ```
 </details>
 
+## Create Custom snippets 
+Create file (suffix .code-snippets) into %APPDATA%\Code\User\snippets\custom.code-snippets :  
+```json
+{
+	"XML annotation": {
+		"scope": "",
+		"prefix": "anno",
+		"body": [
+			"<xs:annotation>",
+			"\t<xs:documentation>${1:description}</xs:documentation>",
+			"</xs:annotation>"
+		],
+		"description": "Add a XML annotation"
+	}
+}
+```
+
 ## Ollama-Continue
 
 Continue can automatically detect available Ollama models. You can configure this in your YAML:
