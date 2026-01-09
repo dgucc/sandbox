@@ -3,6 +3,7 @@
 - [vscode](#vscode)
    * [shortcut](#shortcut)
    * [Configuration](#configuration)
+   * [Create Custom Snippet](#create-custom-snippet)
    * [Ollama-Continue](#ollama-continue)
    * [Installation on Linux  ](#installation-on-linux)
    * [Clean extensions](#clean-extensions)
@@ -117,7 +118,10 @@ Edit /home/<user>/.config/Code/User/settings.json :
 </details>
 
 ## Create Custom snippets 
-Create file (suffix .code-snippets) into %APPDATA%\Code\User\snippets\custom.code-snippets :  
+Create file (suffix .code-snippets) into  
+- %APPDATA%\Code\User\snippets\custom.code-snippets (Windows)
+- $HOME/.config/Code/User/snippets/custom.code-snippets
+  
 ```json
 {
 	"XML annotation": {
