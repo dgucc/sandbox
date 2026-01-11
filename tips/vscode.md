@@ -2,8 +2,9 @@
 
 - [vscode](#vscode)
    * [shortcut](#shortcut)
-   * [custom keybindings](#custom-keybindings)
+   * [Custom keybindings](#custom-keybindings)
    * [Configuration](#configuration)
+   * [Disable CoPilot](#disable-copilot)
    * [Create Custom Snippets](#create-custom-snippets)
    * [Ollama-Continue](#ollama-continue)
    * [Installation on Linux  ](#installation-on-linux)
@@ -365,6 +366,12 @@ rules:
   - You are a senior analyst in uml
 
 ```
+---
+## Disable CoPilot
+
+Ctrl+Shift+P  
+
+Chat:Disable AI Features  
 
 ---
 
