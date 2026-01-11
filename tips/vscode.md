@@ -2,6 +2,7 @@
 
 - [vscode](#vscode)
    * [shortcut](#shortcut)
+   * [custom keybindings](#custom-keybindings)
    * [Configuration](#configuration)
    * [Create Custom Snippets](#create-custom-snippets)
    * [Ollama-Continue](#ollama-continue)
@@ -24,6 +25,27 @@ Open Terminal : <Ctrl+J>
 Focus on Project Explorer : <Ctrl+0>
 
 Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
+
+## custom keybindings
+
+Duplicate line is missing in linux version      
+create ~/.config/Code/User/keybindings.json :  
+
+```json
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus"
+    }
+]
+```
 
 <!-- TOC --><a name="configuration"></a>
 ## Configuration
