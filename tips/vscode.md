@@ -48,7 +48,7 @@ create ~/.config/Code/User/keybindings.json :
 ```
 <details>
 	<summary>[vscode internal commands](https://gist.github.com/skfarhat/4e88ef386c93b9dceb98121d9457edbf)</summary>
-```
+<pre>
 editor.action.selectAll
 editor.action.moveCarretLeftAction
 editor.action.moveCarretRightAction
@@ -190,7 +190,9 @@ editor.action.webvieweditor.redo
 editor.action.extensioneditor.showfind
 editor.action.extensioneditor.findNext
 editor.action.extensioneditor.findPrevious
-```
+		
+</pre>
+
 </details>
 
 <!-- TOC --><a name="configuration"></a>
