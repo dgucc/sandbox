@@ -409,6 +409,11 @@ Substraction
 
 > Output : 01:09:49
 
+### Convert epoch timestamp to date
+
+`$ date -d @1234567890 +'%Y-%m-%d %H:%M:%S %a'`  
+> 2009-02-14 00:31:30 Sat  
+
 ---
 ## File manipulations  
 
