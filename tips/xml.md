@@ -6,6 +6,18 @@
 ```xml
 cat data.xml | xmllint --format -
 ```
+
+### Validate XML by ignoring missing DTD :  
+```xml
+xmllint --noout --nocatalogs --recover data.xml
+```
+--nocatalogs: disables the use of XML catalogs (no DTD resolution).  
+--noent: does not substitute entities, which can help avoid missing DTD references.  
+--recover: attempts to continue parsing even if errors are found (useful for batch/script contexts).  
+--noout: suppresses output, just checks validity.  
+
+
+
 ### Parse XML :  
 Use local-name() trick to ignore namespace prefixes
 ```xml
