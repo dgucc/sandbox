@@ -121,7 +121,13 @@ or
 
 If setup.exe is compatible, a new< folder app/  will be created as a portable app  
 
+
+## How to list open ports and application using them in Windows  
+`PS C:\> netstat -ano | ConvertFrom-String -PropertyNames ProcessName,Proto,Local,Remote,State,PID| where Proto -eq 'TCP' | %{ $_.ProcessName = (Get-Process -Id $_.PID).ProcessName; $_ }  |Format-Table -AutoSize`  
+
 ---
+
+
 
 <!-- TOC --><a name="linux"></a>
 # Linux
