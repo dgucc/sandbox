@@ -456,6 +456,15 @@ shopt -u nullglob
 ### Find file modified less than a day ago :  
 `$ find . -name '*.csv' -ctime -1`  
 
+### Move files by keeping folder structure
+
+`$ find . -iname "*.puml" -exec rsync --relative --remove-source-files {} ../destination-folder/ \;`  
+
+> --relative : keep folder structure from starting point (./).  
+> --remove-source-files : remove original folder  
+
+
+
 ### Replace text in multiple files :   
 `$ sed -i 's/old-text/new-text/g' *.* `
 
