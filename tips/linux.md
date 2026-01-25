@@ -638,7 +638,26 @@ Alternative : 'N;s/pattern/replace/;P;D'
 # "D" delete red next line (already red).
 ```
 
+### Sort list preserving header row
+> -k4,4r : sorting on 4th column in reverse order  
+> -k3,3n : sorting on 3th column as number  
 
+```
+ollama list | (head -n 1 && tail -n +2 | sort -k4,4r -k3,3n)
+NAME                        ID              SIZE      MODIFIED    
+nomic-embed-text:latest     0a109f422b47    274 MB    6 weeks ago    
+mxbai-embed-large:latest    468836162de7    669 MB    6 weeks ago    
+moondream:latest            55fc3abd3867    1.7 GB    3 weeks ago    
+llama3.2:latest             a80c4f17acd5    2.0 GB    6 weeks ago    
+granite3.2-vision:latest    3be41a661804    2.4 GB    3 weeks ago    
+gemma3:latest               a2af6cc3eb7f    3.3 GB    6 weeks ago    
+mistral:latest              6577803aa9a0    4.4 GB    6 weeks ago    
+qwen2.5-coder:latest        dae161e27b0e    4.7 GB    6 weeks ago    
+deepseek-r1:latest          6995872bfe4c    5.2 GB    3 weeks ago    
+minicpm-v:latest            c92bfad01205    5.5 GB    3 weeks ago    
+ministral-3:latest          77300ee7514e    6.0 GB    6 weeks ago    
+llama3.2-vision:11b         6f2f9757ae97    7.8 GB    3 weeks ago    
+```
 
 ### Append string "commit" in each file  
 `$ for file in $(ls -1 *.sql) ; do sed -i '$ a commit;' $file ; done`  
