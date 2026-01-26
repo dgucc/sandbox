@@ -6,6 +6,7 @@
    * [Configuration](#configuration)
    * [Disable CoPilot](#disable-copilot)
    * [Create Custom Snippets](#create-custom-snippets)
+   * [Add Cygwin as terminal](#add-cygwin-as-terminal)
    * [Ollama-Continue](#ollama-continue)
    * [Installation on Linux  ](#installation-on-linux)
    * [Clean extensions](#clean-extensions)
@@ -307,6 +308,18 @@ Create file (suffix .code-snippets) into
 	}
 }
 ```
+
+## Add Cygwin as terminal 
+
+%AppData%\Code\User\settings.json :
+ "terminal.integrated.profiles.windows": {
+	[...]
+	"Cygwin": {
+      "path": "C:\\home\\apps\\cygwin\\cygwin64\\bin\\bash.exe",
+      "args": ["--login"],
+      "env": {"CHERE_INVOKING": "1"}
+    },
+}
 
 ## Ollama-Continue
 
