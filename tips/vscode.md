@@ -311,7 +311,8 @@ Create file (suffix .code-snippets) into
 
 ## Add Cygwin as terminal 
 
-%AppData%\Code\User\settings.json :
+%AppData%\Code\User\settings.json :  
+```json
  "terminal.integrated.profiles.windows": {
 	[...]
 	"Cygwin": {
@@ -320,7 +321,7 @@ Create file (suffix .code-snippets) into
       "env": {"CHERE_INVOKING": "1"}
     },
 }
-
+```
 ## Ollama-Continue
 
 Continue can automatically detect available Ollama models. You can configure this in your YAML:
