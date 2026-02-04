@@ -456,13 +456,21 @@ shopt -u nullglob
 ### Find file modified less than a day ago :  
 `$ find . -name '*.csv' -ctime -1`  
 
+### Change files extension
+`$ find . -iname "*.old" -exec rename .old .new {} \;`  
+or 
+`$ find . -name "*.old" -exec bash -c 'mv "$1" "${1%.old}".new' - '{}' \;`  
+
+### Append date-time into all txt files
+$ find . -name "*.txt" -exec sed -i "$ a $(date)" {} \;
+
+
 ### Move files by keeping folder structure
 
 `$ find . -iname "*.puml" -exec rsync --relative --remove-source-files {} ../destination-folder/ \;`  
 
 > --relative : keep folder structure from starting point (./).  
 > --remove-source-files : remove original folder  
-
 
 
 ### Replace text in multiple files :   
@@ -472,10 +480,10 @@ shopt -u nullglob
 `$ sed -r '/^\s*$/d' file.txt` 
 
 ### Insert one line at the top of a file :  
-`$ sed -i '1 i EXTRA_TOP_LINE'` 
+`$ sed -i '1 i EXTRA_TOP_LINE' file.txt` 
 
 ### Append one line at the end of a file :  
-`$ sed -i '$ a EXTRA_BOTOOM_LINE'`  
+`$ sed -i '$ a EXTRA_BOTOOM_LINE file.txt'`  
 
 ### Insert 'commit;' every 1000 lines
 ```bash
