@@ -13,6 +13,7 @@
   - [unbound](#local-dns-unbound)
   - [OpenVPN](#openvpn)
   - [Create shortcut on desktop](#create-shortcut-on-desktop)
+  - [Pair Device Logitech Unifying Receiver](#pair-device-logitech-unifying-receiver)
   - [Enable WiFi](#enable-wifi)
   - [No Numpad](#no-numpad)
   - [Test Microphone](#test-microphone)
@@ -288,6 +289,15 @@ Check your IP : https://www.whatismyip.com/
 
 ## Browse from Computer Level
 URI : `computer:///`  
+
+
+## Pair Device Logitech Unifying Receiver
+
+[Reference](https://www.adamsdesk.com/posts/pair-device-logitech-unifying-receiver/)  
+
+`$ sudo apt-get install ltunify`  
+or  
+`$ sudo apt-get install solaar`  
 
 ## Enable WiFi
 
