@@ -5,6 +5,7 @@
 - [Disable hibernation](#disable-hibernation)
 - [Disable password expiration](#disable-password-expiration)
 - [Restore classic context menu](#restore-classic-context-menu)
+- [Code Page Windows Command](#code-page-windows-command)
 - [Usefull commands](#usefull-commands)
 - [General](#general)
 - [Programmes et outils Windows](#programmes-et-outils-windows)
@@ -97,6 +98,11 @@ Pre-requesite : `Set-ExecutionPolicy Unrestricted`
 [Restore the old Context Menu in Windows 11](https://answers.microsoft.com/en-us/windows/forum/all/restore-old-right-click-context-menu-in-windows-11/a62e797c-eaf3-411b-aeec-e460e6e5a82a)  
 
 `> reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve`   
+
+## Code Page Windows Command
+Change code page of command to support accentuated characters  
+[HKCU\Software\Microsoft\Command Processor\AutoRun]  
+> chcp 437  
 
 <!-- TOC --><a name="usefull-commands"></a>
 ## Usefull commands 
