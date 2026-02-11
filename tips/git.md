@@ -169,7 +169,7 @@ Revenir strictement à un commit sans aucun fichier modifié
 `$ git diff HEAD`  
 
 <!-- TOC --><a name="discard-local-changes"></a>
-# discard local changes
+## discard local changes
 `$ git checkout -f HEAD`  
 `$ git reset --hard HEAD~1` 
 
@@ -196,6 +196,9 @@ Remove unstaged files
 
 Remove non commited change  
 `$ git reset --hard`  
+
+Stop tracking unwanted files  
+`git rm -r --cached . && git add . && git commit -am "Remove ignored files"`  
 
 <!-- TOC --><a name="log"></a>
 ## Log
