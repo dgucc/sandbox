@@ -7,6 +7,7 @@
    * [Resolve conflict with binary files](#resolve-conflict-with-binary-files)
    * [Git pull all subfolders](#git-pull-all-subfolders)
    * [Git Pull Force](#git-pull-force)
+   * [Commit and add all files in a single command](#Commit-and-add-all-files-in-a-single-command)
    * [git commit --amend](#git-commit-amend)
    * [git stash : mettre de côté   ](#git-stash-mettre-de-côté)
    * [git stach pop : pour récupérer ce qui a été mis de côté  ](#git-stach-pop-pour-récupérer-ce-qui-a-été-mis-de-côté)
@@ -14,9 +15,11 @@
    * [git revert (new commit)](#git-revert-new-commit)
    * [git reset ](#git-reset)
    * [git rebase, cherry-pick	](#git-rebase-cherry-pick)
-- [discard local changes](#discard-local-changes)
+   * [discard local changes](#discard-local-changes)
    * [Clone subdirectory only](#clone-subdirectory-only)
-   * [Misc](#misc)
+   * [Remove untracked files](#Remove-untracked-files)
+   * [Resets to the state of the last commit](#Resets-to-the-state-of-the-last-commit)
+   * [Stop tracking unwanted files](#Stop-tracking-unwanted-files)
    * [Log](#log)
    * [Show git branch in Windows Command Prompt ](#show-git-branch-in-windows-command-prompt)
    * [Show git branch in Linux bash Prompt](#Show-git-branch-in-Linux-bash-Prompt)
@@ -111,6 +114,11 @@ git merge '@{u}'
 
 [GIT avancé : stash, revert, restore, reset](https://www.youtube.com/watch?v=Ayr17xFKMHU)
 
+---
+## Commit and add all files in a single command  
+`$ git commit -a -m 'Take all'`  
+
+
 <!-- TOC --><a name="git-commit-amend"></a>
 ## git commit --amend
 Modifier le dernier commit  (message et autres)
@@ -172,6 +180,25 @@ Revenir strictement à un commit sans aucun fichier modifié
 ## discard local changes
 `$ git checkout -f HEAD`  
 `$ git reset --hard HEAD~1` 
+
+---
+## Remove untracked files  
+> -d : directories  
+> -f : force  
+`$ git clean -df`  
+
+---
+## Resets to the state of the last commit
+> --hard : get rid of uncommited changes  
+`$ git reset --hard`  
+
+---
+## Stop tracking unwanted files  
+> rm -r : remove recursively    
+> --cached : keep untracked files in working directory   
+`git rm -r --cached . && git add . && git commit -am "Remove ignored files"`  
+
+
 
 ---
 
