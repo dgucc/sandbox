@@ -212,21 +212,6 @@ git sparse-checkout set --no-cone openstreetmap
 git checkout
 ```
 
-<!-- TOC --><a name="misc"></a>
-## Misc
-
-Commit and add all files in a single command  
-`$ git commit -a -m 'Take all'`  
-
-Remove unstaged files  
-`$ git clean -df`  
-
-Remove non commited change  
-`$ git reset --hard`  
-
-Stop tracking unwanted files  
-`git rm -r --cached . && git add . && git commit -am "Remove ignored files"`  
-
 <!-- TOC --><a name="log"></a>
 ## Log
 
