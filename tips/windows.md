@@ -29,6 +29,7 @@
 - [Move or Rezize Window with Keyboard Shortcut](#move-or-rezize-window-with-keyboard-shortcut)
 - [Access to local network while using VPN ](#access-to-local-network-while-using-vpn)
 - [Windows Defender Firewall with Advanced Security](#windows-defender-firewall-with-advanced-security)
+- [Firewall : Allow program with netsh](#firewall-:-allow-program-with-netsh)
 - [Windows Key Backup](#windows-key-backup)
 - [VLC : screen recording  ](#vlc-screen-recording)
 - [Excel](#excel)
@@ -423,6 +424,11 @@ Deactivate/Activate via netsh :
 (as admin)
 > netsh advfirewall set domainprofile state off
 ```
+
+## Firewall : Allow program with netsh
+
+`netsh firewall add allowedprogram C:\MyApp\MyApp.exe "My Application" ENABLE`  
+
 <!-- TOC --><a name="windows-key-backup"></a>
 ## Windows Key Backup
 
