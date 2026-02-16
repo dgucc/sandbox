@@ -1,4 +1,7 @@
 [A SMARTER WAY TO DUAL BOOT WINDOWS...](https://www.youtube.com/watch?v=7JBFJuA5QsM)
+[How to Natively Boot a Windows 11 Virtual Hard Disk (VHDX)](https://www.ninjaone.com/blog/native-boot-vhdx-virtual-hard-disk/)
+
+
 # Windows Multi-Boot with virtual disks
 
 ## Check Drivers 
