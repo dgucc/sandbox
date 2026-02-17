@@ -5,6 +5,15 @@
 
 ## Memo
 
+### Install ollama
+
+By executing the installation script  
+`curl -fsSL https://ollama.com/install.sh | sh`  
+
+Or 
+
+Manually  
+
 ```bash
 su -
 
@@ -25,7 +34,9 @@ usermod -a -G ollama dgucc
 # Create systemd service
 `$ sudo nano /etc/systemd/system/ollama.service` 
 ```
+### Customize ollama config
 
+/etc/systemd/system/ollama.service  : 
 ```ini
 [Unit]
 Description=Ollama Service
@@ -53,7 +64,14 @@ systemctl enable --now ollama
 # Check log
 journalctl -u ollama
 ```
+### How to update Ollama
 
+Re-run the installation script  
+`curl -fsSL https://ollama.com/install.sh | sh`  
+
+Or 
+
+Manually   
 ```bash
 # Update ollama
 ollama -v
@@ -66,7 +84,7 @@ tar -C /usr -xvzf ollama-linux-*.tgz
 # Start ollama
 systemctl start ollama.service
 ```
-## Sort ollama list 
+### Sort ollama list 
 > -k4,4r : sorting on 4th column in reverse order  
 > -k3,3n : sorting on 3th column as number  
 
