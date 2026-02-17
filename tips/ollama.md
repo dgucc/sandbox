@@ -107,12 +107,13 @@ llama3.2-vision:11b         6f2f9757ae97    7.8 GB    3 weeks ago
 ```
 
 ### Let's translate from remote ollama through ssh
+```bash
 ssh user@192.168.0.69 << EOF
 ollama run llama3.2  """traduis en anglais ce qui suit :
 Il y a quelque chose de pourri au Royaume du Danemark
 """
 EOF
-
+```
 
 ---
 
