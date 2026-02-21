@@ -66,7 +66,11 @@ cd Sources folder et type
 Option "no internet connection" visible  
 Able to create local user  
 
-## Follow installation process
+New method  
+Shift + F10 :  
+`start ms-cxh:localonly`  
+
+Follow installation process
 
 ---
 ## Post installation
