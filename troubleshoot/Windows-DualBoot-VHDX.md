@@ -11,15 +11,18 @@ Device Manager
 	Realtek Audio
 
 ## Create virtual disk
-Disk Management : Action > Create Virtual Disk  
+With Disk Management  
+Action > Create Virtual Disk  
+
 	- C:\VHDX\Windows11.vhdx  
 	- Size : 50 GB  
 	- Format : VHDX  
 	- Type : Dynamic  
 	
 ## Restart with installation Media
-Windows Setup > Advanced  
-cmd as admin : Shift+F10  
+During Windows Installation    
+Shift+F10 to open cmd  
+
 > c:  
 > cd VHDX  
 > diskpart  
@@ -27,30 +30,30 @@ cmd as admin : Shift+F10
 	list volume  
 	attach vdisk  
 
-## After installation Restart and choose to boot into Windows 11
+## Setup after installation restart and choose to boot into Windows 11
 
-## Rename C: as Windows11 and D: as Windows10 (File Explorer)
+	- Rename C: as Windows11 and D: as Windows10 (File Explorer)
+	- Define default Windows  
+  	sysdm.cpl : System Properties > Advanced  
+  	Startup - Recovery to select default Windows version  
 
-## Define default Windows
-  sysdm.cpl : System Properties > Advanced  
-  Startup - Recovery to select default Windows version  
+Adapt Boot Menu description  	
+
+	bcdedit /enum  
+	bcdedit /set {current} description "Windows 11 Gaming"  
+	bcdedit /set {guid} description "Windows 11 Work"  
 	
 ## To remove virtual Windows disk
 	
-	- Simply delete c:\vhdx\Windows10.vhdx  
-	- msconfig > Boot : delete Windows10 Entry  
+	- Simply delete c:\vhdx\Windows11.vhdx  
+	- msconfig > Boot : delete Windows11 Entry  
 
-## Adapt Boot Menu description	
 
-	bcdedit /enum  
-	bcdedit /set {current} description "Windows for Gaming"  
-	bcdedit /set {guid} description "Windows for Work"  
-
-## Enlarge Virtual disk
+## To enlarge Virtual disk
 
 > diskpart  
 > select vdisk file=c:\VHDX\Windows11.vhdx  
-> expand vdisk maximum=80000  
+> expand vdisk maximum=81920  
 > attach vdisk  
 > select volume 3  
 > extend  
