@@ -30,7 +30,7 @@ Shift+F10 to open cmd
 	- list volume  
 	- attach vdisk  
 
-## Setup after installation restart and choose to boot into Windows 11
+## Setup after restarting (boot into new Windows 11)  
 
 	- Rename C: as Windows11 and D: as Windows10 (File Explorer)
 	- Define default Windows  
