@@ -6,9 +6,9 @@
 
 ## Check Drivers 
 Device Manager
-	NVIDIA GeForce MX250
-	Realtek RTL8822CE 
-	Realtek Audio
+	NVIDIA GeForce MX250  
+	Realtek RTL8822CE   
+	Realtek Audio  
 
 ## Create virtual disk
 With Disk Management  
@@ -23,21 +23,23 @@ Action > Create Virtual Disk
 During Windows Installation    
 Shift+F10 to open cmd  
 
-> c:  
-> cd VHDX  
-> diskpart  
-	select vdisk file:c:\VHDX\Windows11.vhdx  
-	list volume  
-	attach vdisk  
+	- c:  
+	- cd VHDX  
+	- diskpart  
+	- select vdisk file:c:\VHDX\Windows11.vhdx  
+	- list volume  
+	- attach vdisk  
 
 ## Setup after installation restart and choose to boot into Windows 11
 
 	- Rename C: as Windows11 and D: as Windows10 (File Explorer)
 	- Define default Windows  
-  	sysdm.cpl : System Properties > Advanced  
-  	Startup - Recovery to select default Windows version  
+	
+sysdm.cpl : System Properties > Advanced 
 
-Adapt Boot Menu description  	
+	- Startup - Recovery to select default Windows version  
+
+Adapt Boot Menu description with bcdedit    	
 
 	bcdedit /enum  
 	bcdedit /set {current} description "Windows 11 Gaming"  
@@ -51,9 +53,9 @@ Adapt Boot Menu description
 
 ## To enlarge Virtual disk
 
-> diskpart  
-> select vdisk file=c:\VHDX\Windows11.vhdx  
-> expand vdisk maximum=81920  
-> attach vdisk  
-> select volume 3  
-> extend  
+	> diskpart  
+	> select vdisk file=c:\VHDX\Windows11.vhdx  
+	> expand vdisk maximum=81920  
+	> attach vdisk  
+	> select volume 3  
+	> extend  
