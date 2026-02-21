@@ -62,7 +62,7 @@ select vdisk file:c:\VHDX\Windows11.vhdx
 ```cmd
 (as admin) > diskpart  
 > select vdisk file=c:\VHDX\Windows11.vhdx  
-> expand vdisk maximum=80000  
+> expand vdisk maximum=81920  
 > attach vdisk  
 > select volume 3  
 > extend
