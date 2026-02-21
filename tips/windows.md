@@ -79,6 +79,8 @@ registry:
 ## Windows 11 installation with local user
 When invited to connect to internet : SHIFT + F10  
 `(as admin)> OOBE\BYPASSNRO`  -> Restart installation procedure...  
+Or  
+`(as admin) > start ms-cxh:localonly`  New Method
 
 ## UnattendedWinstall
 [Microsoft's Answer Files to automate and customize Windows installations](https://github.com/memstechtips/UnattendedWinstall)  
