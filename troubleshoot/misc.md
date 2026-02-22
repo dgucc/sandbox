@@ -1,5 +1,19 @@
 # Misc 
 
+## MBR to GPT
+
+- Identify Disk # with Disk Manager  
+- Ensure BitLocker is disabled
+  
+```cmd
+(as admin)
+> mbr2gpt /validate /disk:0 /allowFullOS
+> mbr2gpt /convert /disk:0 /allowFullOS
+```
+
+Reboot to change BIOS option to **UEFI**
+
+
 ## ufw : allow ssh in subnet
 
 ```bash
