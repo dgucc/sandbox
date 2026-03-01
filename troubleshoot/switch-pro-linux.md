@@ -32,6 +32,6 @@ trust MAC_ADDRESS
 
 Notes:  
 
-> Without doing step 4 (and possibly step 3?), the controller could be paired using the Blueman manager, but after every reboot or controller disconnection, the controller would need to be unpaired and re-paired again to work.
-> Instead of step 2, installing joycond and cemuhook (https://github.com/joaorb64/joycond-cemuhook) could be done to get motion control working in Cemu. However, I found that this method caused the vertical motion control to be faulty or at least not to my liking (instead of my expectation of tilting the whole controller up and down while keeping the sides level, vertical motion would only work by raising one side of the controller above the other).
+> Without doing step 4 (and possibly step 3?), the controller could be paired using the Blueman manager, but after every reboot or controller disconnection, the controller would need to be unpaired and re-paired again to work.  
+> Instead of step 2, installing joycond and cemuhook (https://github.com/joaorb64/joycond-cemuhook) could be done to get motion control working in Cemu. However, I found that this method caused the vertical motion control to be faulty or at least not to my liking (instead of my expectation of tilting the whole controller up and down while keeping the sides level, vertical motion would only work by raising one side of the controller above the other).  
 
