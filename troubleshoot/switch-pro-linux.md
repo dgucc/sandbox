@@ -20,7 +20,7 @@ KERNEL=="hidraw*", KERNELS=="*057E:2009*", MODE="0660", TAG+="uaccess"
 3. In the Linux Mint Bluetooth GUI (Blueman manager), under adapter-->preferences, change the adapter name to "Nintendo" ([Credit](https://github.com/DanielOgorchock/linux/issues/33#issuecomment-2790851724))
 
 4. Pair the controller using the terminal (instead of within Blueman manager) as follows ([Credit](https://github.com/bluez/bluez/issues/673#issuecomment-1849132576)):
-5. 
+
 ```
 bluetoothctl
 scan on and wait a second
