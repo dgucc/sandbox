@@ -21,17 +21,22 @@ KERNEL=="hidraw*", KERNELS=="*057E:2009*", MODE="0660", TAG+="uaccess"
 
 4. Pair the controller using the terminal (instead of within Blueman manager) as follows ([Credit](https://github.com/bluez/bluez/issues/673#issuecomment-1849132576)):
 
-```
-bluetoothctl
-scan on and wait a second
-devices and copy the MAC of the device that you want to pair
-pair MAC_ADDRESS
-connect MAC_ADDRESS
-trust MAC_ADDRESS
+```bash
+$ bluetoothctl
+$ scan on
+# wait a second
+
+$ devices
+# copy the MAC of the device that you want to pair
+
+$ pair MAC_ADDRESS
+$ connect MAC_ADDRESS
+$ trust MAC_ADDRESS
 ```
 
 Notes:  
 
-> Without doing step 4 (and possibly step 3?), the controller could be paired using the Blueman manager, but after every reboot or controller disconnection, the controller would need to be unpaired and re-paired again to work.  
+> Without doing step 4 (and possibly step 3?), the controller could be paired using the Blueman manager, but after every reboot or controller disconnection, the controller would need to be unpaired and re-paired again to work.
+> 
 > Instead of step 2, installing joycond and cemuhook (https://github.com/joaorb64/joycond-cemuhook) could be done to get motion control working in Cemu. However, I found that this method caused the vertical motion control to be faulty or at least not to my liking (instead of my expectation of tilting the whole controller up and down while keeping the sides level, vertical motion would only work by raising one side of the controller above the other).  
 
