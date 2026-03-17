@@ -133,7 +133,13 @@ in xsl :
   </Content>
 </Document>
 ```
+## XML to XSD
 
+[Generate XSD based on XML : trang.jar](https://github.com/relaxng/jing-trang)
+
+```cmd
+java -jar trang.jar sample.xml sample.xsd
+```
 
 ## XSD Viewer
 
