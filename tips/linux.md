@@ -1181,10 +1181,11 @@ Go to Bluetooth device manager ;-)
 <cygwin-path>\cygwin64\usr\local\bin\cygwin-setup.sh :  
 ```
 #! /usr/bin/sh
-rm setup-x86_64.exe
-wget cygwin.com/setup-x86_64.exe
-chmod u+x setup-x86_64.exe
-run ./setup-x86_64.exe --no-admin
+rm /cygdrive/c/cygwin/setup-x86_64.exe
+wget -P /cygdrive/c/cygwin/ --no-check-certificate https://www.cygwin.com/setup-x86_64.exe
+chmod u+x /cygdrive/c/cygwin/setup-x86_64.exe
+run /cygdrive/c/cygwin/setup-x86_64.exe --no-admin
+read -p "Press ENTER to continue"
 ```
 Create a shortcut in <cygwin-path> :  
 `<cygwin-path>\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/bash -l -c 'cygwin-setup.sh'`  
@@ -1305,6 +1306,10 @@ Alt + b : backward previous word
 Alt + f : forward  next word  
 /cygdrive/c/  
 /cygdrive/d/  
+
+### ssh issue
+
+Downgrade to 9.9p1-2 (instead of 10.2p1-1)  
 
 <!-- TOC --><a name="cygpath"></a>
 ### cygpath
