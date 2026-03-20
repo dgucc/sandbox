@@ -3,6 +3,7 @@
 - [Javascript](#javascript)
    * [Fix charset rendering ](#fix-charset-rendering)
    * [String Remove accents ](#string-remove-accents)
+   * [json samples](#json-samples)
    * [jq : json query ](#jq-json-query)
    * [iconv](#iconv)
    * [PDF : workaround for html2pdf to download pdf with javascript : Base64](#pdf-workaround-for-html2pdf-to-download-pdf-with-javascript-base64)
@@ -58,8 +59,15 @@ var chaine = "À côté d'un verre vide, il y a toujours un mec plein.";
 alert( chaine.sansAccent() );
 ```
 
+## json samples
+
+[json goodies : ](https://github.com/duckduckgo/zeroclickinfo-goodies/tree/master/share/goodie/cheat_sheets/json)
+
 <!-- TOC --><a name="jq-json-query"></a>
 ## jq : json query 
+
+Display all path  
+`$ jq '.[0]|path(..) | map(tostring) | join("/")' out.json`  
 
 Filter output for selected fields :  
 `$ jq -r '[ .[] | {id: .id, field1: .field1} ]' file.json `  
