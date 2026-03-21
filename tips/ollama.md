@@ -8,7 +8,19 @@
 ### Install ollama
 
 By executing the installation script  
-`curl -fsSL https://ollama.com/install.sh | sh`  
+```bash
+curl -fsSL https://ollama.com/install.sh | sh`  
+>>> Installing ollama to /usr/local
+>>> Downloading ollama-linux-amd64.tar.zst
+>>> Creating ollama user...
+>>> Adding ollama user to render group...
+>>> Adding ollama user to video group...
+>>> Adding current user to ollama group...
+>>> Creating ollama systemd service...
+>>> Enabling and starting ollama service...
+Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
+>>> NVIDIA GPU installed.
+```
 
 Or 
 
@@ -55,8 +67,24 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 [Install]
 WantedBy=default.target
 ```
+### Load models from other disk
+```bash
+# Mount extradisk with ollama models
+sudo mkdir /media/extradisk
+sudo chown $USER:$USER /media/extradisk
+sudo lsblk -f
+sudo nano /etc/fstab
+   # extradisk
+   UUID=efc350dd-871f-44a1-aa24-f7dc4685a135 /media/extradisk  ext4  defaults,nofail   0  0
+sudo mount -a
+
+sudo nano /etc/systemd/system/ollama.service
+   Environment="OLLAMA_MODELS=/media/extradisk/ollama/models"
+```
+Reload ollama :  
 
 ```bash
+sudo -i 
 # Reload systemd
 systemctl daemon-reload
 # Activate ollama service
@@ -64,6 +92,9 @@ systemctl enable --now ollama
 # Check log
 journalctl -u ollama
 ```
+
+
+
 ### How to update Ollama
 
 Re-run the installation script  
