@@ -75,7 +75,7 @@ sudo chown $USER:$USER /media/extradisk
 sudo lsblk -f
 sudo nano /etc/fstab
    # extradisk
-   UUID=efc350dd-871f-44a1-aa24-f7dc4685a135 /media/extradisk  ext4  defaults,nofail   0  0
+   UUID=abcc350dd-871f-44a1-aa24-f7dc4685a123 /media/extradisk  ext4  defaults,nofail   0  0
 sudo mount -a
 
 sudo nano /etc/systemd/system/ollama.service
