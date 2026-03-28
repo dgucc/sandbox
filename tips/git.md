@@ -11,6 +11,7 @@
    * [git commit --amend](#git-commit-amend)
    * [git stash : mettre de côté   ](#git-stash-mettre-de-côté)
    * [git stach pop : pour récupérer ce qui a été mis de côté  ](#git-stach-pop-pour-récupérer-ce-qui-a-été-mis-de-côté)
+   * [git worktree](#git-worktree)
    * [git restore](#git-restore)
    * [git revert (new commit)](#git-revert-new-commit)
    * [git reset ](#git-reset)
@@ -140,6 +141,22 @@ Mettre de côté ses modifs pour intervenir sur une autre branch
 	$ git checkout dev
 	$ git stash pop
 ```
+
+## git worktree
+[Dédoublez-vous avec les worktrees](https://comprendre-git.com/fr/commandes/git-worktree/)
+```
+# List existing worktree
+git worktree list -v
+# Create a worktree based on specific branch
+git worktree add -b fix/payment ../project-fix-payment main
+
+# Work on the new worktree...
+
+# Remove worktree <chemin-vers-votre-worktree>
+git worktree remove ../project-fix-payment
+```
+
+
 
 <!-- TOC --><a name="git-restore"></a>
 ## git restore
