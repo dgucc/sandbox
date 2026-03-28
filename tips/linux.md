@@ -1,5 +1,9 @@
 # Linux Tips
 
+[Linux Embedded](https://linuxembedded.fr/)  
+[Linuxtricks.fr](https://www.linuxtricks.fr/pages/bienvenue-sur-linuxtricks)  
+
+
 - [Linux Tips](#linux-tips)
   - [Linux version](#linux-version)
   - [grub](#grub)
