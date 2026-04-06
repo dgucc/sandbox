@@ -5,7 +5,7 @@
       + [Command gh needed to push modifications to remote repository  ](#command-gh-needed-to-push-modifications-to-remote-repository)
       + [How-to push existing repository from command line  ](#how-to-push-existing-repository-from-command-line)
    * [Resolve conflict with binary files](#resolve-conflict-with-binary-files)
-   * [Resolve conflict with detached HEAD](#resolve-conflict-whit-detached-HEAD)
+   * [Resolve conflict with detached HEAD](#resolve-conflict-with-detached-HEAD)
    * [Git pull all subfolders](#git-pull-all-subfolders)
    * [Git Pull Force](#git-pull-force)
    * [Commit and add all files in a single command](#Commit-and-add-all-files-in-a-single-command)
