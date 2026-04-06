@@ -5,6 +5,7 @@
       + [Command gh needed to push modifications to remote repository  ](#command-gh-needed-to-push-modifications-to-remote-repository)
       + [How-to push existing repository from command line  ](#how-to-push-existing-repository-from-command-line)
    * [Resolve conflict with binary files](#resolve-conflict-with-binary-files)
+   * [Resolve conflict with detached HEAD](#resolve-conflict-whit-detached-HEAD)
    * [Git pull all subfolders](#git-pull-all-subfolders)
    * [Git Pull Force](#git-pull-force)
    * [Commit and add all files in a single command](#Commit-and-add-all-files-in-a-single-command)
@@ -81,14 +82,78 @@ find . -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{}/.. pull ori
 ## Resolve conflict with binary files
 
 ```bash
-$ git checkout branch1
-$ git merge branch2
+$ git checkout main
+$ git merge develop
 # Merge conflict in book.xlsx...
 $ git checkout --theirs book.xls
 $ git add book.xls
 $ git commit -m 'Resolve conflict by keeping the branch2 version'
-$ git merge branch2
+$ git merge develop
 ```
+
+## Resolve conflict with detached HEAD
+
+### 🔹 1. Sauvegarde ton travail en cours
+Avant de changer de commit, mets tes modifications en sécurité :
+Commit temporaire  
+```bash
+git add .
+git commit -m "WIP: sauvegarde temporaire"
+```
+### 🔹 2. Reviens au commit antérieur
+Trouve le hash du commit voulu (`git log --oneline`), puis crée une branche dédiée :  
+```bash
+git checkout -b temp-merge <hash-du-commit>)
+```
+✅ Tu es maintenant sur une branche DETACHED.  
+Ta branche d'origine reste intacte avec ton travail sauvegardé. 
+
+### 🔹 3.1 Retrouve ton travail plus tard
+```bash
+git reset --soft HEAD~1   # supprime le commit temporaire mais garde les fichiers modifiés
+```
+
+### 🔹 3.2 Merger un commit en `detached HEAD` vers la branche `main`
+Pour merger un commit fait en état `detached HEAD`, Git ne permet pas de merger directement `HEAD`.  
+La bonne pratique est de **nommer cet état avec une branche temporaire**, puis de la merger dans `main`.  
+
+Voici la marche à suivre selon ta situation exacte :  
+
+```bash
+# 1. Crée une branche sur le commit actuel (détaché)
+git branch temp-merge
+
+# 2. Reviens sur main
+git checkout main
+
+# 3. Merge la branche temporaire
+git merge temp-merge
+
+# 4. Nettoyage
+git branch -d temp-merge
+```
+### 🔹 3.3 Resolve Conflict pour merger un commit en `detached HEAD` vers la branche `main`
+
+```bash
+$ git checkout main
+$ git merge temp-merge
+# Merge conflict...
+```
+Identifier les fichiers en conflit :  
+> --name-only: Lists only the filenames of changed files (instead of the full diff).
+> --diff-filter=U: Filters for unmerged files (i.e., files with conflicts).  
+`git diff --name-only --diff-filter=U `  
+
+
+Résoudre les conflits en privilégiant la branche temp-merge  
+```bash
+$ git checkout main
+$ git checkout --theirs book.xls
+$ git add book.xls
+$ git commit -m 'Resolve conflict by keeping the temp-merge version'
+$ git merge temp-merge
+```
+
 
 ## Git pull all subfolders
 
