@@ -359,6 +359,7 @@ PS1="\[\]\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u
 `$ source ~/.bashrc`  
 
 
+
 <!-- TOC --><a name="preview-html-page-hosted-in-github"></a>
 ## Preview html page hosted in GitHub
 Prepend **https://htmlpreview.github.io/?**  to url  
