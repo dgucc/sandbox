@@ -7,7 +7,7 @@
  * [Load models from other disk](#load-models-from-other-disk)
  * [How to update Ollama](#how-to-update-Ollama)
  * [Sort ollama list ](#sort-ollama-list)
- * [Let's translate from remote ollama through ssh](#let-s-translate-from-remote-ollama-through-ssh)
+ * [Translate text through ssh](#translate-text-through-ssh)
  * [Claude Code with Ollama](#claude-code-with-ollama)
 
 ## Memo
@@ -144,7 +144,7 @@ ministral-3:latest          77300ee7514e    6.0 GB    6 weeks ago
 llama3.2-vision:11b         6f2f9757ae97    7.8 GB    3 weeks ago    
 ```
 
-### Let's translate from remote ollama through ssh
+### Translate text through ssh
 ```bash
 ssh user@192.168.0.69 << EOF
 ollama run llama3.2  """traduis en anglais ce qui suit :
