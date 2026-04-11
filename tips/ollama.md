@@ -1,7 +1,14 @@
 # Ollama
 
 [cf. linuxtricks.fr : IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
-
+ * [Memo](#memo)
+ * [Install ollama](#install-ollama)
+ * [Customize ollama config](#customize-ollama-config)
+ * [Load models from other disk](#load-models-from-other-disk)
+ * [How to update Ollama](#how-to-update-Ollama)
+ * [Sort ollama list ](#sort-ollama-list)
+ * [Let's translate from remote ollama through ssh](#let-s-translate-from-remote-ollama-through-ssh)
+ * [Claude Code with Ollama](#claude-code-with-ollama)
 
 ## Memo
 
@@ -96,7 +103,7 @@ journalctl -u ollama
 
 
 ### How to update Ollama
-
+Backup /etc/systemd/system/ollama.service  
 Re-run the installation script  
 `curl -fsSL https://ollama.com/install.sh | sh`  
 
@@ -145,6 +152,29 @@ Il y a quelque chose de pourri au Royaume du Danemark
 """
 EOF
 ```
+
+### Claude Code with Ollama
+
+1. Update Ollama (Ollama v0.14.0 or later): 
+  
+backup /etc/systemd/system/ollama.service !  
+`$ curl -fsSL https://ollama.com/install.sh | sh`  
+
+2. Install Claude Code:
+`$ curl -fsSL https://claude.ai/install.sh | bash`
+
+3. Set environement variables in .bashrc: 
+  
+> export ANTHROPIC_AUTH_TOKEN=ollama  
+> export ANTHROPIC_BASE_URL=http://localhost:11434  
+> export ANTHROPIC_API_KEY=""  
+
+4. Launch Claude from Ollama  
+
+`$ ollama launch claude --model qwen2.5:3b`
+
+Choose Models with Tools support  
+
 
 ---
 
