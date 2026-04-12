@@ -353,7 +353,7 @@ in ~/.bashrc :
 ```bash
 # https://mary.codes/blog/programming/displaying-git-branch-in-linux-terminal/
 # https://queirozf.com/entries/add-colour-to-text-on-the-terminal-examples-with-bash-and-python
-PS1="\[\]\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\]\033[33m\]\$(__git_ps1)\033[00m\]\[\033[01;32m\]\$\[\033[00m\] "
+PS1="\[\]\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\]\033[33m\]\$(__git_ps1)\033[00m\]\[\033[01;32m\]\[\033[00m\]\n\$ "
 ```
 
 `$ source ~/.bashrc`  
