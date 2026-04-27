@@ -1,6 +1,85 @@
 # Docker
 
-## Install docker
+[Installing Docker Engine on Linux Mint 22.1](https://medium.com/@azriteb/installing-docker-engine-on-linux-mint-22-1-my-learning-journey-3760515c9888)
+
+
+[27/04/2026 lun]  
+
+```bash
+# Step 1: Checking Ubuntu Version
+cat /etc/upstream-release/lsb-release
+```
+> DISTRIB_ID=Ubuntu
+> DISTRIB_RELEASE=24.04
+> DISTRIB_CODENAME=noble
+> DISTRIB_DESCRIPTION="Ubuntu Noble Numbat"
+
+```bash
+# Step 2 : Setting Up Docker’s APT Repository  
+sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Then I added the Docker repository and updated the package list.
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites:   (. /etc/os-release && echo "  {UBUNTU_CODENAME:-  VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+
+```
+
+
+```bash
+# Step 3: Installing Docker Engine
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+
+# check whether Docker is running
+sudo systemctl status docker
+```
+>      Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+>      Active: active (running) since Mon 2026-04-27 08:01:00 CEST; 19s ago
+> TriggeredBy: ● docker.socket
+>        Docs: https://docs.docker.com
+>    Main PID: 16292 (dockerd)
+>       Tasks: 18
+>      Memory: 26.6M (peak: 29.1M)
+>         CPU: 177ms
+>      CGroup: /system.slice/docker.service
+>              └─16292 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+ 
+
+```bash
+# Step 4: Verifying the Installation
+sudo docker run hello-world
+```
+
+
+
+```bash
+# Step 5: Running Docker Without sudo
+sudo groupadd docker
+sudo usermod -aG docker   USER
+
+# To apply the changes
+newgrp docker
+
+docker run hello-world
+```
+
+
+
+
+---
+
+## Install docker (old)
 
 `$ sudo apt-get install docker docker.io`
 
