@@ -620,6 +620,18 @@ Trim white regions away with imagemagick :
 
 ## Text manipulations  
 
+### Insert an autonumber column "id" into csv file
+
+```bash
+# one-liner :
+# -F : field separator
+# RS : record separator
+# OFS : output field separator
+# NR==1 : test number row
+# $0 : current line
+$ awk -F',' 'BEGIN{RS="\n";OFS=","} NR==1{print "id",$0;next} NF{print ++c","$0}' input.csv > output.csv
+```
+
 ### Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
 
