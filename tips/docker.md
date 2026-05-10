@@ -1,5 +1,69 @@
 # Docker
 
+
+## Podman (remplacer docker)  
+
+Remplacer Docker par Podman sur Linux Mint (basé sur Ubuntu/Debian) est simple : 
+installez Podman avec sudo apt install podman, désactivez le démon Docker (sudo systemctl disable --now docker), 
+puis utilisez des alias (ex: alias docker=podman). 
+Podman est "sans démon" (daemonless), sécurisé par défaut (rootless), 
+et compatible avec les commandes Docker et Docker Compose. 
+
+Voici les étapes pour la migration : 
+
+1. Prérequis : Supprimer ou désactiver Docker
+Pour éviter les conflits de ports, désactivez le démon Docker :
+
+
+```sh
+sudo systemctl disable --now docker
+sudo systemctl disable --now docker.socket
+```
+
+
+Optionnel : Pour désinstaller Docker complètement : 
+```sh
+sudo apt purge docker-ce docker-ce-cli
+```
+
+2. Installer Podman sur Linux Mint
+Podman est disponible dans les dépôts officiels : 
+
+```sh
+sudo apt update
+sudo apt install podman -y
+```
+
+
+3. Configurer Podman (Alias)
+Pour que vos scripts et habitudes (docker run ...) continuent de fonctionner, créez un alias :
+
+```sh
+echo "alias docker=podman" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Note : Podman peut fonctionner sans privilèges root (rootless), ce qui est recommandé pour la sécurité. 
+
+
+4. Remplacer Docker Compose
+Si vous utilisez docker-compose, installez podman-compose ou utilisez le binaire Docker Compose avec Podman : 
+```sh
+sudo apt install podman-compose -y
+```
+
+
+Utilisation : Dans vos dossiers, podman-compose up remplace docker-compose up. 
+Principales différences à noter
+
+- Sans Démon : Podman ne nécessite pas de processus en arrière-plan (daemon).
+- Rootless : Podman fonctionne parfaitement sans sudo.
+- Gestion des images : Podman utilise le même stockage que Docker, vous n'aurez pas à re-télécharger vos images.
+- Podman Desktop : Vous pouvez installer Podman Desktop pour une interface graphique similaire à Docker Desktop. 
+
+
+---
+
 [Installing Docker Engine on Linux Mint 22.1](https://medium.com/@azriteb/installing-docker-engine-on-linux-mint-22-1-my-learning-journey-3760515c9888)
 
 
