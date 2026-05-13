@@ -1,5 +1,10 @@
 # Docker
 
+## default location of volumes
+
+> ~/.local/share/containers/storage/volumes   
+
+
 
 ## Podman (remplacer docker)  
 
