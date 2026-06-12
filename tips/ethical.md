@@ -97,6 +97,34 @@ Show stored Wi-Fi passwords
 [HKLM]\Software\Microsoft\Windows\CurrentVersion\RunOnce  
 [HKLM]\SYSTEM\CurrentControlSet\Services\  
 
+
+Example of adding entry in contextual menu :  
+```
+# vscode - contextual menu
+"C:\home\apps\VSCode-win32-x64-1.84.2\Code.exe %1"
+
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode" /f /ve /d "Open with &vscode"
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode" /v "Icon2" /t REG_SZ /f /d "C:\home\apps\VSCode-win32-x64-1.115.0\Code.exe,0"
+reg.exe add "HKCU\Software\Classes\Directory\Background\Shell\vscode\command" /f /ve /d "C:\home\apps\VSCode-win32-x64-1.115.0\Code.exe %1"
+
+
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode" /f /ve /d "Open with &vscode"
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode" /v "Icon" /t REG_SZ /f /d "C:\home\apps\VSCode-win32-x64-1.115.0\Code.exe,0"
+reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode\command" /f /d "C:\home\apps\VSCode-win32-x64-1.115.0\Code.exe %1"
+
+
+Paramètre  | Description
+---------- | ------------------------------------------------------------------------------------------------
+KeyName     | Nom complet d'une clé de Registre Utilise les abréviations HKCR, HKCU, HKLM et HKU pour les clés racines
+/v Nom_de_valeur    | Ajoute ou change une valeur
+/ve          | Change la valeur par défaut de la clé
+/t Type        | Le type de valeur : REG_BINARY, REG_DWORD, REG_SZ, REG_MULTI_SZ, etc. Si ce paramètre est omis, REG_SZ est pris par défaut.
+/s Séparateur  | Spécifie le caractère à utiliser comme séparateur dans votre chaîne de données pour REG_MULTI_SZ. Si ce paramètre est omis, utilise "\0" comme séparateur.
+
+/d Données     | Données à affecter au Nom_de_valeur ajouté
+/f          | Force l'écrasement de l'entrée de Registre existante, sans confirmation.
+```
+
 <!-- TOC --><a name="windows-defender-firewall-with-advanced-security"></a>
 ## Windows Defender Firewall with Advanced Security
 
