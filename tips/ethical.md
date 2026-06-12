@@ -113,16 +113,15 @@ reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode" /v "Icon" /t REG_SZ /
 reg.exe add "HKCU\Software\Classes\Directory\Shell\vscode\command" /f /d "C:\home\apps\VSCode-win32-x64-1.115.0\Code.exe %1"
 
 
-Paramètre  | Description
----------- | ------------------------------------------------------------------------------------------------
-KeyName     | Nom complet d'une clé de Registre Utilise les abréviations HKCR, HKCU, HKLM et HKU pour les clés racines
+Paramètre           | Description
+------------------- | ------------------------------------------------------------------------------------------------
+KeyName             | Nom complet d'une clé de Registre Utilise les abréviations HKCR, HKCU, HKLM et HKU pour les clés racines
 /v Nom_de_valeur    | Ajoute ou change une valeur
-/ve          | Change la valeur par défaut de la clé
-/t Type        | Le type de valeur : REG_BINARY, REG_DWORD, REG_SZ, REG_MULTI_SZ, etc. Si ce paramètre est omis, REG_SZ est pris par défaut.
-/s Séparateur  | Spécifie le caractère à utiliser comme séparateur dans votre chaîne de données pour REG_MULTI_SZ. Si ce paramètre est omis, utilise "\0" comme séparateur.
-
-/d Données     | Données à affecter au Nom_de_valeur ajouté
-/f          | Force l'écrasement de l'entrée de Registre existante, sans confirmation.
+/ve                 | Change la valeur par défaut de la clé
+/t Type             | Le type de valeur : REG_BINARY, REG_DWORD, REG_SZ, REG_MULTI_SZ, etc. Si ce paramètre est omis, REG_SZ est pris par défaut.
+/s Séparateur       | Spécifie le caractère à utiliser comme séparateur dans votre chaîne de données pour REG_MULTI_SZ. Si ce paramètre est omis, utilise "\0" comme séparateur.
+/d Données          | Données à affecter au Nom_de_valeur ajouté
+/f                  | Force l'écrasement de l'entrée de Registre existante, sans confirmation.
 ```
 
 <!-- TOC --><a name="windows-defender-firewall-with-advanced-security"></a>
