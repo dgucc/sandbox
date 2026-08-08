@@ -1216,6 +1216,9 @@ Create a shortcut in <cygwin-path> :
 @C:\cygwin64\bin\bash -c ./my_script.sh
 ```
 
+### ssh
+install openssh package (ssh-copy-id...)    
+
 <!-- TOC --><a name="cygwin-in-contextual-menu"></a>
 ### Cygwin in contextual menu  
 install **chere** package under the "Shells" category.
