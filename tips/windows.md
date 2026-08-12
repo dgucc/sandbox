@@ -50,6 +50,7 @@
    * [Prerequis](#prerequis)
    * [Installation](#installation)
    * [Reset WSL password](#reset-wsl-password)
+   * [Migrate vhdx behind WSL to another computer](#migrate-vhdx-behind-wsl-to-another-computer)
 <!-- TOC end -->
 
 
@@ -555,6 +556,7 @@ PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Li
 <!-- TOC --><a name="installation"></a>
 ### Installation
 ```
+PS> wsl --set-default-version 2
 PS> wsl --list --online
 PS> wsl --install -d Ubuntu
 ```
@@ -565,3 +567,11 @@ In Windows Terminal (as Admin)
 (as admin) > wsl -u root
 ```
 Relaunch WSL and change passwd as usual : `passwd username`  
+
+### Migrate vhdx behind WSL to another computer
+Under WSL2, the entire filesystem is kept in a virtual HDD file named ext4.vhdx.  
+
+- From Source PC, copy %userprofile%\AppData\Local\Packages\CanonicalGroup...\LocalState\ext4.vhdx  
+- On new PC, ensure WSL is down : PS> wsl --shutdown  
+- Paste to Target PC : %USERPROFILE%\AppData\Local\wsl\<GUID>\
+
