@@ -470,10 +470,16 @@ shopt -u nullglob
 ### Find file modified less than a day ago :  
 `$ find . -name '*.csv' -ctime -1`  
 
-### Change files extension
+### Change files extension : %
 `$ find . -iname "*.old" -exec rename .old .new {} \;`  
 or 
 `$ find . -name "*.old" -exec bash -c 'mv "$1" "${1%.old}".new' - '{}' \;`  
+or 
+`$ for file in $(ls -1 *suffix); do mv $file ${file%suffix} ; done`  
+
+
+### Change files prefix : #
+`$ for file in $(ls -1 prefix-*) ; do echo "$file ${file#prefix-}" ; done`   
 
 ### Append date-time into all txt files
 $ find . -name "*.txt" -exec sed -i "$ a $(date)" {} \;
