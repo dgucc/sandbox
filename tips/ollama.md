@@ -95,7 +95,7 @@ cd ~/.ollama/custom/qwen
 
 - create Modelfile
 ```bash
-cat > Modelfile << 'EOF'
+cat > Modelfile << EOF
 FROM qwen2.5-coder:1.5b
 # System prompt - define the model's role
 SYSTEM """You are a senior software engineer. 
