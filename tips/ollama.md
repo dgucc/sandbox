@@ -4,6 +4,7 @@
  * [Memo](#memo)
  * [Install ollama](#install-ollama)
  * [Customize ollama config](#customize-ollama-config)
+ * [Customize models](#customize-models)
  * [Load models from other disk](#load-models-from-other-disk)
  * [How to update Ollama](#how-to-update-Ollama)
  * [Usual mistakes](#usual-mistakes)
@@ -82,6 +83,44 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 [Install]
 WantedBy=default.target
 ```
+
+### Customize models
+
+Example : customization of qwen2.5-coder:1.5b  
+
+```bash
+mkdir ~/.ollama/custom/qwen
+cd ~/.ollama/custom/qwen
+```
+
+- create Modelfile
+```bash
+cat > Modelfile << 'EOF'
+FROM qwen2.5-coder:1.5b
+# System prompt - define the model's role
+SYSTEM """You are a senior software engineer. 
+## General 
+Always give a response in French but use technical words in English.
+You write clean, well-documented code.
+You explain your reasoning before writing code.
+You always include error handling."""
+
+# Parameters
+PARAMETER temperature 0.5
+PARAMETER num_ctx 8192
+PARAMETER num_predict 1024
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+EOF
+
+# Build the custom model
+ollama create qwen-custom -f Modelfile
+
+# Run it
+ollama run qwen-custom
+```
+
+
 ### Load models from other disk
 ```bash
 # Mount extradisk with ollama models
