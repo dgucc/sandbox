@@ -112,12 +112,12 @@ PARAMETER num_predict 1024
 PARAMETER top_p 0.9
 PARAMETER repeat_penalty 1.1
 EOF
+```
+- Build the custom model  
+`ollama create qwen-custom -f Modelfile`  
 
-# Build the custom model
-ollama create qwen-custom -f Modelfile
-
-# Run it
-ollama run qwen-custom
+- Run it
+`ollama run qwen-custom`  
 ```
 
 
