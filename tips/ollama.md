@@ -118,7 +118,6 @@ EOF
 
 - Run it
 `ollama run qwen-custom`  
-```
 
 
 ### Load models from other disk
