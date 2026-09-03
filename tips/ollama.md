@@ -1,13 +1,14 @@
 # Ollama
 
 [cf. linuxtricks.fr : IA : Installer un Modèle de Langage (LLM) avec Ollama](https://www.linuxtricks.fr/wiki/print.php?id=1052)  
+[setup mistakes](https://localaimaster.com/blog/ollama-setup-mistakes)  
+
  * [Memo](#memo)
  * [Install ollama](#install-ollama)
  * [Customize ollama config](#customize-ollama-config)
  * [Customize models](#customize-models)
  * [Load models from other disk](#load-models-from-other-disk)
  * [How to update Ollama](#how-to-update-Ollama)
- * [Usual mistakes](#usual-mistakes)
  * [Sort ollama list ](#sort-ollama-list)
  * [Translate text through ssh](#translate-text-through-ssh)
  * [Claude Code with Ollama](#claude-code-with-ollama)
@@ -168,10 +169,6 @@ tar -C /usr -xvzf ollama-linux-*.tgz
 # Start ollama
 systemctl start ollama.service
 ```
-
-### Usual mistakes
-
-[reference](https://localaimaster.com/blog/ollama-setup-mistakes)  
 
 ### Sort ollama list 
 > -k4,4r : sorting on 4th column in reverse order  
