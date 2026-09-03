@@ -6,6 +6,7 @@
  * [Customize ollama config](#customize-ollama-config)
  * [Load models from other disk](#load-models-from-other-disk)
  * [How to update Ollama](#how-to-update-Ollama)
+ * [Usual mistakes](#usual-mistakes)
  * [Sort ollama list ](#sort-ollama-list)
  * [Translate text through ssh](#translate-text-through-ssh)
  * [Claude Code with Ollama](#claude-code-with-ollama)
@@ -14,6 +15,7 @@
 
 ### Install ollama
 
+#### Standard installation
 By executing the installation script  
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh`  
@@ -31,8 +33,11 @@ Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc
 
 Or 
 
-Manually  
+#### Manual installation 
 
+<details>
+   <summary>step by step</summary>
+   
 ```bash
 su -
 
@@ -53,6 +58,9 @@ usermod -a -G ollama dgucc
 # Create systemd service
 `$ sudo nano /etc/systemd/system/ollama.service` 
 ```
+</details>
+
+
 ### Customize ollama config
 
 /etc/systemd/system/ollama.service  : 
@@ -122,6 +130,11 @@ tar -C /usr -xvzf ollama-linux-*.tgz
 # Start ollama
 systemctl start ollama.service
 ```
+
+### Usual mistakes
+
+[reference](https://localaimaster.com/blog/ollama-setup-mistakes)  
+
 ### Sort ollama list 
 > -k4,4r : sorting on 4th column in reverse order  
 > -k3,3n : sorting on 3th column as number  
