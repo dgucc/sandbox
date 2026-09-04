@@ -373,3 +373,5 @@ Remote Control for AndroidTV
 51180  
 
 https://www.nxcode.io/fr/resources/news/opencode-tutorial-2026  
+https://docs.kanaries.net/fr/topics/AICoding/opencode-how-to-use  
+
