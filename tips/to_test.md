@@ -371,3 +371,5 @@ Remote Control for AndroidTV
 10381  
 67664537  
 51180  
+
+https://www.nxcode.io/fr/resources/news/opencode-tutorial-2026  
