@@ -374,4 +374,5 @@ Remote Control for AndroidTV
 
 https://www.nxcode.io/fr/resources/news/opencode-tutorial-2026  
 https://docs.kanaries.net/fr/topics/AICoding/opencode-how-to-use  
+https://www.glukhov.org/fr/ai-devtools/opencode/llms-comparison/#qwen-35-35b-sur-llamacpp--rapide-pour-le-codage-mais-validez-tout  
 
