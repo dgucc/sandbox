@@ -8,6 +8,7 @@
  * [Customize ollama config](#customize-ollama-config)
  * [Customize models](#customize-models)
  * [Load models from other disk](#load-models-from-other-disk)
+ * [How to update all models](#how-to-update-all-models)
  * [How to update Ollama](#how-to-update-Ollama)
  * [Sort ollama list ](#sort-ollama-list)
  * [Translate text through ssh](#translate-text-through-ssh)
@@ -147,7 +148,8 @@ systemctl enable --now ollama
 journalctl -u ollama
 ```
 
-
+### How to update all models
+`$ for model in $(ollama list | tail -n +2 | cut -d' ' -f1) ; do echo "*** $model ***" && ollama pull $model && echo "" ; done`  
 
 ### How to update Ollama
 Backup /etc/systemd/system/ollama.service  
