@@ -8,6 +8,9 @@
   - [StarUML](#staruml)
 - [DBeaver](#dbeaver)
 - [Misc](#misc)
+  - [Games Emulator](#games-emulator)
+  - [AndroidTV](#androidtv)
+  - [AI](#ai)  
 
 ## pandoc
 [pandoc](https://pandoc.org/)  
@@ -354,6 +357,7 @@ Restart > BIOS : select new HDD
 
 ## Misc
 
+### Games Emulator
 Cemu on Linux cf. Lutris...  
 
 WiiU-USB on Linux : cf. Wine-stage  
@@ -365,14 +369,15 @@ https://www.xci-nsp.com
 yuzu-emu.org  
 Galiak Game
 
-
+### AndroidTV
 Remote Control for AndroidTV
 > codes 
 10381  
 67664537  
 51180  
 
+### AI
 https://www.nxcode.io/fr/resources/news/opencode-tutorial-2026  
 https://docs.kanaries.net/fr/topics/AICoding/opencode-how-to-use  
 https://www.glukhov.org/fr/ai-devtools/opencode/llms-comparison/#qwen-35-35b-sur-llamacpp--rapide-pour-le-codage-mais-validez-tout  
-
+https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
