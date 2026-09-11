@@ -4,6 +4,7 @@
 [setup mistakes](https://localaimaster.com/blog/ollama-setup-mistakes)  
 
  * [Memo](#memo)
+ * [Get Computer Specs](#get-computer-specs)
  * [Install ollama](#install-ollama)
  * [Customize ollama config](#customize-ollama-config)
  * [Customize models](#customize-models)
@@ -15,6 +16,62 @@
  * [Claude Code with Ollama](#claude-code-with-ollama)
 
 ## Memo
+
+### Get Computer Specs
+
+```powershell
+$os = Get-CimInstance Win32_OperatingSystem;
+$cs = Get-CimInstance Win32_ComputerSystem;
+$cpu = Get-CimInstance Win32_Processor;
+$gpus = @(Get-CimInstance Win32_VideoController);
+$disks = @(Get-CimInstance Win32_LogicalDisk -Filter "DeviceID='C:'");
+[pscustomobject]@{Computer=$cs.Name;
+RAM_GB=[math]::Round($cs.TotalPhysicalMemory/1GB,1);
+CPU=$cpu.Name;
+Cores=$cpu.NumberOfCores;
+Threads=$cpu.NumberOfLogicalProcessors;
+GPU=($gpus | ForEach-Object { "$($_.Name) / VRAM=$([math]::Round($_.AdapterRAM/1GB,1))GB" }) -join ';';
+DiskFree_GB=[math]::Round($disks.FreeSpace/1GB,1);
+OS=$os.Caption } | Format-List
+```
+
+
+```bash
+#!/usr/bin/env bash
+
+computer=$(hostname)
+ram_gb=$(free -b | awk '/^Mem:/ {printf "%.1f", $2 / 1024 / 1024 / 1024}')
+cpu=$(lscpu | awk -F: '/Model name/ {
+    sub(/^[[:space:]]+/, "", $2)
+    print $2
+    exit
+}')
+cores=$(lscpu -p=Core,Socket | awk '!/^#/ {print}' | sort -u | wc -l)
+threads=$(nproc --all)
+
+gpus=$(lspci 2>/dev/null |
+    awk -F': ' '/VGA compatible controller|3D controller|Display controller/ {
+        print $2 " / VRAM=N/A"
+    }' |
+    paste -sd '; ' -)
+
+disk_free_gb=$(df -B1 / | awk 'NR==2 {printf "%.1f", $4 / 1024 / 1024 / 1024}')
+os=$(awk -F= '$1 == "PRETTY_NAME" {
+    gsub(/"/, "", $2)
+    print $2
+}' /etc/os-release)
+
+printf 'Computer    : %s\n' "$computer"
+printf 'RAM_GB      : %s\n' "$ram_gb"
+printf 'CPU         : %s\n' "$cpu"
+printf 'Cores       : %s\n' "$cores"
+printf 'Threads     : %s\n' "$threads"
+printf 'GPU         : %s\n' "${gpus:-N/A}"
+printf 'DiskFree_GB : %s\n' "$disk_free_gb"
+printf 'OS          : %s\n' "$os"
+```
+
+
 
 ### Install ollama
 
@@ -29,7 +86,7 @@ curl -fsSL https://ollama.com/install.sh | sh`
 >>> Adding ollama user to video group...
 >>> Adding current user to ollama group...
 >>> Creating ollama systemd service...
->>> Enabling and starting ollama service...
+>>> Enabling a(nd starting ollama service...
 Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
 >>> NVIDIA GPU installed.
 ```
