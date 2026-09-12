@@ -1,4 +1,6 @@
 # TO TEST
+- [Claude Code Ollama](claude-code-ollama)
+- [Wan2GP](#wan2gp)
 - [pandoc](#pandoc)
 - [tika](#tika)
 - [scribe](#scribe)
@@ -11,6 +13,14 @@
   - [Games Emulator](#games-emulator)
   - [AndroidTV](#androidtv)
   - [AI](#ai)  
+
+## Claude Code Ollama
+[Claude Code avec Ollama](https://www.datacamp.com/fr/tutorial/using-claude-code-with-ollama-local-models?dc_referrer=https%3A%2F%2Fwww.google.com%2F)
+
+## Wan2GP
+
+[The best Open Source Video Generative Models Accessible to the GPU Poor](https://github.com/deepbeepmeep/Wan2GP/tree/main)
+50GB downloaded models !!!  
 
 ## pandoc
 [pandoc](https://pandoc.org/)  

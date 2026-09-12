@@ -9,9 +9,18 @@ $ git pull origin main
 
 
 [TO TEST]
+## Murmure Speech-to-text 
+murmure : outil rapide de retranscription off-line basée sur parakeet de NVIDIA  
+Peut s'interfacer avec Ollama  
+[GitHub](https://github.com/Kieirra/murmure/tree/main)  
+[Site officiel](https://murmure.al1x-ai.com/)  
+
 ## Blokada Android
 Ad blocker
 
+## OSINT
+
+Open Source Intelligence  
 
 ## demo phishing
 [zphisher](https://github.com/htr-tech/zphisher)  

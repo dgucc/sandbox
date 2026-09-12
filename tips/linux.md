@@ -428,6 +428,12 @@ Substraction
 `$ date -d @1234567890 +'%Y-%m-%d %H:%M:%S %a'`  
 > 2009-02-14 00:31:30 Sat  
 
+### Weekday of birthdate
+```bash
+$ birth="2002-03-01" && echo "$birth $(date -d $birth '+%A')"
+2002-03-01 Friday
+```
+
 ---
 ## File manipulations  
 
@@ -482,7 +488,11 @@ or
 `$ for file in $(ls -1 prefix-*) ; do echo "$file ${file#prefix-}" ; done`   
 
 ### Append date-time into all txt files
-$ find . -name "*.txt" -exec sed -i "$ a $(date)" {} \;
+`$ find . -name "*.txt" -exec sed -i "$ a $(date)" {} \;`  
+
+
+### Rename files with modification date as suffix
+`$ for zip in $(ls -1 *.zip); do mv $zip "${zip%.zip}_$(date -d @$(stat -c %Y $zip) +"%Y%m%d").zip" ; done`  
 
 
 ### Move files by keeping folder structure
@@ -491,6 +501,13 @@ $ find . -name "*.txt" -exec sed -i "$ a $(date)" {} \;
 
 > --relative : keep folder structure from starting point (./).  
 > --remove-source-files : remove original folder  
+
+### Find and remove duplicated files : fdupes
+
+```bash
+$ sudo apt-get install fdupes
+$ fdupes --noprompt --delete --recurse /path/to/dir/one /path/to/dir/two
+```
 
 
 ### Replace text in multiple files :   
@@ -637,6 +654,7 @@ Trim white regions away with imagemagick :
 # $0 : current line
 $ awk -F',' 'BEGIN{RS="\n";OFS=","} NR==1{print "id",$0;next} NF{print ++c","$0}' input.csv > output.csv
 ```
+
 
 ### Remove last character in file :  
 `$ sed -i '$ s/.$//' filename`  
