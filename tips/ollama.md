@@ -152,7 +152,8 @@ WantedBy=default.target
 
 ```bash
 # Linux (systemd)
-sudo systemctl edit ollama.service
+sudo systemctl stop ollama
+sudo nano /etc/systemd/system/ollama.service
 
 # Add:
 [Service]
