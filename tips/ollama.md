@@ -7,7 +7,7 @@
  * [Get Computer Specs](#get-computer-specs)
  * [Install ollama](#install-ollama)
  * [Customize ollama config](#customize-ollama-config)
- * [OpenCode - Ollama context window](#opencode-ollama-context-window)
+ * [OpenCode Ollama context window](#opencode-ollama-context-window)
  * [Customize models](#customize-models)
  * [Load models from other disk](#load-models-from-other-disk)
  * [How to update all models](#how-to-update-all-models)
@@ -144,7 +144,7 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 WantedBy=default.target
 ```
 
-### OpenCode - Ollama context window
+### OpenCode Ollama context window
 
 [OpenCode/Ollama context window requires manual configuration](https://github.com/hugo-lorenzo-mato/quorum-ai/issues/257)  
 
