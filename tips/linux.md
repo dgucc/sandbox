@@ -1299,10 +1299,16 @@ And add the following line to your ~/.inputrc:
 <!-- TOC --><a name="customize-cygwin-prompt"></a>
 ### Customize cygwin prompt
 
+Adapt cygwin prompt to display git branch name     
+
 <!-- TOC --><a name="manually-buggy"></a>
-#### Manually (buggy)  
+#### Manually (buggy)
+
 <details>
-<summary>Edit .bashrc to define PS1 variable (Gool luck) </summary>
+<summary>Some bugs with newlines... </summary>
+
+Edit .bashrc to define PS1 variable 
+
 ```bash
 # function to detect git repository
 parse_git_branch() {
