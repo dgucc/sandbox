@@ -1302,7 +1302,7 @@ And add the following line to your ~/.inputrc:
 <!-- TOC --><a name="manually-buggy"></a>
 #### Manually (buggy)  
 <details>
-<summary>Edit .bashrc to define PS1 variable : </summary>
+<summary>Edit .bashrc to define PS1 variable (Gool luck) </summary>
 ```bash
 # function to detect git repository
 parse_git_branch() {
@@ -1350,6 +1350,10 @@ else # Git-Bash
     source  'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
 fi
 ```
+
+Reload .bashrc  
+`$ source ~/.bashrc` 
+
 
 <!-- TOC --><a name="keyboard-shortcuts"></a>
 ### Keyboard shortcuts  
