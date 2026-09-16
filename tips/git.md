@@ -24,6 +24,7 @@
    * [Stop tracking unwanted files](#Stop-tracking-unwanted-files)
    * [Log](#log)
    * [Show git branch in Windows Command Prompt ](#show-git-branch-in-windows-command-prompt)
+   * [Show git branch in cygwin prompt](#show-git-branch-in-cygwin-prompt)
    * [Show git branch in Linux bash Prompt](#show-git-branch-in-linux-bash-prompt)
    * [Preview html page hosted in GitHub](#preview-html-page-hosted-in-github)
 
@@ -346,6 +347,23 @@ set branchname=
 [Doskey](https://superuser.com/questions/118655/auto-execute-command-after-going-to-a-folder-with-the-cd-command)  
 [Prompt](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/prompt)  
 
+## Show git branch in cygwin prompt
+By using C:\Program Files\Git\etc\profile.d\git-prompt.sh
+```bash
+# Edit ~/.bashrc :
+# Show git branch in cygwin|git-bash prompt
+unset PS1
+unset __git_ps1
+which_terminal=$(uname -s)
+if [[ ${wich_terminal%_*} == 'CYGWIN' ]]; then
+    source "/cygdrive/c/Program\ Files/Git/etc/profile.d/git-prompt.sh"
+else # Git-Bash
+    source  'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
+fi
+
+$ source ~/.bashrc
+```
+
 
 ## Show git branch in Linux bash Prompt
 
@@ -356,7 +374,8 @@ in ~/.bashrc :
 PS1="\[\]\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\]\033[33m\]\$(__git_ps1)\033[00m\]\[\033[01;32m\]\[\033[00m\]\n\$ "
 ```
 
-`$ source ~/.bashrc`  
+Reload .bashrc  
+`$ source ~/.bashrc` 
 
 
 
