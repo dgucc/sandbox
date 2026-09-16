@@ -1301,8 +1301,8 @@ And add the following line to your ~/.inputrc:
 
 <!-- TOC --><a name="manually-buggy"></a>
 #### Manually (buggy)  
-
-Edit .bashrc to define PS1 variable :   
+<details>
+<summary>Edit .bashrc to define PS1 variable : </summary>
 ```bash
 # function to detect git repository
 parse_git_branch() {
@@ -1327,6 +1327,8 @@ PS1="$PS1"'\[\033[37m\]'        		#
 PS1="$PS1"' $ '                 		# 
 export PS1="$PS1"   
 ```
+</details>
+
 Reload .bashrc  
 `$ source ~/.bashrc` 
 
@@ -1338,9 +1340,15 @@ Reload .bashrc
 
 .bashrc :  
 ```
+# Customize Cygwin | Git Bash prompt using git-prompt.sh
 unset PS1
 unset __git_ps1
-source "/cygdrive/c/Program Files/Git/etc/profile.d/git-prompt.sh"
+which_terminal=$(uname -s)
+if [[ ${wich_terminal%_*} == 'CYGWIN' ]]; then
+    source "/cygdrive/c/Program\ Files/Git/etc/profile.d/git-prompt.sh"
+else # Git-Bash
+    source  'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
+fi
 ```
 
 <!-- TOC --><a name="keyboard-shortcuts"></a>
