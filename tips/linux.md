@@ -812,9 +812,10 @@ port 22: connection refused :
 ufw on remote host  
 ```
 $ sudo ufw status
-$ sudo ufw allow 22
+$ sudo ufw allow from 192.168.1.0/24 to any port 22 proto tcp
 $ sudo ufw reload
 ssh-copy-id -i .ssh/id_rsa.pub username@remote_hostname
+$ sudo ufw delete allow from 192.168.1.0/24  to any port 22 proto tcp
 ```
 
 Copy file to remote host (eg : 192.168.0.3) :  
