@@ -696,6 +696,24 @@ Alternative : 'N;s/pattern/replace/;P;D'
 # "D" delete red next line (already red).
 ```
 
+```bash
+ #!/usr/bin/env bash
+SUBSTITUTION_PATTERN=$(tr '\n' ';' <<EOF
+s/\n\s*"code"/ "code"/g
+s/\n\s*"value"/ "value"/g
+s/"\n\s*\}/ \}/g
+EOF
+)
+
+# - :a : crée une étiquette nommée a.
+# - N : lit la ligne suivante et l’ajoute à l’espace courant, séparée par \n.
+# - $! : signifie « sauf sur la dernière ligne ».
+# - b a : branche vers l’étiquette a, donc recommence la lecture.
+# - Les ; séparent les commandes.
+sed -e ':a;N;$!ba;' -e "$SUBSTITUTION_PATTERN" format-me.json
+
+```
+
 ### Sort list preserving header row
 > -k4,4r : sorting on 4th column in reverse order  
 > -k3,3n : sorting on 3th column as number  
