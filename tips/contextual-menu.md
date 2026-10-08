@@ -1,7 +1,7 @@
 ## Notepad++
 ```cmd
-reg add "HKCU\Software\Classes\*\shell\Notepad++" /v "Icon" /t REG_SZ /d "C:\home\apps\textpad\textpad.exe,0" /f
-reg add "HKCU\Software\Classes\*\shell\Notepad++\command" /ve /t REG_SZ /d "\"C:\home\apps\textpad\textpad.exe\" \"%1\"" /f
+reg add "HKCU\Software\Classes\*\shell\Notepad++" /v "Icon" /t REG_SZ /d "C:\home\apps\Notepad++\Notepad++.exe,0" /f
+reg add "HKCU\Software\Classes\*\shell\Notepad++\command" /ve /t REG_SZ /d "\"C:\home\apps\Notepad++\Nodepad++.exe\" \"%1\"" /f
 ```
 
 ## VSCode
