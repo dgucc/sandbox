@@ -10,7 +10,7 @@
      + [Modify Options](#modify-options)
      + [grub-customizer](#Grub-Customizer)
   - [Reset password](#reset-password)
-  - [Free up disk space](#free-disk-space)
+  - [Free up disk space](#free-up-disk-space)
   - [Move home into a separate partition](#move-home-into-a-separate-partition)
   - [Uninstall](#uninstall)
   - [Linux file system structure](#linux-file-system-structure)
