@@ -14,6 +14,7 @@
    * [Hide References count in Editor ](#hide-references-count-in-editor)
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
    * [C/C++ with WSL](#c-c++-with-wsl)
+   * [Prompt for DB password instead of hardcoding it](#prompt-for-db-password-instead-of-hardcoding-it)
 
 <!-- TOC end -->
 
@@ -507,3 +508,32 @@ cd $HOME/projects/helloworld
 code .
 ```  
 
+## Prompt for DB password instead of hardcoding it 
+
+.vscode/launch.json : 
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+    "type": "java",
+    "name": "Spring Boot - Run",
+    "request": "launch",
+    "mainClass": "com.example.Application",
+    "projectName": "sandbox",
+    "env":{
+      "SPRING_DATASOURCE_PASSWORD":"${input:db2secret}",
+    }
+    }
+  ],
+  "inputs": [
+    {
+    "type": "promptString",
+    "id": "db2secret",
+    "description": "DB2 SECRET",
+    "default": "db2secret",
+    "password": true,
+    }
+  ]
+}
+```
