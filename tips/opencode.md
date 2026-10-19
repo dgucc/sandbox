@@ -15,9 +15,10 @@
 
 
 ---
+[OpenCode : crée ton équipe de 4 agents IA qui se contrôlent entre eux - kit à copier](https://www.youtube.com/redirect?event=comments&redir_token=QUZZTVljRXBFY00xZ04zM2wwQno2MzZ5a2RpLXxBSTVJdTV0T2YxN2Juc0l0ZU1RTzRQbDdnaUVpTDdpQkU1V2NoOTBUczhTUzdkaWNXOExVakJ2eHk5S0JYaHR1ZnpxY2d6NUtDSjVjZmxhYnlFaVM0OGJBMXpBTldNMjREX3BX&q=https%3A%2F%2Fgithub.com%2Ffabstech-lab%2Fagents-open-code)
 
-Voici la traduction en français, en conservant les termes techniques en anglais :
-
+---
+[https://lobehub.com/skills/ramihollings-mr.technology-opencode-folder-creator](https://lobehub.com/skills/ramihollings-mr.technology-opencode-folder-creator)  
 **OpenCode Folder Creator**
 
 Crée des structures de répertoire `.opencode` complètes pour les projets avec tous les fichiers de configuration, `agents` et `commands` nécessaires.  
