@@ -16,27 +16,29 @@
 
 ---
 
-## OpenCode Folder Structure
+Voici la traduction en français, en conservant les termes techniques en anglais :
 
-Creates complete .opencode directory structures for projects with all necessary configuration files, agents, and commands.  
-This skill sets up the entire OpenCode project structure that teams can immediately use with opencode serve.
+**OpenCode Folder Creator**
 
-**IMPORTANT UNIVERSAL PRINCIPLE:**  
-This skill creates FOLDERS and STRUCTURES only.  
-The specific agent types mentioned (code-analyzer, documentation-writer, etc.) are EXAMPLES ONLY.  
-Real swarms will have vastly different agent types, purposes, and specializations.  
-This skill is universal and works with ANY agent configuration.
+Crée des structures de répertoire `.opencode` complètes pour les projets avec tous les fichiers de configuration, `agents` et `commands` nécessaires.  
+Cette `skill` configure l'ensemble de la structure de projet OpenCode que les équipes peuvent utiliser immédiatement avec `opencode serve`.
 
-### Quick Start
+**PRINCIPE UNIVERSEL IMPORTANT :**  
+Cette `skill` crée uniquement des DOSSIERS (`FOLDERS`) et des STRUCTURES (`STRUCTURES`).  
+Les types d'`agent` spécifiques mentionnés (`code-analyzer`, `documentation-writer`, etc.) sont UNIQUEMENT DES EXEMPLES.  
+Les vrais `swarms` auront des types d'`agent`, des objectifs et des spécialisations très différents.  
+Cette `skill` est universelle et fonctionne avec N'IMPORTE QUELLE configuration d'`agent`.
 
-#### Basic Project Setup
+## Démarrage rapide
 
-Create basic OpenCode structure  
+### Configuration de base du projet
+
+Créer la structure OpenCode de base  
 
 ```bash
 mkdir -p .opencode/{agent,command}
 
-# Create main config file
+# Créer le fichier de configuration principal
 cat > .opencode/opencode.json << 'EOF'
 {
   "$schema": "https://opencode.ai/config.json",
@@ -46,57 +48,54 @@ cat > .opencode/opencode.json << 'EOF'
 EOF
 ```
 
-#### Specialized Agent Folder Creation (Swarm-Ready)
+### Création de dossiers d'agent spécialisés (Swarm-Ready)
 
-Creates specialized agent folders with proper communication protocols for swarm deployment:
+Crée des dossiers d'`agent` spécialisés avec des protocoles de communication appropriés pour le déploiement en `swarm` :
 
-**Folder Structure:**  
+**Structure des dossiers :**  
 
 ```plaintext
-
 folder-name/
-├── AGENTS.md                    # Agent directory and communication protocol
+├── AGENTS.md                    # Répertoire des agents et protocole de communication
 └── .opencode/
-    ├── opencode.json           # Folder-specific configuration
+    ├── opencode.json           # Configuration spécifique au dossier
     ├── agent/
-    │   └── folder_name.md     # Primary agent with communication requirements
+    │   └── folder_name.md     # Agent principal avec exigences de communication
     └── command/
 ```
 
-**Communication Protocol: Every agent MUST introduce itself:**
+**Protocole de communication : Chaque agent DOIT se présenter :**
 
 ```plaintext
-I am the [Agent_Name] agent from the [folder_name] folder. 
-I am contacting you because [reason]. 
-I need you to [request]. 
-Please respond with [format].
+Je suis l'agent [Agent_Name] du dossier [folder_name]. 
+Je vous contacte car [reason]. 
+J'ai besoin que vous [request]. 
+Veuillez répondre avec [format].
 ```
 
-
-**⚠️ EXAMPLE AGENT TYPES ONLY:**  
-The following are EXAMPLES to illustrate the pattern. Real swarms can have ANY agent types:  
+**⚠️ EXEMPLES DE TYPES D'AGENT UNIQUEMENT :**  
+Ce qui suit sont des EXEMPLES pour illustrer le modèle. Les vrais `swarms` peuvent avoir N'IMPORTE QUEL type d'`agent` :  
 
 ```plaintext
-    data-scientist/ - Data analysis and machine learning
-    ui-designer/ - User interface design and prototyping
-    api-developer/ - API development and integration
-    game-developer/ - Game logic and mechanics
-    researcher/ - Research and analysis
-    translator/ - Language translation and localization
-    music-composer/ - Music composition and audio production
-    financial-analyst/ - Financial modeling and analysis
+    data-scientist/ - Analyse de données et machine learning
+    ui-designer/ - Conception d'interface utilisateur et prototypage
+    api-developer/ - Développement et intégration d'API
+    game-developer/ - Logique et mécaniques de jeu
+    researcher/ - Recherche et analyse
+    translator/ - Traduction de langues et localisation
+    music-composer/ - Composition musicale et production audio
+    financial-analyst/ - Modélisation et analyse financière
 ```
 
-**UNIVERSAL TRUTH:** This skill works with ANY folder name, ANY agent purpose, ANY specialization. The examples above are for illustration only.
+**VÉRITÉ UNIVERSELLE :** Cette `skill` fonctionne avec N'IMPORTE QUEL nom de dossier, N'IMPORTE QUEL objectif d'`agent`, N'IMPORTE QUELLE spécialisation. Les exemples ci-dessus sont uniquement à titre d'illustration.
 
-
-#### Project Templates
+### Modèles de projet
 
 ```bash
-# Development Project Structure  
-`mkdir -p .opencode/{agent,command}`
+# Structure de projet de développement  
+mkdir -p .opencode/{agent,command}
 
-# Code reviewer agent
+# Agent code reviewer
 cat > .opencode/agent/code-reviewer.md << 'EOF'
 
 ---
@@ -110,16 +109,16 @@ permissions:
   write: deny
 ---
 
-You are a code reviewer. Focus on:
-- Code quality and best practices
-- Potential bugs and edge cases
-- Performance implications
-- Security considerations
+Vous êtes un code reviewer. Concentrez-vous sur :
+- La qualité du code et les bonnes pratiques (best practices)
+- Les bugs potentiels et les edge cases
+- Les implications en matière de performance
+- Les considérations de sécurité
 
-Provide constructive feedback without making direct changes.
+Fournissez des retours constructifs sans apporter de modifications directes.
 EOF
 
-# Main configuration
+# Configuration principale
 cat > .opencode/opencode.json << 'EOF'
 {
   "$schema": "https://opencode.ai/config.json",
@@ -129,34 +128,28 @@ cat > .opencode/opencode.json << 'EOF'
 EOF
 ```
 
+## Bonnes pratiques
 
+### Organisation des fichiers
+   - Utilisez le `kebab-case` pour les noms d'`agent` et de `command`
+   - Gardez les descriptions concises mais informatives
+   - Regroupez les `agents` et les `commands` connexes ensemble
 
-### Best Practices
+### Gestion des permissions
+   - Restreignez l'accès en écriture/modification (`write`/`edit`) pour les `agents` axés sur la sécurité
+   - N'autorisez l'accès `bash` que lorsque cela est nécessaire
+   - Utilisez des permissions de commande `bash` spécifiques au lieu de caractères génériques (`wildcard`)
 
-#### File Organization
+### Gestion de la configuration
+   - Incluez toujours `$schema` pour la validation
+   - Utilisez des variables d'environnement pour les données sensibles
+   - Conservez la configuration spécifique au projet dans `.opencode/`
+   - Stockez les préférences de l'utilisateur dans `~/.config/opencode/`
 
-   - Use kebab-case for agent and command names
-   - Keep descriptions concise but informative
-   - Group related agents and commands together
+### Conception des agents (Agent Design)
+   - Créez des `agents` ciblés avec des objectifs spécifiques
+   - Utilisez des `subagents` pour les tâches spécialisées
+   - Réservez les `agents` principaux (`primary agents`) pour les tâches de coordination
+   - Incluez des instructions d'utilisation claires dans les `prompts` des `agents`
 
-#### Permission Management
-
-   - Restrict write/edit access for security-focused agents
-   - Allow bash access only when necessary
-   - Use specific bash command permissions instead of wildcard
-
-#### Configuration Management
-
-   - Always include $schema for validation
-   - Use environment variables for sensitive data
-   - Keep project-specific config in .opencode/
-   - Store user preferences in ~/.config/opencode/
-
-#### Agent Design
-
-   - Create focused agents with specific purposes
-   - Use subagents for specialized tasks
-   - Reserve primary agents for coordination tasks
-   - Include clear usage instructions in agent prompts
-
-This skill provides everything needed to create complete, functional OpenCode folder structures for any project type, with ready-to-use agents, commands, and configurations.
+Cette `skill` fournit tout ce qui est nécessaire pour créer des structures de dossiers OpenCode complètes et fonctionnelles pour tout type de projet, avec des `agents`, des `commands` et des configurations prêts à l'emploi.
