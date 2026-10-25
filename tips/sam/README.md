@@ -1,5 +1,8 @@
 # Pour Samuel
 
+## Idées pour les projet
+- explorer tree-sitter pour l'analyzer de code...
+
 ## Git
 
 Downloads
