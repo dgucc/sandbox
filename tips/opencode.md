@@ -15,7 +15,13 @@
 
 
 ---
-[OpenCode : crée ton équipe de 4 agents IA qui se contrôlent entre eux - kit à copier](https://www.youtube.com/redirect?event=comments&redir_token=QUZZTVljRXBFY00xZ04zM2wwQno2MzZ5a2RpLXxBSTVJdTV0T2YxN2Juc0l0ZU1RTzRQbDdnaUVpTDdpQkU1V2NoOTBUczhTUzdkaWNXOExVakJ2eHk5S0JYaHR1ZnpxY2d6NUtDSjVjZmxhYnlFaVM0OGJBMXpBTldNMjREX3BX&q=https%3A%2F%2Fgithub.com%2Ffabstech-lab%2Fagents-open-code)
+[OpenCode : crée ton équipe de 4 agents IA qui se contrôlent entre eux - kit à copier](https://www.youtube.com/watch?v=dl78bCncIe0&t=5s)
+`$ git clone --single-branch git@github.com:fabstech-lab/agents-open-code.git`    
+
+[OpenCode : skills et MCP, le guide complet (kit à copier)](https://www.youtube.com/watch?v=3NjrA8oM9ns)  
+
+`$ git clone --single-branch git@github.com:fabstech-lab/opencode-skills-mcp-kit.git`  
+
 
 ---
 [https://lobehub.com/skills/ramihollings-mr.technology-opencode-folder-creator](https://lobehub.com/skills/ramihollings-mr.technology-opencode-folder-creator)  
