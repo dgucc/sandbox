@@ -2,6 +2,7 @@
 
 - [vscode](#vscode)
    * [shortcut](#shortcut)
+   * [Example of .vscode/tasks.json](#example-of-.vscode/tasks.json)
    * [Custom keybindings](#custom-keybindings)
    * [Configuration](#configuration)
    * [Disable CoPilot](#disable-copilot)
