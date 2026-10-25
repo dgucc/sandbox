@@ -32,6 +32,8 @@ Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
 
 ## Example of .vscode/tasks.json
 
+Ctrl+Shift+B : to execute command defined as a build task :  
+
 ```json
 
 {
