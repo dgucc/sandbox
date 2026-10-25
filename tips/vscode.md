@@ -29,6 +29,54 @@ Focus on Project Explorer : <Ctrl+0>
 
 Auto-complete [Emmet abbreviations](https://docs.emmet.io/cheat-sheet/) : <Tab>
 
+## Example of .vscode/tasks.json
+
+```json
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // A human-readable name for the task
+            "label": "Run node.js script",
+            // Task type
+            "type": "shell",
+            // The executable or script to run
+            "command": "node",
+            // Arguments to pass to the command
+            "args": [
+                "${file}" // current file
+            ],
+            "group": {
+                // kind: "build" (marks as build task) or "test" (marks as test task)
+                "kind": "build",
+                // isDefault: mark this task as default task for quick access
+                "isDefault": true
+            },
+            // Information shown in Command Palette
+            "detail": "Execute node on current script Ctrl+Shift+B",
+            "presentation": {
+                // reveal: when to show terminal "always", "silent" (only on problem), "never"
+                "reveal": "always",
+                // revealProblems: when to show Problems panel - "always", "onProblem"
+                "revealProblems": "onProblem",
+                // panel: terminal allocation
+                //        "shared" (default, all tasks share),
+                //        "new" (every task execution uses a new clean terminal),
+                //        "dedicated" (each task reuses its dedicated terminal)
+                "panel": "new",
+                // clear: clear terminal before running task (default: false)
+                "clear": true,
+                // focus: focus terminal (taking input focus) after task starts (default: false)
+                "focus": true,
+                // echo: show command in terminal (default: true)
+                "echo": true
+            }
+        }
+    ]
+}
+```
+
 ## custom keybindings
 
 Duplicate line is missing in linux version      
