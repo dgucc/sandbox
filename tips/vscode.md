@@ -9,13 +9,13 @@
    * [Create Custom Snippets](#create-custom-snippets)
    * [Add Cygwin as terminal](#add-cygwin-as-terminal)
    * [Ollama-Continue](#ollama-continue)
-   * [Installation on Linux  ](#installation-on-linux)
    * [Clean extensions](#clean-extensions)
    * [Format curly brackets on the same line c# ](#format-curly-brackets-on-the-same-line-c)
    * [Hide References count in Editor ](#hide-references-count-in-editor)
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
    * [C/C++ with WSL](#c-c++-with-wsl)
    * [Prompt for DB password instead of hardcoding it](#prompt-for-db-password-instead-of-hardcoding-it)
+   * [C# : Installation on Linux  ](#c#-:-installation-on-linux)
 
 <!-- TOC end -->
 
@@ -441,31 +441,6 @@ Chat:Disable AI Features
 
 ---
 
-<!-- TOC --><a name="installation-on-linux"></a>
-## Installation on Linux  
-
-[Install Visual Studio Code and .NET Core for C# coding on Linux](https://www.pragmaticlinux.com/2021/03/install-visual-studio-code-and-net-core-for-c-coding-on-linux/)  
-
-Install the .NET SDK package repository   
-`$ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb`  
-`$ sudo dpkg -i packages-microsoft-prod.deb` 
-
-Install .NET SDK   
-`$ sudo apt-get update`   
-`$ sudo apt-get install dotnet-sdk-5.0`  
-`$ dotnet --list-sdks`  
-
-[Setup, Build and Run Blazor WASM App on Linux](https://www.prowaretech.com/articles/current/information-technology/linux/setup-and-configure/build-and-run-blazor-wasm-apps)
-
-Create the Blazor WebAssembly Client and Server Projects  
-`$dotnet new blazorwasm -o BlazorWasmApp -f net6.0 -ho`  
-
-Restore Dependencies  
-`$ dotnet restore`   
-Build (in same folder as "sln")  
-`$ dotnet build`   
-Run by specifying project  
-`$ dotnet run --project Server`   
 
 [3 Ways to install Visual studio code in Ubuntu using terminal](https://www.how2shout.com/linux/3-ways-install-visual-studio-code-in-ubuntu-using-terminal/)  
 
@@ -588,3 +563,30 @@ code .
   ]
 }
 ```
+
+<!-- TOC --><a name="installation-on-linux"></a>
+## C# : Installation on Linux  
+
+[Install Visual Studio Code and .NET Core for C# coding on Linux](https://www.pragmaticlinux.com/2021/03/install-visual-studio-code-and-net-core-for-c-coding-on-linux/)  
+
+Install the .NET SDK package repository   
+`$ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb`  
+`$ sudo dpkg -i packages-microsoft-prod.deb` 
+
+Install .NET SDK   
+`$ sudo apt-get update`   
+`$ sudo apt-get install dotnet-sdk-5.0`  
+`$ dotnet --list-sdks`  
+
+[Setup, Build and Run Blazor WASM App on Linux](https://www.prowaretech.com/articles/current/information-technology/linux/setup-and-configure/build-and-run-blazor-wasm-apps)
+
+Create the Blazor WebAssembly Client and Server Projects  
+`$dotnet new blazorwasm -o BlazorWasmApp -f net6.0 -ho`  
+
+Restore Dependencies  
+`$ dotnet restore`   
+Build (in same folder as "sln")  
+`$ dotnet build`   
+Run by specifying project  
+`$ dotnet run --project Server`   
+
