@@ -15,7 +15,7 @@
    * [Add "Open with Visual Studio Code" in Contextual Menu](#add-open-with-visual-studio-code-in-contextual-menu)
    * [C/C++ with WSL](#c-c++-with-wsl)
    * [Prompt for DB password instead of hardcoding it](#prompt-for-db-password-instead-of-hardcoding-it)
-   * [C# : Installation on Linux  ](#c#-:-installation-on-linux)
+   * [CSharp : Installation on Linux  ](#csharp-:-installation-on-linux)
 
 <!-- TOC end -->
 
@@ -564,8 +564,8 @@ code .
 }
 ```
 
-<!-- TOC --><a name="installation-on-linux"></a>
-## C# : Installation on Linux  
+<!-- TOC --><a name="csharp-:-installation-on-linux"></a>
+## CSharp : Installation on Linux  
 
 [Install Visual Studio Code and .NET Core for C# coding on Linux](https://www.pragmaticlinux.com/2021/03/install-visual-studio-code-and-net-core-for-c-coding-on-linux/)  
 
