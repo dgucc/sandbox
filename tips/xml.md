@@ -182,4 +182,18 @@ Open xml file with your browser :
 Fetch any kind of node containing a specific text  
 `//*[text()[contains(.,'abc')]]`  
 
+## Call SOAP
 
+```xml
+#!/usr/bin/env bash
+curl --request POST \
+  'http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso' \
+  --header 'Content-Type: text/xml; charset=utf-8' \
+  --header 'SOAPAction: "http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso/ListOfCountryNamesByName"' \
+  --data-binary '<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.oorsprong.org/websamples.countryinfo">
+<soap:Body>
+	<web:ListOfCountryNamesByName />
+</soap:Body>
+</soap:Envelope>'
+```
