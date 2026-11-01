@@ -1,14 +1,6 @@
 # Diskpart
 
-**diskpart** : manage computer’s drives (discs, partitions, volumes, or virtual hard drives).
-
-## Create primary partition
-```cmd
-create part primary size=102400
-format fs=ntfs quick label Data 
-assign letter D
-list vol
-```
+(as admin) **diskpart** : manage computer’s drives (discs, partitions, volumes, or virtual hard drives).
 
 ## Delete all partition
 ```cmd
@@ -16,6 +8,7 @@ list disk
 select disk 0 
 clean # Clearing all partitions
 ```
+
 
 ## Convert disk from MBR to GPT 
 ```cmd
@@ -47,6 +40,15 @@ create partition efi size=512
 format fs=fat32 quick label="System Boot"
 assign letter S
 ```
+
+## Create primary partition
+```cmd
+create part primary size=102400
+format fs=ntfs quick label Data 
+assign letter D
+list vol
+```
+
 
 ## Create and attach a virtual disk
 
