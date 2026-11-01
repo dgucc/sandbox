@@ -1,0 +1,30 @@
+# Windows totally on virtual disk [TO TEST]
+
+
+## DISM : Create image *.wim
+`dism /capture-image /imagefile:"D:\Win10Backup.wim" /capturedir:c:\ /name:"Win10Backup"`
+
+
+## Prepare virtual disk : 
+```cmd
+(as admin) > diskpart
+create vdisk file="D:\Win10Pro.vhdx" maximum=81920
+select vdisk file="D:\Win10Pro.vhdx"
+attach vdisk
+create partition primary
+format quick fs=ntfs label="VHDX"
+assign letter=V
+```
+
+## DISM : Restore image *.wim
+
+`dism /Get-ImageInfo /ImageFile:"D:\Win10Backup.wim"`
+or  
+`dism /get-wiminfo /wimfile:"D:\Win10Backup.wim"`
+
+`dism /apply-image /imagefile:"D:\Win10Backup.wim" /index:6 /applydir:V:\ `
+
+
+## Add Boot Entry
+bcdboot V:\Windows
+
