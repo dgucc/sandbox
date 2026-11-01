@@ -48,13 +48,15 @@ format fs=fat32 quick label="System Boot"
 assign letter S
 ```
 
-## Attach a virtual disk
+## Create and attach a virtual disk
 
 ```cmd
 (as admin) > diskpart
-select vdisk file:c:\VHDX\Windows11.vhdx
+	create vdisk file=c:\VHDX\Windows11.vhdx maximum=81920
+	select vdisk file:c:\VHDX\Windows11.vhdx
 	list volume
 	attach vdisk
+	assign letter V
 ```
 
 ## Enlarge Virtual disk
