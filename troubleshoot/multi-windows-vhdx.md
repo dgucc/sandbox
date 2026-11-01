@@ -15,13 +15,20 @@ convert gpt
 
 Create efi partition  
 ```cmd
-create partition efi size=200
+create partition efi size=100
 format fs=fat32 quick label "efi"
 ```
 
 Create Microsoft Reserved (MSR) partition  
 ```cmd
 create partition msr size=128
+```
+
+Create Windows Recovery Partition  
+```cmd
+create partition primary size=500
+set id=de94bba4-06d1-4d40-a16a-bfd50179d6ac
+format quick fs=ntfs label="Recovery"
 ```
 
 Create Windows partition  
